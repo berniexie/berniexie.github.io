@@ -75,6 +75,7 @@ export function GenreMixChart({
               outerRadius={75}
               paddingAngle={2}
               dataKey="value"
+              isAnimationActive={false}
             >
               {genrePieData.map((entry) => (
                 <Cell key={`cell-${entry.name}`} fill={GENRE_COLORS[entry.name] || '#808080'} />

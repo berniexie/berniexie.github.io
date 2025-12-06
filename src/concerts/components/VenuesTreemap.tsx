@@ -137,8 +137,7 @@ export function VenuesTreemap({ venueTreemapData }: VenuesTreemapProps) {
             dataKey="size"
             aspectRatio={4 / 3}
             content={<TreemapContent />}
-            isAnimationActive={true}
-            animationDuration={600}
+            isAnimationActive={false}
           >
             <Tooltip content={<TreemapTooltip />} />
           </Treemap>

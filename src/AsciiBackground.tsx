@@ -1,5 +1,28 @@
 import { useEffect, useRef } from 'react'
 
+// Pre-compute sin/cos lookup tables for performance
+const SIN_TABLE_SIZE = 1000
+const sinTable: number[] = new Array(SIN_TABLE_SIZE)
+const cosTable: number[] = new Array(SIN_TABLE_SIZE)
+for (let i = 0; i < SIN_TABLE_SIZE; i++) {
+  const angle = (i / SIN_TABLE_SIZE) * Math.PI * 20 // Cover a wide range
+  sinTable[i] = Math.sin(angle)
+  cosTable[i] = Math.cos(angle)
+}
+
+// Fast lookup for sin/cos with table interpolation
+function fastSin(x: number): number {
+  const normalized = ((x % (Math.PI * 20)) + Math.PI * 20) % (Math.PI * 20)
+  const index = Math.floor((normalized / (Math.PI * 20)) * SIN_TABLE_SIZE)
+  return sinTable[index % SIN_TABLE_SIZE]
+}
+
+function fastCos(x: number): number {
+  const normalized = ((x % (Math.PI * 20)) + Math.PI * 20) % (Math.PI * 20)
+  const index = Math.floor((normalized / (Math.PI * 20)) * SIN_TABLE_SIZE)
+  return cosTable[index % SIN_TABLE_SIZE]
+}
+
 const AsciiBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -13,7 +36,14 @@ const AsciiBackground = () => {
     let width = window.innerWidth
     let height = window.innerHeight
     let animationFrameId: number
+    let idleCallbackId: number
     let time = 0
+    let isRunning = true
+    let lastFrameTime = 0
+    let lastMouseMoveTime = 0
+    const targetFPS = 30 // Throttle to 30fps for better performance
+    const frameInterval = 1000 / targetFPS
+    const idleThreshold = 2000 // Switch to idle callback after 2s of no mouse movement
 
     // Mouse state
     const mouse = { x: -1000, y: -1000 }
@@ -21,55 +51,66 @@ const AsciiBackground = () => {
     const handleMouseMove = (e: MouseEvent) => {
       mouse.x = e.clientX
       mouse.y = e.clientY
+      lastMouseMoveTime = performance.now()
+    }
+
+    // Pause animation when tab is hidden
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        isRunning = false
+        cancelAnimationFrame(animationFrameId)
+        cancelIdleCallback(idleCallbackId)
+      } else {
+        isRunning = true
+        lastFrameTime = 0
+        lastMouseMoveTime = performance.now() // Reset to use rAF initially
+        render(0)
+      }
     }
 
     window.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('visibilitychange', handleVisibilityChange)
 
-    // Configuration
-    const fontSize = 12
+    // Configuration - increased cell size for fewer calculations
+    const fontSize = 14 // Slightly larger for fewer cells
+    const cellWidth = fontSize * 0.6
     const font = `bold ${fontSize}px "Space Mono", monospace`
-    // Using a geometric character set for a "tech/blueprint" feel
     const chars = ' ·+x*#'
+    const interactionRadiusSq = 400 * 400 // Pre-compute squared radius to avoid sqrt
 
     const draw = () => {
-      // Clear with fade effect for "motion blur" if desired,
-      // but for crisp ASCII, full clear is often better.
-      // Let's go with a solid clear to avoid muddying the text.
       ctx.fillStyle = '#050505'
       ctx.fillRect(0, 0, width, height)
 
       ctx.font = font
 
       const rows = Math.ceil(height / fontSize)
-      const cols = Math.ceil(width / (fontSize * 0.6)) // 0.6 aspect ratio approx
+      const cols = Math.ceil(width / cellWidth)
 
       for (let y = 0; y < rows; y++) {
         for (let x = 0; x < cols; x++) {
           // Screen coordinates
-          const px = x * fontSize * 0.6
+          const px = x * cellWidth
           const py = y * fontSize
 
-          // Calculate distance from mouse for interaction
+          // Use squared distance to avoid expensive sqrt
           const dx = px - mouse.x
           const dy = py - mouse.y
-          const dist = Math.sqrt(dx * dx + dy * dy)
+          const distSq = dx * dx + dy * dy
 
-          // Interactive "Flashlight" / Distortion effect
-          // The closer the mouse, the faster/more turbulent the wave
-          const interaction = Math.max(0, 1 - dist / 400) // 400px radius
+          // Skip expensive calculations for cells far from mouse
+          const interaction = distSq < interactionRadiusSq ? Math.max(0, 1 - Math.sqrt(distSq) / 400) : 0
 
-          // Wave math: layers of Sine waves
-          // We mix coordinate-based offset with time
+          // Use lookup tables for trig functions
           const scale = 0.05
-          const v1 = Math.sin(x * scale + time * 0.5)
-          const v2 = Math.cos(y * scale + time * 0.3)
-          const v3 = Math.sin((x + y) * 0.02 + time * 1.2) // Fast ripples
+          const v1 = fastSin(x * scale + time * 0.5)
+          const v2 = fastCos(y * scale + time * 0.3)
+          const v3 = fastSin((x + y) * 0.02 + time * 1.2)
 
           // Combine waves
           const value = v1 + v2 + v3 * interaction * 2
 
           // Normalize roughly to 0-1 range for char mapping
-          // value range is approx -2 to 2 normally, extended by interaction
           const mapIndex = Math.floor(((value + 2 + interaction) / 5) * chars.length)
           const charIndex = Math.max(0, Math.min(chars.length - 1, mapIndex))
 
@@ -79,9 +120,7 @@ const AsciiBackground = () => {
           if (char === ' ') continue
 
           // Dynamic Coloring
-          // Dark grey base, getting brighter/more colored with "height" or interaction
-          // Subtle background breathing
-          const brightness = 0.04 + (charIndex / chars.length) * 0.10
+          const brightness = 0.04 + (charIndex / chars.length) * 0.1
           ctx.fillStyle = `rgba(255, 255, 255, ${brightness})`
 
           ctx.fillText(char, px, py)
@@ -91,8 +130,44 @@ const AsciiBackground = () => {
       time += 0.02
     }
 
-    const render = () => {
-      draw()
+    // Idle callback for low-priority rendering when user isn't interacting
+    const renderIdle = (deadline: IdleDeadline) => {
+      if (!isRunning) return
+
+      // Only draw if we have time remaining
+      if (deadline.timeRemaining() > 5) {
+        draw()
+      }
+
+      // Check if user has started interacting again
+      const timeSinceMouseMove = performance.now() - lastMouseMoveTime
+      if (timeSinceMouseMove < idleThreshold) {
+        // Switch back to requestAnimationFrame for responsive rendering
+        lastFrameTime = performance.now()
+        animationFrameId = requestAnimationFrame(render)
+      } else {
+        // Continue with idle callbacks
+        idleCallbackId = requestIdleCallback(renderIdle, { timeout: 100 })
+      }
+    }
+
+    const render = (currentTime: number) => {
+      if (!isRunning) return
+
+      // Check if we should switch to idle callback (no mouse activity)
+      const timeSinceMouseMove = currentTime - lastMouseMoveTime
+      if (lastMouseMoveTime > 0 && timeSinceMouseMove > idleThreshold) {
+        // Switch to requestIdleCallback for lower priority rendering
+        idleCallbackId = requestIdleCallback(renderIdle, { timeout: 100 })
+        return
+      }
+
+      // Throttle to target FPS
+      if (currentTime - lastFrameTime >= frameInterval) {
+        lastFrameTime = currentTime
+        draw()
+      }
+
       animationFrameId = requestAnimationFrame(render)
     }
 
@@ -106,12 +181,15 @@ const AsciiBackground = () => {
     handleResize() // Initial size
     window.addEventListener('resize', handleResize)
 
-    render()
+    render(0)
 
     return () => {
+      isRunning = false
       window.removeEventListener('resize', handleResize)
       window.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
       cancelAnimationFrame(animationFrameId)
+      cancelIdleCallback(idleCallbackId)
     }
   }, [])
 

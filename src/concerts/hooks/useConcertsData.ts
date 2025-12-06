@@ -12,35 +12,48 @@ export function useConcertsData() {
       .catch((err) => console.error('Failed to load concerts:', err))
   }, [])
 
-  const stats = useMemo<ConcertStats | null>(() => {
-    if (concerts.length === 0) return null
+  // Base filtered concerts - most other computations depend on this
+  const validConcerts = useMemo(
+    () => concerts.filter((c) => c.rating !== null && c.status !== 'cancelled'),
+    [concerts]
+  )
 
-    const validConcerts = concerts.filter((c) => c.rating !== null && c.status !== 'cancelled')
-
-    // Assign primary genre to each concert
-    const concertsWithGenre = validConcerts.map((c) => ({
-      ...c,
-      primaryGenre: getPrimaryGenre(c.tags),
-    }))
-
-    // Count concerts by primary genre
+  // Genre computations
+  const { concertsByGenre, topGenresList, genrePieData } = useMemo(() => {
     const genreCounts: Record<string, number> = {}
     const concertsByGenre: Record<string, Concert[]> = {}
 
-    concertsWithGenre.forEach((c) => {
-      genreCounts[c.primaryGenre] = (genreCounts[c.primaryGenre] || 0) + 1
-      if (!concertsByGenre[c.primaryGenre]) concertsByGenre[c.primaryGenre] = []
-      concertsByGenre[c.primaryGenre].push(c)
+    validConcerts.forEach((c) => {
+      const primaryGenre = getPrimaryGenre(c.tags)
+      genreCounts[primaryGenre] = (genreCounts[primaryGenre] || 0) + 1
+      if (!concertsByGenre[primaryGenre]) concertsByGenre[primaryGenre] = []
+      concertsByGenre[primaryGenre].push(c)
     })
 
-    // Get top 8 actual genres by count (exclude "other" - it's calculated separately)
+    // Get top 25 genres by count (exclude "other")
     const topGenresList = Object.entries(genreCounts)
       .filter(([g]) => g !== 'other')
       .sort((a, b) => b[1] - a[1])
       .slice(0, 25)
       .map(([g]) => g)
 
-    // Timeline Data: Concerts per year + Top Genre trends
+    // Pie chart data
+    const genrePieData = topGenresList.map((genre) => ({
+      name: genre,
+      value: genreCounts[genre],
+    }))
+
+    const topGenreTotal = genrePieData.reduce((sum, item) => sum + item.value, 0)
+    const otherCount = validConcerts.length - topGenreTotal
+    if (otherCount > 0) {
+      genrePieData.push({ name: 'other', value: otherCount })
+    }
+
+    return { genreCounts, concertsByGenre, topGenresList, genrePieData }
+  }, [validConcerts])
+
+  // Timeline/Years data
+  const { yearsData, byYear } = useMemo(() => {
     const byYear: Record<number, Concert[]> = {}
     const yearsSet = new Set<number>()
 
@@ -57,7 +70,7 @@ export function useConcertsData() {
       .map((year) => {
         const yearConcerts = byYear[year] || []
         const yearConcertsValid = yearConcerts.filter(
-          (c) => c.rating !== null && c.status !== 'cancelled',
+          (c) => c.rating !== null && c.status !== 'cancelled'
         )
 
         // Count primary genres for this year
@@ -78,41 +91,17 @@ export function useConcertsData() {
         }
       })
 
-    // Rating distribution
-    const ratingBuckets = [
-      { range: '1-4', count: 0 },
-      { range: '5-6', count: 0 },
-      { range: '7-8', count: 0 },
-      { range: '9-10', count: 0 },
-    ]
-    validConcerts.forEach((c) => {
-      const r = c.rating!
-      if (r <= 4) ratingBuckets[0].count++
-      else if (r <= 6) ratingBuckets[1].count++
-      else if (r <= 8) ratingBuckets[2].count++
-      else ratingBuckets[3].count++
-    })
+    return { yearsData, byYear }
+  }, [concerts, topGenresList])
 
-    // Genre Pie Data (top 6 + other)
-    const genrePieData = topGenresList.map((genre) => ({
-      name: genre,
-      value: genreCounts[genre],
-    }))
-
-    const topGenreTotal = genrePieData.reduce((sum, item) => sum + item.value, 0)
-    const otherCount = validConcerts.length - topGenreTotal
-    if (otherCount > 0) {
-      genrePieData.push({ name: 'other', value: otherCount })
-    }
-
-    // Venue/Festival breakdown data
+  // Venue/Festival data
+  const { venueTreemapData, topVenues } = useMemo(() => {
     const festivalCounts: Record<string, number> = {}
     const venueCounts: Record<string, number> = {}
 
     validConcerts.forEach((c) => {
       const festivalTag = c.tags.find((t) => t.startsWith('festival:'))
       if (festivalTag) {
-        // Convert festival tag to title case (e.g., "coachella" -> "Coachella")
         const festivalName = festivalTag
           .replace('festival:', '')
           .replace(/-/g, ' ')
@@ -125,7 +114,6 @@ export function useConcertsData() {
       }
     })
 
-    // Create treemap data for venues breakdown
     const topFestivals = Object.entries(festivalCounts)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 8)
@@ -153,17 +141,21 @@ export function useConcertsData() {
       },
     ]
 
-    // Top venues for stats card
     const topVenues = Object.entries(venueCounts)
       .concat(Object.entries(festivalCounts))
       .sort((a, b) => b[1] - a[1])
       .slice(0, 5) as [string, number][]
 
-    // Average rating
-    const avgRating =
-      validConcerts.reduce((sum, c) => sum + (c.rating || 0), 0) / validConcerts.length
+    return { venueTreemapData, topVenues }
+  }, [validConcerts])
 
-    // Scatter Plot Data
+  // Scatter plot and ratings data
+  const { scatterData, topRated, avgRating, ratingBuckets } = useMemo(() => {
+    const avgRating =
+      validConcerts.length > 0
+        ? validConcerts.reduce((sum, c) => sum + (c.rating || 0), 0) / validConcerts.length
+        : 0
+
     const scatterData: ConcertWithTimestamp[] = validConcerts
       .map((c) => ({
         ...c,
@@ -171,24 +163,41 @@ export function useConcertsData() {
       }))
       .sort((a, b) => a.timestamp - b.timestamp)
 
-    // Top rated concerts (all perfect 10s)
     const topRated = [...validConcerts]
       .filter((c) => c.rating === 10)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
-    // Top artists by number of times seen
+    const ratingBuckets = [
+      { range: '1-4', count: 0 },
+      { range: '5-6', count: 0 },
+      { range: '7-8', count: 0 },
+      { range: '9-10', count: 0 },
+    ]
+    validConcerts.forEach((c) => {
+      const r = c.rating!
+      if (r <= 4) ratingBuckets[0].count++
+      else if (r <= 6) ratingBuckets[1].count++
+      else if (r <= 8) ratingBuckets[2].count++
+      else ratingBuckets[3].count++
+    })
+
+    return { scatterData, topRated, avgRating, ratingBuckets }
+  }, [validConcerts])
+
+  // Top artists data
+  const topArtists = useMemo<ArtistStats[]>(() => {
     const artistConcerts: Record<string, Concert[]> = {}
     validConcerts.forEach((c) => {
       if (!artistConcerts[c.artist]) artistConcerts[c.artist] = []
       artistConcerts[c.artist].push(c)
     })
 
-    const topArtists: ArtistStats[] = Object.entries(artistConcerts)
+    return Object.entries(artistConcerts)
       .map(([name, concerts]) => {
         const ratings = concerts.filter((c) => c.rating !== null).map((c) => c.rating!)
         const avgRating = ratings.length > 0 ? ratings.reduce((a, b) => a + b, 0) / ratings.length : 0
         const sortedByDate = [...concerts].sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
         )
         return {
           name,
@@ -198,9 +207,14 @@ export function useConcertsData() {
           concerts,
         }
       })
-      .filter((a) => a.count > 1) // Only artists seen more than once
+      .filter((a) => a.count > 1)
       .sort((a, b) => b.count - a.count || b.avgRating - a.avgRating)
       .slice(0, 15)
+  }, [validConcerts])
+
+  // Combine all stats into final object
+  const stats = useMemo<ConcertStats | null>(() => {
+    if (concerts.length === 0) return null
 
     return {
       total: concerts.length,
@@ -218,8 +232,22 @@ export function useConcertsData() {
       validConcerts,
       topArtists,
     }
-  }, [concerts])
+  }, [
+    concerts.length,
+    avgRating,
+    yearsData,
+    ratingBuckets,
+    genrePieData,
+    venueTreemapData,
+    scatterData,
+    topVenues,
+    topRated,
+    byYear,
+    topGenresList,
+    concertsByGenre,
+    validConcerts,
+    topArtists,
+  ])
 
   return { concerts, stats }
 }
-

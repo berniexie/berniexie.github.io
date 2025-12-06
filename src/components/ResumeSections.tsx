@@ -1,9 +1,21 @@
 import { Expand, Minimize } from 'lucide-react'
-import ConcertsSection from '../ConcertsSection'
-import TravelGlobe from '../TravelGlobe'
+import { lazy, Suspense } from 'react'
 import type { ResumeSection } from '../types/resume'
 import EducationList from './EducationList'
 import WorkExperience from './WorkExperience'
+
+// Lazy load heavy components for better initial load performance
+const TravelGlobe = lazy(() => import('../TravelGlobe'))
+const ConcertsSection = lazy(() => import('../ConcertsSection'))
+
+// Loading fallback component
+function SectionLoader() {
+  return (
+    <div className="flex items-center justify-center py-12">
+      <div className="animate-pulse text-[var(--color-text-muted)] text-sm">Loading...</div>
+    </div>
+  )
+}
 
 interface ResumeSectionsProps {
   sections: ResumeSection[]
@@ -59,9 +71,17 @@ function ResumeSections({
 
             {section.items && <EducationList items={section.items} />}
 
-            {section.id === 'travels' && <TravelGlobe />}
+            {section.id === 'travels' && (
+              <Suspense fallback={<SectionLoader />}>
+                <TravelGlobe />
+              </Suspense>
+            )}
 
-            {section.id === 'concerts' && <ConcertsSection />}
+            {section.id === 'concerts' && (
+              <Suspense fallback={<SectionLoader />}>
+                <ConcertsSection />
+              </Suspense>
+            )}
           </div>
         )
       })}
@@ -70,3 +90,4 @@ function ResumeSections({
 }
 
 export default ResumeSections
+

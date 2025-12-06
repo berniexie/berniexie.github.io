@@ -39,4 +39,3 @@ Edit the `public/resume.md` file to update resume content. The site will automat
 
 - [] Backfill more concert data
 - [] Support photography
-- [] Performance

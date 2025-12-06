@@ -65,11 +65,9 @@ export default function TravelGlobe() {
       .catch((err) => console.error('Failed to load travel data', err))
   }, [])
 
-  // Load country borders GeoJSON
+  // Load country borders GeoJSON (cached locally for performance)
   useEffect(() => {
-    fetch(
-      'https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson',
-    )
+    fetch('/countries.geojson')
       .then((res) => res.json())
       .then((data: { features: CountryFeature[] }) => {
         setCountries(data.features)
@@ -178,6 +176,40 @@ export default function TravelGlobe() {
     ]
   }, [homeTrip, hoveredTrip])
 
+  // Memoized callback props for Globe to prevent unnecessary re-renders
+  const polygonCapColor = useCallback(
+    (d: object) => (isCountryHovered(d) ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0)'),
+    [isCountryHovered]
+  )
+
+  const polygonSideColor = useCallback(() => 'rgba(0, 0, 0, 0)', [])
+
+  const polygonStrokeColor = useCallback(
+    (d: object) => (isCountryHovered(d) ? 'rgba(255, 255, 255, 0.5)' : 'rgba(255, 255, 255, 0.05)'),
+    [isCountryHovered]
+  )
+
+  const pointLat = useCallback((d: object) => (d as Trip).coordinates[0], [])
+  const pointLng = useCallback((d: object) => (d as Trip).coordinates[1], [])
+
+  const arcStartLat = useCallback((d: object) => (d as Arc).startLat, [])
+  const arcStartLng = useCallback((d: object) => (d as Arc).startLng, [])
+  const arcEndLat = useCallback((d: object) => (d as Arc).endLat, [])
+  const arcEndLng = useCallback((d: object) => (d as Arc).endLng, [])
+  const arcColor = useCallback(() => ['rgba(255, 255, 255, 0.8)', 'rgba(255, 255, 255, 0.3)'], [])
+
+  const handlePointHover = useCallback(
+    (point: object | null) => {
+      setHoveredTrip(point as Trip | null)
+      if (containerRef.current) {
+        containerRef.current.style.cursor = point ? 'pointer' : 'grab'
+      }
+    },
+    []
+  )
+
+  const handleGlobeReady = useCallback(() => setGlobeReady(true), [])
+
   return (
     <div className="w-full flex flex-col items-center justify-center my-12 relative z-0">
       {/* Globe container */}
@@ -196,43 +228,34 @@ export default function TravelGlobe() {
           showAtmosphere={true}
           // Country Polygons (highlight on hover)
           polygonsData={countries}
-          polygonCapColor={(d) =>
-            isCountryHovered(d) ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0)'
-          }
-          polygonSideColor={() => 'rgba(0, 0, 0, 0)'}
-          polygonStrokeColor={(d) =>
-            isCountryHovered(d) ? 'rgba(255, 255, 255, 0.5)' : 'rgba(255, 255, 255, 0.05)'
-          }
+          polygonCapColor={polygonCapColor}
+          polygonSideColor={polygonSideColor}
+          polygonStrokeColor={polygonStrokeColor}
           polygonAltitude={0.005}
           // Points Layer (clean circular markers)
           pointsData={trips}
-          pointLat={(d) => (d as Trip).coordinates[0]}
-          pointLng={(d) => (d as Trip).coordinates[1]}
+          pointLat={pointLat}
+          pointLng={pointLng}
           pointColor={getPointColor}
           pointRadius={getPointRadius}
           pointAltitude={0.01}
           pointsMerge={false}
           // Arcs Layer (streak from home to hovered location)
           arcsData={arcData}
-          arcStartLat={(d) => (d as Arc).startLat}
-          arcStartLng={(d) => (d as Arc).startLng}
-          arcEndLat={(d) => (d as Arc).endLat}
-          arcEndLng={(d) => (d as Arc).endLng}
-          arcColor={() => ['rgba(255, 255, 255, 0.8)', 'rgba(255, 255, 255, 0.3)']}
+          arcStartLat={arcStartLat}
+          arcStartLng={arcStartLng}
+          arcEndLat={arcEndLat}
+          arcEndLng={arcEndLng}
+          arcColor={arcColor}
           arcDashLength={0.5}
           arcDashGap={0.2}
           arcDashAnimateTime={1500}
           arcStroke={0.5}
           arcAltitudeAutoScale={0.3}
           // Hover interaction
-          onPointHover={(point) => {
-            setHoveredTrip(point as Trip | null)
-            if (containerRef.current) {
-              containerRef.current.style.cursor = point ? 'pointer' : 'grab'
-            }
-          }}
+          onPointHover={handlePointHover}
           // Globe events
-          onGlobeReady={() => setGlobeReady(true)}
+          onGlobeReady={handleGlobeReady}
           onZoom={handleInteraction}
           // Atmosphere glow
           atmosphereColor="rgba(255, 255, 255, 0.5)"

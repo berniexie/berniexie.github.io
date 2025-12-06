@@ -9,6 +9,8 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
   const [activeSection, setActiveSection] = useState<string>('')
   const [stickyStates, setStickyStates] = useState<Record<string, boolean>>({})
   const isScrollingRef = useRef(false)
+  const observerRef = useRef<IntersectionObserver | null>(null)
+  const stickyObserverRef = useRef<IntersectionObserver | null>(null)
 
   // Initialize active section when sections change
   useEffect(() => {
@@ -17,44 +19,66 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
     }
   }, [sections, activeSection])
 
-  // Handle scroll to update active section and sticky states
+  // Use IntersectionObserver for efficient scroll detection
   useEffect(() => {
     if (sections.length === 0) return
 
-    const handleScroll = () => {
-      // Skip active section updates during programmatic scrolling
-      if (isScrollingRef.current) {
-        return
-      }
+    // Observer for active section detection (fires when section enters viewport)
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        // Skip updates during programmatic scrolling
+        if (isScrollingRef.current) return
 
-      let currentSection = sections[0]?.id || ''
-      const newStickyStates: Record<string, boolean> = {}
-
-      for (const section of sections) {
-        const element = document.getElementById(section.id)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          newStickyStates[section.id] = rect.top <= 0
-
-          if (window.scrollY >= element.offsetTop - 200) {
-            currentSection = section.id
-          }
+        // Find the most visible section
+        const visibleEntries = entries.filter((entry) => entry.isIntersecting)
+        
+        if (visibleEntries.length > 0) {
+          // Get the entry closest to the top of the viewport
+          const topEntry = visibleEntries.reduce((prev, curr) => {
+            const prevRect = prev.boundingClientRect
+            const currRect = curr.boundingClientRect
+            return Math.abs(prevRect.top) < Math.abs(currRect.top) ? prev : curr
+          })
+          setActiveSection(topEntry.target.id)
         }
+      },
+      {
+        rootMargin: '-100px 0px -50% 0px', // Trigger when section is in top half of viewport
+        threshold: [0, 0.1, 0.5],
       }
+    )
 
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
-        if (sections.length > 0) {
-          currentSection = sections[sections.length - 1].id
-        }
+    // Observer for sticky state detection
+    stickyObserverRef.current = new IntersectionObserver(
+      (entries) => {
+        setStickyStates((prev) => {
+          const newStates = { ...prev }
+          entries.forEach((entry) => {
+            // Element is "stuck" when it's not intersecting (scrolled past the top)
+            newStates[entry.target.id] = !entry.isIntersecting
+          })
+          return newStates
+        })
+      },
+      {
+        rootMargin: '0px 0px 0px 0px',
+        threshold: 1.0,
       }
+    )
 
-      setStickyStates(newStickyStates)
-      setActiveSection(currentSection)
+    // Observe all section elements
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id)
+      if (element) {
+        observerRef.current?.observe(element)
+        stickyObserverRef.current?.observe(element)
+      }
+    })
+
+    return () => {
+      observerRef.current?.disconnect()
+      stickyObserverRef.current?.disconnect()
     }
-
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [sections])
 
   // Handle clicking on a section in the sidebar

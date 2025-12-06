@@ -122,6 +122,7 @@ export function TasteEvolutionChart({
               strokeWidth={2}
               dot={{ r: 3 }}
               name="Total"
+              isAnimationActive={false}
             />
             {/* Genre Lines */}
             {topGenresList.map((genre) => (
@@ -133,6 +134,7 @@ export function TasteEvolutionChart({
                 strokeWidth={1.5}
                 dot={false}
                 name={genre}
+                isAnimationActive={false}
               />
             ))}
           </LineChart>
@@ -141,3 +143,4 @@ export function TasteEvolutionChart({
     </div>
   )
 }
+

@@ -101,7 +101,7 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
               cursor={{ fill: 'var(--color-border)', opacity: 0.3 }}
               wrapperStyle={{ zIndex: 100 }}
             />
-            <Bar dataKey="count" radius={[0, 4, 4, 0]} maxBarSize={20}>
+            <Bar dataKey="count" radius={[0, 4, 4, 0]} maxBarSize={20} isAnimationActive={false}>
               {topArtists.map((_, index) => (
                 <Cell key={`cell-${index}`} fill={BAR_COLORS[index % BAR_COLORS.length]} />
               ))}

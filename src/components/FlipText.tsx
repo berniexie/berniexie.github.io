@@ -26,11 +26,19 @@ export function FlipText({ children, className = '', delay = 0 }: FlipTextProps)
       prevChildren.current = children
     }
 
-    let timer: ReturnType<typeof setInterval>
+    let animationFrameId: number
     let iteration = 0
+    let lastTime = 0
+    const frameInterval = 30 // Target ~33fps (30ms between frames)
 
-    const startTimeout = setTimeout(() => {
-      timer = setInterval(() => {
+    const animate = (currentTime: number) => {
+      if (!lastTime) lastTime = currentTime
+
+      const elapsed = currentTime - lastTime
+
+      if (elapsed >= frameInterval) {
+        lastTime = currentTime
+
         setOutput(
           children
             .split('')
@@ -43,16 +51,22 @@ export function FlipText({ children, className = '', delay = 0 }: FlipTextProps)
         )
 
         if (iteration >= children.length) {
-          clearInterval(timer)
+          return // Stop animation
         }
 
         iteration += 1 / 3
-      }, 30)
+      }
+
+      animationFrameId = requestAnimationFrame(animate)
+    }
+
+    const startTimeout = setTimeout(() => {
+      animationFrameId = requestAnimationFrame(animate)
     }, delay)
 
     return () => {
       clearTimeout(startTimeout)
-      clearInterval(timer)
+      cancelAnimationFrame(animationFrameId)
     }
   }, [children, delay])
 

@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import {
   XAxis,
   YAxis,
@@ -10,6 +11,10 @@ import {
 } from 'recharts'
 import type { ConcertWithTimestamp } from '../types'
 import { getRatingColor } from '../utils'
+
+interface ConcertWithColor extends ConcertWithTimestamp {
+  color: string
+}
 
 interface RatingScatterTooltipProps {
   active?: boolean
@@ -67,6 +72,16 @@ interface RatingsScatterChartProps {
 }
 
 export function RatingsScatterChart({ scatterData }: RatingsScatterChartProps) {
+  // Pre-compute colors to avoid recalculating on every render
+  const scatterDataWithColors = useMemo<ConcertWithColor[]>(
+    () =>
+      scatterData.map((entry) => ({
+        ...entry,
+        color: getRatingColor(entry.rating || 0),
+      })),
+    [scatterData]
+  )
+
   return (
     <div className="mt-8 p-4 rounded-lg border border-[var(--color-border)]">
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
@@ -102,13 +117,9 @@ export function RatingsScatterChart({ scatterData }: RatingsScatterChartProps) {
               wrapperStyle={{ zIndex: 100 }}
               cursor={{ strokeDasharray: '3 3' }}
             />
-            <Scatter name="Ratings" data={scatterData} shape="circle">
-              {scatterData.map((entry, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={getRatingColor(entry.rating || 0)}
-                  strokeWidth={0}
-                />
+            <Scatter name="Ratings" data={scatterDataWithColors} shape="circle" isAnimationActive={false}>
+              {scatterDataWithColors.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} strokeWidth={0} />
               ))}
             </Scatter>
           </ScatterChart>
