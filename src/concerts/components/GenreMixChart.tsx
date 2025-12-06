@@ -64,13 +64,13 @@ export function GenreMixChart({
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
         Genre Mix
       </h4>
-      <div className="h-48">
+      <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
               data={genrePieData}
               cx="50%"
-              cy="50%"
+              cy="40%"
               innerRadius={35}
               outerRadius={75}
               paddingAngle={2}
@@ -88,16 +88,16 @@ export function GenreMixChart({
             />
             <Legend
               wrapperStyle={{ fontSize: '9px' }}
-              layout="vertical"
-              align="right"
-              verticalAlign="middle"
+              layout="horizontal"
+              align="center"
+              verticalAlign="bottom"
               content={({ payload }) => {
                 // Sort by value (percentage) descending, then take top 10
                 const sortedPayload = [...(payload || [])]
                   .sort((a, b) => (b.payload?.value || 0) - (a.payload?.value || 0))
                   .slice(0, 10)
                 return (
-                  <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+                  <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '8px 12px' }}>
                     {sortedPayload.map((entry, index) => (
                       <li
                         key={`legend-${index}`}
@@ -105,7 +105,6 @@ export function GenreMixChart({
                           display: 'flex',
                           alignItems: 'center',
                           gap: '4px',
-                          marginBottom: '2px',
                           fontSize: '9px',
                         }}
                       >
@@ -131,3 +130,4 @@ export function GenreMixChart({
     </div>
   )
 }
+
