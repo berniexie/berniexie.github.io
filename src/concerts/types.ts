@@ -83,5 +83,6 @@ export interface RatingBucket {
 export interface GenrePieItem {
   name: string
   value: number
+  [key: string]: string | number
 }
 
