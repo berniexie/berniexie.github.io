@@ -10,14 +10,35 @@ interface Trip {
   summary?: string;
 }
 
+interface CountryFeature {
+  type: string;
+  properties: {
+    NAME?: string;
+    ADMIN?: string;
+    ISO_A3?: string;
+  };
+  geometry: any;
+}
+
 interface TravelData {
   trips: Trip[];
 }
+
+// Map travel.json country names to GeoJSON names
+const COUNTRY_NAME_MAP: Record<string, string> = {
+  "USA": "United States of America",
+  "UK": "United Kingdom",
+  "Scotland": "United Kingdom",
+  "South Korea": "South Korea",
+  "Hong Kong": "China",
+  "Czech Republic": "Czechia"
+};
 
 export default function TravelGlobe() {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
   const [trips, setTrips] = useState<Trip[]>([]);
+  const [countries, setCountries] = useState<CountryFeature[]>([]);
   const [hoveredTrip, setHoveredTrip] = useState<Trip | null>(null);
   const [globeReady, setGlobeReady] = useState(false);
   const [dimensions, setDimensions] = useState({ width: 600, height: 600 });
@@ -30,6 +51,16 @@ export default function TravelGlobe() {
         setTrips(data.trips);
       })
       .catch((err) => console.error("Failed to load travel data", err));
+  }, []);
+
+  // Load country borders GeoJSON
+  useEffect(() => {
+    fetch("https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson")
+      .then((res) => res.json())
+      .then((data: { features: CountryFeature[] }) => {
+        setCountries(data.features);
+      })
+      .catch((err) => console.error("Failed to load country data", err));
   }, []);
 
   // Handle resize
@@ -74,6 +105,25 @@ export default function TravelGlobe() {
     }
   }, []);
 
+  // Helper to check if a country feature matches the hovered trip
+  const isCountryHovered = useCallback((feature: object) => {
+    if (!hoveredTrip) return false;
+    const f = feature as CountryFeature;
+    const geoName = f.properties.ADMIN || f.properties.NAME || "";
+    const tripCountry = hoveredTrip.country;
+    
+    // Direct match
+    if (geoName === tripCountry) return true;
+    
+    // Mapped match
+    if (COUNTRY_NAME_MAP[tripCountry] === geoName) return true;
+    
+    // Partial match (e.g. "United States" vs "United States of America")
+    if (geoName.includes(tripCountry) || tripCountry.includes(geoName)) return true;
+    
+    return false;
+  }, [hoveredTrip]);
+
   // Dynamic point color based on hover
   const getPointColor = useCallback((d: object) => {
     const trip = d as Trip;
@@ -109,6 +159,13 @@ export default function TravelGlobe() {
           globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
           showGlobe={true}
           showAtmosphere={true}
+          
+          // Country Polygons (highlight on hover)
+          polygonsData={countries}
+          polygonCapColor={(d) => isCountryHovered(d) ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0)"}
+          polygonSideColor={() => "rgba(0, 0, 0, 0)"}
+          polygonStrokeColor={(d) => isCountryHovered(d) ? "rgba(255, 255, 255, 0.5)" : "rgba(255, 255, 255, 0.05)"}
+          polygonAltitude={0.005}
           
           // Points Layer (clean circular markers)
           pointsData={trips}
