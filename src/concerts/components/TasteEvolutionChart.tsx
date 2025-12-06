@@ -124,8 +124,8 @@ export function TasteEvolutionChart({
               name="Total"
               isAnimationActive={false}
             />
-            {/* Genre Lines */}
-            {topGenresList.map((genre) => (
+            {/* Genre Lines - Top 10 */}
+            {topGenresList.slice(0, 10).map((genre) => (
               <Line
                 key={genre}
                 type="monotone"
