@@ -1,7 +1,7 @@
 import { Expand, Minimize } from 'lucide-react'
 import ConcertsSection from '../ConcertsSection'
 import TravelGlobe from '../TravelGlobe'
-import { ResumeSection } from '../types/resume'
+import type { ResumeSection } from '../types/resume'
 import EducationList from './EducationList'
 import WorkExperience from './WorkExperience'
 
