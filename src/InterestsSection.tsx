@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Plane, Flag, Music, Tv, BookOpen, Ticket } from 'lucide-react'
+import { FlipText } from './components/FlipText'
 
 interface InterestsData {
   lastTravel: {
@@ -86,7 +87,7 @@ function InterestsSection() {
   return (
     <div className="py-6">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        {interests.map((item) => (
+        {interests.map((item, index) => (
           <div
             key={item.label}
             className="group flex flex-col gap-2 p-3 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-text)]/30 transition-colors"
@@ -102,11 +103,11 @@ function InterestsSection() {
             </div>
             <div>
               <p className="text-xs font-medium text-[var(--color-text)] leading-tight">
-                {item.value}
+                <FlipText delay={index * 200}>{item.value}</FlipText>
               </p>
               {item.subtext && (
                 <p className="text-[10px] text-[var(--color-text-muted)] mt-0.5 leading-tight">
-                  {item.subtext}
+                  <FlipText delay={index * 200 + 100}>{item.subtext}</FlipText>
                 </p>
               )}
             </div>

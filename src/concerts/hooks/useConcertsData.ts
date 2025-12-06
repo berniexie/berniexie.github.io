@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
-import type { Concert, ConcertStats, ConcertWithTimestamp } from '../types'
+import type { Concert, ConcertStats, ConcertWithTimestamp, ArtistStats } from '../types'
 import { getPrimaryGenre } from '../utils'
 
 export function useConcertsData() {
@@ -176,6 +176,32 @@ export function useConcertsData() {
       .filter((c) => c.rating === 10)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
+    // Top artists by number of times seen
+    const artistConcerts: Record<string, Concert[]> = {}
+    validConcerts.forEach((c) => {
+      if (!artistConcerts[c.artist]) artistConcerts[c.artist] = []
+      artistConcerts[c.artist].push(c)
+    })
+
+    const topArtists: ArtistStats[] = Object.entries(artistConcerts)
+      .map(([name, concerts]) => {
+        const ratings = concerts.filter((c) => c.rating !== null).map((c) => c.rating!)
+        const avgRating = ratings.length > 0 ? ratings.reduce((a, b) => a + b, 0) / ratings.length : 0
+        const sortedByDate = [...concerts].sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+        )
+        return {
+          name,
+          count: concerts.length,
+          avgRating,
+          lastSeen: sortedByDate[0].date,
+          concerts,
+        }
+      })
+      .filter((a) => a.count > 1) // Only artists seen more than once
+      .sort((a, b) => b.count - a.count || b.avgRating - a.avgRating)
+      .slice(0, 15)
+
     return {
       total: concerts.length,
       avgRating,
@@ -190,8 +216,10 @@ export function useConcertsData() {
       topGenresList,
       concertsByGenre,
       validConcerts,
+      topArtists,
     }
   }, [concerts])
 
   return { concerts, stats }
 }
+

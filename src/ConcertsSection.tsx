@@ -6,6 +6,7 @@ import {
   VenuesTreemap,
   RatingsScatterChart,
   PerfectTensList,
+  TopArtistsChart,
 } from './concerts'
 
 function ConcertsSection() {
@@ -25,7 +26,7 @@ function ConcertsSection() {
         concerts={concerts}
       />
 
-      {/* Secondary Charts Row: 2 columns max */}
+      {/* Secondary Charts Row: 2 columns */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Genre Composition */}
         <GenreMixChart
@@ -37,6 +38,9 @@ function ConcertsSection() {
         {/* Venues & Festivals Breakdown */}
         <VenuesTreemap venueTreemapData={stats.venueTreemapData} />
       </div>
+
+      {/* Most Seen Artists (Full Width) */}
+      <TopArtistsChart topArtists={stats.topArtists} />
 
       {/* All Ratings (Full Width) */}
       <RatingsScatterChart scatterData={stats.scatterData} />

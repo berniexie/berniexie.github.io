@@ -33,11 +33,22 @@ export interface TreemapItem {
   name: string
   size: number
   type: string
+  [key: string]: string | number
 }
 
 export interface TreemapCategory {
   name: string
   children: TreemapItem[]
+  [key: string]: string | TreemapItem[]
+}
+
+// Artist stats for top artists chart
+export interface ArtistStats {
+  name: string
+  count: number
+  avgRating: number
+  lastSeen: string
+  concerts: Concert[]
 }
 
 // Stats returned from useConcertsData hook
@@ -55,6 +66,7 @@ export interface ConcertStats {
   topGenresList: string[]
   concertsByGenre: Record<string, Concert[]>
   validConcerts: Concert[]
+  topArtists: ArtistStats[]
 }
 
 export interface YearData {
@@ -72,3 +84,4 @@ export interface GenrePieItem {
   name: string
   value: number
 }
+

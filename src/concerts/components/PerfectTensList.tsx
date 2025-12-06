@@ -6,11 +6,11 @@ interface PerfectTensListProps {
 
 export function PerfectTensList({ topRated }: PerfectTensListProps) {
   return (
-    <div className="mt-6 p-4 rounded-lg border border-[var(--color-border)]">
+    <div className="mt-8 p-4 rounded-lg border border-[var(--color-border)]">
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
         Perfect 10s
       </h4>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 max-h-64 overflow-y-auto pr-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-64 overflow-y-auto pr-2">
         {topRated.map((concert, i) => (
           <div
             key={`${concert.artist}-${concert.date}-${i}`}

@@ -68,7 +68,7 @@ interface RatingsScatterChartProps {
 
 export function RatingsScatterChart({ scatterData }: RatingsScatterChartProps) {
   return (
-    <div className="mt-6 p-4 rounded-lg border border-[var(--color-border)]">
+    <div className="mt-8 p-4 rounded-lg border border-[var(--color-border)]">
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
         All Ratings
       </h4>

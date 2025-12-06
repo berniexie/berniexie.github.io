@@ -1,6 +1,10 @@
 import { ResponsiveContainer, Treemap, Tooltip } from 'recharts'
 import type { TreemapCategory } from '../types'
-import { TREEMAP_COLORS } from '../constants'
+
+const COLORS = {
+  venue: '#818cf8', // indigo-400 - matches accent
+  festival: '#34d399', // emerald-400
+}
 
 interface TreemapContentProps {
   x?: number
@@ -23,52 +27,52 @@ function TreemapContent({
   type,
   depth,
 }: TreemapContentProps) {
-  // Only render leaf nodes (depth 2)
   if (depth !== 2) return null
 
   const isSmall = width < 60 || height < 30
   const isTiny = width < 40 || height < 20
+  const color = type === 'festival' ? COLORS.festival : COLORS.venue
 
   return (
     <g>
       <rect
-        x={x}
-        y={y}
-        width={width}
-        height={height}
-        style={{
-          fill: type === 'festival' ? TREEMAP_COLORS.festival : TREEMAP_COLORS.venue,
-          stroke: 'var(--color-bg)',
-          strokeWidth: 2,
-          opacity: 0.85,
-        }}
+        x={x + 1}
+        y={y + 1}
+        width={Math.max(0, width - 2)}
+        height={Math.max(0, height - 2)}
+        rx={3}
+        ry={3}
+        fill={color}
+        fillOpacity={0.15}
+        stroke={color}
+        strokeWidth={1}
+        strokeOpacity={0.5}
       />
       {!isTiny && (
         <>
           <text
             x={x + width / 2}
-            y={y + height / 2 - (isSmall ? 0 : 6)}
+            y={y + height / 2 - (isSmall ? 0 : 7)}
             textAnchor="middle"
             dominantBaseline="middle"
-            style={{
-              fontSize: isSmall ? 8 : 10,
-              fill: '#1a1a1a',
-              fontWeight: 500,
-            }}
+            fill="var(--color-text)"
+            fontSize={isSmall ? 9 : 11}
+            fontWeight={500}
+            fontFamily="var(--font-body)"
           >
-            {name && name.length > width / 7 ? name.slice(0, Math.floor(width / 7)) + '…' : name}
+            {name && name.length > width / 6.5
+              ? name.slice(0, Math.floor(width / 6.5)) + '…'
+              : name}
           </text>
           {!isSmall && (
             <text
               x={x + width / 2}
-              y={y + height / 2 + 10}
+              y={y + height / 2 + 9}
               textAnchor="middle"
               dominantBaseline="middle"
-              style={{
-                fontSize: 9,
-                fill: '#1a1a1a',
-                opacity: 0.7,
-              }}
+              fill="var(--color-text-muted)"
+              fontSize={10}
+              fontFamily="var(--font-body)"
             >
               {size}
             </text>
@@ -91,12 +95,11 @@ function TreemapTooltip({ active, payload }: TreemapTooltipProps) {
   if (!data.name || !data.size) return null
 
   return (
-    <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg p-3 shadow-lg z-50 relative">
-      <p className="text-sm font-bold text-[var(--color-text)] capitalize">{data.name}</p>
+    <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-md px-3 py-2 shadow-lg">
+      <p className="text-sm text-[var(--color-text)]">{data.name}</p>
       <p className="text-xs text-[var(--color-text-muted)]">
-        <span className="font-semibold text-[var(--color-text)]">{data.size}</span> shows
+        {data.size} shows · <span className="capitalize">{data.type}</span>
       </p>
-      <p className="text-[10px] text-[var(--color-text-muted)] capitalize">{data.type}</p>
     </div>
   )
 }
@@ -108,35 +111,36 @@ interface VenuesTreemapProps {
 export function VenuesTreemap({ venueTreemapData }: VenuesTreemapProps) {
   return (
     <div className="p-4 rounded-lg border border-[var(--color-border)]">
-      <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-2">
+      <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-3">
         Venues & Festivals
       </h4>
-      <div className="flex gap-2 mb-2">
-        <span className="flex items-center gap-1 text-[10px] text-[var(--color-text-muted)]">
+      <div className="flex gap-4 mb-3">
+        <span className="flex items-center gap-1.5 text-[10px] text-[var(--color-text-muted)]">
           <span
             className="w-2 h-2 rounded-sm"
-            style={{ backgroundColor: TREEMAP_COLORS.venue }}
+            style={{ backgroundColor: COLORS.venue }}
           />
           Venues
         </span>
-        <span className="flex items-center gap-1 text-[10px] text-[var(--color-text-muted)]">
+        <span className="flex items-center gap-1.5 text-[10px] text-[var(--color-text-muted)]">
           <span
             className="w-2 h-2 rounded-sm"
-            style={{ backgroundColor: TREEMAP_COLORS.festival }}
+            style={{ backgroundColor: COLORS.festival }}
           />
           Festivals
         </span>
       </div>
-      <div className="h-40">
+      <div className="h-64 md:h-72">
         <ResponsiveContainer width="100%" height="100%">
           <Treemap
             data={venueTreemapData}
             dataKey="size"
             aspectRatio={4 / 3}
-            stroke="var(--color-bg)"
             content={<TreemapContent />}
+            isAnimationActive={true}
+            animationDuration={600}
           >
-            <Tooltip content={<TreemapTooltip />} wrapperStyle={{ zIndex: 100 }} />
+            <Tooltip content={<TreemapTooltip />} />
           </Treemap>
         </ResponsiveContainer>
       </div>
