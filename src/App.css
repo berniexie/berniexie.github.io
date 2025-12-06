@@ -1,40 +1,95 @@
-/* Additional component styles */
-
-/* Smooth transitions for interactive elements */
-a {
-  transition: color 0.15s ease;
+/* Typography Utilities */
+.font-display {
+  font-family: var(--font-display);
 }
 
-/* Custom scrollbar for a cleaner look */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+.font-body {
+  font-family: var(--font-body);
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+/* Tech Link Hover Effect */
+.hover-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color 0.2s ease;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 4px;
+.hover-link:hover {
+  color: var(--color-accent);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
+.hover-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-accent);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
-/* Print styles */
-@media print {
-  .fixed {
-    display: none !important;
-  }
-  
-  main {
-    padding: 0 !important;
-  }
-  
-  article {
-    max-width: none !important;
-  }
+.hover-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Markdown overrides */
+.prose {
+  color: var(--color-text-muted);
+  max-width: none;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  font-family: var(--font-display);
+  color: var(--color-text);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.prose strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.prose a {
+  color: var(--color-text);
+  text-decoration-color: var(--color-border);
+  transition: all 0.2s;
+}
+
+.prose a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+.prose ul > li::marker {
+    color: var(--color-accent);
+}
+
+/* List Styling */
+.prose li p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.prose > ul > li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Glass Panel */
+.glass-panel {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Glitch/Tech text effect class (optional usage) */
+.text-tech {
+    text-shadow: 0 0 10px var(--color-accent-dim);
 }
