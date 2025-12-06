@@ -93,7 +93,8 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
               tick={{ fill: 'var(--color-text)', fontSize: 11 }}
               axisLine={false}
               tickLine={false}
-              width={100}
+              width={140}
+              interval={0}
             />
             <Tooltip
               content={<ArtistTooltip />}
