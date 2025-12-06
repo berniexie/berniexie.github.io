@@ -1,87 +1,87 @@
-import { useEffect, useState } from "react";
-import { Plane, Flag, Music, Tv, BookOpen, Ticket } from "lucide-react";
+import { useEffect, useState } from 'react'
+import { Plane, Flag, Music, Tv, BookOpen, Ticket } from 'lucide-react'
 
 interface InterestsData {
   lastTravel: {
-    city: string;
-    country: string;
-    month: string;
-    year: number;
-  };
+    city: string
+    country: string
+    month: string
+    year: number
+  }
   golf: {
-    pr: number;
-    course: string;
-    date: string;
-    handicap: number;
-  };
+    pr: number
+    course: string
+    date: string
+    handicap: number
+  }
   mostPlayedSong: {
-    title: string;
-    artist: string;
-  };
+    title: string
+    artist: string
+  }
   lastWatched: {
-    title: string;
-    platform: string;
-  };
+    title: string
+    platform: string
+  }
   lastRead: {
-    title: string;
-    author: string;
-  };
+    title: string
+    author: string
+  }
   lastConcert: {
-    artist: string;
-    venue: string;
-  };
+    artist: string
+    venue: string
+  }
 }
 
 function InterestsSection() {
-  const [data, setData] = useState<InterestsData | null>(null);
+  const [data, setData] = useState<InterestsData | null>(null)
 
   useEffect(() => {
-    fetch("/interests.json")
+    fetch('/interests.json')
       .then((res) => res.json())
       .then((data: InterestsData) => setData(data))
-      .catch((err) => console.error("Failed to load interests:", err));
-  }, []);
+      .catch((err) => console.error('Failed to load interests:', err))
+  }, [])
 
-  if (!data) return null;
+  if (!data) return null
 
   const interests = [
     {
       icon: Plane,
-      label: "Last Travel",
+      label: 'Last Travel',
       value: `${data.lastTravel.city}, ${data.lastTravel.country}`,
       subtext: `${data.lastTravel.month} ${data.lastTravel.year}`,
     },
     {
       icon: Flag,
-      label: "Golf PR",
+      label: 'Golf PR',
       value: `${data.golf.pr} (${data.golf.handicap} hcp)`,
       subtext: data.golf.course,
     },
     {
       icon: Music,
-      label: "On Repeat",
+      label: 'On Repeat',
       value: data.mostPlayedSong.title,
       subtext: data.mostPlayedSong.artist,
     },
     {
       icon: Tv,
-      label: "Last Watched",
+      label: 'Last Watched',
       value: data.lastWatched.title,
       subtext: data.lastWatched.platform,
     },
     {
       icon: BookOpen,
-      label: "Last Read",
+      label: 'Last Read',
       value: data.lastRead.title,
       subtext: data.lastRead.author,
     },
     {
       icon: Ticket,
-      label: "Last Concert",
+      label: 'Last Concert',
       value: data.lastConcert.artist,
       subtext: data.lastConcert.venue,
     },
-  ];
+  ]
 
   return (
     <div className="py-6">
@@ -114,7 +114,7 @@ function InterestsSection() {
         ))}
       </div>
     </div>
-  );
+  )
 }
 
-export default InterestsSection;
+export default InterestsSection

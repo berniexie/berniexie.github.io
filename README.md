@@ -34,3 +34,9 @@ The site automatically deploys to GitHub Pages when changes are pushed to the `m
 ## Editing Resume
 
 Edit the `public/resume.md` file to update resume content. The site will automatically re-render with the new content.
+
+## TODOs
+
+- [] Backfill more concert data
+- [] Support photography
+- [] Performance

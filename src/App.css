@@ -43,7 +43,9 @@
   max-width: none;
 }
 
-.prose h1, .prose h2, .prose h3 {
+.prose h1,
+.prose h2,
+.prose h3 {
   font-family: var(--font-display);
   color: var(--color-text);
   font-weight: 700;
@@ -67,7 +69,7 @@
 }
 
 .prose ul > li::marker {
-    color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 /* List Styling */
@@ -91,5 +93,5 @@
 
 /* Glitch/Tech text effect class (optional usage) */
 .text-tech {
-    text-shadow: 0 0 10px var(--color-accent-dim);
+  text-shadow: 0 0 10px var(--color-accent-dim);
 }

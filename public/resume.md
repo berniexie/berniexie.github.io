@@ -14,6 +14,7 @@ Full-stack engineer with 9 years of experience, including 2 founding engineer ro
 ## Work Experience
 
 ### Kestral (YC X25)
+
 **Co-Founder & CTO** | April 2025 – Present
 
 Architected and built 90%+ of a production AI task management platform generating $X,000 MRR, owning the full stack from database schema design through React UI to GCP deployment pipelines and 30+ AI agents.
@@ -29,6 +30,7 @@ Architected and built 90%+ of a production AI task management platform generatin
 ---
 
 ### Asana
+
 **Senior Software Engineer** | November 2023 – April 2025
 
 - Led a 10-month, 3-engineer enterprise permissions initiative (Custom Field Permissions) to GA 1.5 months ahead of schedule, now adopted by 37 of the Top 100 enterprise accounts, by solo-owning the most complex milestone and coordinating across 4+ platform teams.
@@ -44,6 +46,7 @@ Architected and built 90%+ of a production AI task management platform generatin
 ---
 
 ### Terrastruct
+
 **Founding Engineer** | March 2021 – July 2023
 
 - Established the engineering foundation as the first hire, shaping technical direction, processes, and culture during the company's earliest growth stage.
@@ -57,6 +60,7 @@ Architected and built 90%+ of a production AI task management platform generatin
 ---
 
 ### AllStripes
+
 **Founding Engineer** | February 2019 – March 2021
 
 - Second engineer and fifth full time employee hired.
@@ -70,13 +74,17 @@ Architected and built 90%+ of a production AI task management platform generatin
 ---
 
 ### TuneIn
+
 **Software Engineer** | September 2017 – February 2019
 
 - Software Engineer on the Ads team, Web team, and Embed Player
+
 ---
 
 ### Expedia, Inc.
+
 **Software Engineer** | August 2016 – September 2017
+
 - Software Engineer for the Local Expert and Hotel Search teams
 
 ---
@@ -84,5 +92,5 @@ Architected and built 90%+ of a production AI task management platform generatin
 ## Education
 
 ### University of Southern California | Viterbi School of Engineering
-**Bachelor of Science (B.S) in Computer Science** | August 2012 – May 2016
 
+**Bachelor of Science (B.S) in Computer Science** | August 2012 – May 2016

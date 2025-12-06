@@ -1,11 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
 /* Cyber/Tech Theme */
 :root {
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Space Mono', monospace;
-  
+
   --color-bg: #050505;
   --color-bg-alt: #0a0a0a;
   --color-text: #ffffff;
@@ -30,7 +30,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-image: 
+  background-image:
     linear-gradient(to right, #111 1px, transparent 1px),
     linear-gradient(to bottom, #111 1px, transparent 1px);
   background-size: 40px 40px;
