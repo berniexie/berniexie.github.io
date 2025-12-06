@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
-// Generate a scrambled version of text (preserving spaces)
 function scramble(text: string): string {
   return text
     .split('')
@@ -17,26 +16,26 @@ interface FlipTextProps {
 }
 
 export function FlipText({ children, className = '', delay = 0 }: FlipTextProps) {
-  // Start with scrambled text so there's no flash of correct content
-  // Start with scrambled text so there's no flash of correct content
   const [output, setOutput] = useState(() => scramble(children))
+  const prevChildren = useRef(children)
 
   useEffect(() => {
-    // Reset to scrambled state when children changes
-    setOutput(scramble(children))
-    
+    // Only re-scramble if children actually changed (not on initial mount)
+    if (prevChildren.current !== children) {
+      setOutput(scramble(children))
+      prevChildren.current = children
+    }
+
     let timer: ReturnType<typeof setInterval>
     let iteration = 0
-    
+
     const startTimeout = setTimeout(() => {
       timer = setInterval(() => {
         setOutput(
           children
             .split('')
             .map((letter, index) => {
-              if (index < iteration) {
-                return children[index]
-              }
+              if (index < iteration) return children[index]
               if (letter === ' ') return ' '
               return CHARS[Math.floor(Math.random() * CHARS.length)]
             })
@@ -58,12 +57,8 @@ export function FlipText({ children, className = '', delay = 0 }: FlipTextProps)
   }, [children, delay])
 
   return (
-    <span 
-      className={`${className} inline-block`}
-      aria-label={children}
-    >
+    <span className={`${className} inline-block`} aria-label={children}>
       {output}
     </span>
   )
 }
-
