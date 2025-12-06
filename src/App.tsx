@@ -257,10 +257,7 @@ function App() {
             {resumeData.sections.map((section) => {
               const isStuck = stickyStates[section.id];
               return (
-                <div
-                  key={section.id}
-                  className="my-12"
-                >
+                <div key={section.id} className="my-12">
                   <hr className="border-[var(--color-border)] my-0" />
                   <div
                     id={section.id}

@@ -28,63 +28,143 @@ interface Concert {
 
 // Genre Colors for consistent styling across charts
 const GENRE_COLORS: Record<string, string> = {
-  "k-pop": "#FF6B9D",      // Pink
-  "k-hip-hop": "#FF9F6B",  // Coral
-  "k-rnb": "#FFB6C1",      // Light Pink
-  "k-rock": "#DC143C",     // Crimson
-  "house": "#00BFFF",      // Deep Sky Blue
-  "techno": "#4B0082",     // Indigo
-  "trap": "#FF4500",       // Orange Red
-  "dubstep": "#9400D3",    // Dark Violet
+  "k-pop": "#FF6B9D", // Pink
+  "k-hip-hop": "#FF9F6B", // Coral
+  "k-rnb": "#FFB6C1", // Light Pink
+  "k-rock": "#DC143C", // Crimson
+  house: "#00BFFF", // Deep Sky Blue
+  techno: "#4B0082", // Indigo
+  trap: "#FF4500", // Orange Red
+  dubstep: "#9400D3", // Dark Violet
   "future-bass": "#00CED1", // Dark Turquoise
   "electro-pop": "#DA70D6", // Orchid
-  "downtempo": "#5F9EA0",  // Cadet Blue
+  downtempo: "#5F9EA0", // Cadet Blue
   "progressive-house": "#1E90FF", // Dodger Blue
-  "midtempo": "#8B008B",   // Dark Magenta
-  "hip-hop": "#FFA500",    // Orange
-  "rnb": "#DDA0DD",        // Plum
-  "alt-rnb": "#E6B8D9",    // Lighter Plum
-  "rock": "#B22222",       // Fire Brick
-  "alt-rock": "#CD5C5C",   // Indian Red
-  "indie-pop": "#98FB98",  // Pale Green
+  midtempo: "#8B008B", // Dark Magenta
+  "hip-hop": "#FFA500", // Orange
+  rnb: "#DDA0DD", // Plum
+  "alt-rnb": "#E6B8D9", // Lighter Plum
+  rock: "#B22222", // Fire Brick
+  "alt-rock": "#CD5C5C", // Indian Red
+  "indie-pop": "#98FB98", // Pale Green
   "indie-rock": "#32CD32", // Lime Green
-  "pop": "#FF69B4",        // Hot Pink
-  "alt-pop": "#FF85C1",    // Lighter Hot Pink
-  "country": "#DAA520",    // Goldenrod
-  "latin": "#FF6347",      // Tomato
-  "afrobeats": "#9ACD32",  // Yellow Green
-  "j-pop": "#FF1493",      // Deep Pink
-  "c-pop": "#DB7093",      // Pale Violet Red
-  "bass": "#7B68EE",       // Medium Slate Blue
+  pop: "#FF69B4", // Hot Pink
+  "alt-pop": "#FF85C1", // Lighter Hot Pink
+  country: "#DAA520", // Goldenrod
+  latin: "#FF6347", // Tomato
+  afrobeats: "#9ACD32", // Yellow Green
+  "j-pop": "#FF1493", // Deep Pink
+  "c-pop": "#DB7093", // Pale Violet Red
+  bass: "#7B68EE", // Medium Slate Blue
   "melodic-bass": "#6A5ACD", // Slate Blue
-  "electronic": "#00FFFF", // Cyan
-  "other": "#808080",      // Gray
+  electronic: "#00FFFF", // Cyan
+  other: "#808080", // Gray
 };
 
 // Meta tags to ignore for genre classification
 const META_TAGS = new Set([
-  "solo", "group", "band", "duo", "dj", "dj-duo", "dj-group", "collab", "producer",
-  "english", "korean", "japanese", "french", "spanish", "mandarin", "bilingual", "instrumental",
-  "us", "uk", "south-korea", "japan", "china", "france", "canada", "australia", "sweden",
-  "germany", "belgium", "norway", "haiti", "indonesia", "nigeria", "colombia", "spain",
-  "puerto-rico", "new-zealand", "hong-kong", "lebanon", "bangladesh", "multi-national",
-  "korean-american", "vietnamese-american", "festival", "electronic", "edm",
-  "girl-group", "boy-group"
+  "solo",
+  "group",
+  "band",
+  "duo",
+  "dj",
+  "dj-duo",
+  "dj-group",
+  "collab",
+  "producer",
+  "english",
+  "korean",
+  "japanese",
+  "french",
+  "spanish",
+  "mandarin",
+  "bilingual",
+  "instrumental",
+  "us",
+  "uk",
+  "south-korea",
+  "japan",
+  "china",
+  "france",
+  "canada",
+  "australia",
+  "sweden",
+  "germany",
+  "belgium",
+  "norway",
+  "haiti",
+  "indonesia",
+  "nigeria",
+  "colombia",
+  "spain",
+  "puerto-rico",
+  "new-zealand",
+  "hong-kong",
+  "lebanon",
+  "bangladesh",
+  "multi-national",
+  "korean-american",
+  "vietnamese-american",
+  "festival",
+  "electronic",
+  "edm",
+  "girl-group",
+  "boy-group",
 ]);
 
 // Genre hierarchy - first match wins (order matters!)
 const GENRE_PRIORITY: string[] = [
   // Korean Specific (highest priority)
-  "k-pop", "k-hip-hop", "k-rnb", "k-rock",
+  "k-pop",
+  "k-hip-hop",
+  "k-rnb",
+  "k-rock",
   // Specific Electronic
-  "techno", "house", "trap", "dubstep", "future-bass", "hardstyle", "midtempo",
-  "downtempo", "electro-pop", "progressive-house", "uk-garage", "disco-house",
-  "electro-house", "melodic-house", "melodic-bass", "bass", "indietronica",
-  "live-electronic", "future-funk", "nu-jazz", "synth-pop", "dancehall",
+  "techno",
+  "house",
+  "trap",
+  "dubstep",
+  "future-bass",
+  "hardstyle",
+  "midtempo",
+  "downtempo",
+  "electro-pop",
+  "progressive-house",
+  "uk-garage",
+  "disco-house",
+  "electro-house",
+  "melodic-house",
+  "melodic-bass",
+  "bass",
+  "indietronica",
+  "live-electronic",
+  "future-funk",
+  "nu-jazz",
+  "synth-pop",
+  "dancehall",
   // General Genres
-  "hip-hop", "rnb", "alt-rnb", "rock", "alt-rock", "pop-rock", "pop-punk",
-  "emo", "metalcore", "indie-pop", "indie-rock", "pop", "alt-pop", "country",
-  "soul", "soul-pop", "funk", "afrobeats", "latin", "reggaeton", "j-pop", "c-pop",
+  "hip-hop",
+  "rnb",
+  "alt-rnb",
+  "rock",
+  "alt-rock",
+  "pop-rock",
+  "pop-punk",
+  "emo",
+  "metalcore",
+  "indie-pop",
+  "indie-rock",
+  "pop",
+  "alt-pop",
+  "country",
+  "soul",
+  "soul-pop",
+  "funk",
+  "afrobeats",
+  "latin",
+  "reggaeton",
+  "j-pop",
+  "c-pop",
 ];
 
 /**
@@ -128,11 +208,11 @@ interface CustomTooltipProps {
   label?: number | string;
 }
 
-function LineChartTooltip({ 
-  active, 
-  payload, 
-  label, 
-  concerts 
+function LineChartTooltip({
+  active,
+  payload,
+  label,
+  concerts,
 }: CustomTooltipProps & { concerts: Concert[] }) {
   if (!active || !payload || payload.length === 0) return null;
 
@@ -140,7 +220,7 @@ function LineChartTooltip({
   const yearConcerts = concerts.filter(
     (c) => new Date(c.date).getFullYear() === year && c.status !== "cancelled"
   );
-  
+
   // Get top rated from this year
   const topRatedYear = yearConcerts
     .filter((c) => c.rating !== null)
@@ -158,10 +238,13 @@ function LineChartTooltip({
   return (
     <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg p-3 shadow-lg min-w-[180px] z-50 relative">
       <p className="text-sm font-bold text-[var(--color-text)] mb-2">{year}</p>
-      
+
       {totalEntry && (
         <p className="text-xs text-[var(--color-text-muted)] mb-2">
-          <span className="font-semibold text-[var(--color-text)]">{totalEntry.value}</span> shows
+          <span className="font-semibold text-[var(--color-text)]">
+            {totalEntry.value}
+          </span>{" "}
+          shows
         </p>
       )}
 
@@ -182,10 +265,13 @@ function LineChartTooltip({
 
       {topRatedYear.length > 0 && (
         <div className="border-t border-[var(--color-border)] pt-2 mt-2">
-          <p className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider mb-1">Top Rated</p>
+          <p className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider mb-1">
+            Top Rated
+          </p>
           {topRatedYear.map((c, i) => (
             <p key={i} className="text-[10px] text-[var(--color-text)]">
-              {c.artist} <span className="text-[var(--color-text-muted)]">({c.rating})</span>
+              {c.artist}{" "}
+              <span className="text-[var(--color-text-muted)]">({c.rating})</span>
             </p>
           ))}
         </div>
@@ -200,12 +286,17 @@ interface PieTooltipPayload {
   value: number;
 }
 
-function GenrePieTooltip({ 
-  active, 
-  payload, 
-  concertsByGenre, 
-  total 
-}: { active?: boolean; payload?: PieTooltipPayload[]; concertsByGenre: Record<string, Concert[]>; total: number }) {
+function GenrePieTooltip({
+  active,
+  payload,
+  concertsByGenre,
+  total,
+}: {
+  active?: boolean;
+  payload?: PieTooltipPayload[];
+  concertsByGenre: Record<string, Concert[]>;
+  total: number;
+}) {
   if (!active || !payload || payload.length === 0) return null;
 
   const data = payload[0];
@@ -222,17 +313,23 @@ function GenrePieTooltip({
 
   return (
     <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg p-3 shadow-lg min-w-[160px] z-50 relative">
-      <p className="text-sm font-bold text-[var(--color-text)] capitalize mb-1">{genre}</p>
+      <p className="text-sm font-bold text-[var(--color-text)] capitalize mb-1">
+        {genre}
+      </p>
       <p className="text-xs text-[var(--color-text-muted)]">
-        <span className="font-semibold text-[var(--color-text)]">{count}</span> shows ({percentage}%)
+        <span className="font-semibold text-[var(--color-text)]">{count}</span> shows (
+        {percentage}%)
       </p>
 
       {topRated.length > 0 && (
         <div className="border-t border-[var(--color-border)] pt-2 mt-2">
-          <p className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider mb-1">Top Rated</p>
+          <p className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider mb-1">
+            Top Rated
+          </p>
           {topRated.map((c, i) => (
             <p key={i} className="text-[10px] text-[var(--color-text)]">
-              {c.artist} <span className="text-[var(--color-text-muted)]">({c.rating})</span>
+              {c.artist}{" "}
+              <span className="text-[var(--color-text-muted)]">({c.rating})</span>
             </p>
           ))}
         </div>
@@ -251,10 +348,13 @@ function getRatingColor(rating: number): string {
 }
 
 // Tooltip for Rating Scatter
-function RatingScatterTooltip({ 
-  active, 
-  payload 
-}: { active?: boolean; payload?: Array<{ payload: Concert & { timestamp: number } }> }) {
+function RatingScatterTooltip({
+  active,
+  payload,
+}: {
+  active?: boolean;
+  payload?: Array<{ payload: Concert & { timestamp: number } }>;
+}) {
   if (!active || !payload || payload.length === 0) return null;
 
   const data = payload[0].payload;
@@ -266,34 +366,34 @@ function RatingScatterTooltip({
         <div>
           <p className="text-sm font-bold text-[var(--color-text)]">{data.artist}</p>
           <p className="text-xs text-[var(--color-text-muted)]">
-            {new Date(data.date).toLocaleDateString("en-US", { 
-              year: 'numeric', 
-              month: 'short', 
-              day: 'numeric' 
+            {new Date(data.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
             })}
           </p>
           <p className="text-xs text-[var(--color-text-muted)]">{data.venue}</p>
         </div>
         <div className="flex flex-col items-center">
-            <span 
-                className="text-lg font-bold"
-                style={{ color }}
-            >
-                {data.rating}
-            </span>
+          <span className="text-lg font-bold" style={{ color }}>
+            {data.rating}
+          </span>
         </div>
       </div>
-      
+
       <div className="flex flex-wrap gap-1 mt-2">
-        {data.tags.slice(0, 5).map(tag => (
-            <span key={tag} className="text-[9px] px-1.5 py-0.5 rounded-full bg-[var(--color-bg-secondary)] text-[var(--color-text-muted)] border border-[var(--color-border)]">
-                {tag}
-            </span>
+        {data.tags.slice(0, 5).map((tag) => (
+          <span
+            key={tag}
+            className="text-[9px] px-1.5 py-0.5 rounded-full bg-[var(--color-bg-secondary)] text-[var(--color-text-muted)] border border-[var(--color-border)]"
+          >
+            {tag}
+          </span>
         ))}
         {data.tags.length > 5 && (
-            <span className="text-[9px] px-1.5 py-0.5 text-[var(--color-text-muted)]">
-                +{data.tags.length - 5} more
-            </span>
+          <span className="text-[9px] px-1.5 py-0.5 text-[var(--color-text-muted)]">
+            +{data.tags.length - 5} more
+          </span>
         )}
       </div>
     </div>
@@ -318,22 +418,22 @@ interface TreemapContentProps {
   depth?: number;
 }
 
-function TreemapContent({ 
-  x = 0, 
-  y = 0, 
-  width = 0, 
-  height = 0, 
-  name, 
-  size, 
+function TreemapContent({
+  x = 0,
+  y = 0,
+  width = 0,
+  height = 0,
+  name,
+  size,
   type,
   depth,
 }: TreemapContentProps) {
   // Only render leaf nodes (depth 2)
   if (depth !== 2) return null;
-  
+
   const isSmall = width < 60 || height < 30;
   const isTiny = width < 40 || height < 20;
-  
+
   return (
     <g>
       <rect
@@ -361,7 +461,9 @@ function TreemapContent({
               fontWeight: 500,
             }}
           >
-            {name && name.length > (width / 7) ? name.slice(0, Math.floor(width / 7)) + "…" : name}
+            {name && name.length > width / 7
+              ? name.slice(0, Math.floor(width / 7)) + "…"
+              : name}
           </text>
           {!isSmall && (
             <text
@@ -385,15 +487,18 @@ function TreemapContent({
 }
 
 // Tooltip for Treemap
-function TreemapTooltip({ 
-  active, 
-  payload 
-}: { active?: boolean; payload?: Array<{ payload: { name: string; size: number; type: string } }> }) {
+function TreemapTooltip({
+  active,
+  payload,
+}: {
+  active?: boolean;
+  payload?: Array<{ payload: { name: string; size: number; type: string } }>;
+}) {
   if (!active || !payload || payload.length === 0) return null;
-  
+
   const data = payload[0].payload;
   if (!data.name || !data.size) return null;
-  
+
   return (
     <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg p-3 shadow-lg z-50 relative">
       <p className="text-sm font-bold text-[var(--color-text)] capitalize">{data.name}</p>
@@ -432,7 +537,7 @@ function ConcertsSection() {
     // Count concerts by primary genre
     const genreCounts: Record<string, number> = {};
     const concertsByGenre: Record<string, Concert[]> = {};
-    
+
     concertsWithGenre.forEach((c) => {
       genreCounts[c.primaryGenre] = (genreCounts[c.primaryGenre] || 0) + 1;
       if (!concertsByGenre[c.primaryGenre]) concertsByGenre[c.primaryGenre] = [];
@@ -504,7 +609,7 @@ function ConcertsSection() {
       name: genre,
       value: genreCounts[genre],
     }));
-    
+
     const topGenreTotal = genrePieData.reduce((sum, item) => sum + item.value, 0);
     const otherCount = validConcerts.length - topGenreTotal;
     if (otherCount > 0) {
@@ -514,7 +619,7 @@ function ConcertsSection() {
     // Venue/Festival breakdown data
     const festivalCounts: Record<string, number> = {};
     const venueCounts: Record<string, number> = {};
-    
+
     validConcerts.forEach((c) => {
       const festivalTag = c.tags.find((t) => t.startsWith("festival:"));
       if (festivalTag) {
@@ -535,7 +640,7 @@ function ConcertsSection() {
     const topFestivals = Object.entries(festivalCounts)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 8);
-    
+
     const topVenuesData = Object.entries(venueCounts)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 8);
@@ -567,12 +672,11 @@ function ConcertsSection() {
 
     // Average rating
     const avgRating =
-      validConcerts.reduce((sum, c) => sum + (c.rating || 0), 0) /
-      validConcerts.length;
+      validConcerts.reduce((sum, c) => sum + (c.rating || 0), 0) / validConcerts.length;
 
     // Scatter Plot Data
     const scatterData = validConcerts
-      .map(c => ({
+      .map((c) => ({
         ...c,
         timestamp: new Date(c.date).getTime(),
       }))
@@ -613,9 +717,7 @@ function ConcertsSection() {
               Total Shows
             </span>
           </div>
-          <p className="text-2xl font-bold text-[var(--color-text)]">
-            {stats.total}
-          </p>
+          <p className="text-2xl font-bold text-[var(--color-text)]">{stats.total}</p>
         </div>
         <div className="flex flex-col gap-1 p-3 rounded-lg border border-[var(--color-border)]">
           <div className="flex items-center gap-2">
@@ -742,8 +844,8 @@ function ConcertsSection() {
                   }
                   wrapperStyle={{ zIndex: 100 }}
                 />
-                <Legend 
-                  wrapperStyle={{ fontSize: "9px" }} 
+                <Legend
+                  wrapperStyle={{ fontSize: "9px" }}
                   layout="vertical"
                   align="right"
                   verticalAlign="middle"
@@ -753,11 +855,30 @@ function ConcertsSection() {
                       .sort((a, b) => (b.payload?.value || 0) - (a.payload?.value || 0))
                       .slice(0, 10);
                     return (
-                      <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+                      <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
                         {sortedPayload.map((entry, index) => (
-                          <li key={`legend-${index}`} style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '2px', fontSize: '9px' }}>
-                            <span style={{ width: 8, height: 8, backgroundColor: entry.color, borderRadius: '50%', display: 'inline-block' }} />
-                            <span style={{ color: 'var(--color-text-muted)' }}>{entry.value}</span>
+                          <li
+                            key={`legend-${index}`}
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "4px",
+                              marginBottom: "2px",
+                              fontSize: "9px",
+                            }}
+                          >
+                            <span
+                              style={{
+                                width: 8,
+                                height: 8,
+                                backgroundColor: entry.color,
+                                borderRadius: "50%",
+                                display: "inline-block",
+                              }}
+                            />
+                            <span style={{ color: "var(--color-text-muted)" }}>
+                              {entry.value}
+                            </span>
                           </li>
                         ))}
                       </ul>
@@ -776,11 +897,17 @@ function ConcertsSection() {
           </h4>
           <div className="flex gap-2 mb-2">
             <span className="flex items-center gap-1 text-[10px] text-[var(--color-text-muted)]">
-              <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: TREEMAP_COLORS.venue }} />
+              <span
+                className="w-2 h-2 rounded-sm"
+                style={{ backgroundColor: TREEMAP_COLORS.venue }}
+              />
               Venues
             </span>
             <span className="flex items-center gap-1 text-[10px] text-[var(--color-text-muted)]">
-              <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: TREEMAP_COLORS.festival }} />
+              <span
+                className="w-2 h-2 rounded-sm"
+                style={{ backgroundColor: TREEMAP_COLORS.festival }}
+              />
               Festivals
             </span>
           </div>
@@ -793,10 +920,7 @@ function ConcertsSection() {
                 stroke="var(--color-bg)"
                 content={<TreemapContent />}
               >
-                <Tooltip
-                  content={<TreemapTooltip />}
-                  wrapperStyle={{ zIndex: 100 }}
-                />
+                <Tooltip content={<TreemapTooltip />} wrapperStyle={{ zIndex: 100 }} />
               </Treemap>
             </ResponsiveContainer>
           </div>
@@ -814,7 +938,7 @@ function ConcertsSection() {
               <XAxis
                 type="number"
                 dataKey="timestamp"
-                domain={['dataMin', 'dataMax']}
+                domain={["dataMin", "dataMax"]}
                 name="Date"
                 tickFormatter={(unixTime) => new Date(unixTime).getFullYear().toString()}
                 tick={{ fontSize: 10, fill: "var(--color-text-muted)" }}
@@ -836,12 +960,12 @@ function ConcertsSection() {
               <Tooltip
                 content={<RatingScatterTooltip />}
                 wrapperStyle={{ zIndex: 100 }}
-                cursor={{ strokeDasharray: '3 3' }}
+                cursor={{ strokeDasharray: "3 3" }}
               />
               <Scatter name="Ratings" data={stats.scatterData} shape="circle">
                 {stats.scatterData.map((entry, index) => (
-                  <Cell 
-                    key={`cell-${index}`} 
+                  <Cell
+                    key={`cell-${index}`}
                     fill={getRatingColor(entry.rating || 0)}
                     strokeWidth={0}
                   />
