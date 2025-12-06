@@ -43,11 +43,20 @@ const GENRE_COLORS: Record<string, string> = {
   "midtempo": "#8B008B",   // Dark Magenta
   "hip-hop": "#FFA500",    // Orange
   "rnb": "#DDA0DD",        // Plum
+  "alt-rnb": "#E6B8D9",    // Lighter Plum
   "rock": "#B22222",       // Fire Brick
+  "alt-rock": "#CD5C5C",   // Indian Red
   "indie-pop": "#98FB98",  // Pale Green
   "indie-rock": "#32CD32", // Lime Green
   "pop": "#FF69B4",        // Hot Pink
+  "alt-pop": "#FF85C1",    // Lighter Hot Pink
   "country": "#DAA520",    // Goldenrod
+  "latin": "#FF6347",      // Tomato
+  "afrobeats": "#9ACD32",  // Yellow Green
+  "j-pop": "#FF1493",      // Deep Pink
+  "c-pop": "#DB7093",      // Pale Violet Red
+  "bass": "#7B68EE",       // Medium Slate Blue
+  "melodic-bass": "#6A5ACD", // Slate Blue
   "electronic": "#00FFFF", // Cyan
   "other": "#808080",      // Gray
 };
@@ -430,10 +439,11 @@ function ConcertsSection() {
       concertsByGenre[c.primaryGenre].push(c);
     });
 
-    // Get top 6 genres by count
+    // Get top 8 actual genres by count (exclude "other" - it's calculated separately)
     const topGenresList = Object.entries(genreCounts)
+      .filter(([g]) => g !== "other")
       .sort((a, b) => b[1] - a[1])
-      .slice(0, 6)
+      .slice(0, 25)
       .map(([g]) => g);
 
     // Timeline Data: Concerts per year + Top Genre trends
@@ -697,8 +707,8 @@ function ConcertsSection() {
         </div>
       </div>
 
-      {/* Secondary Charts Row: Pies + List */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {/* Secondary Charts Row: 2 columns max */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Genre Composition */}
         <div className="p-4 rounded-lg border border-[var(--color-border)]">
           <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
@@ -711,9 +721,9 @@ function ConcertsSection() {
                   data={stats.genrePieData}
                   cx="50%"
                   cy="50%"
-                  innerRadius={40}
-                  outerRadius={60}
-                  paddingAngle={3}
+                  innerRadius={35}
+                  outerRadius={75}
+                  paddingAngle={2}
                   dataKey="value"
                 >
                   {stats.genrePieData.map((entry) => (
@@ -732,7 +742,28 @@ function ConcertsSection() {
                   }
                   wrapperStyle={{ zIndex: 100 }}
                 />
-                <Legend wrapperStyle={{ fontSize: "10px" }} />
+                <Legend 
+                  wrapperStyle={{ fontSize: "9px" }} 
+                  layout="vertical"
+                  align="right"
+                  verticalAlign="middle"
+                  content={({ payload }) => {
+                    // Sort by value (percentage) descending, then take top 10
+                    const sortedPayload = [...(payload || [])]
+                      .sort((a, b) => (b.payload?.value || 0) - (a.payload?.value || 0))
+                      .slice(0, 10);
+                    return (
+                      <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+                        {sortedPayload.map((entry, index) => (
+                          <li key={`legend-${index}`} style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '2px', fontSize: '9px' }}>
+                            <span style={{ width: 8, height: 8, backgroundColor: entry.color, borderRadius: '50%', display: 'inline-block' }} />
+                            <span style={{ color: 'var(--color-text-muted)' }}>{entry.value}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    );
+                  }}
+                />
               </PieChart>
             </ResponsiveContainer>
           </div>
@@ -770,40 +801,9 @@ function ConcertsSection() {
             </ResponsiveContainer>
           </div>
         </div>
-
-        {/* Top Rated List */}
-        <div className="p-4 rounded-lg border border-[var(--color-border)]">
-          <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
-            Perfect 10s
-          </h4>
-          <div className="space-y-2 max-h-48 overflow-y-auto pr-2">
-            {stats.topRated.map((concert, i) => (
-              <div
-                key={`${concert.artist}-${concert.date}-${i}`}
-                className="flex items-center justify-between gap-2 py-1.5 border-b border-[var(--color-border)] last:border-0"
-              >
-                <div className="min-w-0 flex-1">
-                  <p className="text-xs font-medium text-[var(--color-text)] truncate">
-                    {concert.artist}
-                  </p>
-                  <p className="text-[10px] text-[var(--color-text-muted)] truncate">
-                    {concert.venue} •{" "}
-                    {new Date(concert.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "short",
-                    })}
-                  </p>
-                </div>
-                <span className="text-xs font-bold flex-shrink-0 text-[var(--color-text)]">
-                  {concert.rating}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
-      {/* Rating Distribution (Full Width Bottom) */}
+      {/* All Ratings (Full Width) */}
       <div className="mt-6 p-4 rounded-lg border border-[var(--color-border)]">
         <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
           All Ratings
@@ -814,7 +814,7 @@ function ConcertsSection() {
               <XAxis
                 type="number"
                 dataKey="timestamp"
-                domain={['auto', 'auto']}
+                domain={['dataMin', 'dataMax']}
                 name="Date"
                 tickFormatter={(unixTime) => new Date(unixTime).getFullYear().toString()}
                 tick={{ fontSize: 10, fill: "var(--color-text-muted)" }}
@@ -849,6 +849,37 @@ function ConcertsSection() {
               </Scatter>
             </ScatterChart>
           </ResponsiveContainer>
+        </div>
+      </div>
+
+      {/* Perfect 10s */}
+      <div className="mt-6 p-4 rounded-lg border border-[var(--color-border)]">
+        <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
+          Perfect 10s
+        </h4>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 max-h-64 overflow-y-auto pr-2">
+          {stats.topRated.map((concert, i) => (
+            <div
+              key={`${concert.artist}-${concert.date}-${i}`}
+              className="flex items-center justify-between gap-2 py-1.5 px-2 border border-[var(--color-border)] rounded"
+            >
+              <div className="min-w-0 flex-1">
+                <p className="text-xs font-medium text-[var(--color-text)] truncate">
+                  {concert.artist}
+                </p>
+                <p className="text-[10px] text-[var(--color-text-muted)] truncate">
+                  {concert.venue} •{" "}
+                  {new Date(concert.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                  })}
+                </p>
+              </div>
+              <span className="text-xs font-bold flex-shrink-0 text-[var(--color-text)]">
+                {concert.rating}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
