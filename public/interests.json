@@ -1,0 +1,29 @@
+{
+  "lastTravel": {
+    "city": "Vancouver",
+    "country": "Canada",
+    "month": "November",
+    "year": 2025
+  },
+  "golf": {
+    "pr": 77,
+    "course": "Lake Chabot GC",
+    "date": "October 2024",
+    "handicap": 9.8
+  },
+  "mostPlayedSong": {
+    "title": "Whiplash",
+    "artist": "Aespa"
+  },
+  "lastWatched": {
+    "title": "Physical Asia"
+  },
+  "lastRead": {
+    "title": "Death's End",
+    "author": "Cixin Liu"
+  },
+  "lastConcert": {
+    "artist": "Skaiisyourgod",
+    "venue": "Great American Music Hall"
+  }
+}

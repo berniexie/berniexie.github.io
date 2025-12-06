@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Download, ArrowUpRight, Expand, Minimize } from "lucide-react";
 import "./App.css";
 import AsciiBackground from "./AsciiBackground";
+import TravelGlobe from "./TravelGlobe";
+import InterestsSection from "./InterestsSection";
 
 interface ResumeData {
   name: string;
@@ -243,7 +245,10 @@ function App() {
               {resumeData.summary}
             </p>
 
-            <hr className="border-[var(--color-border)] my-0" />
+            {/* Fun Facts / Interests */}
+            <InterestsSection />
+
+            {/* <hr className="border-[var(--color-border)] my-0" /> */}
 
             {/* Sections */}
             {resumeData.sections.map((section) => {
@@ -251,7 +256,7 @@ function App() {
               return (
                 <div
                   key={section.id}
-                  className={section.id === "work-experience" ? "mb-12" : ""}
+                  className="my-12"
                 >
                   <hr className="border-[var(--color-border)] my-0" />
                   <div
@@ -346,6 +351,9 @@ function App() {
                         </p>
                       </div>
                     ))}
+
+                  {/* Travel Section */}
+                  {section.id === "travels" && <TravelGlobe />}
                 </div>
               );
             })}

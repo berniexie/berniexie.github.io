@@ -1,0 +1,408 @@
+{
+  "trips": [
+    {
+      "city": "Shanghai",
+      "country": "China",
+      "coordinates": [31.2312707, 121.4700152],
+      "score": 10,
+      "summary": "My home and my favorite city in the world."
+    },
+    {
+      "city": "San Francisco",
+      "country": "USA",
+      "coordinates": [37.7932754, -122.3963589],
+      "score": 9.8,
+      "summary": "My current home, and my favorite city in the USA."
+    },
+    {
+      "city": "Naoshima",
+      "country": "Japan",
+      "coordinates": [34.4598081, 133.9956762],
+      "score": 9.7
+    },
+    {
+      "city": "Edinburgh",
+      "country": "Scotland",
+      "coordinates": [55.9533456, -3.1883749],
+      "score": 9.7
+    },
+    {
+      "city": "New York City",
+      "country": "USA",
+      "coordinates": [40.7127281, -74.0060152],
+      "score": 9.67
+    },
+    {
+      "city": "Singapore",
+      "country": "Singapore",
+      "coordinates": [1.357107, 103.8194992],
+      "score": 9.6
+    },
+    {
+      "city": "Hong Kong",
+      "country": "China",
+      "coordinates": [22.350627, 114.1849161],
+      "score": 9.5
+    },
+    {
+      "city": "Hakone",
+      "country": "Japan",
+      "coordinates": [35.2323662, 139.1068849],
+      "score": 9.5
+    },
+    {
+      "city": "Seoul",
+      "country": "South Korea",
+      "coordinates": [37.5666791, 126.9782914],
+      "score": 9.43
+    },
+    {
+      "city": "Vancouver",
+      "country": "Canada",
+      "coordinates": [49.2608724, -123.113952],
+      "score": 9.4
+    },
+    {
+      "city": "Istanbul",
+      "country": "Turkey",
+      "coordinates": [41.006381, 28.9758715],
+      "score": 9.4
+    },
+    {
+      "city": "Chengdu",
+      "country": "China",
+      "coordinates": [30.659867, 104.063315],
+      "score": 9.4
+    },
+    {
+      "city": "Bolzano",
+      "country": "Italy",
+      "coordinates": [46.6559455, 11.2302129],
+      "score": 9.3
+    },
+    {
+      "city": "Kyoto",
+      "country": "Japan",
+      "coordinates": [35.0115754, 135.7681441],
+      "score": 9.15
+    },
+    {
+      "city": "Cortina",
+      "country": "Italy",
+      "coordinates": [46.3009459, 10.7016958],
+      "score": 9.1
+    },
+    {
+      "city": "Nanchang",
+      "country": "China",
+      "coordinates": [28.6472124, 116.0348483],
+      "score": 9.1
+    },
+    {
+      "city": "Tahoe",
+      "country": "USA",
+      "coordinates": [38.7962368, -90.3638369],
+      "score": 9.1
+    },
+    {
+      "city": "Ghent",
+      "country": "Belgium",
+      "coordinates": [51.0538286, 3.7250121],
+      "score": 9.1
+    },
+    {
+      "city": "Cape Town",
+      "country": "South Africa",
+      "coordinates": [-33.9288301, 18.4172197],
+      "score": 9.1
+    },
+    {
+      "city": "Tokyo",
+      "country": "Japan",
+      "coordinates": [35.6768601, 139.7638947],
+      "score": 9
+    },
+    {
+      "city": "Prague",
+      "country": "Czech Republic",
+      "coordinates": [50.0874654, 14.4212535],
+      "score": 9
+    },
+    {
+      "city": "Jeju",
+      "country": "South Korea",
+      "coordinates": [33.4887737, 126.4987083],
+      "score": 8.9
+    },
+    {
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "coordinates": [52.3730796, 4.8924534],
+      "score": 8.9
+    },
+    {
+      "city": "Chicago",
+      "country": "USA",
+      "coordinates": [41.8755616, -87.6244212],
+      "score": 8.9
+    },
+    {
+      "city": "Hanoi",
+      "country": "Vietnam",
+      "coordinates": [21.0283334, 105.854041],
+      "score": 8.9
+    },
+    {
+      "city": "Hangzhou",
+      "country": "China",
+      "coordinates": [30.2489634, 120.2052342],
+      "score": 8.8
+    },
+    {
+      "city": "Jakarta",
+      "country": "Indonesia",
+      "coordinates": [-6.1754049, 106.827168],
+      "score": 8.8
+    },
+    {
+      "city": "Boulder",
+      "country": "USA",
+      "coordinates": [40.0149856, -105.270545],
+      "score": 8.8
+    },
+    {
+      "city": "Venice",
+      "country": "Italy",
+      "coordinates": [45.4371908, 12.3345898],
+      "score": 8.7
+    },
+    {
+      "city": "Montana",
+      "country": "USA",
+      "coordinates": [47.3752671, -109.638757],
+      "score": 8.7
+    },
+    {
+      "city": "Paris",
+      "country": "France",
+      "coordinates": [48.8588897, 2.320041],
+      "score": 8.7
+    },
+    {
+      "city": "Tulum",
+      "country": "Mexico",
+      "coordinates": [20.429647, -87.6529306],
+      "score": 8.7
+    },
+    {
+      "city": "Cebu",
+      "country": "Philippines",
+      "coordinates": [10.47, 123.83],
+      "score": 8.6
+    },
+    {
+      "city": "Zurich",
+      "country": "Switzerland",
+      "coordinates": [47.3744489, 8.5410422],
+      "score": 8.6
+    },
+    {
+      "city": "Osaka",
+      "country": "Japan",
+      "coordinates": [34.6198813, 135.490357],
+      "score": 8.5
+    },
+    {
+      "city": "Shenzhen",
+      "country": "China",
+      "coordinates": [22.5445741, 114.0545429],
+      "score": 8.5
+    },
+    {
+      "city": "Seattle",
+      "country": "USA",
+      "coordinates": [47.6038321, -122.330062],
+      "score": 8.4
+    },
+    {
+      "city": "Austin",
+      "country": "USA",
+      "coordinates": [30.2711286, -97.7436995],
+      "score": 8.3
+    },
+    {
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": [25.0375198, 121.5636796],
+      "score": 8.25
+    },
+    {
+      "city": "Portland",
+      "country": "USA",
+      "coordinates": [45.5202471, -122.674194],
+      "score": 8.2
+    },
+    {
+      "city": "Puerto Vallarta",
+      "country": "Mexico",
+      "coordinates": [20.6407176, -105.220306],
+      "score": 8.2
+    },
+    {
+      "city": "Beijing",
+      "country": "China",
+      "coordinates": [40.190632, 116.412144],
+      "score": 8.2
+    },
+    {
+      "city": "Interlaken",
+      "country": "Switzerland",
+      "coordinates": [46.6855231, 7.8585139],
+      "score": 8.2
+    },
+    {
+      "city": "Saigon",
+      "country": "Vietnam",
+      "coordinates": [10.7755254, 106.7021047],
+      "score": 8.2
+    },
+    {
+      "city": "London",
+      "country": "UK",
+      "coordinates": [51.5074456, -0.1277653],
+      "score": 8.15
+    },
+    {
+      "city": "Sevilla",
+      "country": "Spain",
+      "coordinates": [37.3886303, -5.9953403],
+      "score": 8.1
+    },
+    {
+      "city": "Dallas",
+      "country": "USA",
+      "coordinates": [32.7762719, -96.7968559],
+      "score": 8
+    },
+    {
+      "city": "Rome",
+      "country": "Italy",
+      "coordinates": [41.8933203, 12.4829321],
+      "score": 7.8
+    },
+    {
+      "city": "Bern",
+      "country": "Switzerland",
+      "coordinates": [46.9484742, 7.4521749],
+      "score": 7.8
+    },
+    {
+      "city": "Hoi An",
+      "country": "Vietnam",
+      "coordinates": [15.8795863, 108.3319406],
+      "score": 7.8
+    },
+    {
+      "city": "Sorrento",
+      "country": "Italy",
+      "coordinates": [40.624906, 14.374836],
+      "score": 7.7
+    },
+    {
+      "city": "Napoli",
+      "country": "Italy",
+      "coordinates": [40.8358846, 14.2487679],
+      "score": 8.1
+    },
+    {
+      "city": "Barcelona",
+      "country": "Spain",
+      "coordinates": [41.3825802, 2.177073],
+      "score": 7.1
+    },
+    {
+      "city": "Denver",
+      "country": "USA",
+      "coordinates": [39.7392364, -104.984862],
+      "score": 7.07
+    },
+    {
+      "city": "Changchun",
+      "country": "China",
+      "coordinates": [43.8844201, 125.3180998],
+      "score": 7
+    },
+    {
+      "city": "Las Vegas",
+      "country": "USA",
+      "coordinates": [36.1674263, -115.1484131],
+      "score": 6.97
+    },
+    {
+      "city": "Copenhagen",
+      "country": "Denmark",
+      "coordinates": [55.6867243, 12.5700724],
+      "score": 6.8
+    },
+    {
+      "city": "Berlin",
+      "country": "Germany",
+      "coordinates": [52.5173885, 13.3951309],
+      "score": 6.5
+    },
+    {
+      "city": "Granada",
+      "country": "Spain",
+      "coordinates": [37.1734995, -3.5995337],
+      "score": 6.5
+    },
+    {
+      "city": "Ronda",
+      "country": "Spain",
+      "coordinates": [36.7421339, -5.1665916],
+      "score": 6
+    },
+    {
+      "city": "Brussels",
+      "country": "Belgium",
+      "coordinates": [50.8465573, 4.351697],
+      "score": 5.7
+    },
+    {
+      "city": "Gibraltar",
+      "country": "Gibraltar",
+      "coordinates": [36.1285933, -5.3474761],
+      "score": 5.1
+    },
+    {
+      "city": "Kagoshima",
+      "country": "Japan",
+      "coordinates": [31.521587, 130.5474077],
+      "score": 9.1
+    },
+    {
+      "city": "Haikou",
+      "country": "China",
+      "coordinates": [20.0462328, 110.1956502],
+      "score": 8.9
+    },
+    {
+      "city": "Sanya",
+      "country": "China",
+      "coordinates": [18.2534658, 109.5034392],
+      "score": 8.4
+    },
+    {
+      "city": "Fukuoka",
+      "country": "Japan",
+      "coordinates": [33.6251241, 130.6180016],
+      "score": 8.3
+    },
+    {
+      "city": "Busan",
+      "country": "South Korea",
+      "coordinates": [35.1799528, 129.0752365],
+      "score": 7.8
+    }
+  ]
+}
