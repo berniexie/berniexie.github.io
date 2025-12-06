@@ -4,7 +4,7 @@
     "phone": "(213) 268-4742",
     "email": "bxie94@gmail.com",
     "linkedin": "http://www.linkedin.com/in/xiebernard",
-    "website": "https://berniexie.github.io"
+    "x": "https://x.com/berniex_x"
   },
   "summary": "Full-stack engineer with 9 years of experience, including 2 founding engineer roles. Currently building AI-native products as Founding CTO at a YC-backed startup. Track record of shipping complex systems end-to-end, from architecture to deployment, while mentoring teams and driving technical strategy.",
   "sections": [
@@ -16,8 +16,9 @@
           "company": "Kestral (YC X25)",
           "title": "Co-Founder & CTO",
           "period": "April 2025 – Present",
-          "summary": "Architected and built 90%+ of a production AI task management platform generating $X,000 MRR, owning the full stack from database schema design through React UI to GCP deployment pipelines and 30+ AI agents.",
+          "summary": "Kestral aims to accelerate your entire product developement lifecycle with SOTA AI Agents.",
           "details": [
+            "Architected and built 90%+ of a production AI task management platform generating $X,000 MRR, owning the full stack from database schema design through React UI to GCP deployment pipelines and 30+ AI agents.",
             "Delivered a scalable multi-tenant SaaS platform by architecting a full-stack TypeScript system using React/Vite, Node/Express, Apollo GraphQL, and PostgreSQL, deployed on Google Cloud Run with optimized CI/CD for rapid iteration.",
             "Engineered a citation-grounded multi-agent AI system using Mastra orchestration and cloud agents—featuring an intelligent query router, 11 agentic tools, hybrid vector search, Zep graph memory, and multi-step workflows for task deduplication, prioritization, and project auto-categorization",
             "Designed distributed batch processing with Cloud Run Jobs, Cloud Tasks priority queues, and database-driven stream processing for sequential job execution—supporting real-time updates via GraphQL subscriptions, Redis Pub/Sub, and WebSockets, with 8+ external integrations",
@@ -91,6 +92,10 @@
     {
       "id": "travels",
       "title": "Travels"
+    },
+    {
+      "id": "concerts",
+      "title": "Concerts"
     }
   ]
 }

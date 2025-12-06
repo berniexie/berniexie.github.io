@@ -4,6 +4,7 @@ import "./App.css";
 import AsciiBackground from "./AsciiBackground";
 import TravelGlobe from "./TravelGlobe";
 import InterestsSection from "./InterestsSection";
+import ConcertsSection from "./ConcertsSection";
 
 interface ResumeData {
   name: string;
@@ -11,7 +12,7 @@ interface ResumeData {
     phone: string;
     email: string;
     linkedin: string;
-    website: string;
+    x: string;
   };
   summary: string;
   sections: Array<{
@@ -229,10 +230,12 @@ function App() {
                     LinkedIn <ArrowUpRight size={10} />
                   </a>
                   <a
-                    href={resumeData.contact.website}
+                    href={resumeData.contact.x}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover-link inline-flex items-center gap-1 w-fit text-[var(--color-text)]"
                   >
-                    berniexie.github.io <ArrowUpRight size={10} />
+                    X <ArrowUpRight size={10} />
                   </a>
                 </div>
               </div>
@@ -304,7 +307,7 @@ function App() {
                         </p>
 
                         {job.summary && (
-                          <p className="text-[var(--color-text-muted)] leading-relaxed py-4 font-body text-xs md:text-sm max-w-2xl">
+                          <p className="text-[var(--color-text-muted)] leading-relaxed py-4 font-body text-xs md:text-sm">
                             {job.summary}
                           </p>
                         )}
@@ -354,6 +357,9 @@ function App() {
 
                   {/* Travel Section */}
                   {section.id === "travels" && <TravelGlobe />}
+
+                  {/* Concerts Section */}
+                  {section.id === "concerts" && <ConcertsSection />}
                 </div>
               );
             })}
