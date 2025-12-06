@@ -1,0 +1,40 @@
+/* Additional component styles */
+
+/* Smooth transitions for interactive elements */
+a {
+  transition: color 0.15s ease;
+}
+
+/* Custom scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Print styles */
+@media print {
+  .fixed {
+    display: none !important;
+  }
+  
+  main {
+    padding: 0 !important;
+  }
+  
+  article {
+    max-width: none !important;
+  }
+}
