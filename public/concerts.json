@@ -383,6 +383,7 @@
     "rating": 7,
     "tags": [
       "electronic",
+      "future-bass",
       "indietronica",
       "duo",
       "australia",
@@ -466,10 +467,10 @@
     "rating": 8,
     "tags": [
       "edm",
-      "electronic",
+      "electro-pop",
       "dj",
       "us",
-      "english",
+      "electronic",
       "festival",
       "festival:second-sky",
       "city:oakland",
@@ -483,7 +484,8 @@
     "rating": 9,
     "tags": [
       "edm",
-      "electronic",
+      "future-bass",
+      "downtempo",
       "dj",
       "us",
       "korean-american",
@@ -626,9 +628,10 @@
     "rating": 8,
     "tags": [
       "edm",
-      "electronic",
+      "future-bass",
       "dj",
       "canada",
+      "electronic",
       "festival",
       "festival:hard-summer",
       "city:fontana",
@@ -642,7 +645,8 @@
     "rating": 7.5,
     "tags": [
       "edm",
-      "electronic",
+      "bass",
+      "trap",
       "dj",
       "us",
       "korean-american",
@@ -1145,8 +1149,8 @@
     "venue": "The Globe Theater - LA",
     "rating": 10,
     "tags": [
+      "k-rock",
       "k-pop",
-      "rock",
       "girl-group",
       "group",
       "south-korea",
@@ -1525,8 +1529,8 @@
     "venue": "Coachella",
     "rating": 8.5,
     "tags": [
+      "k-rnb",
       "k-pop",
-      "rnb",
       "solo",
       "south-korea",
       "korean",
@@ -1777,6 +1781,7 @@
     "rating": 8,
     "tags": [
       "electronic",
+      "synth-pop",
       "soul",
       "duo",
       "uk",
@@ -1791,8 +1796,8 @@
     "venue": "The Midway",
     "rating": 9.5,
     "tags": [
+      "k-rock",
       "k-pop",
-      "rock",
       "girl-group",
       "group",
       "south-korea",
@@ -1943,8 +1948,8 @@
     "venue": "88 Rising HITC",
     "rating": 8,
     "tags": [
+      "k-rnb",
       "k-pop",
-      "rnb",
       "solo",
       "south-korea",
       "korean",
@@ -2409,10 +2414,10 @@
     "rating": 6.5,
     "tags": [
       "edm",
-      "electronic",
+      "progressive-house",
       "duo",
       "us",
-      "english",
+      "electronic",
       "festival",
       "festival:coachella",
       "city:indio",
@@ -2629,10 +2634,12 @@
     "rating": 10,
     "tags": [
       "edm",
-      "electronic",
+      "house",
+      "uk-garage",
       "collab",
       "uk",
       "us",
+      "electronic",
       "festival",
       "festival:coachella",
       "city:indio",
@@ -2742,6 +2749,7 @@
     "venue": "Lollapalooza",
     "rating": 7,
     "tags": [
+      "k-rock",
       "k-pop",
       "band",
       "group",
@@ -2878,6 +2886,7 @@
     "rating": 8.5,
     "tags": [
       "electronic",
+      "future-bass",
       "indietronica",
       "duo",
       "australia",
@@ -3128,8 +3137,8 @@
     "venue": "Oakland Paramount Theatre",
     "rating": 9,
     "tags": [
+      "k-rnb",
       "k-pop",
-      "rnb",
       "solo",
       "south-korea",
       "korean",

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import Globe from "react-globe.gl";
 import type { GlobeMethods } from "react-globe.gl";
 
@@ -8,6 +8,14 @@ interface Trip {
   coordinates: [number, number]; // [lat, lon]
   score: number;
   summary?: string;
+  isHome?: boolean;
+}
+
+interface Arc {
+  startLat: number;
+  startLng: number;
+  endLat: number;
+  endLng: number;
 }
 
 interface CountryFeature {
@@ -40,6 +48,7 @@ export default function TravelGlobe() {
   const [trips, setTrips] = useState<Trip[]>([]);
   const [countries, setCountries] = useState<CountryFeature[]>([]);
   const [hoveredTrip, setHoveredTrip] = useState<Trip | null>(null);
+  const [homeTrip, setHomeTrip] = useState<Trip | null>(null);
   const [globeReady, setGlobeReady] = useState(false);
   const [dimensions, setDimensions] = useState({ width: 600, height: 600 });
 
@@ -49,6 +58,8 @@ export default function TravelGlobe() {
       .then((res) => res.json())
       .then((data: TravelData) => {
         setTrips(data.trips);
+        const home = data.trips.find((t) => t.isHome);
+        if (home) setHomeTrip(home);
       })
       .catch((err) => console.error("Failed to load travel data", err));
   }, []);
@@ -142,6 +153,17 @@ export default function TravelGlobe() {
     return trip.score >= 9.0 ? 0.6 : 0.4;
   }, [hoveredTrip]);
 
+  // Arc from home to hovered location
+  const arcData = useMemo<Arc[]>(() => {
+    if (!homeTrip || !hoveredTrip || hoveredTrip.isHome) return [];
+    return [{
+      startLat: homeTrip.coordinates[0],
+      startLng: homeTrip.coordinates[1],
+      endLat: hoveredTrip.coordinates[0],
+      endLng: hoveredTrip.coordinates[1],
+    }];
+  }, [homeTrip, hoveredTrip]);
+
   return (
     <div className="w-full flex flex-col items-center justify-center my-12 relative z-0">
       {/* Globe container */}
@@ -175,6 +197,19 @@ export default function TravelGlobe() {
           pointRadius={getPointRadius}
           pointAltitude={0.01}
           pointsMerge={false}
+          
+          // Arcs Layer (streak from home to hovered location)
+          arcsData={arcData}
+          arcStartLat={(d) => (d as Arc).startLat}
+          arcStartLng={(d) => (d as Arc).startLng}
+          arcEndLat={(d) => (d as Arc).endLat}
+          arcEndLng={(d) => (d as Arc).endLng}
+          arcColor={() => ["rgba(255, 255, 255, 0.8)", "rgba(255, 255, 255, 0.3)"]}
+          arcDashLength={0.5}
+          arcDashGap={0.2}
+          arcDashAnimateTime={1500}
+          arcStroke={0.5}
+          arcAltitudeAutoScale={0.3}
           
           // Hover interaction
           onPointHover={(point) => {

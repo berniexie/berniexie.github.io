@@ -12,7 +12,8 @@
       "country": "USA",
       "coordinates": [37.7932754, -122.3963589],
       "score": 9.8,
-      "summary": "My current home, and my favorite city in the USA."
+      "summary": "My current home, and my favorite city in the USA.",
+      "isHome": true
     },
     {
       "city": "Naoshima",

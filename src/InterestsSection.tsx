@@ -20,6 +20,7 @@ interface InterestsData {
   };
   lastWatched: {
     title: string;
+    platform: string;
   };
   lastRead: {
     title: string;
@@ -66,7 +67,7 @@ function InterestsSection() {
       icon: Tv,
       label: "Last Watched",
       value: data.lastWatched.title,
-      subtext: null,
+      subtext: data.lastWatched.platform,
     },
     {
       icon: BookOpen,
