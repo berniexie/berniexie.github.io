@@ -14,6 +14,7 @@ interface InterestsData {
     course: string
     date: string
     handicap: number
+    handicapDate: string
   }
   mostPlayedSong: {
     title: string
@@ -54,9 +55,18 @@ function InterestsSection() {
     },
     {
       icon: Flag,
-      label: 'Golf PR',
-      value: `${data.golf.pr} (${data.golf.handicap} hcp)`,
-      subtext: data.golf.course,
+      label: 'Golf',
+      isGolfCard: true,
+      left: {
+        label: 'PR',
+        value: String(data.golf.pr),
+        subtext: data.golf.course,
+      },
+      right: {
+        label: 'Handicap',
+        value: String(data.golf.handicap),
+        subtext: data.golf.handicapDate,
+      },
     },
     {
       icon: Music,
@@ -101,16 +111,43 @@ function InterestsSection() {
                 {item.label}
               </span>
             </div>
-            <div>
-              <p className="text-xs font-medium text-[var(--color-text)] leading-tight">
-                <FlipText delay={index * 200}>{item.value}</FlipText>
-              </p>
-              {item.subtext && (
-                <p className="text-[10px] text-[var(--color-text-muted)] mt-0.5 leading-tight">
-                  <FlipText delay={index * 200 + 100}>{item.subtext}</FlipText>
+            {item.isGolfCard ? (
+              <div className="grid grid-cols-2 gap-3">
+                <div className="border-r border-[var(--color-border)] pr-3">
+                  <p className="text-[9px] uppercase tracking-wider text-[var(--color-text-muted)] mb-0.5">
+                    {item.left.label}
+                  </p>
+                  <p className="text-xs font-medium text-[var(--color-text)] leading-tight">
+                    <FlipText delay={index * 200}>{item.left.value}</FlipText>
+                  </p>
+                  <p className="text-[10px] text-[var(--color-text-muted)] mt-0.5 leading-tight">
+                    <FlipText delay={index * 200 + 100}>{item.left.subtext}</FlipText>
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[9px] uppercase tracking-wider text-[var(--color-text-muted)] mb-0.5">
+                    {item.right.label}
+                  </p>
+                  <p className="text-xs font-medium text-[var(--color-text)] leading-tight">
+                    <FlipText delay={index * 200 + 50}>{item.right.value}</FlipText>
+                  </p>
+                  <p className="text-[10px] text-[var(--color-text-muted)] mt-0.5 leading-tight">
+                    <FlipText delay={index * 200 + 150}>{item.right.subtext}</FlipText>
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <p className="text-xs font-medium text-[var(--color-text)] leading-tight">
+                  <FlipText delay={index * 200}>{item.value ?? ''}</FlipText>
                 </p>
-              )}
-            </div>
+                {item.subtext && (
+                  <p className="text-[10px] text-[var(--color-text-muted)] mt-0.5 leading-tight">
+                    <FlipText delay={index * 200 + 100}>{item.subtext}</FlipText>
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         ))}
       </div>
