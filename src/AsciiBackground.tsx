@@ -81,7 +81,7 @@ const AsciiBackground = () => {
           // Dynamic Coloring
           // Dark grey base, getting brighter/more colored with "height" or interaction
           // Subtle background breathing
-          const brightness = 0.02 + (charIndex / chars.length) * 0.05
+          const brightness = 0.04 + (charIndex / chars.length) * 0.10
           ctx.fillStyle = `rgba(255, 255, 255, ${brightness})`
 
           ctx.fillText(char, px, py)

@@ -247,7 +247,7 @@ export default function TravelGlobe() {
                 {hoveredTrip.city}
               </span>
               <span className="font-mono text-sm font-bold text-white bg-white/10 px-2 py-0.5 rounded">
-                {hoveredTrip.score}
+                Score: {hoveredTrip.score}
               </span>
             </div>
             <div className="text-gray-400 text-xs uppercase tracking-widest mb-2">

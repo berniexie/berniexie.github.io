@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import type { ResumeSection } from '../types/resume'
 
 interface UseSectionScrollOptions {
@@ -8,6 +8,7 @@ interface UseSectionScrollOptions {
 export function useSectionScroll({ sections }: UseSectionScrollOptions) {
   const [activeSection, setActiveSection] = useState<string>('')
   const [stickyStates, setStickyStates] = useState<Record<string, boolean>>({})
+  const isScrollingRef = useRef(false)
 
   // Initialize active section when sections change
   useEffect(() => {
@@ -21,13 +22,17 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
     if (sections.length === 0) return
 
     const handleScroll = () => {
+      // Skip active section updates during programmatic scrolling
+      if (isScrollingRef.current) {
+        return
+      }
+
       let currentSection = sections[0]?.id || ''
       const newStickyStates: Record<string, boolean> = {}
 
       for (const section of sections) {
         const element = document.getElementById(section.id)
         if (element) {
-          // Check if element is stuck (at top of viewport)
           const rect = element.getBoundingClientRect()
           newStickyStates[section.id] = rect.top <= 0
 
@@ -37,7 +42,6 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
         }
       }
 
-      // If near bottom of page, set to last section
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
         if (sections.length > 0) {
           currentSection = sections[sections.length - 1].id
@@ -49,13 +53,16 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // Initial call
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [sections])
 
   // Handle clicking on a section in the sidebar
   const handleSectionClick = useCallback((sectionId: string) => {
+    // Prevent scroll handler from overriding our selection
+    isScrollingRef.current = true
     setActiveSection(sectionId)
+
     const element = document.getElementById(sectionId)
     if (element) {
       const offset = 100
@@ -68,6 +75,13 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
         top: offsetPosition,
         behavior: 'smooth',
       })
+
+      // Re-enable scroll handler after smooth scroll completes
+      setTimeout(() => {
+        isScrollingRef.current = false
+      }, 800)
+    } else {
+      isScrollingRef.current = false
     }
   }, [])
 
@@ -77,3 +91,4 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
     handleSectionClick,
   }
 }
+
