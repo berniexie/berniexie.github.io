@@ -102,28 +102,60 @@
     "date": "2013-04-06",
     "venue": "USC Springfest",
     "rating": 7.5,
-    "tags": ["edm", "turntablism", "dj", "canada", "electronic", "city:los-angeles", "venue:usc"]
+    "tags": [
+      "edm",
+      "turntablism",
+      "dj",
+      "canada",
+      "electronic",
+      "city:los-angeles",
+      "venue:usc"
+    ]
   },
   {
     "artist": "Big Sean",
     "date": "2013-04-06",
     "venue": "USC Springfest",
     "rating": 6.4,
-    "tags": ["hip-hop", "rap", "solo", "us", "english", "city:los-angeles", "venue:usc"]
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "city:los-angeles",
+      "venue:usc"
+    ]
   },
   {
     "artist": "Capital Cities",
     "date": "2013-04-06",
     "venue": "USC Springfest",
     "rating": 8.1,
-    "tags": ["indie-pop", "synth-pop", "band", "us", "english", "city:los-angeles", "venue:usc"]
+    "tags": [
+      "indie-pop",
+      "synth-pop",
+      "band",
+      "us",
+      "english",
+      "city:los-angeles",
+      "venue:usc"
+    ]
   },
   {
     "artist": "Walk the Moon",
     "date": "2013-04-06",
     "venue": "USC Springfest",
     "rating": 8.3,
-    "tags": ["indie-pop", "synth-pop", "band", "us", "english", "city:los-angeles", "venue:usc"]
+    "tags": [
+      "indie-pop",
+      "synth-pop",
+      "band",
+      "us",
+      "english",
+      "city:los-angeles",
+      "venue:usc"
+    ]
   },
   {
     "artist": "Dada Life",
@@ -191,6 +223,14 @@
     "date": "2013-11-25",
     "venue": "USC Conquest",
     "rating": 7.4,
-    "tags": ["pop", "rnb", "solo", "us", "english", "city:los-angeles", "venue:usc"]
+    "tags": [
+      "pop",
+      "rnb",
+      "solo",
+      "us",
+      "english",
+      "city:los-angeles",
+      "venue:usc"
+    ]
   }
 ]

@@ -4,7 +4,14 @@
     "date": "2015-04-14",
     "venue": "Club Nokia",
     "rating": 9.8,
-    "tags": ["electro-pop", "solo", "belgium", "french", "city:los-angeles", "venue:club-nokia"]
+    "tags": [
+      "electro-pop",
+      "solo",
+      "belgium",
+      "french",
+      "city:los-angeles",
+      "venue:club-nokia"
+    ]
   },
   {
     "artist": "Porter Robinson",
@@ -213,7 +220,15 @@
     "date": "2015-08-19",
     "venue": "The Showbox",
     "rating": 9.2,
-    "tags": ["indie-pop", "synth-pop", "band", "us", "english", "city:seattle", "venue:the-showbox"]
+    "tags": [
+      "indie-pop",
+      "synth-pop",
+      "band",
+      "us",
+      "english",
+      "city:seattle",
+      "venue:the-showbox"
+    ]
   },
   {
     "artist": "Kygo",
@@ -235,13 +250,29 @@
     "date": "2015-11-23",
     "venue": "USC Conquest",
     "rating": 4,
-    "tags": ["hip-hop", "rap", "solo", "us", "english", "city:los-angeles", "venue:usc"]
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "city:los-angeles",
+      "venue:usc"
+    ]
   },
   {
     "artist": "Miguel",
     "date": "2015-11-23",
     "venue": "USC Conquest",
     "rating": 5.8,
-    "tags": ["rnb", "pop", "solo", "us", "english", "city:los-angeles", "venue:usc"]
+    "tags": [
+      "rnb",
+      "pop",
+      "solo",
+      "us",
+      "english",
+      "city:los-angeles",
+      "venue:usc"
+    ]
   }
 ]

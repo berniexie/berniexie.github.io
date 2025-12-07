@@ -4,7 +4,13 @@
     "date": "2025-01-08",
     "venue": "SF Chinatown",
     "rating": 9.1,
-    "tags": ["edm", "house", "dj", "us", "electronic", "city:san-francisco", "venue:chinatown"]
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "us",
+      "electronic"
+    ]
   },
   {
     "artist": "Aespa",

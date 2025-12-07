@@ -516,5 +516,12 @@
       "city:las-vegas",
       "venue:downtown-las-vegas"
     ]
+  },
+  {
+    "artist": "Jay-Z",
+    "date": "2017-12-17",
+    "venue": "Golden 1 Center",
+    "rating": 9.4,
+    "tags": ["hip-hop", "rap", "solo", "us", "english", "city:sacramento", "venue:golden-1-center"]
   }
 ]

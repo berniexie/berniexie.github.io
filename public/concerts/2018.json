@@ -615,6 +615,20 @@
     ]
   },
   {
+    "artist": "Migos",
+    "date": "2018-10-26",
+    "venue": "Oakland Arena",
+    "rating": 2.7,
+    "tags": ["hip-hop", "rap", "group", "us", "english", "city:oakland", "venue:oakland-arena"]
+  },
+  {
+    "artist": "Drake",
+    "date": "2018-10-26",
+    "venue": "Oakland Arena",
+    "rating": 8.8,
+    "tags": ["hip-hop", "rap", "solo", "canada", "english", "city:oakland", "venue:oakland-arena"]
+  },
+  {
     "artist": "Rich Brian",
     "date": "2018-10-31",
     "venue": "Bill Graham Civic Center",
