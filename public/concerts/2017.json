@@ -1,0 +1,520 @@
+[
+  {
+    "artist": "Marshmello",
+    "date": "2017-01-17",
+    "venue": "Bill Graham Civic Center",
+    "rating": 6.5,
+    "tags": [
+      "edm",
+      "future-bass",
+      "dj",
+      "us",
+      "electronic",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "ODESZA",
+    "date": "2017-01-17",
+    "venue": "The Greek Theatre",
+    "rating": 9.3,
+    "tags": [
+      "edm",
+      "downtempo",
+      "duo",
+      "us",
+      "electronic",
+      "city:berkeley",
+      "venue:greek-theatre-berkeley"
+    ]
+  },
+  {
+    "artist": "Hans Zimmer",
+    "date": "2017-04-19",
+    "venue": "Bill Graham Civic Center",
+    "rating": 10,
+    "tags": [
+      "orchestral",
+      "film-score",
+      "solo",
+      "germany",
+      "instrumental",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Gorillaz",
+    "date": "2017-08-11",
+    "venue": "Outside Lands",
+    "rating": 4.5,
+    "tags": [
+      "alt-rock",
+      "electronic",
+      "band",
+      "uk",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "RAC",
+    "date": "2017-08-11",
+    "venue": "Outside Lands",
+    "rating": 10,
+    "tags": [
+      "electronic",
+      "indie-dance",
+      "dj",
+      "us",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Kali Uchis",
+    "date": "2017-08-11",
+    "venue": "Outside Lands",
+    "rating": 7.8,
+    "tags": [
+      "rnb",
+      "pop",
+      "solo",
+      "us",
+      "colombia",
+      "english",
+      "spanish",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Vance Joy",
+    "date": "2017-08-12",
+    "venue": "Outside Lands",
+    "rating": 7,
+    "tags": [
+      "indie-folk",
+      "folk-pop",
+      "solo",
+      "australia",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Lawrence",
+    "date": "2017-08-12",
+    "venue": "Outside Lands",
+    "rating": 9.7,
+    "tags": [
+      "soul-pop",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Above & Beyond",
+    "date": "2017-08-13",
+    "venue": "Outside Lands",
+    "rating": 9.1,
+    "tags": [
+      "edm",
+      "trance",
+      "group",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Bleachers",
+    "date": "2017-08-14",
+    "venue": "Outside Lands",
+    "rating": 9.5,
+    "tags": [
+      "indie-pop",
+      "synth-pop",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Louis the Child",
+    "date": "2017-08-15",
+    "venue": "Outside Lands",
+    "rating": 8.1,
+    "tags": [
+      "edm",
+      "future-bass",
+      "duo",
+      "us",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "K. Flay",
+    "date": "2017-08-16",
+    "venue": "Outside Lands",
+    "rating": 8.3,
+    "tags": [
+      "alt-rock",
+      "hip-hop",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Sofi Tukker",
+    "date": "2017-08-17",
+    "venue": "Outside Lands",
+    "rating": 6.5,
+    "tags": [
+      "electronic",
+      "dance-pop",
+      "duo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "FRENSHIP",
+    "date": "2017-08-18",
+    "venue": "Outside Lands",
+    "rating": 8.7,
+    "tags": [
+      "pop",
+      "indie-pop",
+      "duo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "2 Chainz",
+    "date": "2017-09-22",
+    "venue": "Life is Beautiful",
+    "rating": 8.1,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Zed's Dead",
+    "date": "2017-09-22",
+    "venue": "Life is Beautiful",
+    "rating": 7.7,
+    "tags": [
+      "edm",
+      "dubstep",
+      "duo",
+      "canada",
+      "electronic",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Tchami",
+    "date": "2017-09-22",
+    "venue": "Life is Beautiful",
+    "rating": 9.8,
+    "tags": [
+      "edm",
+      "future-house",
+      "dj",
+      "france",
+      "electronic",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Matoma",
+    "date": "2017-09-22",
+    "venue": "Life is Beautiful",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "tropical-house",
+      "dj",
+      "norway",
+      "electronic",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Big Gigantic",
+    "date": "2017-09-22",
+    "venue": "Life is Beautiful",
+    "rating": 7.9,
+    "tags": [
+      "edm",
+      "electro-soul",
+      "duo",
+      "us",
+      "electronic",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "RAC",
+    "date": "2017-09-22",
+    "venue": "Life is Beautiful",
+    "rating": 9.2,
+    "tags": [
+      "electronic",
+      "indie-dance",
+      "dj",
+      "us",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Viceroy",
+    "date": "2017-09-22",
+    "venue": "Life is Beautiful",
+    "rating": 7.5,
+    "tags": [
+      "electronic",
+      "nu-disco",
+      "dj",
+      "us",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Muse",
+    "date": "2017-09-23",
+    "venue": "Life is Beautiful",
+    "rating": 10,
+    "tags": [
+      "rock",
+      "alt-rock",
+      "band",
+      "uk",
+      "english",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Milky Chance",
+    "date": "2017-09-23",
+    "venue": "Life is Beautiful",
+    "rating": 8.1,
+    "tags": [
+      "indie-folk",
+      "electronic",
+      "duo",
+      "germany",
+      "english",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Goldroom",
+    "date": "2017-09-23",
+    "venue": "Life is Beautiful",
+    "rating": 10,
+    "tags": [
+      "electronic",
+      "nu-disco",
+      "dj",
+      "us",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Whethan",
+    "date": "2017-09-23",
+    "venue": "Life is Beautiful",
+    "rating": 7.7,
+    "tags": [
+      "edm",
+      "future-bass",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "The XX",
+    "date": "2017-09-24",
+    "venue": "Life is Beautiful",
+    "rating": 8.2,
+    "tags": [
+      "indie-pop",
+      "electronic",
+      "band",
+      "uk",
+      "english",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "ZHU",
+    "date": "2017-09-24",
+    "venue": "Life is Beautiful",
+    "rating": 9.8,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Vince Staples",
+    "date": "2017-09-24",
+    "venue": "Life is Beautiful",
+    "rating": 8,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Troyboi",
+    "date": "2017-09-24",
+    "venue": "Life is Beautiful",
+    "rating": 9.7,
+    "tags": [
+      "edm",
+      "trap",
+      "dj",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "Big Wild",
+    "date": "2017-09-24",
+    "venue": "Life is Beautiful",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "future-bass",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  },
+  {
+    "artist": "SG Lewis",
+    "date": "2017-09-24",
+    "venue": "Life is Beautiful",
+    "rating": 8.1,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:life-is-beautiful",
+      "city:las-vegas",
+      "venue:downtown-las-vegas"
+    ]
+  }
+]

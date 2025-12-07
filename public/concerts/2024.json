@@ -1,0 +1,281 @@
+[
+  {
+    "artist": "ABBA Voyage",
+    "date": "2024-05-25",
+    "venue": "ABBA Theatre",
+    "rating": 9,
+    "tags": [
+      "pop",
+      "disco",
+      "group",
+      "sweden",
+      "english",
+      "city:london",
+      "venue:abba-theatre"
+    ]
+  },
+  {
+    "artist": "Blu DeTiger",
+    "date": "2024-06-13",
+    "venue": "Berkeley Greek Theater",
+    "rating": 8,
+    "tags": [
+      "alt-pop",
+      "funk-pop",
+      "solo",
+      "us",
+      "english",
+      "city:berkeley",
+      "venue:greek-theatre-berkeley"
+    ]
+  },
+  {
+    "artist": "ODESZA",
+    "date": "2024-06-13",
+    "venue": "Berkeley Greek Theater",
+    "rating": 9.5,
+    "tags": [
+      "edm",
+      "downtempo",
+      "duo",
+      "us",
+      "electronic",
+      "city:berkeley",
+      "venue:greek-theatre-berkeley"
+    ]
+  },
+  {
+    "artist": "Jordan Davis",
+    "date": "2024-06-15",
+    "venue": "Sofi Stadium",
+    "rating": 7.5,
+    "tags": [
+      "country",
+      "solo",
+      "us",
+      "english",
+      "city:inglewood",
+      "venue:sofi-stadium"
+    ]
+  },
+  {
+    "artist": "Luke Combs",
+    "date": "2024-06-15",
+    "venue": "Sofi Stadium",
+    "rating": 8.5,
+    "tags": [
+      "country",
+      "solo",
+      "us",
+      "english",
+      "city:inglewood",
+      "venue:sofi-stadium"
+    ]
+  },
+  {
+    "artist": "Cosmos Midnight",
+    "date": "2024-06-29",
+    "venue": "The Independent",
+    "rating": 8.5,
+    "tags": [
+      "electronic",
+      "future-bass",
+      "indietronica",
+      "duo",
+      "australia",
+      "english",
+      "city:san-francisco",
+      "venue:the-independent"
+    ]
+  },
+  {
+    "artist": "IU",
+    "date": "2024-07-30",
+    "venue": "Oakland Arena",
+    "rating": 10,
+    "tags": [
+      "k-pop",
+      "ballad",
+      "solo",
+      "south-korea",
+      "korean",
+      "city:oakland",
+      "venue:oakland-arena"
+    ]
+  },
+  {
+    "artist": "Rezz",
+    "date": "2024-08-30",
+    "venue": "Red Rocks Ampitheatre",
+    "rating": 6.5,
+    "tags": [
+      "edm",
+      "midtempo",
+      "dj",
+      "canada",
+      "electronic",
+      "city:morrison",
+      "venue:red-rocks"
+    ]
+  },
+  {
+    "artist": "Dan + Shay",
+    "date": "2024-09-14",
+    "venue": "Shoreline Ampitheater",
+    "rating": 7,
+    "tags": [
+      "country",
+      "duo",
+      "us",
+      "english",
+      "city:mountain-view",
+      "venue:shoreline-amphitheatre"
+    ]
+  },
+  {
+    "artist": "Interplanetary Criminal",
+    "date": "2024-09-28",
+    "venue": "Portola",
+    "rating": 7.5,
+    "tags": [
+      "edm",
+      "uk-garage",
+      "dj",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:portola",
+      "city:san-francisco",
+      "venue:pier-80"
+    ]
+  },
+  {
+    "artist": "Jessie Ware",
+    "date": "2024-09-28",
+    "venue": "Portola",
+    "rating": 8.5,
+    "tags": [
+      "pop",
+      "soul",
+      "solo",
+      "uk",
+      "english",
+      "festival",
+      "festival:portola",
+      "city:san-francisco",
+      "venue:pier-80"
+    ]
+  },
+  {
+    "artist": "Jamie XX",
+    "date": "2024-09-28",
+    "venue": "Portola",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:portola",
+      "city:san-francisco",
+      "venue:pier-80"
+    ]
+  },
+  {
+    "artist": "Rufus Du Sol",
+    "date": "2024-09-28",
+    "venue": "Portola",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "live-electronic",
+      "band",
+      "australia",
+      "electronic",
+      "festival",
+      "festival:portola",
+      "city:san-francisco",
+      "venue:pier-80"
+    ]
+  },
+  {
+    "artist": "Gesaffelstein",
+    "date": "2024-09-28",
+    "venue": "Portola",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "techno",
+      "dj",
+      "france",
+      "electronic",
+      "festival",
+      "festival:portola",
+      "city:san-francisco",
+      "venue:pier-80"
+    ]
+  },
+  {
+    "artist": "Justice",
+    "date": "2024-10-04",
+    "venue": "Hollywood Bowl",
+    "rating": 10,
+    "tags": [
+      "edm",
+      "electro",
+      "dj-duo",
+      "france",
+      "electronic",
+      "city:los-angeles",
+      "venue:hollywood-bowl"
+    ]
+  },
+  {
+    "artist": "XG",
+    "date": "2024-10-09",
+    "venue": "Bill Graham",
+    "rating": 8,
+    "tags": [
+      "j-pop",
+      "k-pop",
+      "girl-group",
+      "group",
+      "japan",
+      "english",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Young Posse",
+    "date": "2024-11-05",
+    "venue": "Victoria Theater",
+    "rating": 9,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:san-francisco",
+      "venue:victoria-theater"
+    ]
+  },
+  {
+    "artist": "Seventeen",
+    "date": "2024-11-06",
+    "venue": "Oakland Arena",
+    "rating": 9.5,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:oakland",
+      "venue:oakland-arena"
+    ]
+  }
+]

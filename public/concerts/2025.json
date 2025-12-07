@@ -1,0 +1,131 @@
+[
+  {
+    "artist": "ZHU",
+    "date": "2025-01-08",
+    "venue": "SF Chinatown",
+    "rating": 9.1,
+    "tags": ["edm", "house", "dj", "us", "electronic", "city:san-francisco", "venue:chinatown"]
+  },
+  {
+    "artist": "Aespa",
+    "date": "2025-01-30",
+    "venue": "Oakland Arena",
+    "rating": 10,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:oakland",
+      "venue:oakland-arena"
+    ]
+  },
+  {
+    "artist": "PIAO",
+    "date": "2025-02-19",
+    "venue": "The Independent",
+    "rating": 6.5,
+    "tags": [
+      "c-pop",
+      "indie-pop",
+      "solo",
+      "china",
+      "mandarin",
+      "city:san-francisco",
+      "venue:the-independent"
+    ]
+  },
+  {
+    "artist": "Tiffany Day",
+    "date": "2025-02-19",
+    "venue": "The Independent",
+    "rating": 8.5,
+    "tags": [
+      "pop",
+      "alt-pop",
+      "solo",
+      "us",
+      "korean-american",
+      "english",
+      "city:san-francisco",
+      "venue:the-independent"
+    ]
+  },
+  {
+    "artist": "BIBI",
+    "date": "2025-06-24",
+    "venue": "Oakland Paramount Theatre",
+    "rating": 9,
+    "tags": [
+      "k-rnb",
+      "k-pop",
+      "solo",
+      "south-korea",
+      "korean",
+      "city:oakland",
+      "venue:oakland-paramount"
+    ]
+  },
+  {
+    "artist": "Le Sserafim",
+    "date": "2025-09-05",
+    "venue": "Wintrust Arena",
+    "rating": 9.5,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:chicago",
+      "venue:wintrust-arena"
+    ]
+  },
+  {
+    "artist": "Kaytranada",
+    "date": "2025-10-22",
+    "venue": "Oakland Arena",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "canada",
+      "haiti",
+      "electronic",
+      "city:oakland",
+      "venue:oakland-arena"
+    ]
+  },
+  {
+    "artist": "Justice",
+    "date": "2025-10-22",
+    "venue": "Oakland Arena",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "electro",
+      "dj-duo",
+      "france",
+      "electronic",
+      "city:oakland",
+      "venue:oakland-arena"
+    ]
+  },
+  {
+    "artist": "Skaiisyourgod",
+    "date": "2025-11-23",
+    "venue": "Great American Music Hall",
+    "rating": 7,
+    "tags": [
+      "hip-hop",
+      "experimental",
+      "solo",
+      "us",
+      "english",
+      "city:san-francisco",
+      "venue:great-american-music-hall"
+    ]
+  }
+]

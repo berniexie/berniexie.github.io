@@ -1,0 +1,692 @@
+[
+  {
+    "artist": "The Weeknd",
+    "date": "2018-04-13",
+    "venue": "Coachella",
+    "rating": 9.9,
+    "tags": [
+      "pop",
+      "rnb",
+      "solo",
+      "canada",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Kygo",
+    "date": "2018-04-13",
+    "venue": "Coachella",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "tropical-house",
+      "dj",
+      "norway",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Daniel Caesar",
+    "date": "2018-04-13",
+    "venue": "Coachella",
+    "rating": 9.3,
+    "tags": [
+      "rnb",
+      "soul",
+      "solo",
+      "canada",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Alan Walker",
+    "date": "2018-04-13",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "electro-house",
+      "dj",
+      "norway",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "The Neighbourhood",
+    "date": "2018-04-13",
+    "venue": "Coachella",
+    "rating": 7.8,
+    "tags": [
+      "alt-rock",
+      "indie-rock",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Bleachers",
+    "date": "2018-04-13",
+    "venue": "Coachella",
+    "rating": 8.8,
+    "tags": [
+      "indie-pop",
+      "synth-pop",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "SuperDuperKyle",
+    "date": "2018-04-13",
+    "venue": "Coachella",
+    "rating": 7.5,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Beyonce",
+    "date": "2018-04-14",
+    "venue": "Coachella",
+    "rating": 9.1,
+    "tags": [
+      "pop",
+      "rnb",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Brockhampton",
+    "date": "2018-04-14",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "hip-hop",
+      "alt-hip-hop",
+      "group",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Alina Baraz",
+    "date": "2018-04-14",
+    "venue": "Coachella",
+    "rating": 7.8,
+    "tags": [
+      "rnb",
+      "electronic",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Tom Misch",
+    "date": "2018-04-14",
+    "venue": "Coachella",
+    "rating": 9.5,
+    "tags": [
+      "jazz",
+      "soul",
+      "solo",
+      "uk",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Ekali",
+    "date": "2018-04-14",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "trap",
+      "dj",
+      "canada",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Vance Joy",
+    "date": "2018-04-15",
+    "venue": "Coachella",
+    "rating": 7,
+    "tags": [
+      "indie-folk",
+      "folk-pop",
+      "solo",
+      "australia",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Cardi B",
+    "date": "2018-04-15",
+    "venue": "Coachella",
+    "rating": 9.8,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Portugal. The Man",
+    "date": "2018-04-15",
+    "venue": "Coachella",
+    "rating": 9.5,
+    "tags": [
+      "alt-rock",
+      "psychedelic",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "ODESZA",
+    "date": "2018-04-15",
+    "venue": "Coachella",
+    "rating": 10,
+    "tags": [
+      "edm",
+      "downtempo",
+      "duo",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Eminem",
+    "date": "2018-04-15",
+    "venue": "Coachella",
+    "rating": 10,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Lawrence",
+    "date": "2018-05-26",
+    "venue": "The Independent",
+    "rating": 9.3,
+    "tags": ["soul-pop", "band", "us", "english", "city:san-francisco", "venue:the-independent"]
+  },
+  {
+    "artist": "The Weeknd",
+    "date": "2018-08-10",
+    "venue": "Outside Lands",
+    "rating": 9.3,
+    "tags": [
+      "pop",
+      "rnb",
+      "solo",
+      "canada",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "ODESZA",
+    "date": "2018-08-10",
+    "venue": "Outside Lands",
+    "rating": 9.5,
+    "tags": [
+      "edm",
+      "downtempo",
+      "duo",
+      "us",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "N.E.R.D",
+    "date": "2018-08-10",
+    "venue": "Outside Lands",
+    "rating": 8,
+    "tags": [
+      "hip-hop",
+      "funk",
+      "group",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Mac DeMarco",
+    "date": "2018-08-10",
+    "venue": "Outside Lands",
+    "rating": 7.5,
+    "tags": [
+      "indie-rock",
+      "jangle-pop",
+      "solo",
+      "canada",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Rex Orange County",
+    "date": "2018-08-10",
+    "venue": "Outside Lands",
+    "rating": 8.2,
+    "tags": [
+      "indie-pop",
+      "bedroom-pop",
+      "solo",
+      "uk",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Lauv",
+    "date": "2018-08-10",
+    "venue": "Outside Lands",
+    "rating": 8,
+    "tags": [
+      "pop",
+      "electro-pop",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Quinn XCII",
+    "date": "2018-08-10",
+    "venue": "Outside Lands",
+    "rating": 9.5,
+    "tags": [
+      "pop",
+      "indie-pop",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Florence + The Machine",
+    "date": "2018-08-11",
+    "venue": "Outside Lands",
+    "rating": 7,
+    "tags": [
+      "indie-rock",
+      "art-pop",
+      "band",
+      "uk",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Jamie XX",
+    "date": "2018-08-11",
+    "venue": "Outside Lands",
+    "rating": 7.5,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Illenium",
+    "date": "2018-08-11",
+    "venue": "Outside Lands",
+    "rating": 8.2,
+    "tags": [
+      "edm",
+      "melodic-bass",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "SOB X RBE",
+    "date": "2018-08-11",
+    "venue": "Outside Lands",
+    "rating": 6.5,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "group",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Portugal. The Man",
+    "date": "2018-08-12",
+    "venue": "Outside Lands",
+    "rating": 8.5,
+    "tags": [
+      "alt-rock",
+      "psychedelic",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Janelle Monae",
+    "date": "2018-08-12",
+    "venue": "Outside Lands",
+    "rating": 8,
+    "tags": [
+      "rnb",
+      "funk",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "The Internet",
+    "date": "2018-08-12",
+    "venue": "Outside Lands",
+    "rating": 7.8,
+    "tags": [
+      "rnb",
+      "neo-soul",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Gryffin",
+    "date": "2018-08-12",
+    "venue": "Outside Lands",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "melodic-house",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Chromeo",
+    "date": "2018-08-12",
+    "venue": "Outside Lands",
+    "rating": 8.8,
+    "tags": [
+      "electronic",
+      "electro-funk",
+      "duo",
+      "canada",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "DJ Snake",
+    "date": "2018-08-12",
+    "venue": "Outside Lands",
+    "rating": 9.5,
+    "tags": [
+      "edm",
+      "trap",
+      "dj",
+      "france",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Arctic Monkeys",
+    "date": "2018-10-21",
+    "venue": "Bill Graham Civic Center",
+    "rating": 3.5,
+    "tags": [
+      "rock",
+      "indie-rock",
+      "band",
+      "uk",
+      "english",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Zico",
+    "date": "2018-10-24",
+    "venue": "The Warfield",
+    "rating": 10,
+    "tags": [
+      "k-hip-hop",
+      "k-pop",
+      "solo",
+      "south-korea",
+      "korean",
+      "city:san-francisco",
+      "venue:the-warfield"
+    ]
+  },
+  {
+    "artist": "Rich Brian",
+    "date": "2018-10-31",
+    "venue": "Bill Graham Civic Center",
+    "rating": 7,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "indonesia",
+      "english",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Niki",
+    "date": "2018-10-31",
+    "venue": "Bill Graham Civic Center",
+    "rating": 9.7,
+    "tags": [
+      "pop",
+      "rnb",
+      "solo",
+      "indonesia",
+      "english",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Higher Brothers",
+    "date": "2018-10-31",
+    "venue": "Bill Graham Civic Center",
+    "rating": 9.1,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "group",
+      "china",
+      "mandarin",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Joji",
+    "date": "2018-10-31",
+    "venue": "Bill Graham Civic Center",
+    "rating": 7.5,
+    "tags": [
+      "alt-rnb",
+      "lofi",
+      "solo",
+      "japan",
+      "australia",
+      "english",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Shallou",
+    "date": "2018-11-27",
+    "venue": "The Independent",
+    "rating": 8.9,
+    "tags": [
+      "electronic",
+      "indie-electronic",
+      "dj",
+      "us",
+      "city:san-francisco",
+      "venue:the-independent"
+    ]
+  }
+]

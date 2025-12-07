@@ -1,0 +1,247 @@
+[
+  {
+    "artist": "Stromae",
+    "date": "2015-04-14",
+    "venue": "Club Nokia",
+    "rating": 9.8,
+    "tags": ["electro-pop", "solo", "belgium", "french", "city:los-angeles", "venue:club-nokia"]
+  },
+  {
+    "artist": "Porter Robinson",
+    "date": "2015-08-07",
+    "venue": "Outside Lands",
+    "rating": 7.5,
+    "tags": [
+      "edm",
+      "electro-pop",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Chet Faker",
+    "date": "2015-08-07",
+    "venue": "Outside Lands",
+    "rating": 8,
+    "tags": [
+      "electronic",
+      "soul",
+      "solo",
+      "australia",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "RL Grime",
+    "date": "2015-08-07",
+    "venue": "Outside Lands",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "trap",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Lindsey Stirling",
+    "date": "2015-08-07",
+    "venue": "Outside Lands",
+    "rating": 8.8,
+    "tags": [
+      "electronic",
+      "classical-crossover",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Leon Bridges",
+    "date": "2015-08-07",
+    "venue": "Outside Lands",
+    "rating": 8,
+    "tags": [
+      "soul",
+      "rnb",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Kendrick Lamar",
+    "date": "2015-08-08",
+    "venue": "Outside Lands",
+    "rating": 9.2,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "G-Eazy",
+    "date": "2015-08-08",
+    "venue": "Outside Lands",
+    "rating": 9,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Misterwives",
+    "date": "2015-08-08",
+    "venue": "Outside Lands",
+    "rating": 9.5,
+    "tags": [
+      "indie-pop",
+      "synth-pop",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Giraffage",
+    "date": "2015-08-08",
+    "venue": "Outside Lands",
+    "rating": 8.9,
+    "tags": [
+      "electronic",
+      "chillwave",
+      "dj",
+      "us",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "ODESZA",
+    "date": "2015-08-09",
+    "venue": "Outside Lands",
+    "rating": 9.6,
+    "tags": [
+      "edm",
+      "downtempo",
+      "duo",
+      "us",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "DJ Mustard",
+    "date": "2015-08-09",
+    "venue": "Outside Lands",
+    "rating": 7.5,
+    "tags": [
+      "hip-hop",
+      "producer",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "James Bay",
+    "date": "2015-08-09",
+    "venue": "Outside Lands",
+    "rating": 7,
+    "tags": [
+      "folk",
+      "rock",
+      "solo",
+      "uk",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Misterwives",
+    "date": "2015-08-19",
+    "venue": "The Showbox",
+    "rating": 9.2,
+    "tags": ["indie-pop", "synth-pop", "band", "us", "english", "city:seattle", "venue:the-showbox"]
+  },
+  {
+    "artist": "Kygo",
+    "date": "2015-10-17",
+    "venue": "The LA Greek Theatre",
+    "rating": 9.8,
+    "tags": [
+      "edm",
+      "tropical-house",
+      "dj",
+      "norway",
+      "electronic",
+      "city:los-angeles",
+      "venue:greek-theatre-la"
+    ]
+  },
+  {
+    "artist": "ILOVEMAKONNEN",
+    "date": "2015-11-23",
+    "venue": "USC Conquest",
+    "rating": 4,
+    "tags": ["hip-hop", "rap", "solo", "us", "english", "city:los-angeles", "venue:usc"]
+  },
+  {
+    "artist": "Miguel",
+    "date": "2015-11-23",
+    "venue": "USC Conquest",
+    "rating": 5.8,
+    "tags": ["rnb", "pop", "solo", "us", "english", "city:los-angeles", "venue:usc"]
+  }
+]

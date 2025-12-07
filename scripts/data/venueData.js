@@ -1,6 +1,34 @@
 const venueTags = {
+  'Beyond Wonderland': [
+    'festival',
+    'festival:beyond-wonderland',
+    'city:san-bernardino',
+    'venue:nos-events-center',
+  ],
+  Chinatown: ['city:san-francisco', 'venue:chinatown'],
+  'Club Nokia': ['city:los-angeles', 'venue:club-nokia'],
+  'El Rey Theatre': ['city:los-angeles', 'venue:el-rey-theatre'],
+  'Hollywood Palladium': ['city:los-angeles', 'venue:hollywood-palladium'],
+  'Life is Beautiful': [
+    'festival',
+    'festival:life-is-beautiful',
+    'city:las-vegas',
+    'venue:downtown-las-vegas',
+  ],
+  'Outside Lands': [
+    'festival',
+    'festival:outside-lands',
+    'city:san-francisco',
+    'venue:golden-gate-park',
+  ],
   'Pasadena Civic Auditorium': ['city:pasadena', 'venue:pasadena-civic-auditorium'],
   'Regency Ballroom': ['city:san-francisco', 'venue:regency-ballroom'],
+  'The Greek Theatre': ['city:berkeley', 'venue:greek-theatre-berkeley'],
+  'The LA Greek Theatre': ['city:los-angeles', 'venue:greek-theatre-la'],
+  'The Showbox': ['city:seattle', 'venue:the-showbox'],
+  'The Shrine': ['city:los-angeles', 'venue:the-shrine'],
+  'USC Conquest': ['city:los-angeles', 'venue:usc'],
+  'USC Springfest': ['city:los-angeles', 'venue:usc'],
   'Bill Graham Civic Center': ['city:san-francisco', 'venue:bill-graham-civic-auditorium'],
   'Bill Graham Civic Auditorium': ['city:san-francisco', 'venue:bill-graham-civic-auditorium'],
   'Bill Graham': ['city:san-francisco', 'venue:bill-graham-civic-auditorium'],
@@ -75,10 +103,18 @@ const venueTags = {
 }
 
 const festivalGuesses = [
+  {
+    match: 'beyond wonderland',
+    tags: ['festival', 'festival:beyond-wonderland', 'city:san-bernardino', 'venue:nos-events-center'],
+  },
   { match: 'coachella', tags: ['festival', 'festival:coachella', 'city:indio', 'venue:coachella'] },
   {
     match: 'hard summer',
     tags: ['festival', 'festival:hard-summer', 'city:fontana', 'venue:auto-club-speedway'],
+  },
+  {
+    match: 'life is beautiful',
+    tags: ['festival', 'festival:life-is-beautiful', 'city:las-vegas', 'venue:downtown-las-vegas'],
   },
   { match: 'kcon', tags: ['festival', 'festival:kcon-la', 'city:los-angeles', 'venue:kcon-la'] },
   {
@@ -117,8 +153,21 @@ const festivalGuesses = [
 ]
 
 const cityOverrides = {
+  'Beyond Wonderland': 'city:san-bernardino',
+  Chinatown: 'city:san-francisco',
+  'Club Nokia': 'city:los-angeles',
+  'El Rey Theatre': 'city:los-angeles',
+  'Hollywood Palladium': 'city:los-angeles',
+  'Life is Beautiful': 'city:las-vegas',
+  'Outside Lands': 'city:san-francisco',
   'Pasadena Civic Auditorium': 'city:pasadena',
   'Regency Ballroom': 'city:san-francisco',
+  'The Greek Theatre': 'city:berkeley',
+  'The LA Greek Theatre': 'city:los-angeles',
+  'The Showbox': 'city:seattle',
+  'The Shrine': 'city:los-angeles',
+  'USC Conquest': 'city:los-angeles',
+  'USC Springfest': 'city:los-angeles',
   'Bill Graham Civic Center': 'city:san-francisco',
   'Bill Graham Civic Auditorium': 'city:san-francisco',
   'Bill Graham': 'city:san-francisco',

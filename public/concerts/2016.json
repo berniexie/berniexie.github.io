@@ -1,0 +1,335 @@
+[
+  {
+    "artist": "Big Wild",
+    "date": "2016-04-02",
+    "venue": "USC Springfest",
+    "rating": 9,
+    "tags": ["edm", "future-bass", "dj", "us", "electronic", "city:los-angeles", "venue:usc"]
+  },
+  {
+    "artist": "Jack U",
+    "date": "2016-04-15",
+    "venue": "Coachella",
+    "rating": 7.8,
+    "tags": [
+      "edm",
+      "trap",
+      "dj-duo",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Snakehips",
+    "date": "2016-04-15",
+    "venue": "Coachella",
+    "rating": 8.8,
+    "tags": [
+      "electronic",
+      "rnb",
+      "duo",
+      "uk",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Lido",
+    "date": "2016-04-15",
+    "venue": "Coachella",
+    "rating": 6.5,
+    "tags": [
+      "edm",
+      "electronic",
+      "dj",
+      "norway",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "A$AP Rocky",
+    "date": "2016-04-16",
+    "venue": "Coachella",
+    "rating": 2,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Tchami",
+    "date": "2016-04-16",
+    "venue": "Coachella",
+    "rating": 9.8,
+    "tags": [
+      "edm",
+      "future-house",
+      "dj",
+      "france",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Sia",
+    "date": "2016-04-17",
+    "venue": "Coachella",
+    "rating": 9,
+    "tags": [
+      "pop",
+      "solo",
+      "australia",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Matt and Kim",
+    "date": "2016-04-17",
+    "venue": "Coachella",
+    "rating": 9.5,
+    "tags": [
+      "indie-pop",
+      "synth-pop",
+      "duo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "The Chainsmokers",
+    "date": "2016-04-17",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "pop",
+      "duo",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Calvin Harris",
+    "date": "2016-04-17",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "J Cole",
+    "date": "2016-08-05",
+    "venue": "Outside Lands",
+    "rating": 9.8,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Thomas Jack",
+    "date": "2016-08-05",
+    "venue": "Outside Lands",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "tropical-house",
+      "dj",
+      "australia",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Hiatus Kaiyote",
+    "date": "2016-08-05",
+    "venue": "Outside Lands",
+    "rating": 8,
+    "tags": [
+      "neo-soul",
+      "jazz",
+      "band",
+      "australia",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Radiohead",
+    "date": "2016-08-06",
+    "venue": "Outside Lands",
+    "rating": 4.5,
+    "tags": [
+      "rock",
+      "alt-rock",
+      "band",
+      "uk",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Zedd",
+    "date": "2016-08-06",
+    "venue": "Outside Lands",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "electro-house",
+      "dj",
+      "germany",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Halsey",
+    "date": "2016-08-06",
+    "venue": "Outside Lands",
+    "rating": 8.2,
+    "tags": [
+      "pop",
+      "alt-pop",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Kehlani",
+    "date": "2016-08-07",
+    "venue": "Outside Lands",
+    "rating": 8.5,
+    "tags": [
+      "rnb",
+      "pop",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Oh Wonder",
+    "date": "2016-08-07",
+    "venue": "Outside Lands",
+    "rating": 8.9,
+    "tags": [
+      "indie-pop",
+      "synth-pop",
+      "duo",
+      "uk",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Lana Del Rey",
+    "date": "2016-08-07",
+    "venue": "Outside Lands",
+    "rating": 7.1,
+    "tags": [
+      "indie-pop",
+      "dream-pop",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Chance the Rapper",
+    "date": "2016-10-21",
+    "venue": "Bill Graham Civic Center",
+    "rating": 9.5,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Lupe Fiasco",
+    "date": "2016-11-15",
+    "venue": "1015 Folsom",
+    "rating": 9.8,
+    "tags": ["hip-hop", "rap", "solo", "us", "english", "city:san-francisco", "venue:1015-folsom"]
+  }
+]

@@ -1,0 +1,904 @@
+[
+  {
+    "artist": "Twice",
+    "date": "2022-02-18",
+    "venue": "Oakland Arena",
+    "rating": 10,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:oakland",
+      "venue:oakland-arena"
+    ]
+  },
+  {
+    "artist": "Lost Kings",
+    "date": "2022-04-15",
+    "venue": "Coachella",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "progressive-house",
+      "duo",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Mika",
+    "date": "2022-04-15",
+    "venue": "Coachella",
+    "rating": 5,
+    "tags": [
+      "pop",
+      "solo",
+      "uk",
+      "lebanon",
+      "english",
+      "french",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Carly Rae Jepsen",
+    "date": "2022-04-15",
+    "venue": "Coachella",
+    "rating": 7.5,
+    "tags": [
+      "pop",
+      "solo",
+      "canada",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Niki",
+    "date": "2022-04-15",
+    "venue": "Coachella",
+    "rating": 7.5,
+    "tags": [
+      "pop",
+      "rnb",
+      "solo",
+      "indonesia",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Madeon",
+    "date": "2022-04-15",
+    "venue": "Coachella",
+    "rating": 8.5,
+    "tags": [
+      "edm",
+      "electro-pop",
+      "dj",
+      "france",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Subtronics",
+    "date": "2022-04-15",
+    "venue": "Coachella",
+    "rating": 6,
+    "tags": [
+      "edm",
+      "dubstep",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Pink Sweat$",
+    "date": "2022-04-15",
+    "venue": "Coachella",
+    "rating": 5.5,
+    "tags": [
+      "rnb",
+      "pop",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Epik High",
+    "date": "2022-04-15",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "hip-hop",
+      "k-hip-hop",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "BIBI",
+    "date": "2022-04-16",
+    "venue": "Coachella",
+    "rating": 8.5,
+    "tags": [
+      "k-rnb",
+      "k-pop",
+      "solo",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Hikaru Utada",
+    "date": "2022-04-16",
+    "venue": "Coachella",
+    "rating": 7,
+    "tags": [
+      "j-pop",
+      "solo",
+      "japan",
+      "japanese",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Jackson Wang",
+    "date": "2022-04-16",
+    "venue": "Coachella",
+    "rating": 7,
+    "tags": [
+      "pop",
+      "hip-hop",
+      "solo",
+      "hong-kong",
+      "korean",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "CL + 2NE1",
+    "date": "2022-04-16",
+    "venue": "Coachella",
+    "rating": 9,
+    "tags": [
+      "k-pop",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Danny Elfman",
+    "date": "2022-04-16",
+    "venue": "Coachella",
+    "rating": 5.5,
+    "tags": [
+      "rock",
+      "orchestral",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Stromae",
+    "date": "2022-04-16",
+    "venue": "Coachella",
+    "rating": 9,
+    "tags": [
+      "electro-pop",
+      "solo",
+      "belgium",
+      "french",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "21 Savage",
+    "date": "2022-04-16",
+    "venue": "Coachella",
+    "rating": 6,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Duck Sauce",
+    "date": "2022-04-17",
+    "venue": "Coachella",
+    "rating": 6.5,
+    "tags": [
+      "edm",
+      "disco-house",
+      "dj-duo",
+      "canada",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Joji",
+    "date": "2022-04-17",
+    "venue": "Coachella",
+    "rating": 4,
+    "tags": [
+      "alt-rnb",
+      "lofi",
+      "solo",
+      "japan",
+      "australia",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Doja Cat",
+    "date": "2022-04-17",
+    "venue": "Coachella",
+    "rating": 5,
+    "tags": [
+      "pop",
+      "rap",
+      "hip-hop",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Jamie XX",
+    "date": "2022-04-17",
+    "venue": "Coachella",
+    "rating": 5,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Swedish House Mafia",
+    "date": "2022-04-17",
+    "venue": "Coachella",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "house",
+      "dj-group",
+      "sweden",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "The Weeknd",
+    "date": "2022-04-17",
+    "venue": "Coachella",
+    "rating": 7,
+    "tags": [
+      "pop",
+      "rnb",
+      "solo",
+      "canada",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Yumi Zuma",
+    "date": "2022-05-03",
+    "venue": "The Independent",
+    "rating": 5,
+    "tags": [
+      "indie-pop",
+      "band",
+      "new-zealand",
+      "english",
+      "city:san-francisco",
+      "venue:the-independent"
+    ]
+  },
+  {
+    "artist": "Alesso",
+    "date": "2022-05-06",
+    "venue": "Brooklyn Mirage",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "progressive-house",
+      "dj",
+      "sweden",
+      "electronic",
+      "city:brooklyn",
+      "venue:brooklyn-mirage"
+    ]
+  },
+  {
+    "artist": "HONNE",
+    "date": "2022-05-09",
+    "venue": "Terminal 5",
+    "rating": 8,
+    "tags": [
+      "electronic",
+      "synth-pop",
+      "soul",
+      "duo",
+      "uk",
+      "english",
+      "city:new-york",
+      "venue:terminal-5"
+    ]
+  },
+  {
+    "artist": "Dreamcatcher",
+    "date": "2022-07-14",
+    "venue": "The Midway",
+    "rating": 9.5,
+    "tags": [
+      "k-rock",
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:san-francisco",
+      "venue:the-midway"
+    ]
+  },
+  {
+    "artist": "Seventeen",
+    "date": "2022-08-14",
+    "venue": "Oakland Arena",
+    "rating": 9.5,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:oakland",
+      "venue:oakland-arena"
+    ]
+  },
+  {
+    "artist": "Dabin",
+    "date": "2022-08-20",
+    "venue": "88 Rising HITC",
+    "rating": 5,
+    "tags": [
+      "edm",
+      "melodic-bass",
+      "dj",
+      "canada",
+      "electronic",
+      "festival",
+      "festival:head-in-the-clouds",
+      "city:pasadena",
+      "venue:brookside-rose-bowl"
+    ]
+  },
+  {
+    "artist": "Chungha",
+    "date": "2022-08-20",
+    "venue": "88 Rising HITC",
+    "rating": 7,
+    "tags": [
+      "k-pop",
+      "solo",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:head-in-the-clouds",
+      "city:pasadena",
+      "venue:brookside-rose-bowl"
+    ]
+  },
+  {
+    "artist": "Audrey Nuna",
+    "date": "2022-08-20",
+    "venue": "88 Rising HITC",
+    "rating": 2,
+    "tags": [
+      "rnb",
+      "alt-pop",
+      "hip-hop",
+      "solo",
+      "us",
+      "korean-american",
+      "english",
+      "festival",
+      "festival:head-in-the-clouds",
+      "city:pasadena",
+      "venue:brookside-rose-bowl"
+    ]
+  },
+  {
+    "artist": "Jay Park feat. Sik-k & ph-1",
+    "date": "2022-08-20",
+    "venue": "88 Rising HITC",
+    "rating": 9,
+    "tags": [
+      "hip-hop",
+      "k-hip-hop",
+      "rap",
+      "south-korea",
+      "korean-american",
+      "festival",
+      "festival:head-in-the-clouds",
+      "city:pasadena",
+      "venue:brookside-rose-bowl"
+    ]
+  },
+  {
+    "artist": "keshi",
+    "date": "2022-08-20",
+    "venue": "88 Rising HITC",
+    "rating": 7.5,
+    "tags": [
+      "alt-rnb",
+      "indie",
+      "solo",
+      "us",
+      "vietnamese-american",
+      "english",
+      "festival",
+      "festival:head-in-the-clouds",
+      "city:pasadena",
+      "venue:brookside-rose-bowl"
+    ]
+  },
+  {
+    "artist": "Atarashi Gakko!",
+    "date": "2022-08-21",
+    "venue": "88 Rising HITC",
+    "rating": 7.5,
+    "tags": [
+      "j-pop",
+      "group",
+      "japan",
+      "japanese",
+      "festival",
+      "festival:head-in-the-clouds",
+      "city:pasadena",
+      "venue:brookside-rose-bowl"
+    ]
+  },
+  {
+    "artist": "Warren Hue & Chasu",
+    "date": "2022-08-21",
+    "venue": "88 Rising HITC",
+    "rating": 5.5,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "duo",
+      "indonesia",
+      "south-korea",
+      "english",
+      "festival",
+      "festival:head-in-the-clouds",
+      "city:pasadena",
+      "venue:brookside-rose-bowl"
+    ]
+  },
+  {
+    "artist": "BIBI",
+    "date": "2022-08-21",
+    "venue": "88 Rising HITC",
+    "rating": 8,
+    "tags": [
+      "k-rnb",
+      "k-pop",
+      "solo",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:head-in-the-clouds",
+      "city:pasadena",
+      "venue:brookside-rose-bowl"
+    ]
+  },
+  {
+    "artist": "Rich Brian",
+    "date": "2022-08-21",
+    "venue": "88 Rising HITC",
+    "rating": 7,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "indonesia",
+      "english",
+      "festival",
+      "festival:head-in-the-clouds",
+      "city:pasadena",
+      "venue:brookside-rose-bowl"
+    ]
+  },
+  {
+    "artist": "Teriyaki Boyz",
+    "date": "2022-08-21",
+    "venue": "88 Rising HITC",
+    "rating": 9.5,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "group",
+      "japan",
+      "japanese",
+      "festival",
+      "festival:head-in-the-clouds",
+      "city:pasadena",
+      "venue:brookside-rose-bowl"
+    ]
+  },
+  {
+    "artist": "Jackson Wang",
+    "date": "2022-08-21",
+    "venue": "88 Rising HITC",
+    "rating": 3.5,
+    "tags": [
+      "pop",
+      "hip-hop",
+      "solo",
+      "hong-kong",
+      "korean",
+      "english",
+      "festival",
+      "festival:head-in-the-clouds",
+      "city:pasadena",
+      "venue:brookside-rose-bowl"
+    ]
+  },
+  {
+    "artist": "The Killers",
+    "date": "2022-08-23",
+    "venue": "Chase Center",
+    "rating": 10,
+    "tags": [
+      "rock",
+      "alt-rock",
+      "band",
+      "us",
+      "english",
+      "city:san-francisco",
+      "venue:chase-center"
+    ]
+  },
+  {
+    "artist": "ZHU",
+    "date": "2022-09-17",
+    "venue": "Chase Center",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "us",
+      "electronic",
+      "city:san-francisco",
+      "venue:chase-center"
+    ]
+  },
+  {
+    "artist": "Swedish House Mafia",
+    "date": "2022-09-17",
+    "venue": "Chase Center",
+    "rating": 9.5,
+    "tags": [
+      "edm",
+      "house",
+      "dj-group",
+      "sweden",
+      "electronic",
+      "city:san-francisco",
+      "venue:chase-center"
+    ]
+  },
+  {
+    "artist": "ODESZA",
+    "date": "2022-09-30",
+    "venue": "Shoreline Ampitheatre",
+    "rating": null,
+    "status": "cancelled",
+    "tags": [
+      "edm",
+      "downtempo",
+      "duo",
+      "us",
+      "electronic",
+      "city:mountain-view",
+      "venue:shoreline-amphitheatre"
+    ]
+  },
+  {
+    "artist": "Stromae",
+    "date": "2022-10-26",
+    "venue": "Bill Graham Civic Center",
+    "rating": 10,
+    "tags": [
+      "electro-pop",
+      "solo",
+      "belgium",
+      "french",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Mayday Parade",
+    "date": "2022-10-28",
+    "venue": "When We Were Young",
+    "rating": 6.5,
+    "tags": [
+      "rock",
+      "pop-punk",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:when-we-were-young",
+      "city:las-vegas",
+      "venue:las-vegas-festival-grounds"
+    ]
+  },
+  {
+    "artist": "Boys Like Girls",
+    "date": "2022-10-28",
+    "venue": "When We Were Young",
+    "rating": 9,
+    "tags": [
+      "rock",
+      "pop-rock",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:when-we-were-young",
+      "city:las-vegas",
+      "venue:las-vegas-festival-grounds"
+    ]
+  },
+  {
+    "artist": "Anberlin",
+    "date": "2022-10-28",
+    "venue": "When We Were Young",
+    "rating": 4,
+    "tags": [
+      "rock",
+      "alt-rock",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:when-we-were-young",
+      "city:las-vegas",
+      "venue:las-vegas-festival-grounds"
+    ]
+  },
+  {
+    "artist": "AFI",
+    "date": "2022-10-28",
+    "venue": "When We Were Young",
+    "rating": 6.5,
+    "tags": [
+      "rock",
+      "punk",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:when-we-were-young",
+      "city:las-vegas",
+      "venue:las-vegas-festival-grounds"
+    ]
+  },
+  {
+    "artist": "Jimmy Eat World",
+    "date": "2022-10-28",
+    "venue": "When We Were Young",
+    "rating": 8,
+    "tags": [
+      "rock",
+      "emo",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:when-we-were-young",
+      "city:las-vegas",
+      "venue:las-vegas-festival-grounds"
+    ]
+  },
+  {
+    "artist": "A Story So Far",
+    "date": "2022-10-28",
+    "venue": "When We Were Young",
+    "rating": 6,
+    "tags": [
+      "rock",
+      "pop-punk",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:when-we-were-young",
+      "city:las-vegas",
+      "venue:las-vegas-festival-grounds"
+    ]
+  },
+  {
+    "artist": "The All American Rejects",
+    "date": "2022-10-28",
+    "venue": "When We Were Young",
+    "rating": 10,
+    "tags": [
+      "rock",
+      "pop-rock",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:when-we-were-young",
+      "city:las-vegas",
+      "venue:las-vegas-festival-grounds"
+    ]
+  },
+  {
+    "artist": "Bright Eyes",
+    "date": "2022-10-28",
+    "venue": "When We Were Young",
+    "rating": 2,
+    "tags": [
+      "indie-rock",
+      "folk",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:when-we-were-young",
+      "city:las-vegas",
+      "venue:las-vegas-festival-grounds"
+    ]
+  },
+  {
+    "artist": "Bring Me The Horizon",
+    "date": "2022-10-28",
+    "venue": "When We Were Young",
+    "rating": 8.5,
+    "tags": [
+      "rock",
+      "metalcore",
+      "alt-metal",
+      "band",
+      "uk",
+      "english",
+      "festival",
+      "festival:when-we-were-young",
+      "city:las-vegas",
+      "venue:las-vegas-festival-grounds"
+    ]
+  },
+  {
+    "artist": "Paramore",
+    "date": "2022-10-28",
+    "venue": "When We Were Young",
+    "rating": 9.5,
+    "tags": [
+      "rock",
+      "alt-rock",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:when-we-were-young",
+      "city:las-vegas",
+      "venue:las-vegas-festival-grounds"
+    ]
+  },
+  {
+    "artist": "My Chemical Romance",
+    "date": "2022-10-28",
+    "venue": "When We Were Young",
+    "rating": 9,
+    "tags": [
+      "rock",
+      "emo",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:when-we-were-young",
+      "city:las-vegas",
+      "venue:las-vegas-festival-grounds"
+    ]
+  }
+]

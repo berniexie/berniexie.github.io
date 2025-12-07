@@ -42,7 +42,7 @@ function ResumeSections({
             <div
               id={section.id}
               className={`scroll-mt-24 sticky top-0 py-4 border-b border-[var(--color-border)] mb-6 z-10 transition-all duration-300 flex justify-between items-center ${
-                isStuck ? 'bg-[var(--color-bg)]/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
+                isStuck ? 'sticky-header-blur' : 'bg-transparent'
               }`}
             >
               <h2 className="mt-0 text-base md:text-lg font-semibold tracking-tight text-[var(--color-text)] font-display uppercase flex items-center gap-3">

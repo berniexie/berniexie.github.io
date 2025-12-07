@@ -1,0 +1,346 @@
+[
+  {
+    "artist": "Diplo",
+    "date": "2014-04-05",
+    "venue": "USC Springfest",
+    "rating": 8.1,
+    "tags": ["edm", "trap", "dj", "us", "electronic", "city:los-angeles", "venue:usc"]
+  },
+  {
+    "artist": "OutKast",
+    "date": "2014-04-18",
+    "venue": "Coachella",
+    "rating": 4.5,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "duo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Zedd",
+    "date": "2014-04-18",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "electro-house",
+      "dj",
+      "germany",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "The Glitch Mob",
+    "date": "2014-04-18",
+    "venue": "Coachella",
+    "rating": 10,
+    "tags": [
+      "electronic",
+      "glitch",
+      "band",
+      "us",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Martin Garrix",
+    "date": "2014-04-18",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "big-room",
+      "dj",
+      "netherlands",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Flume",
+    "date": "2014-04-18",
+    "venue": "Coachella",
+    "rating": 10,
+    "tags": [
+      "edm",
+      "future-bass",
+      "dj",
+      "australia",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Aloe Blacc",
+    "date": "2014-04-18",
+    "venue": "Coachella",
+    "rating": 9.3,
+    "tags": [
+      "soul",
+      "rnb",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Carnage",
+    "date": "2014-04-18",
+    "venue": "Coachella",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "trap",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Foster the People",
+    "date": "2014-04-19",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "indie-pop",
+      "alt-rock",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "MGMT",
+    "date": "2014-04-19",
+    "venue": "Coachella",
+    "rating": 8.5,
+    "tags": [
+      "indie-rock",
+      "psychedelic",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Fatboy Slim",
+    "date": "2014-04-19",
+    "venue": "Coachella",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "big-beat",
+      "dj",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Nas",
+    "date": "2014-04-19",
+    "venue": "Coachella",
+    "rating": 10,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Kid Cudi",
+    "date": "2014-04-19",
+    "venue": "Coachella",
+    "rating": 9.6,
+    "tags": [
+      "hip-hop",
+      "alt-hip-hop",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Disclosure",
+    "date": "2014-04-20",
+    "venue": "Coachella",
+    "rating": 9.7,
+    "tags": [
+      "electronic",
+      "house",
+      "duo",
+      "uk",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Alesso",
+    "date": "2014-04-20",
+    "venue": "Coachella",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "progressive-house",
+      "dj",
+      "sweden",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Duck Sauce",
+    "date": "2014-04-20",
+    "venue": "Coachella",
+    "rating": 6.8,
+    "tags": [
+      "edm",
+      "disco-house",
+      "dj-duo",
+      "canada",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Flosstradamus",
+    "date": "2014-04-20",
+    "venue": "Coachella",
+    "rating": 7.2,
+    "tags": [
+      "edm",
+      "trap",
+      "duo",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "STRFKR",
+    "date": "2014-04-20",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "indie-rock",
+      "synth-pop",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Flight Facilities",
+    "date": "2014-04-20",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "electronic",
+      "nu-disco",
+      "duo",
+      "australia",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Rudimental",
+    "date": "2014-04-20",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "electronic",
+      "drum-and-bass",
+      "band",
+      "uk",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Clean Bandit",
+    "date": "2014-09-30",
+    "venue": "El Rey Theatre",
+    "rating": 9.5,
+    "tags": [
+      "electronic",
+      "classical-crossover",
+      "band",
+      "uk",
+      "english",
+      "city:los-angeles",
+      "venue:el-rey-theatre"
+    ]
+  }
+]

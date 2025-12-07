@@ -1,0 +1,1162 @@
+[
+  {
+    "artist": "Red Velvet",
+    "date": "2019-02-08",
+    "venue": "Pasadena Civic Auditorium",
+    "rating": 8,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:pasadena",
+      "venue:pasadena-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Sunmi",
+    "date": "2019-03-06",
+    "venue": "Regency Ballroom",
+    "rating": 9.5,
+    "tags": [
+      "k-pop",
+      "solo",
+      "south-korea",
+      "korean",
+      "city:san-francisco",
+      "venue:regency-ballroom"
+    ]
+  },
+  {
+    "artist": "GEM",
+    "date": "2019-03-22",
+    "venue": "Bill Graham Civic Center",
+    "rating": 8,
+    "tags": [
+      "c-pop",
+      "mandopop",
+      "solo",
+      "china",
+      "mandarin",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Fisher",
+    "date": "2019-04-12",
+    "venue": "Coachella 2019",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "australia",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Jaden Smith",
+    "date": "2019-04-12",
+    "venue": "Coachella 2019",
+    "rating": 7,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Blackpink",
+    "date": "2019-04-12",
+    "venue": "Coachella 2019",
+    "rating": 10,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Rufus Du Sol",
+    "date": "2019-04-12",
+    "venue": "Coachella 2019",
+    "rating": 10,
+    "tags": [
+      "edm",
+      "live-electronic",
+      "band",
+      "australia",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "DJ Snake",
+    "date": "2019-04-12",
+    "venue": "Coachella 2019",
+    "rating": 8.5,
+    "tags": [
+      "edm",
+      "trap",
+      "dj",
+      "france",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "ARIZONA",
+    "date": "2019-04-13",
+    "venue": "Coachella 2019",
+    "rating": 9,
+    "tags": [
+      "alt-pop",
+      "indie-pop",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "FKJ",
+    "date": "2019-04-13",
+    "venue": "Coachella 2019",
+    "rating": 7,
+    "tags": [
+      "electronic",
+      "nu-jazz",
+      "solo",
+      "france",
+      "french",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Sheck Wes",
+    "date": "2019-04-13",
+    "venue": "Coachella 2019",
+    "rating": 7,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Bazzi",
+    "date": "2019-04-13",
+    "venue": "Coachella 2019",
+    "rating": 6,
+    "tags": [
+      "pop",
+      "rnb",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "J Balvin",
+    "date": "2019-04-13",
+    "venue": "Coachella 2019",
+    "rating": 8.5,
+    "tags": [
+      "latin",
+      "reggaeton",
+      "solo",
+      "colombia",
+      "spanish",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Wiz Khalifa",
+    "date": "2019-04-13",
+    "venue": "Coachella 2019",
+    "rating": 7,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Major Lazer",
+    "date": "2019-04-13",
+    "venue": "Coachella 2019",
+    "rating": 3,
+    "tags": [
+      "edm",
+      "dancehall",
+      "group",
+      "multi-national",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Bad Bunny",
+    "date": "2019-04-14",
+    "venue": "Coachella 2019",
+    "rating": 5,
+    "tags": [
+      "latin",
+      "reggaeton",
+      "latin-trap",
+      "solo",
+      "puerto-rico",
+      "spanish",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Zedd",
+    "date": "2019-04-14",
+    "venue": "Coachella 2019",
+    "rating": 7.5,
+    "tags": [
+      "edm",
+      "electro-house",
+      "dj",
+      "germany",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Gesaffelstein",
+    "date": "2019-04-14",
+    "venue": "Coachella 2019",
+    "rating": 10,
+    "tags": [
+      "edm",
+      "techno",
+      "dj",
+      "france",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Kaytranada",
+    "date": "2019-04-14",
+    "venue": "Coachella 2019",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "canada",
+      "haiti",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Epik High",
+    "date": "2019-04-28",
+    "venue": "The Warfield",
+    "rating": 8,
+    "tags": [
+      "hip-hop",
+      "k-hip-hop",
+      "group",
+      "south-korea",
+      "korean",
+      "city:san-francisco",
+      "venue:the-warfield"
+    ]
+  },
+  {
+    "artist": "Glades",
+    "date": "2019-05-18",
+    "venue": "Mezzanine",
+    "rating": 5,
+    "tags": [
+      "indie-pop",
+      "band",
+      "australia",
+      "english",
+      "city:san-francisco",
+      "venue:mezzanine"
+    ]
+  },
+  {
+    "artist": "FRENSHIP",
+    "date": "2019-05-18",
+    "venue": "Mezzanine",
+    "rating": 6,
+    "tags": [
+      "pop",
+      "indie-pop",
+      "duo",
+      "us",
+      "english",
+      "city:san-francisco",
+      "venue:mezzanine"
+    ]
+  },
+  {
+    "artist": "Higher Brothers",
+    "date": "2019-05-22",
+    "venue": "Regency Ballroom",
+    "rating": 8,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "group",
+      "china",
+      "mandarin",
+      "city:san-francisco",
+      "venue:regency-ballroom"
+    ]
+  },
+  {
+    "artist": "Cosmos Midnight",
+    "date": "2019-06-14",
+    "venue": "1015 Folsom",
+    "rating": 7,
+    "tags": [
+      "electronic",
+      "future-bass",
+      "indietronica",
+      "duo",
+      "australia",
+      "english",
+      "city:san-francisco",
+      "venue:1015-folsom"
+    ]
+  },
+  {
+    "artist": "Kero Kero Bonito",
+    "date": "2019-06-16",
+    "venue": "Porter's Second Sky",
+    "rating": 4,
+    "tags": [
+      "indie-pop",
+      "hyperpop",
+      "band",
+      "uk",
+      "bilingual",
+      "festival",
+      "festival:second-sky",
+      "city:oakland",
+      "venue:second-sky"
+    ]
+  },
+  {
+    "artist": "Cashmere Cat",
+    "date": "2019-06-16",
+    "venue": "Porter's Second Sky",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "future-bass",
+      "dj",
+      "norway",
+      "electronic",
+      "festival",
+      "festival:second-sky",
+      "city:oakland",
+      "venue:second-sky"
+    ]
+  },
+  {
+    "artist": "Skrillex",
+    "date": "2019-06-16",
+    "venue": "Porter's Second Sky",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "dubstep",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:second-sky",
+      "city:oakland",
+      "venue:second-sky"
+    ]
+  },
+  {
+    "artist": "Madeon",
+    "date": "2019-06-16",
+    "venue": "Porter's Second Sky",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "electro-pop",
+      "dj",
+      "france",
+      "electronic",
+      "festival",
+      "festival:second-sky",
+      "city:oakland",
+      "venue:second-sky"
+    ]
+  },
+  {
+    "artist": "Porter Robinson",
+    "date": "2019-06-16",
+    "venue": "Porter's Second Sky",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "electro-pop",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:second-sky",
+      "city:oakland",
+      "venue:second-sky"
+    ]
+  },
+  {
+    "artist": "Tokimonsta",
+    "date": "2019-06-27",
+    "venue": "Audio SF",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "future-bass",
+      "downtempo",
+      "dj",
+      "us",
+      "korean-american",
+      "city:san-francisco",
+      "venue:audio-sf"
+    ]
+  },
+  {
+    "artist": "Heize",
+    "date": "2019-06-30",
+    "venue": "Cornerstone",
+    "rating": 6,
+    "tags": [
+      "k-rnb",
+      "k-pop",
+      "solo",
+      "south-korea",
+      "korean",
+      "city:berkeley",
+      "venue:cornerstone"
+    ]
+  },
+  {
+    "artist": "Twice",
+    "date": "2019-07-18",
+    "venue": "The Forum",
+    "rating": 10,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:inglewood",
+      "venue:the-forum"
+    ]
+  },
+  {
+    "artist": "Rufus Du Sol",
+    "date": "2019-07-20",
+    "venue": "Greek Theatre",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "live-electronic",
+      "band",
+      "australia",
+      "electronic",
+      "city:los-angeles",
+      "venue:greek-theatre-la"
+    ]
+  },
+  {
+    "artist": "ODESZA",
+    "date": "2019-07-27",
+    "venue": "LA Historic Park",
+    "rating": 10,
+    "tags": [
+      "edm",
+      "downtempo",
+      "duo",
+      "us",
+      "electronic",
+      "city:los-angeles",
+      "venue:la-historic-park"
+    ]
+  },
+  {
+    "artist": "Flosstradamus B2B 4B",
+    "date": "2019-08-03",
+    "venue": "Hard Summer 2019",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "trap",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:hard-summer",
+      "city:fontana",
+      "venue:auto-club-speedway"
+    ]
+  },
+  {
+    "artist": "What So Not",
+    "date": "2019-08-03",
+    "venue": "Hard Summer 2019",
+    "rating": 7.5,
+    "tags": [
+      "edm",
+      "bass",
+      "dj",
+      "australia",
+      "electronic",
+      "festival",
+      "festival:hard-summer",
+      "city:fontana",
+      "venue:auto-club-speedway"
+    ]
+  },
+  {
+    "artist": "DJ Snake B2B Malaa",
+    "date": "2019-08-03",
+    "venue": "Hard Summer 2019",
+    "rating": 8.5,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "france",
+      "electronic",
+      "festival",
+      "festival:hard-summer",
+      "city:fontana",
+      "venue:auto-club-speedway"
+    ]
+  },
+  {
+    "artist": "GRAVEDGR",
+    "date": "2019-08-04",
+    "venue": "Hard Summer 2019",
+    "rating": 3,
+    "tags": [
+      "edm",
+      "hardstyle",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:hard-summer",
+      "city:fontana",
+      "venue:auto-club-speedway"
+    ]
+  },
+  {
+    "artist": "Robotaki",
+    "date": "2019-08-04",
+    "venue": "Hard Summer 2019",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "future-bass",
+      "dj",
+      "canada",
+      "electronic",
+      "festival",
+      "festival:hard-summer",
+      "city:fontana",
+      "venue:auto-club-speedway"
+    ]
+  },
+  {
+    "artist": "Yultron",
+    "date": "2019-08-04",
+    "venue": "Hard Summer 2019",
+    "rating": 7.5,
+    "tags": [
+      "edm",
+      "bass",
+      "trap",
+      "dj",
+      "us",
+      "korean-american",
+      "festival",
+      "festival:hard-summer",
+      "city:fontana",
+      "venue:auto-club-speedway"
+    ]
+  },
+  {
+    "artist": "Ookay",
+    "date": "2019-08-04",
+    "venue": "Hard Summer 2019",
+    "rating": 6,
+    "tags": [
+      "edm",
+      "trap",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:hard-summer",
+      "city:fontana",
+      "venue:auto-club-speedway"
+    ]
+  },
+  {
+    "artist": "Zhu B2B Tchami",
+    "date": "2019-08-04",
+    "venue": "Hard Summer 2019",
+    "rating": 10,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "france",
+      "us",
+      "electronic",
+      "festival",
+      "festival:hard-summer",
+      "city:fontana",
+      "venue:auto-club-speedway"
+    ]
+  },
+  {
+    "artist": "Kayzo",
+    "date": "2019-08-04",
+    "venue": "Hard Summer 2019",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "dubstep",
+      "hardstyle",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:hard-summer",
+      "city:fontana",
+      "venue:auto-club-speedway"
+    ]
+  },
+  {
+    "artist": "RL Grime",
+    "date": "2019-08-04",
+    "venue": "Hard Summer 2019",
+    "rating": 9.5,
+    "tags": [
+      "edm",
+      "trap",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:hard-summer",
+      "city:fontana",
+      "venue:auto-club-speedway"
+    ]
+  },
+  {
+    "artist": "AB6IX",
+    "date": "2019-08-17",
+    "venue": "KCON LA 2019",
+    "rating": 7,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "ATEEZ",
+    "date": "2019-08-17",
+    "venue": "KCON LA 2019",
+    "rating": 7,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "IZONE",
+    "date": "2019-08-17",
+    "venue": "KCON LA 2019",
+    "rating": 9.5,
+    "tags": [
+      "k-pop",
+      "j-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "japanese",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "LOONA",
+    "date": "2019-08-17",
+    "venue": "KCON LA 2019",
+    "rating": 9,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "MOMOLAND",
+    "date": "2019-08-17",
+    "venue": "KCON LA 2019",
+    "rating": 5,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "NU'EST",
+    "date": "2019-08-17",
+    "venue": "KCON LA 2019",
+    "rating": 5,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "SF9",
+    "date": "2019-08-17",
+    "venue": "KCON LA 2019",
+    "rating": 7,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "fromis_9",
+    "date": "2019-08-18",
+    "venue": "KCON LA 2019",
+    "rating": 5,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "ITZY",
+    "date": "2019-08-18",
+    "venue": "KCON LA 2019",
+    "rating": 8,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "MAMAMOO",
+    "date": "2019-08-18",
+    "venue": "KCON LA 2019",
+    "rating": 8.5,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "N.Flying",
+    "date": "2019-08-18",
+    "venue": "KCON LA 2019",
+    "rating": 7,
+    "tags": [
+      "k-rock",
+      "band",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "Seventeen",
+    "date": "2019-08-18",
+    "venue": "KCON LA 2019",
+    "rating": 8.5,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "Stray Kids",
+    "date": "2019-08-18",
+    "venue": "KCON LA 2019",
+    "rating": 8.5,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "Verivery",
+    "date": "2019-08-18",
+    "venue": "KCON LA 2019",
+    "rating": 5,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:kcon-la",
+      "city:los-angeles",
+      "venue:kcon-la"
+    ]
+  },
+  {
+    "artist": "Dan + Shay",
+    "date": "2019-09-27",
+    "venue": "Shoreline Amphitheatre",
+    "rating": 6.5,
+    "tags": [
+      "country",
+      "duo",
+      "us",
+      "english",
+      "city:mountain-view",
+      "venue:shoreline-amphitheatre"
+    ]
+  },
+  {
+    "artist": "Florida Georgia Line",
+    "date": "2019-09-27",
+    "venue": "Shoreline Amphitheatre",
+    "rating": 7,
+    "tags": [
+      "country",
+      "duo",
+      "us",
+      "english",
+      "city:mountain-view",
+      "venue:shoreline-amphitheatre"
+    ]
+  },
+  {
+    "artist": "DRAMA",
+    "date": "2019-10-04",
+    "venue": "Great American Music Hall",
+    "rating": 6,
+    "tags": [
+      "alt-rnb",
+      "electronic",
+      "duo",
+      "us",
+      "english",
+      "city:san-francisco",
+      "venue:great-american-music-hall"
+    ]
+  },
+  {
+    "artist": "SG Lewis",
+    "date": "2019-10-04",
+    "venue": "Great American Music Hall",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "uk",
+      "electronic",
+      "city:san-francisco",
+      "venue:great-american-music-hall"
+    ]
+  },
+  {
+    "artist": "Rezz",
+    "date": "2019-10-12",
+    "venue": "Bill Graham Civic Center",
+    "rating": 9.5,
+    "tags": [
+      "edm",
+      "midtempo",
+      "dj",
+      "canada",
+      "electronic",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "YBN Cordae",
+    "date": "2019-10-13",
+    "venue": "Chase Center",
+    "rating": 7.5,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "city:san-francisco",
+      "venue:chase-center"
+    ]
+  },
+  {
+    "artist": "JID",
+    "date": "2019-10-13",
+    "venue": "Chase Center",
+    "rating": 6,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "city:san-francisco",
+      "venue:chase-center"
+    ]
+  },
+  {
+    "artist": "Logic",
+    "date": "2019-10-13",
+    "venue": "Chase Center",
+    "rating": 7,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "city:san-francisco",
+      "venue:chase-center"
+    ]
+  },
+  {
+    "artist": "Gryffin",
+    "date": "2019-10-19",
+    "venue": "SJSU",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "melodic-house",
+      "dj",
+      "us",
+      "electronic",
+      "city:san-jose",
+      "venue:sjsu"
+    ]
+  },
+  {
+    "artist": "Gesaffelstein",
+    "date": "2019-11-08",
+    "venue": "Bill Graham Civic Center",
+    "rating": 9.5,
+    "tags": [
+      "edm",
+      "techno",
+      "dj",
+      "france",
+      "electronic",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Madeon",
+    "date": "2019-11-14",
+    "venue": "Bill Graham Civic Auditorium",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "electro-pop",
+      "dj",
+      "france",
+      "electronic",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Louis the Child",
+    "date": "2019-11-22",
+    "venue": "Terminal 5 - NYC",
+    "rating": 6.5,
+    "tags": [
+      "edm",
+      "future-bass",
+      "duo",
+      "us",
+      "electronic",
+      "city:new-york",
+      "venue:terminal-5"
+    ]
+  },
+  {
+    "artist": "Dreamcatcher",
+    "date": "2019-12-06",
+    "venue": "The Globe Theater - LA",
+    "rating": 10,
+    "tags": [
+      "k-rock",
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:los-angeles",
+      "venue:globe-theater-la"
+    ]
+  }
+]

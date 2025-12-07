@@ -86,6 +86,7 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
               axisLine={{ stroke: 'var(--color-border)' }}
               tickLine={false}
               allowDecimals={false}
+              domain={[0, 6]}
             />
             <YAxis
               type="category"

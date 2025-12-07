@@ -2,13 +2,25 @@ import { useEffect, useState, useMemo } from 'react'
 import type { Concert, ConcertStats, ConcertWithTimestamp, ArtistStats } from '../types'
 import { getPrimaryGenre } from '../utils'
 
+// Years with concert data - add new years here as needed
+const CONCERT_YEARS = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
+
 export function useConcertsData() {
   const [concerts, setConcerts] = useState<Concert[]>([])
 
   useEffect(() => {
-    fetch('/concerts.json')
-      .then((res) => res.json())
-      .then((data: Concert[]) => setConcerts(data))
+    // Fetch all yearly concert files and combine them
+    Promise.all(
+      CONCERT_YEARS.map((year) =>
+        fetch(`/concerts/${year}.json`)
+          .then((res) => res.json())
+          .catch(() => []) // Return empty array if year file doesn't exist
+      )
+    )
+      .then((yearlyData) => {
+        const allConcerts = yearlyData.flat()
+        setConcerts(allConcerts)
+      })
       .catch((err) => console.error('Failed to load concerts:', err))
   }, [])
 

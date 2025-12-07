@@ -1,0 +1,187 @@
+[
+  {
+    "artist": "Buscabulla",
+    "date": "2021-10-29",
+    "venue": "OSL",
+    "rating": 6,
+    "tags": [
+      "indie-pop",
+      "alt-latin",
+      "duo",
+      "puerto-rico",
+      "spanish",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Yung Bae",
+    "date": "2021-10-29",
+    "venue": "OSL",
+    "rating": 6.5,
+    "tags": [
+      "edm",
+      "future-funk",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Khruangbin",
+    "date": "2021-10-29",
+    "venue": "OSL",
+    "rating": 6.5,
+    "tags": [
+      "psychedelic",
+      "funk",
+      "band",
+      "us",
+      "instrumental",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Glass Animals",
+    "date": "2021-10-29",
+    "venue": "OSL",
+    "rating": 8.5,
+    "tags": [
+      "indie-pop",
+      "alt-pop",
+      "band",
+      "uk",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Kaytranada",
+    "date": "2021-10-29",
+    "venue": "OSL",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "canada",
+      "haiti",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "ARIZONA",
+    "date": "2021-10-30",
+    "venue": "OSL",
+    "rating": 8,
+    "tags": [
+      "alt-pop",
+      "indie-pop",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Dr. Dog",
+    "date": "2021-10-30",
+    "venue": "OSL",
+    "rating": 3,
+    "tags": [
+      "indie-rock",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Amine",
+    "date": "2021-10-30",
+    "venue": "OSL",
+    "rating": 6.5,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "24kGoldn",
+    "date": "2021-10-30",
+    "venue": "OSL",
+    "rating": 8,
+    "tags": [
+      "hip-hop",
+      "pop-rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "ZHU",
+    "date": "2021-10-30",
+    "venue": "OSL",
+    "rating": 8.5,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:outside-lands",
+      "city:san-francisco",
+      "venue:golden-gate-park"
+    ]
+  },
+  {
+    "artist": "Emotional Oranges",
+    "date": "2021-11-09",
+    "venue": "Regency Ballroom",
+    "rating": 9,
+    "tags": [
+      "alt-rnb",
+      "pop",
+      "duo",
+      "us",
+      "english",
+      "city:san-francisco",
+      "venue:regency-ballroom"
+    ]
+  }
+]

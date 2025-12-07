@@ -1,0 +1,196 @@
+[
+  {
+    "artist": "Alesso",
+    "date": "2013-03-09",
+    "venue": "LA Historic Park",
+    "rating": 9.9,
+    "tags": [
+      "edm",
+      "progressive-house",
+      "dj",
+      "sweden",
+      "electronic",
+      "city:los-angeles",
+      "venue:la-historic-park"
+    ]
+  },
+  {
+    "artist": "Swedish House Mafia",
+    "date": "2013-03-09",
+    "venue": "LA Historic Park",
+    "rating": 10,
+    "tags": [
+      "edm",
+      "house",
+      "dj-group",
+      "sweden",
+      "electronic",
+      "city:los-angeles",
+      "venue:la-historic-park"
+    ]
+  },
+  {
+    "artist": "Hardwell",
+    "date": "2013-03-16",
+    "venue": "Beyond Wonderland",
+    "rating": 7.8,
+    "tags": [
+      "edm",
+      "big-room",
+      "dj",
+      "netherlands",
+      "electronic",
+      "festival",
+      "festival:beyond-wonderland",
+      "city:san-bernardino",
+      "venue:nos-events-center"
+    ]
+  },
+  {
+    "artist": "David Guetta",
+    "date": "2013-03-16",
+    "venue": "Beyond Wonderland",
+    "rating": 8.2,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "france",
+      "electronic",
+      "festival",
+      "festival:beyond-wonderland",
+      "city:san-bernardino",
+      "venue:nos-events-center"
+    ]
+  },
+  {
+    "artist": "Afrojack",
+    "date": "2013-03-16",
+    "venue": "Beyond Wonderland",
+    "rating": 8.8,
+    "tags": [
+      "edm",
+      "electro-house",
+      "dj",
+      "netherlands",
+      "electronic",
+      "festival",
+      "festival:beyond-wonderland",
+      "city:san-bernardino",
+      "venue:nos-events-center"
+    ]
+  },
+  {
+    "artist": "R3hab",
+    "date": "2013-03-16",
+    "venue": "Beyond Wonderland",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "electro-house",
+      "dj",
+      "netherlands",
+      "electronic",
+      "festival",
+      "festival:beyond-wonderland",
+      "city:san-bernardino",
+      "venue:nos-events-center"
+    ]
+  },
+  {
+    "artist": "A-Trak",
+    "date": "2013-04-06",
+    "venue": "USC Springfest",
+    "rating": 7.5,
+    "tags": ["edm", "turntablism", "dj", "canada", "electronic", "city:los-angeles", "venue:usc"]
+  },
+  {
+    "artist": "Big Sean",
+    "date": "2013-04-06",
+    "venue": "USC Springfest",
+    "rating": 6.4,
+    "tags": ["hip-hop", "rap", "solo", "us", "english", "city:los-angeles", "venue:usc"]
+  },
+  {
+    "artist": "Capital Cities",
+    "date": "2013-04-06",
+    "venue": "USC Springfest",
+    "rating": 8.1,
+    "tags": ["indie-pop", "synth-pop", "band", "us", "english", "city:los-angeles", "venue:usc"]
+  },
+  {
+    "artist": "Walk the Moon",
+    "date": "2013-04-06",
+    "venue": "USC Springfest",
+    "rating": 8.3,
+    "tags": ["indie-pop", "synth-pop", "band", "us", "english", "city:los-angeles", "venue:usc"]
+  },
+  {
+    "artist": "Dada Life",
+    "date": "2013-05-18",
+    "venue": "The Shrine",
+    "rating": 9.3,
+    "tags": [
+      "edm",
+      "electro-house",
+      "duo",
+      "sweden",
+      "electronic",
+      "city:los-angeles",
+      "venue:the-shrine"
+    ]
+  },
+  {
+    "artist": "Imagine Dragons",
+    "date": "2013-05-29",
+    "venue": "Hollywood Palladium",
+    "rating": 9.5,
+    "tags": [
+      "rock",
+      "alt-rock",
+      "pop-rock",
+      "band",
+      "us",
+      "english",
+      "city:los-angeles",
+      "venue:hollywood-palladium"
+    ]
+  },
+  {
+    "artist": "Zedd",
+    "date": "2013-10-11",
+    "venue": "The Shrine",
+    "rating": 9.1,
+    "tags": [
+      "edm",
+      "electro-house",
+      "dj",
+      "germany",
+      "electronic",
+      "city:los-angeles",
+      "venue:the-shrine"
+    ]
+  },
+  {
+    "artist": "Avicii",
+    "date": "2013-11-09",
+    "venue": "Hollywood Bowl",
+    "rating": 10,
+    "tags": [
+      "edm",
+      "progressive-house",
+      "dj",
+      "sweden",
+      "electronic",
+      "city:los-angeles",
+      "venue:hollywood-bowl"
+    ]
+  },
+  {
+    "artist": "Jason Derulo",
+    "date": "2013-11-25",
+    "venue": "USC Conquest",
+    "rating": 7.4,
+    "tags": ["pop", "rnb", "solo", "us", "english", "city:los-angeles", "venue:usc"]
+  }
+]

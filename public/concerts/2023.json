@@ -1,0 +1,534 @@
+[
+  {
+    "artist": "ph1",
+    "date": "2023-01-23",
+    "venue": "The Warfield",
+    "rating": 7.5,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "korean-american",
+      "english",
+      "city:san-francisco",
+      "venue:the-warfield"
+    ]
+  },
+  {
+    "artist": "Emotional Oranges",
+    "date": "2023-03-19",
+    "venue": "The Warfield",
+    "rating": 8.5,
+    "tags": [
+      "alt-rnb",
+      "pop",
+      "duo",
+      "us",
+      "english",
+      "city:san-francisco",
+      "venue:the-warfield"
+    ]
+  },
+  {
+    "artist": "Malaa",
+    "date": "2023-04-21",
+    "venue": "Coachella",
+    "rating": 7,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "france",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Pusha T",
+    "date": "2023-04-21",
+    "venue": "Coachella",
+    "rating": 3,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "SG Lewis",
+    "date": "2023-04-21",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Burna Boy",
+    "date": "2023-04-21",
+    "venue": "Coachella",
+    "rating": 9,
+    "tags": [
+      "afrobeats",
+      "world",
+      "solo",
+      "nigeria",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Kaytranada",
+    "date": "2023-04-21",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "canada",
+      "haiti",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Of the Trees",
+    "date": "2023-04-21",
+    "venue": "Coachella",
+    "rating": 8.5,
+    "tags": [
+      "edm",
+      "bass",
+      "dj",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Two Friends",
+    "date": "2023-04-21",
+    "venue": "Coachella",
+    "rating": 6.5,
+    "tags": [
+      "edm",
+      "progressive-house",
+      "duo",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Metro Boomin",
+    "date": "2023-04-21",
+    "venue": "Coachella",
+    "rating": 9,
+    "tags": [
+      "hip-hop",
+      "producer",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Kenny Beats",
+    "date": "2023-04-22",
+    "venue": "Coachella",
+    "rating": 7.5,
+    "tags": [
+      "hip-hop",
+      "producer",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Despacio",
+    "date": "2023-04-22",
+    "venue": "Coachella",
+    "rating": 7,
+    "tags": [
+      "disco",
+      "house",
+      "dj",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Rosalia",
+    "date": "2023-04-22",
+    "venue": "Coachella",
+    "rating": 10,
+    "tags": [
+      "pop",
+      "flamenco-pop",
+      "solo",
+      "spain",
+      "spanish",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Blackpink",
+    "date": "2023-04-22",
+    "venue": "Coachella",
+    "rating": 10,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Eric Prydz HOLO",
+    "date": "2023-04-22",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "progressive-house",
+      "dj",
+      "sweden",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Labrinth",
+    "date": "2023-04-22",
+    "venue": "Coachella",
+    "rating": 9.5,
+    "tags": [
+      "pop",
+      "rnb",
+      "solo",
+      "uk",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Calvin Harris",
+    "date": "2023-04-22",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "uk",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Jai Wolf",
+    "date": "2023-04-23",
+    "venue": "Coachella",
+    "rating": 7.5,
+    "tags": [
+      "edm",
+      "indietronica",
+      "dj",
+      "bangladesh",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "DRAMA",
+    "date": "2023-04-23",
+    "venue": "Coachella",
+    "rating": 9,
+    "tags": [
+      "alt-rnb",
+      "electronic",
+      "duo",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "DPR Live + Ian",
+    "date": "2023-04-23",
+    "venue": "Coachella",
+    "rating": 8,
+    "tags": [
+      "k-hip-hop",
+      "hip-hop",
+      "duo",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Blink-182",
+    "date": "2023-04-23",
+    "venue": "Coachella",
+    "rating": 8.5,
+    "tags": [
+      "rock",
+      "pop-punk",
+      "band",
+      "us",
+      "english",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "Four tet, Fred Again..., Skrillex",
+    "date": "2023-04-23",
+    "venue": "Coachella",
+    "rating": 10,
+    "tags": [
+      "edm",
+      "house",
+      "uk-garage",
+      "collab",
+      "uk",
+      "us",
+      "electronic",
+      "festival",
+      "festival:coachella",
+      "city:indio",
+      "venue:coachella"
+    ]
+  },
+  {
+    "artist": "MAMAMOO",
+    "date": "2023-06-02",
+    "venue": "Oakland Arena",
+    "rating": 8.5,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:oakland",
+      "venue:oakland-arena"
+    ]
+  },
+  {
+    "artist": "Lee Youngji",
+    "date": "2023-07-30",
+    "venue": "San Mateo Convention Center",
+    "rating": 9,
+    "tags": [
+      "hip-hop",
+      "k-hip-hop",
+      "solo",
+      "south-korea",
+      "korean",
+      "city:san-mateo",
+      "venue:san-mateo-convention-center"
+    ]
+  },
+  {
+    "artist": "Lovejoy",
+    "date": "2023-08-03",
+    "venue": "Lollapalooza",
+    "rating": 8,
+    "tags": [
+      "indie-rock",
+      "band",
+      "uk",
+      "english",
+      "festival",
+      "festival:lollapalooza",
+      "city:chicago",
+      "venue:grant-park"
+    ]
+  },
+  {
+    "artist": "NewJeans",
+    "date": "2023-08-03",
+    "venue": "Lollapalooza",
+    "rating": 9,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:lollapalooza",
+      "city:chicago",
+      "venue:grant-park"
+    ]
+  },
+  {
+    "artist": "Dom Dolla",
+    "date": "2023-08-03",
+    "venue": "Lollapalooza",
+    "rating": 6.5,
+    "tags": [
+      "edm",
+      "house",
+      "dj",
+      "australia",
+      "electronic",
+      "festival",
+      "festival:lollapalooza",
+      "city:chicago",
+      "venue:grant-park"
+    ]
+  },
+  {
+    "artist": "KeyGlock",
+    "date": "2023-08-03",
+    "venue": "Lollapalooza",
+    "rating": 7.5,
+    "tags": [
+      "hip-hop",
+      "rap",
+      "solo",
+      "us",
+      "english",
+      "festival",
+      "festival:lollapalooza",
+      "city:chicago",
+      "venue:grant-park"
+    ]
+  },
+  {
+    "artist": "The Rose",
+    "date": "2023-08-03",
+    "venue": "Lollapalooza",
+    "rating": 7,
+    "tags": [
+      "k-rock",
+      "k-pop",
+      "band",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:lollapalooza",
+      "city:chicago",
+      "venue:grant-park"
+    ]
+  },
+  {
+    "artist": "Apashe",
+    "date": "2023-10-13",
+    "venue": "Regency Ballroom",
+    "rating": 9,
+    "tags": [
+      "edm",
+      "bass",
+      "dj",
+      "canada",
+      "electronic",
+      "city:san-francisco",
+      "venue:regency-ballroom"
+    ]
+  },
+  {
+    "artist": "RL Grime",
+    "date": "2023-10-28",
+    "venue": "Bill Graham Civic Center",
+    "rating": 8,
+    "tags": [
+      "edm",
+      "trap",
+      "dj",
+      "us",
+      "electronic",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Everglow",
+    "date": "2023-12-04",
+    "venue": "The Warfield",
+    "rating": 9,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:san-francisco",
+      "venue:the-warfield"
+    ]
+  }
+]

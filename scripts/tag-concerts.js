@@ -1,4 +1,4 @@
-// Adds rich tags to each concert entry and writes back to public/concerts.json.
+// Adds rich tags to each concert entry and writes back to public/concerts/*.json files.
 // Safe to rerun any time the source data or tag dictionaries change.
 import fs from 'fs'
 import path from 'path'
@@ -7,8 +7,15 @@ import artistTags from './data/artistTags.js'
 import { venueTags, festivalGuesses, cityOverrides } from './data/venueData.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const filePath = path.join(__dirname, '..', 'public', 'concerts.json')
-const concerts = JSON.parse(fs.readFileSync(filePath, 'utf8'))
+const concertsDir = path.join(__dirname, '..', 'public', 'concerts')
+
+// Read all year files from the concerts directory
+const yearFiles = fs.readdirSync(concertsDir).filter((f) => f.endsWith('.json'))
+const concertsByYear = {}
+yearFiles.forEach((file) => {
+  const year = file.replace('.json', '')
+  concertsByYear[year] = JSON.parse(fs.readFileSync(path.join(concertsDir, file), 'utf8'))
+})
 
 function tagsForVenue(venue) {
   const tags = new Set()
@@ -31,7 +38,7 @@ function tagsForArtist(artist) {
   return artistTags[artist] || ['unknown']
 }
 
-const enriched = concerts.map((entry) => {
+function enrichConcert(entry) {
   const tags = new Set()
   tagsForArtist(entry.artist).forEach((t) => tags.add(t))
   tagsForVenue(entry.venue).forEach((t) => tags.add(t))
@@ -43,7 +50,15 @@ const enriched = concerts.map((entry) => {
     ...(status ? { status } : {}),
     tags: [...tags],
   }
-})
+}
 
-fs.writeFileSync(filePath, JSON.stringify(enriched, null, 2))
-console.log('Tagged concerts written:', enriched.length)
+// Process and write each year file
+let totalCount = 0
+Object.entries(concertsByYear).forEach(([year, concerts]) => {
+  const enriched = concerts.map(enrichConcert)
+  const filePath = path.join(concertsDir, `${year}.json`)
+  fs.writeFileSync(filePath, JSON.stringify(enriched, null, 2))
+  console.log(`${year}: ${enriched.length} concerts tagged`)
+  totalCount += enriched.length
+})
+console.log(`Total concerts tagged: ${totalCount}`)
