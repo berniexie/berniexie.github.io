@@ -48,30 +48,36 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
       }
     )
 
-    // Observer for sticky state detection
+    // Observer for sticky state detection using sentinel elements
+    // When the sentinel scrolls out of view (above viewport), the sticky header is "stuck"
     stickyObserverRef.current = new IntersectionObserver(
       (entries) => {
         setStickyStates((prev) => {
           const newStates = { ...prev }
           entries.forEach((entry) => {
-            // Element is "stuck" when it's not intersecting (scrolled past the top)
-            newStates[entry.target.id] = !entry.isIntersecting
+            // Extract section ID from sentinel ID (e.g., "work-experience-sentinel" -> "work-experience")
+            const sectionId = entry.target.id.replace('-sentinel', '')
+            // Element is "stuck" when sentinel is not intersecting (scrolled past the top)
+            newStates[sectionId] = !entry.isIntersecting
           })
           return newStates
         })
       },
       {
         rootMargin: '0px 0px 0px 0px',
-        threshold: 1.0,
+        threshold: 0,
       }
     )
 
     // Observe all section elements
     sections.forEach((section) => {
       const element = document.getElementById(section.id)
+      const sentinel = document.getElementById(`${section.id}-sentinel`)
       if (element) {
         observerRef.current?.observe(element)
-        stickyObserverRef.current?.observe(element)
+      }
+      if (sentinel) {
+        stickyObserverRef.current?.observe(sentinel)
       }
     })
 

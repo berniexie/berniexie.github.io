@@ -1,4 +1,5 @@
 import { Music, Star, Calendar, MapPin } from 'lucide-react'
+import { FlipText } from '../../components/FlipText'
 import type { ConcertStats } from '../types'
 
 interface StatsCardsProps {
@@ -15,7 +16,9 @@ export function StatsCards({ stats }: StatsCardsProps) {
             Total Shows
           </span>
         </div>
-        <p className="text-2xl font-bold text-[var(--color-text)]">{stats.total}</p>
+        <p className="text-2xl font-bold text-[var(--color-text)]">
+          <FlipText delay={0}>{String(stats.total)}</FlipText>
+        </p>
       </div>
       <div className="flex flex-col gap-1 p-3 rounded-lg border border-[var(--color-border)]">
         <div className="flex items-center gap-2">
@@ -24,7 +27,9 @@ export function StatsCards({ stats }: StatsCardsProps) {
             Avg Rating
           </span>
         </div>
-        <p className="text-2xl font-bold text-[var(--color-text)]">{stats.avgRating.toFixed(1)}</p>
+        <p className="text-2xl font-bold text-[var(--color-text)]">
+          <FlipText delay={200}>{stats.avgRating.toFixed(1)}</FlipText>
+        </p>
       </div>
       <div className="flex flex-col gap-1 p-3 rounded-lg border border-[var(--color-border)]">
         <div className="flex items-center gap-2">
@@ -33,7 +38,9 @@ export function StatsCards({ stats }: StatsCardsProps) {
             Years Active
           </span>
         </div>
-        <p className="text-2xl font-bold text-[var(--color-text)]">{stats.yearsData.length}</p>
+        <p className="text-2xl font-bold text-[var(--color-text)]">
+          <FlipText delay={400}>{String(stats.yearsData.length)}</FlipText>
+        </p>
       </div>
       <div className="flex flex-col gap-1 p-3 rounded-lg border border-[var(--color-border)]">
         <div className="flex items-center gap-2">
@@ -43,9 +50,11 @@ export function StatsCards({ stats }: StatsCardsProps) {
           </span>
         </div>
         <p className="text-xs font-medium text-[var(--color-text)] leading-tight">
-          {stats.topVenues[0]?.[0]}
+          <FlipText delay={600}>{stats.topVenues[0]?.[0] || ''}</FlipText>
         </p>
-        <p className="text-[10px] text-[var(--color-text-muted)]">{stats.topVenues[0]?.[1]} shows</p>
+        <p className="text-[10px] text-[var(--color-text-muted)]">
+          <FlipText delay={750}>{stats.topVenues[0] ? `${stats.topVenues[0][1]} shows` : ''}</FlipText>
+        </p>
       </div>
     </div>
   )

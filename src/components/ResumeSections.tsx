@@ -39,6 +39,8 @@ function ResumeSections({
         return (
           <div key={section.id} className="my-12">
             <hr className="border-[var(--color-border)] my-0" />
+            {/* Sentinel element for sticky detection */}
+            <div id={`${section.id}-sentinel`} className="h-0 w-full" aria-hidden="true" />
             <div
               id={section.id}
               className={`scroll-mt-24 sticky top-0 py-4 border-b border-[var(--color-border)] mb-6 z-10 transition-all duration-300 flex justify-between items-center ${
