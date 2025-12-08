@@ -38,7 +38,7 @@ function InterestsSection() {
   const [data, setData] = useState<InterestsData | null>(null)
 
   useEffect(() => {
-    fetch('/interests.json')
+    fetch('/trends.json')
       .then((res) => res.json())
       .then((data: InterestsData) => setData(data))
       .catch((err) => console.error('Failed to load interests:', err))

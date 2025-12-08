@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useCallback, useMemo } from 'react'
 import Globe from 'react-globe.gl'
 import type { GlobeMethods } from 'react-globe.gl'
 import type { Geometry } from 'geojson'
+import { BoardingPass } from './components/BoardingPass'
 
 interface Trip {
   city: string
@@ -264,23 +265,8 @@ export default function TravelGlobe() {
 
         {/* Hover tooltip */}
         {hoveredTrip && (
-          <div className="absolute top-4 left-4 z-10 bg-black/90 backdrop-blur-md border border-white/20 px-4 py-3 rounded-lg shadow-lg animate-in fade-in duration-200 min-w-[200px]">
-            <div className="flex items-center justify-between gap-3 mb-2">
-              <span className="font-display font-bold text-white text-lg tracking-wide">
-                {hoveredTrip.city}
-              </span>
-              <span className="font-mono text-sm font-bold text-white bg-white/10 px-2 py-0.5 rounded">
-                Rating: {hoveredTrip.score}/10
-              </span>
-            </div>
-            <div className="text-gray-400 text-xs uppercase tracking-widest mb-2">
-              {hoveredTrip.country}
-            </div>
-            {hoveredTrip.summary && (
-              <p className="text-gray-300 text-xs leading-relaxed font-light border-t border-white/10 pt-2">
-                {hoveredTrip.summary}
-              </p>
-            )}
+          <div className="absolute bottom-4 right-4 z-50 animate-in fade-in duration-200">
+            <BoardingPass trip={hoveredTrip} homeTrip={homeTrip} />
           </div>
         )}
       </div>
