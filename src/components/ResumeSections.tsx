@@ -19,33 +19,26 @@ function SectionLoader() {
 
 interface ResumeSectionsProps {
   sections: ResumeSection[]
-  stickyStates: Record<string, boolean>
   showDetails: boolean
   onToggleDetails: () => void
 }
 
 function ResumeSections({
   sections,
-  stickyStates,
   showDetails,
   onToggleDetails,
 }: ResumeSectionsProps) {
   return (
     <>
       {sections.map((section) => {
-        const isStuck = stickyStates[section.id]
         const isWorkSection = section.id === 'work-experience'
 
         return (
           <div key={section.id} className="my-12">
             <hr className="border-[var(--color-border)] my-0" />
-            {/* Sentinel element for sticky detection */}
-            <div id={`${section.id}-sentinel`} className="h-0 w-full" aria-hidden="true" />
             <div
               id={section.id}
-              className={`scroll-mt-24 sticky top-0 py-4 border-b border-[var(--color-border)] mb-6 z-10 transition-all duration-300 flex justify-between items-center ${
-                isStuck ? 'sticky-header-blur' : 'bg-transparent'
-              }`}
+              className="scroll-mt-24 py-4 border-b border-[var(--color-border)] mb-6 flex justify-between items-center"
             >
               <h2 className="mt-0 text-base md:text-lg font-semibold tracking-tight text-[var(--color-text)] font-display uppercase flex items-center gap-3">
                 {section.title}

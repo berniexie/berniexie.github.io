@@ -13,7 +13,7 @@ function App() {
   const { resumeData, isLoading } = useResumeData()
   const [showDetails, setShowDetails] = useState(false)
 
-  const { activeSection, stickyStates, handleSectionClick } = useSectionScroll({
+  const { activeSection, handleSectionClick } = useSectionScroll({
     sections: resumeData?.sections || [],
   })
 
@@ -32,16 +32,17 @@ function App() {
       <AsciiBackground />
       <DownloadButton />
 
-      {/* Main Layout */}
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12 py-8 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <Sidebar
-          sections={resumeData.sections}
-          activeSection={activeSection}
-          onSectionClick={handleSectionClick}
-        />
+      {/* Sidebar - Fixed on the left */}
+      <Sidebar
+        sections={resumeData.sections}
+        activeSection={activeSection}
+        onSectionClick={handleSectionClick}
+      />
 
+      {/* Main Layout - Centered */}
+      <div className="max-w-4xl mx-auto px-6 py-8 md:py-16">
         {/* Content Area */}
-        <main className="lg:col-span-9 lg:pl-12">
+        <main>
           <article className="max-w-none">
             <ProfileHeader
               name={resumeData.name}
@@ -54,7 +55,6 @@ function App() {
 
             <ResumeSections
               sections={resumeData.sections}
-              stickyStates={stickyStates}
               showDetails={showDetails}
               onToggleDetails={() => setShowDetails(!showDetails)}
             />

@@ -8,9 +8,9 @@ interface SidebarProps {
 
 function Sidebar({ sections, activeSection, onSectionClick }: SidebarProps) {
   return (
-    <aside className="lg:col-span-3 lg:sticky lg:top-24 h-fit flex flex-col gap-8">
+    <aside className="hidden lg:flex fixed left-16 top-24 w-48 h-fit flex-col gap-8">
       <div>
-        <div className="font-display font-bold text-lg tracking-tight mb-2">berniexie</div>
+        <div className="font-display font-bold text-xl tracking-tight mb-2">berniexie</div>
         <div className="font-body text-xs text-[var(--color-text-muted)]">
           Software Engineer
           <br />
@@ -19,7 +19,7 @@ function Sidebar({ sections, activeSection, onSectionClick }: SidebarProps) {
       </div>
 
       {sections.length > 0 && (
-        <nav className="hidden lg:block">
+        <nav>
           <ul className="flex flex-col gap-2">
             {sections.map((section) => {
               const isActive = activeSection === section.id
@@ -31,7 +31,7 @@ function Sidebar({ sections, activeSection, onSectionClick }: SidebarProps) {
                       e.preventDefault()
                       onSectionClick(section.id)
                     }}
-                    className={`text-xs uppercase tracking-widest transition-colors duration-200 flex items-center gap-2 ${
+                    className={`text-sm uppercase tracking-widest transition-colors duration-200 flex items-center gap-2 ${
                       isActive
                         ? 'text-[var(--color-text)] font-semibold'
                         : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]'

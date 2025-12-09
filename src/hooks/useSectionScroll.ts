@@ -7,10 +7,8 @@ interface UseSectionScrollOptions {
 
 export function useSectionScroll({ sections }: UseSectionScrollOptions) {
   const [activeSection, setActiveSection] = useState<string>('')
-  const [stickyStates, setStickyStates] = useState<Record<string, boolean>>({})
   const isScrollingRef = useRef(false)
   const observerRef = useRef<IntersectionObserver | null>(null)
-  const stickyObserverRef = useRef<IntersectionObserver | null>(null)
 
   // Initialize active section when sections change
   useEffect(() => {
@@ -48,42 +46,16 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
       }
     )
 
-    // Observer for sticky state detection using sentinel elements
-    // When the sentinel scrolls out of view (above viewport), the sticky header is "stuck"
-    stickyObserverRef.current = new IntersectionObserver(
-      (entries) => {
-        setStickyStates((prev) => {
-          const newStates = { ...prev }
-          entries.forEach((entry) => {
-            // Extract section ID from sentinel ID (e.g., "work-experience-sentinel" -> "work-experience")
-            const sectionId = entry.target.id.replace('-sentinel', '')
-            // Element is "stuck" when sentinel is not intersecting (scrolled past the top)
-            newStates[sectionId] = !entry.isIntersecting
-          })
-          return newStates
-        })
-      },
-      {
-        rootMargin: '0px 0px 0px 0px',
-        threshold: 0,
-      }
-    )
-
     // Observe all section elements
     sections.forEach((section) => {
       const element = document.getElementById(section.id)
-      const sentinel = document.getElementById(`${section.id}-sentinel`)
       if (element) {
         observerRef.current?.observe(element)
-      }
-      if (sentinel) {
-        stickyObserverRef.current?.observe(sentinel)
       }
     })
 
     return () => {
       observerRef.current?.disconnect()
-      stickyObserverRef.current?.disconnect()
     }
   }, [sections])
 
@@ -117,7 +89,6 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
 
   return {
     activeSection,
-    stickyStates,
     handleSectionClick,
   }
 }
