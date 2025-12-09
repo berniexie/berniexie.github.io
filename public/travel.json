@@ -100,9 +100,9 @@
       "score": 9.1
     },
     {
-      "city": "Tahoe",
+      "city": "Lake Tahoe",
       "country": "USA",
-      "coordinates": [38.7962368, -90.3638369],
+      "coordinates": [39.0968, -120.0324],
       "score": 9.1
     },
     {
@@ -404,6 +404,54 @@
       "country": "South Korea",
       "coordinates": [35.1799528, 129.0752365],
       "score": 7.8
+    },
+    {
+      "city": "Los Angeles",
+      "country": "USA",
+      "coordinates": [34.0522, -118.2437],
+      "score": 9.5
+    },
+    {
+      "city": "Pittsburgh",
+      "country": "USA",
+      "coordinates": [40.4406, -79.9959],
+      "score": 9.3
+    },
+    {
+      "city": "Boston",
+      "country": "USA",
+      "coordinates": [42.3601, -71.0589],
+      "score": 8.5
+    },
+    {
+      "city": "Philadelphia",
+      "country": "USA",
+      "coordinates": [39.9526, -75.1652],
+      "score": 8.3
+    },
+    {
+      "city": "Salt Lake City",
+      "country": "USA",
+      "coordinates": [40.7608, -111.891],
+      "score": 8.3
+    },
+    {
+      "city": "San Diego",
+      "country": "USA",
+      "coordinates": [32.7157, -117.1611],
+      "score": 8.1
+    },
+    {
+      "city": "Spokane",
+      "country": "USA",
+      "coordinates": [47.6588, -117.426],
+      "score": 8.0
+    },
+    {
+      "city": "Kansas City",
+      "country": "USA",
+      "coordinates": [39.0997, -94.5786],
+      "score": 7.4
     }
   ]
 }
