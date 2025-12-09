@@ -127,7 +127,7 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
                   className="hover:opacity-80"
                 />
               ))}
-              <LabelList dataKey="name" content={renderCustomLabel} />
+              <LabelList dataKey="name" content={renderCustomLabel as never} />
             </Bar>
           </BarChart>
         </ResponsiveContainer>
