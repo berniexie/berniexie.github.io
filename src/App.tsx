@@ -64,7 +64,13 @@ function App() {
             <div>
               <p>&copy; {new Date().getFullYear()}</p>
             </div>
-            <div className="text-right">
+            <div className="flex-col justify-items-end items-end gap-3">
+              <img 
+                src="/round-cat.png" 
+                alt="Cat" 
+                className="w-16 h-16 animate-spin"
+                style={{ animationDuration: '3s' }}
+              />
               <p>Got the goods.</p>
             </div>
           </footer>
