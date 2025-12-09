@@ -19,7 +19,7 @@ function ArtistTooltip({ active, payload }: ArtistTooltipProps) {
   const venues = [...new Set(artist.concerts.map((c) => c.venue))].slice(0, 3)
 
   return (
-    <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg p-3 shadow-lg min-w-[180px] z-50 relative">
+    <div className="glass-tooltip rounded-lg p-3 min-w-[180px] z-50 relative">
       <p className="text-sm font-bold text-[var(--color-text)] mb-1">{artist.name}</p>
       <p className="text-xs text-[var(--color-text-muted)]">
         <span className="font-semibold text-[var(--color-text)]">{artist.count}</span> shows
@@ -73,7 +73,7 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
   if (topArtists.length === 0) return null
 
   return (
-    <div className="p-4 rounded-lg border border-[var(--color-border)] mt-8">
+    <div className="glass-card p-4 rounded-lg mt-8">
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
         Most Seen Artists
       </h4>

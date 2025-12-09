@@ -95,7 +95,7 @@ function TreemapTooltip({ active, payload }: TreemapTooltipProps) {
   if (!data.name || !data.size) return null
 
   return (
-    <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-md px-3 py-2 shadow-lg">
+    <div className="glass-tooltip rounded-md px-3 py-2">
       <p className="text-sm text-[var(--color-text)]">{data.name}</p>
       <p className="text-xs text-[var(--color-text-muted)]">
         {data.size} shows · <span className="capitalize">{data.type}</span>
@@ -110,7 +110,7 @@ interface VenuesTreemapProps {
 
 export function VenuesTreemap({ venueTreemapData }: VenuesTreemapProps) {
   return (
-    <div className="p-4 rounded-lg border border-[var(--color-border)]">
+    <div className="glass-card p-4 rounded-lg">
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-3">
         Venues & Festivals
       </h4>

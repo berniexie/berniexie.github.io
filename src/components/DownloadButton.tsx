@@ -7,7 +7,7 @@ export function DownloadButton() {
       <a
         href="/resume.md"
         download="Bernard_Xie_Resume.md"
-        className="fixed bottom-8 right-8 z-50 group hidden md:flex items-center gap-3 bg-[var(--color-bg)] pl-4 pr-3 py-2 rounded-full border border-[var(--color-border)] hover:border-[var(--color-text)] transition-all hover:shadow-lg"
+        className="glass-card fixed bottom-8 right-8 z-50 group hidden md:flex items-center gap-3 pl-4 pr-3 py-2 rounded-full"
       >
         <span className="text-xs font-medium uppercase tracking-wider">Download Resume</span>
         <div className="bg-[var(--color-text)] text-[var(--color-bg)] p-1.5 rounded-full flex items-center justify-center">

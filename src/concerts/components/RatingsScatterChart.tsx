@@ -28,7 +28,7 @@ function RatingScatterTooltip({ active, payload }: RatingScatterTooltipProps) {
   const color = getRatingColor(data.rating || 0)
 
   return (
-    <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg p-3 shadow-lg z-50 relative min-w-[200px]">
+    <div className="glass-tooltip rounded-lg p-3 z-50 relative min-w-[200px]">
       <div className="flex justify-between items-start gap-4 mb-2">
         <div>
           <p className="text-sm font-bold text-[var(--color-text)]">{data.artist}</p>
@@ -83,7 +83,7 @@ export function RatingsScatterChart({ scatterData }: RatingsScatterChartProps) {
   )
 
   return (
-    <div className="mt-8 p-4 rounded-lg border border-[var(--color-border)]">
+    <div className="glass-card mt-8 p-4 rounded-lg">
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
         All Ratings
       </h4>

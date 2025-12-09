@@ -40,7 +40,7 @@ function LineChartTooltip({ active, payload, label, concerts }: LineChartTooltip
   const totalEntry = payload.find((p) => p.dataKey === 'total')
 
   return (
-    <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg p-3 shadow-lg min-w-[180px] z-50 relative">
+    <div className="glass-tooltip rounded-lg p-3 min-w-[180px] z-50 relative">
       <p className="text-sm font-bold text-[var(--color-text)] mb-2">{year}</p>
 
       {totalEntry && (
@@ -89,7 +89,7 @@ export function TasteEvolutionChart({
   concerts,
 }: TasteEvolutionChartProps) {
   return (
-    <div className="mb-8 p-4 rounded-lg border border-[var(--color-border)]">
+    <div className="glass-card mb-8 p-4 rounded-lg">
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
         Taste Evolution (Shows per Year)
       </h4>

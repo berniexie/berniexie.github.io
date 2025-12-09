@@ -33,7 +33,7 @@ export const BoardingPass: React.FC<BoardingPassProps> = ({ trip }) => {
   );
 
   return (
-    <div className="bg-zinc-900 border border-zinc-700 rounded-xl shadow-2xl overflow-hidden w-[380px] h-[160px] relative group hover:border-zinc-500 transition-colors duration-300 flex flex-row">
+    <div className="glass-card rounded-xl shadow-2xl overflow-hidden w-[380px] h-[160px] relative group transition-colors duration-300 flex flex-row">
       {/* Left Side Decoration (formerly Top) */}
       <div className="w-1.5 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500" />
       
@@ -82,7 +82,7 @@ export const BoardingPass: React.FC<BoardingPassProps> = ({ trip }) => {
       </div>
 
       {/* Barcode Section (Stub) */}
-      <div className="bg-zinc-900/50 w-16 p-2 flex items-center justify-center">
+      <div className="bg-black/30 w-16 p-2 flex items-center justify-center">
          <div className="text-white/20 h-full py-2">
            <Barcode />
          </div>

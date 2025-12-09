@@ -25,7 +25,7 @@ function GenrePieTooltip({ active, payload, concertsByGenre, total }: GenrePieTo
     .slice(0, 3)
 
   return (
-    <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg p-3 shadow-lg min-w-[160px] z-50 relative">
+    <div className="glass-tooltip rounded-lg p-3 min-w-[160px] z-50 relative">
       <p className="text-sm font-bold text-[var(--color-text)] capitalize mb-1">{genre}</p>
       <p className="text-xs text-[var(--color-text-muted)]">
         <span className="font-semibold text-[var(--color-text)]">{count}</span> shows ({percentage}
@@ -60,7 +60,7 @@ export function GenreMixChart({
   totalValidConcerts,
 }: GenreMixChartProps) {
   return (
-    <div className="p-4 rounded-lg border border-[var(--color-border)]">
+    <div className="glass-card p-4 rounded-lg">
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
         Genre Mix
       </h4>

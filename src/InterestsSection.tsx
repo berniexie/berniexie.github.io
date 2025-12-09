@@ -100,7 +100,7 @@ function InterestsSection() {
         {interests.map((item, index) => (
           <div
             key={item.label}
-            className="group flex flex-col gap-2 p-3 rounded-lg border border-[var(--color-border)] hover:border-[var(--color-text)]/30 transition-colors"
+            className="glass-card group flex flex-col gap-2 p-3 rounded-lg"
           >
             <div className="flex items-center gap-2">
               <item.icon

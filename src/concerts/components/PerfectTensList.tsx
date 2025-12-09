@@ -6,7 +6,7 @@ interface PerfectTensListProps {
 
 export function PerfectTensList({ topRated }: PerfectTensListProps) {
   return (
-    <div className="mt-8 p-4 rounded-lg border border-[var(--color-border)]">
+    <div className="glass-card mt-8 p-4 rounded-lg">
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
         Perfect 10s
       </h4>

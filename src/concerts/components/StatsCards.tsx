@@ -9,7 +9,7 @@ interface StatsCardsProps {
 export function StatsCards({ stats }: StatsCardsProps) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-      <div className="flex flex-col gap-1 p-3 rounded-lg border border-[var(--color-border)]">
+      <div className="glass-card flex flex-col gap-1 p-3 rounded-lg">
         <div className="flex items-center gap-2">
           <Music size={12} className="text-[var(--color-text-muted)]" />
           <span className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold">
@@ -20,7 +20,7 @@ export function StatsCards({ stats }: StatsCardsProps) {
           <FlipText delay={0}>{String(stats.total)}</FlipText>
         </p>
       </div>
-      <div className="flex flex-col gap-1 p-3 rounded-lg border border-[var(--color-border)]">
+      <div className="glass-card flex flex-col gap-1 p-3 rounded-lg">
         <div className="flex items-center gap-2">
           <Star size={12} className="text-[var(--color-text-muted)]" />
           <span className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold">
@@ -31,7 +31,7 @@ export function StatsCards({ stats }: StatsCardsProps) {
           <FlipText delay={200}>{stats.avgRating.toFixed(1)}</FlipText>
         </p>
       </div>
-      <div className="flex flex-col gap-1 p-3 rounded-lg border border-[var(--color-border)]">
+      <div className="glass-card flex flex-col gap-1 p-3 rounded-lg">
         <div className="flex items-center gap-2">
           <Calendar size={12} className="text-[var(--color-text-muted)]" />
           <span className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold">
@@ -42,7 +42,7 @@ export function StatsCards({ stats }: StatsCardsProps) {
           <FlipText delay={400}>{String(stats.yearsData.length)}</FlipText>
         </p>
       </div>
-      <div className="flex flex-col gap-1 p-3 rounded-lg border border-[var(--color-border)]">
+      <div className="glass-card flex flex-col gap-1 p-3 rounded-lg">
         <div className="flex items-center gap-2">
           <MapPin size={12} className="text-[var(--color-text-muted)]" />
           <span className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold">
