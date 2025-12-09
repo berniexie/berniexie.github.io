@@ -6,14 +6,16 @@
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Space Mono', monospace;
 
-  --color-bg: #050505;
-  --color-bg-alt: #0a0a0a;
-  --color-text: #ffffff;
-  --color-text-muted: #b3b3b3;
-  --color-border: #2a2a2a;
-  --color-accent: #818cf8;
-  --color-accent-secondary: #a78bfa;
-  --color-accent-dim: rgba(0, 255, 157, 0.1);
+  /* Light Theme Colors */
+  --color-bg: #faf8f5;
+  --color-bg-alt: #f5f2ed;
+  --color-text: #1a1a1a;
+  --color-text-muted: #3f3f46; /* Zinc-700 - much darker for better contrast */
+  --color-border: #a1a1aa; /* Zinc-400 - more visible on light bg */
+  --color-accent: #0f766e; /* Teal-700 */
+  --color-accent-secondary: #115e59; /* Teal-800 */
+  --color-accent-dim: rgba(15, 118, 110, 0.1);
+  --color-accent-rgb: 15, 118, 110;
 }
 
 /* Light mode override (optional, but let's stick to dark as default for 'coolness') */
@@ -31,30 +33,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   background-image:
-    linear-gradient(to right, #111 1px, transparent 1px),
-    linear-gradient(to bottom, #111 1px, transparent 1px);
+    linear-gradient(to right, #e8e4dd 1px, transparent 1px),
+    linear-gradient(to bottom, #e8e4dd 1px, transparent 1px);
   background-size: 40px 40px;
   background-attachment: fixed;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
-  border-left: 1px solid var(--color-border);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border: 2px solid var(--color-bg);
+  background: #d4d4d8; /* Zinc-300 */
   border-radius: 99px;
+  transition: background 0.2s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
+  background: #a1a1aa; /* Zinc-400 */
 }
 
 /* Selection */

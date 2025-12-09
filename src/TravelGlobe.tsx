@@ -145,9 +145,9 @@ export default function TravelGlobe() {
     (d: object) => {
       const trip = d as Trip
       if (hoveredTrip?.city === trip.city) {
-        return '#ffffff'
+        return '#ffffff' // White when hovered
       }
-      return '#a1a1aa' // Gray
+      return '#f97316' // Bright orange for visibility
     },
     [hoveredTrip],
   )
@@ -157,9 +157,9 @@ export default function TravelGlobe() {
     (d: object) => {
       const trip = d as Trip
       if (hoveredTrip?.city === trip.city) {
-        return 1.0
+        return 1.2
       }
-      return trip.score >= 9.0 ? 0.6 : 0.4
+      return trip.score >= 9.0 ? 0.8 : 0.6
     },
     [hoveredTrip],
   )
@@ -179,14 +179,14 @@ export default function TravelGlobe() {
 
   // Memoized callback props for Globe to prevent unnecessary re-renders
   const polygonCapColor = useCallback(
-    (d: object) => (isCountryHovered(d) ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0)'),
+    (d: object) => (isCountryHovered(d) ? 'rgba(15, 118, 110, 0.2)' : 'rgba(0, 0, 0, 0)'),
     [isCountryHovered]
   )
 
   const polygonSideColor = useCallback(() => 'rgba(0, 0, 0, 0)', [])
 
   const polygonStrokeColor = useCallback(
-    (d: object) => (isCountryHovered(d) ? 'rgba(255, 255, 255, 0.5)' : 'rgba(255, 255, 255, 0.05)'),
+    (d: object) => (isCountryHovered(d) ? 'rgba(15, 118, 110, 0.6)' : 'rgba(0, 0, 0, 0.1)'),
     [isCountryHovered]
   )
 
@@ -197,7 +197,7 @@ export default function TravelGlobe() {
   const arcStartLng = useCallback((d: object) => (d as Arc).startLng, [])
   const arcEndLat = useCallback((d: object) => (d as Arc).endLat, [])
   const arcEndLng = useCallback((d: object) => (d as Arc).endLng, [])
-  const arcColor = useCallback(() => ['rgba(255, 255, 255, 0.8)', 'rgba(255, 255, 255, 0.3)'], [])
+  const arcColor = useCallback(() => ['rgba(20, 184, 166, 0.9)', 'rgba(15, 118, 110, 0.4)'], [])
 
   const handlePointHover = useCallback(
     (point: object | null) => {
@@ -223,8 +223,8 @@ export default function TravelGlobe() {
           width={dimensions.width}
           height={dimensions.height}
           backgroundColor="rgba(0,0,0,0)"
-          // Night Earth texture
-          globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+          // Day Earth texture (Blue Marble)
+          globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
           showGlobe={true}
           showAtmosphere={true}
           // Country Polygons (highlight on hover)
@@ -259,8 +259,8 @@ export default function TravelGlobe() {
           onGlobeReady={handleGlobeReady}
           onZoom={handleInteraction}
           // Atmosphere glow
-          atmosphereColor="rgba(255, 255, 255, 0.5)"
-          atmosphereAltitude={0.12}
+          atmosphereColor="rgba(20, 75, 166, 0.5)"
+          atmosphereAltitude={0.20}
         />
 
         {/* Hover tooltip */}

@@ -1,9 +1,16 @@
+import { useState } from 'react'
 import { ResponsiveContainer, Treemap, Tooltip } from 'recharts'
 import type { TreemapCategory } from '../types'
 
 const COLORS = {
-  venue: '#818cf8', // indigo-400 - matches accent
-  festival: '#34d399', // emerald-400
+  venue: {
+    base: '#5A7AB0', // Steel Blue
+    hover: '#4A68A0', // Deeper on hover
+  },
+  festival: {
+    base: '#5AAA78', // Jade Green
+    hover: '#4A9A68', // Deeper on hover
+  },
 }
 
 interface TreemapContentProps {
@@ -15,6 +22,8 @@ interface TreemapContentProps {
   size?: number
   type?: string
   depth?: number
+  hoveredItem?: string | null
+  onHover?: (name: string | null) => void
 }
 
 function TreemapContent({
@@ -26,15 +35,23 @@ function TreemapContent({
   size,
   type,
   depth,
+  hoveredItem,
+  onHover,
 }: TreemapContentProps) {
   if (depth !== 2) return null
 
   const isSmall = width < 60 || height < 30
   const isTiny = width < 40 || height < 20
-  const color = type === 'festival' ? COLORS.festival : COLORS.venue
+  const colorSet = type === 'festival' ? COLORS.festival : COLORS.venue
+  const isHovered = hoveredItem === name
+  const color = isHovered ? colorSet.hover : colorSet.base
 
   return (
-    <g>
+    <g
+      style={{ cursor: 'pointer' }}
+      onMouseEnter={() => onHover?.(name || null)}
+      onMouseLeave={() => onHover?.(null)}
+    >
       <rect
         x={x + 1}
         y={y + 1}
@@ -43,10 +60,11 @@ function TreemapContent({
         rx={3}
         ry={3}
         fill={color}
-        fillOpacity={0.15}
+        fillOpacity={isHovered ? 0.45 : 0.3}
         stroke={color}
-        strokeWidth={1}
-        strokeOpacity={0.5}
+        strokeWidth={isHovered ? 1.5 : 1}
+        strokeOpacity={isHovered ? 1 : 0.7}
+        style={{ transition: 'all 0.15s ease' }}
       />
       {!isTiny && (
         <>
@@ -57,8 +75,9 @@ function TreemapContent({
             dominantBaseline="middle"
             fill="var(--color-text)"
             fontSize={isSmall ? 9 : 11}
-            fontWeight={500}
+            fontWeight={isHovered ? 600 : 500}
             fontFamily="var(--font-body)"
+            style={{ transition: 'font-weight 0.15s ease' }}
           >
             {name && name.length > width / 6.5
               ? name.slice(0, Math.floor(width / 6.5)) + '…'
@@ -109,8 +128,10 @@ interface VenuesTreemapProps {
 }
 
 export function VenuesTreemap({ venueTreemapData }: VenuesTreemapProps) {
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+
   return (
-    <div className="glass-card p-4 rounded-lg">
+    <div className="glass-card p-4 rounded-lg mt-8">
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-3">
         Venues & Festivals
       </h4>
@@ -118,25 +139,25 @@ export function VenuesTreemap({ venueTreemapData }: VenuesTreemapProps) {
         <span className="flex items-center gap-1.5 text-[10px] text-[var(--color-text-muted)]">
           <span
             className="w-2 h-2 rounded-sm"
-            style={{ backgroundColor: COLORS.venue }}
+            style={{ backgroundColor: COLORS.venue.base }}
           />
           Venues
         </span>
         <span className="flex items-center gap-1.5 text-[10px] text-[var(--color-text-muted)]">
           <span
             className="w-2 h-2 rounded-sm"
-            style={{ backgroundColor: COLORS.festival }}
+            style={{ backgroundColor: COLORS.festival.base }}
           />
           Festivals
         </span>
       </div>
-      <div className="h-64 md:h-72">
+      <div className="h-80 md:h-96">
         <ResponsiveContainer width="100%" height="100%">
           <Treemap
             data={venueTreemapData}
             dataKey="size"
-            aspectRatio={4 / 3}
-            content={<TreemapContent />}
+            aspectRatio={3}
+            content={<TreemapContent hoveredItem={hoveredItem} onHover={setHoveredItem} />}
             isAnimationActive={false}
           >
             <Tooltip content={<TreemapTooltip />} />

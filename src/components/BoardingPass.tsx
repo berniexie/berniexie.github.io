@@ -33,21 +33,21 @@ export const BoardingPass: React.FC<BoardingPassProps> = ({ trip }) => {
   );
 
   return (
-    <div className="glass-card rounded-xl shadow-2xl overflow-hidden w-[380px] h-[160px] relative group transition-colors duration-300 flex flex-row">
+    <div className="bg-white rounded-xl shadow-xl overflow-hidden w-[380px] h-[160px] relative group transition-colors duration-300 flex flex-row border border-zinc-200">
       {/* Left Side Decoration (formerly Top) */}
-      <div className="w-1.5 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500" />
+      <div className="w-1.5 h-full bg-gradient-to-b from-teal-400/60 via-teal-600/60 to-teal-800/60" />
       
       {/* Main Pass Section */}
       <div className="flex-1 p-5 flex flex-col justify-between">
         {/* Header */}
-        <div className="flex justify-between items-center border-b border-zinc-800 pb-2">
+        <div className="flex justify-between items-center border-b border-zinc-200 pb-2">
           <div className="flex items-center gap-2">
-            <div className="bg-zinc-800 p-1 rounded-full">
+            <div className="bg-zinc-900 p-1 rounded-full">
               <Plane className="w-3 h-3 text-white transform -rotate-45" />
             </div>
-            <span className="font-display font-bold text-white tracking-widest text-xs">HERBERT AIR</span>
+            <span className="font-display font-bold text-zinc-900 tracking-widest text-xs">HERBERT AIR</span>
           </div>
-          <div className="text-[10px] font-mono text-zinc-600 tracking-[0.2em]">
+          <div className="text-[10px] font-mono text-zinc-500 tracking-[0.2em]">
              BX-{trip.city.length}{Math.floor(trip.score)}X
            </div>
         </div>
@@ -56,18 +56,18 @@ export const BoardingPass: React.FC<BoardingPassProps> = ({ trip }) => {
           {/* Destination */}
           <div>
             <div className="text-zinc-500 text-[10px] font-mono mb-0.5">DESTINATION</div>
-            <div className="text-3xl font-display font-bold text-white uppercase tracking-wide leading-none">
+            <div className="text-3xl font-display font-bold text-zinc-900 uppercase tracking-wide leading-none">
               {trip.city}
             </div>
-            <div className="text-zinc-400 text-[10px] uppercase mt-1">{trip.country}</div>
+            <div className="text-zinc-600 text-[10px] uppercase mt-1">{trip.country}</div>
           </div>
 
           {/* Rating */}
           <div className="text-right">
-             <div className="text-zinc-600 text-[10px] font-mono uppercase mb-0.5">RATING</div>
+             <div className="text-zinc-500 text-[10px] font-mono uppercase mb-0.5">RATING</div>
              <div className="flex items-baseline justify-end gap-1">
-               <span className="text-white font-mono font-bold text-2xl">{trip.score}</span>
-               <span className="text-zinc-600 text-[10px]">/ 10</span>
+               <span className="text-zinc-900 font-mono font-bold text-2xl">{trip.score}</span>
+               <span className="text-zinc-500 text-[10px]">/ 10</span>
              </div>
           </div>
         </div>
@@ -75,15 +75,15 @@ export const BoardingPass: React.FC<BoardingPassProps> = ({ trip }) => {
 
       {/* Perforated Divider (Vertical) */}
       <div className="relative flex flex-col items-center justify-center h-full">
-         <div className="h-full w-[1px] border-l border-dashed border-zinc-700"></div>
+         <div className="h-full w-[1px] border-l border-dashed border-zinc-300"></div>
          {/* Notches */}
-         <div className="absolute top-[-6px] left-[-6px] w-3 h-3 bg-black rounded-full z-10"></div>
-         <div className="absolute bottom-[-6px] left-[-6px] w-3 h-3 bg-black rounded-full z-10"></div>
+         <div className="absolute top-[-6px] left-[-6px] w-3 h-3 bg-[var(--color-bg)] rounded-full z-10"></div>
+         <div className="absolute bottom-[-6px] left-[-6px] w-3 h-3 bg-[var(--color-bg)] rounded-full z-10"></div>
       </div>
 
       {/* Barcode Section (Stub) */}
-      <div className="bg-black/30 w-16 p-2 flex items-center justify-center">
-         <div className="text-white/20 h-full py-2">
+      <div className="bg-zinc-100 w-16 p-2 flex items-center justify-center">
+         <div className="text-zinc-300 h-full py-2">
            <Barcode />
          </div>
       </div>

@@ -113,11 +113,11 @@ function FlipChar({ char: target, delay, className = '' }: FlipCharProps) {
   }, [])
 
   return (
-    <div 
+    <span 
       className={`relative inline-block overflow-hidden h-[1.2em] w-[0.65em] align-top ${className}`}
       aria-hidden="true"
     >
-      <div 
+      <span 
         className="flex flex-col w-full transition-transform duration-50 ease-linear will-change-transform"
         style={{ 
           transform: isScrolling ? 'translateY(-50%)' : 'translateY(0%)',
@@ -125,14 +125,14 @@ function FlipChar({ char: target, delay, className = '' }: FlipCharProps) {
           // So sliding -50% of the 200% container moves to the second char.
         }}
       >
-        <div className="h-[1.2em] flex items-center justify-center leading-none">
+        <span className="h-[1.2em] flex items-center justify-center leading-none">
             {current === ' ' ? '\u00A0' : current}
-        </div>
-        <div className="h-[1.2em] flex items-center justify-center leading-none">
+        </span>
+        <span className="h-[1.2em] flex items-center justify-center leading-none">
             {next === ' ' ? '\u00A0' : next}
-        </div>
-      </div>
-    </div>
+        </span>
+      </span>
+    </span>
   )
 }
 

@@ -4,6 +4,8 @@ export interface ResumeJob {
   period: string
   summary: string | null
   details: string[]
+  ycBatch?: string
+  ycSlug?: string
 }
 
 export interface ResumeEducationItem {
@@ -30,3 +32,4 @@ export interface ResumeData {
   summary: string
   sections: ResumeSection[]
 }
+

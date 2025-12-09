@@ -65,7 +65,7 @@ function App() {
               <p>&copy; {new Date().getFullYear()}</p>
             </div>
             <div className="text-right">
-              <p>Designed & Engineered</p>
+              <p>Got the goods.</p>
             </div>
           </footer>
         </main>

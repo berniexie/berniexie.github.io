@@ -35,10 +35,11 @@ function ResumeSections({
 
         return (
           <div key={section.id} className="my-12">
-            <hr className="border-[var(--color-border)] my-0" />
+            {/* Gradient separator */}
+            <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[var(--color-border)] to-transparent opacity-60 mb-6" />
             <div
               id={section.id}
-              className="scroll-mt-24 py-4 border-b border-[var(--color-border)] mb-6 flex justify-between items-center"
+              className="scroll-mt-24 py-4 flex justify-between items-center"
             >
               <h2 className="mt-0 text-base md:text-lg font-semibold tracking-tight text-[var(--color-text)] font-display uppercase flex items-center gap-3">
                 {section.title}

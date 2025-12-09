@@ -76,9 +76,15 @@ export function GenreMixChart({
               paddingAngle={2}
               dataKey="value"
               isAnimationActive={false}
+              style={{ cursor: 'pointer' }}
             >
               {genrePieData.map((entry) => (
-                <Cell key={`cell-${entry.name}`} fill={GENRE_COLORS[entry.name] || '#808080'} />
+                <Cell
+                  key={`cell-${entry.name}`}
+                  fill={GENRE_COLORS[entry.name] || '#8A8A8A'}
+                  style={{ transition: 'opacity 0.2s ease', cursor: 'pointer' }}
+                  className="hover:opacity-80"
+                />
               ))}
             </Pie>
             <Tooltip

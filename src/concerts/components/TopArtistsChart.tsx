@@ -1,4 +1,4 @@
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from 'recharts'
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell, LabelList } from 'recharts'
 import type { ArtistStats } from '../types'
 
 interface ArtistTooltipProps {
@@ -46,23 +46,43 @@ function ArtistTooltip({ active, payload }: ArtistTooltipProps) {
   )
 }
 
-// Color gradient from warm to cool based on position
+// Custom label renderer for inside the bar
+function renderCustomLabel(props: { x?: number; y?: number; width?: number; height?: number; value?: string }) {
+  const { x = 0, y = 0, width = 0, height = 0, value } = props
+  if (width < 30) return null // Don't render if bar is too small
+  
+  return (
+    <text
+      x={x + 6}
+      y={y + height / 2}
+      fill="#ffffff"
+      fontSize={10}
+      fontWeight={500}
+      dominantBaseline="middle"
+      style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
+    >
+      {value}
+    </text>
+  )
+}
+
+// Color gradient from warm to cool based on position (balanced taupe-friendly palette)
 const BAR_COLORS = [
-  '#FF6B9D', // Pink (top)
-  '#FF7B8D',
-  '#FF8B7D',
-  '#FF9B6D',
-  '#FFAB5D',
-  '#FFBB4D',
-  '#E8C744',
-  '#C8D34A',
-  '#A8DF50',
-  '#88EB56',
-  '#68D77C',
-  '#58C3A2',
-  '#48AFC8',
-  '#389BEE',
-  '#8884d8', // Purple (bottom)
+  '#C87058', // Terracotta (top)
+  '#D08060',
+  '#D49068',
+  '#D8A070',
+  '#D4A870',
+  '#C8B070',
+  '#B0B870',
+  '#90B878',
+  '#70B888',
+  '#60B898',
+  '#58B0A0',
+  '#58A0A8',
+  '#5890B0',
+  '#5878B0',
+  '#5A68A0', // Slate Blue (bottom)
 ]
 
 interface TopArtistsChartProps {
@@ -73,13 +93,13 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
   if (topArtists.length === 0) return null
 
   return (
-    <div className="glass-card p-4 rounded-lg mt-8">
+    <div className="glass-card p-4 rounded-lg h-full">
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
         Most Seen Artists
       </h4>
-      <div className="h-[320px]">
+      <div className="h-[280px]">
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={topArtists} layout="vertical" margin={{ left: 0, right: 20 }}>
+          <BarChart data={topArtists} layout="vertical" margin={{ left: 10, right: 20 }}>
             <XAxis
               type="number"
               tick={{ fill: 'var(--color-text-muted)', fontSize: 10 }}
@@ -91,21 +111,23 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
             <YAxis
               type="category"
               dataKey="name"
-              tick={{ fill: 'var(--color-text)', fontSize: 11 }}
-              axisLine={false}
-              tickLine={false}
-              width={140}
-              interval={0}
+              hide={true}
             />
             <Tooltip
               content={<ArtistTooltip />}
               cursor={{ fill: 'var(--color-border)', opacity: 0.3 }}
               wrapperStyle={{ zIndex: 100 }}
             />
-            <Bar dataKey="count" radius={[0, 4, 4, 0]} maxBarSize={20} isAnimationActive={false}>
+            <Bar dataKey="count" radius={[4, 4, 4, 4]} barSize={18} isAnimationActive={false} style={{ cursor: 'pointer' }}>
               {topArtists.map((_, index) => (
-                <Cell key={`cell-${index}`} fill={BAR_COLORS[index % BAR_COLORS.length]} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={BAR_COLORS[index % BAR_COLORS.length]}
+                  style={{ transition: 'opacity 0.2s ease', cursor: 'pointer' }}
+                  className="hover:opacity-80"
+                />
               ))}
+              <LabelList dataKey="name" content={renderCustomLabel} />
             </Bar>
           </BarChart>
         </ResponsiveContainer>

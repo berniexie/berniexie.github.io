@@ -120,7 +120,8 @@ export function TasteEvolutionChart({
               dataKey="total"
               stroke="var(--color-text)"
               strokeWidth={2}
-              dot={{ r: 3 }}
+              dot={{ r: 3, fill: 'var(--color-text)', strokeWidth: 0 }}
+              activeDot={{ r: 5, fill: 'var(--color-text)', stroke: 'var(--color-bg)', strokeWidth: 2 }}
               name="Total"
               isAnimationActive={false}
             />
@@ -130,9 +131,10 @@ export function TasteEvolutionChart({
                 key={genre}
                 type="monotone"
                 dataKey={genre}
-                stroke={GENRE_COLORS[genre] || '#808080'}
+                stroke={GENRE_COLORS[genre] || '#8A8A8A'}
                 strokeWidth={1.5}
                 dot={false}
+                activeDot={{ r: 4, fill: GENRE_COLORS[genre] || '#8A8A8A', stroke: 'var(--color-bg)', strokeWidth: 2 }}
                 name={genre}
                 isAnimationActive={false}
               />

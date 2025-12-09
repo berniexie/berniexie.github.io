@@ -10,11 +10,11 @@ export function PerfectTensList({ topRated }: PerfectTensListProps) {
       <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
         Perfect 10s
       </h4>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-64 overflow-y-auto pr-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-72 overflow-y-auto pr-2">
         {topRated.map((concert, i) => (
           <div
             key={`${concert.artist}-${concert.date}-${i}`}
-            className="flex items-center justify-between gap-2 py-1.5 px-2 border border-[var(--color-border)] rounded"
+            className="flex items-center justify-between gap-2 py-1.5 px-2 border border-[var(--color-border)] rounded transition-all duration-200 hover:bg-[var(--color-bg-alt)] hover:border-[var(--color-text-muted)]"
           >
             <div className="min-w-0 flex-1">
               <p className="text-xs font-medium text-[var(--color-text)] truncate">

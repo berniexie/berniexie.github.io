@@ -13,7 +13,9 @@
       "title": "Work Experience",
       "jobs": [
         {
-          "company": "Kestral (YC X25)",
+          "company": "Kestral",
+          "ycBatch": "X25",
+          "ycSlug": "kestral",
           "title": "Co-Founder & CTO",
           "period": "April 2025 – Present",
           "summary": "Kestral aims to accelerate your entire product developement lifecycle with SOTA AI Agents.",

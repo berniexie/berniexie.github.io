@@ -1,5 +1,8 @@
+// import { Suspense, lazy } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import type { ResumeData } from '../types/resume'
+
+// const BedroomScene = lazy(() => import('./BedroomScene'))
 
 interface ProfileHeaderProps {
   name: string
@@ -14,11 +17,24 @@ function ProfileHeader({ name, contact, summary }: ProfileHeaderProps) {
         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-[var(--color-text)] font-display leading-[0.95] break-words">
           {name}
         </h1>
+        
+        {/* 3D Bedroom Scene - Large and Centered */}
+        {/* <div className="w-full h-[36rem] md:h-[48rem] mt-4 relative">
+          <Suspense
+            fallback={
+              <div className="w-full h-full flex items-center justify-center text-[var(--color-text-muted)] text-xs">
+                <span className="animate-pulse">Loading room...</span>
+              </div>
+            }
+          >
+            <BedroomScene />
+          </Suspense>
+        </div> */}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-xs text-[var(--color-text-muted)] font-body mb-4">
         <div className="flex flex-col gap-3">
-          <span className="text-[10px] uppercase tracking-widest opacity-40 font-semibold">
+          <span className="text-[10px] uppercase tracking-widest opacity-70 font-semibold">
             Contact
           </span>
           <div className="flex flex-col gap-2">
@@ -32,7 +48,7 @@ function ProfileHeader({ name, contact, summary }: ProfileHeaderProps) {
           </div>
         </div>
         <div className="flex flex-col gap-3">
-          <span className="text-[10px] uppercase tracking-widest opacity-40 font-semibold">
+          <span className="text-[10px] uppercase tracking-widest opacity-70 font-semibold">
             Social
           </span>
           <div className="flex flex-col gap-2">
@@ -56,7 +72,8 @@ function ProfileHeader({ name, contact, summary }: ProfileHeaderProps) {
         </div>
       </div>
 
-      <hr className="border-[var(--color-border)] my-0" />
+      {/* Gradient separator */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[var(--color-border)] to-transparent opacity-60" />
 
       <p className="text-[var(--color-text-muted)] leading-relaxed py-4 font-body text-xs md:text-sm max-w-2xl">
         {summary}
@@ -66,3 +83,4 @@ function ProfileHeader({ name, contact, summary }: ProfileHeaderProps) {
 }
 
 export default ProfileHeader
+

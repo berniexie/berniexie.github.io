@@ -119,7 +119,13 @@ export function RatingsScatterChart({ scatterData }: RatingsScatterChartProps) {
             />
             <Scatter name="Ratings" data={scatterDataWithColors} shape="circle" isAnimationActive={false}>
               {scatterDataWithColors.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} strokeWidth={0} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={entry.color}
+                  strokeWidth={0}
+                  style={{ transition: 'opacity 0.2s ease, transform 0.2s ease', cursor: 'pointer' }}
+                  className="hover:opacity-80"
+                />
               ))}
             </Scatter>
           </ScatterChart>

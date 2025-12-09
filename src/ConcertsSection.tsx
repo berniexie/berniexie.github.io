@@ -35,12 +35,12 @@ function ConcertsSection() {
           totalValidConcerts={stats.validConcerts.length}
         />
 
-        {/* Venues & Festivals Breakdown */}
-        <VenuesTreemap venueTreemapData={stats.venueTreemapData} />
+        {/* Most Seen Artists */}
+        <TopArtistsChart topArtists={stats.topArtists} />
       </div>
 
-      {/* Most Seen Artists (Full Width) */}
-      <TopArtistsChart topArtists={stats.topArtists} />
+      {/* Venues & Festivals Breakdown (Full Width) */}
+      <VenuesTreemap venueTreemapData={stats.venueTreemapData} />
 
       {/* All Ratings (Full Width) */}
       <RatingsScatterChart scatterData={stats.scatterData} />

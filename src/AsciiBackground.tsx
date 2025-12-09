@@ -78,8 +78,26 @@ const AsciiBackground = () => {
     const chars = ' ·+x*#'
     const interactionRadiusSq = 400 * 400 // Pre-compute squared radius to avoid sqrt
 
+    // Get theme colors from CSS variables
+    const computedStyle = getComputedStyle(document.documentElement)
+    const bgColor = computedStyle.getPropertyValue('--color-bg').trim() || '#f8f7f4'
+    const textColor = computedStyle.getPropertyValue('--color-text').trim() || '#1a1a1a'
+
+    // Parse text color to RGB for transparency support
+    const parseColor = (color: string): [number, number, number] => {
+      if (color.startsWith('#')) {
+        const hex = color.slice(1)
+        const r = parseInt(hex.slice(0, 2), 16)
+        const g = parseInt(hex.slice(2, 4), 16)
+        const b = parseInt(hex.slice(4, 6), 16)
+        return [r, g, b]
+      }
+      return [26, 26, 26] // fallback dark color
+    }
+    const [r, g, b] = parseColor(textColor)
+
     const draw = () => {
-      ctx.fillStyle = '#050505'
+      ctx.fillStyle = bgColor
       ctx.fillRect(0, 0, width, height)
 
       ctx.font = font
@@ -119,9 +137,9 @@ const AsciiBackground = () => {
           // Skip empty space for cleaner look
           if (char === ' ') continue
 
-          // Dynamic Coloring
-          const brightness = 0.04 + (charIndex / chars.length) * 0.1
-          ctx.fillStyle = `rgba(255, 255, 255, ${brightness})`
+          // Dynamic Coloring - use theme text color with very subtle transparency
+          const brightness = 0.02 + (charIndex / chars.length) * 0.04
+          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${brightness})`
 
           ctx.fillText(char, px, py)
         }
