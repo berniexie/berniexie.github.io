@@ -24,3 +24,4 @@ function EducationList({ items }: EducationListProps) {
 
 export default EducationList
 
+
