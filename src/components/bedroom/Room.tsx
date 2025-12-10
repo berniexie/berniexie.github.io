@@ -69,7 +69,7 @@ export function Room() {
       <Bed />
       <GamingDesk />
       <GamingChair />
-      <GolfBag />
+      <GolfBag position={[-2.2, 0, 2]} rotation={[0, 0.5, 0]} />
       <TennisEquipment />
       <DrumKit />
     </group>
