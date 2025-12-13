@@ -2,6 +2,7 @@ import { Expand, Minimize } from 'lucide-react'
 import { lazy, Suspense } from 'react'
 import type { ResumeSection } from '../types/resume'
 import EducationList from './EducationList'
+import RecentPosts from './RecentPosts'
 import WorkExperience from './WorkExperience'
 
 // Lazy load heavy components for better initial load performance
@@ -66,6 +67,9 @@ function ResumeSections({
             {section.jobs && <WorkExperience jobs={section.jobs} showDetails={showDetails} />}
 
             {section.items && <EducationList items={section.items} />}
+
+            {/* Inject Recent Posts after Education section */}
+            {section.id === 'education' && <RecentPosts />}
 
             {section.id === 'travels' && (
               <Suspense fallback={<SectionLoader />}>

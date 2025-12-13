@@ -15,18 +15,20 @@ function Sidebar({ sections, activeSection, onSectionClick }: SidebarProps) {
     setIsMenuOpen(false)
   }
 
-  const NavContent = () => (
-    <>
-      <div>
-        <div className="font-display font-bold text-xl tracking-tight mb-2">berniexie</div>
-        <div className="font-body text-xs text-[var(--color-text-muted)]">
-          Software Engineer
-          <br />
-          San Francisco, CA
+  const NavContent = () => {
+    const isBlogActive = activeSection === 'blog'
+    
+    return (
+      <>
+        <div>
+          <div className="font-display font-bold text-xl tracking-tight mb-2">berniexie</div>
+          <div className="font-body text-xs text-[var(--color-text-muted)]">
+            Software Engineer
+            <br />
+            San Francisco, CA
+          </div>
         </div>
-      </div>
 
-      {sections.length > 0 && (
         <nav>
           <ul className="flex flex-col gap-2">
             {sections.map((section) => {
@@ -48,14 +50,32 @@ function Sidebar({ sections, activeSection, onSectionClick }: SidebarProps) {
                     {isActive && <span className="w-1 h-1 rounded-full bg-[var(--color-text)]" />}
                     {section.title}
                   </a>
+                  {/* Blog link right after Education */}
+                  {section.id === 'education' && (
+                    <a
+                      href="#blog"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        handleNavClick('blog')
+                      }}
+                      className={`text-sm uppercase tracking-widest transition-colors duration-200 flex items-center gap-2 mt-2 ${
+                        isBlogActive
+                          ? 'text-[var(--color-text)] font-semibold'
+                          : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]'
+                      }`}
+                    >
+                      {isBlogActive && <span className="w-1 h-1 rounded-full bg-[var(--color-text)]" />}
+                      Blog
+                    </a>
+                  )}
                 </li>
               )
             })}
           </ul>
         </nav>
-      )}
-    </>
-  )
+      </>
+    )
+  }
 
   return (
     <>
@@ -127,7 +147,7 @@ function Sidebar({ sections, activeSection, onSectionClick }: SidebarProps) {
       </div>
 
       {/* Desktop Sidebar */}
-      <aside className="hidden xl:flex fixed left-16 top-24 w-48 h-fit flex-col gap-8">
+      <aside className="hidden xl:flex fixed left-16 top-24 w-48 h-fit flex-col gap-8 z-40">
         <NavContent />
       </aside>
     </>
