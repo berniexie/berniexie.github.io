@@ -7,7 +7,7 @@
 
 ---
 
-Full-stack engineer with 9 years of experience, including 2 founding engineer roles. Currently building AI-native products as Founding CTO at a YC-backed startup. Track record of shipping complex systems end-to-end, from architecture to deployment, while mentoring teams and driving technical strategy.
+Full-stack engineer with 9 years of experience. Currently building AI-native products as Founding CTO at a YC-backed startup. Track record of shipping complex systems end-to-end, from architecture to deployment, while mentoring teams and driving technical strategy.
 
 ---
 
