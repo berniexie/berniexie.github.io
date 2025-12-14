@@ -452,6 +452,18 @@
       "country": "USA",
       "coordinates": [39.0997, -94.5786],
       "score": 7.4
+    },
+    {
+      "city": "Hualien",
+      "country": "Taiwan",
+      "coordinates": [23.991, 121.6144],
+      "score": 8.3
+    },
+    {
+      "city": "Kenting",
+      "country": "Taiwan",
+      "coordinates": [21.9465, 120.7861],
+      "score": 9.6
     }
   ]
 }

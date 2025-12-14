@@ -226,7 +226,7 @@ export default function TravelGlobe() {
           // Day Earth texture (Blue Marble)
           globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
           showGlobe={true}
-          showAtmosphere={true}
+          showAtmosphere={false}
           // Country Polygons (highlight on hover)
           polygonsData={countries}
           polygonCapColor={polygonCapColor}
@@ -258,9 +258,6 @@ export default function TravelGlobe() {
           // Globe events
           onGlobeReady={handleGlobeReady}
           onZoom={handleInteraction}
-          // Atmosphere glow
-          atmosphereColor="rgba(20, 75, 166, 0.5)"
-          atmosphereAltitude={0.20}
         />
 
         {/* Hover tooltip */}
