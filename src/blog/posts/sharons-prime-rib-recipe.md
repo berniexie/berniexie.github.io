@@ -8,8 +8,6 @@ tags: ["recipe", "cooking", "prime-rib", "holiday"]
 draft: false
 ---
 
-# Prime Rib Au Jus
-
 **Prep time:** Day 1 - 25 min, Day 2 - 30 min  
 **Cook time:** Initial bake 2.5-3 hours, rest time 30-60 min, reverse sear 5-10 min
 
