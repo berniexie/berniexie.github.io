@@ -115,7 +115,7 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
         Most Seen Artists
       </h4>
       <div className="h-[280px]">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
           <BarChart data={topArtists} layout="vertical" margin={{ left: 10, right: 20 }}>
             <XAxis
               type="number"

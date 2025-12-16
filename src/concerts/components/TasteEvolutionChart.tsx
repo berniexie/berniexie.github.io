@@ -87,7 +87,7 @@ export function TasteEvolutionChart({
       </h4>
 
       <div className="h-64">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
           <LineChart data={yearsData}>
             <XAxis
               dataKey="year"

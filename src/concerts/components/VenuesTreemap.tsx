@@ -146,7 +146,7 @@ export function VenuesTreemap({ venueTreemapData }: VenuesTreemapProps) {
         </span>
       </div>
       <div className="h-80 md:h-96">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
           <Treemap
             data={venueTreemapData}
             dataKey="size"
