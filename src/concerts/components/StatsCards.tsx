@@ -53,7 +53,9 @@ export function StatsCards({ stats }: StatsCardsProps) {
           <FlipText delay={600}>{stats.topVenues[0]?.[0] || ''}</FlipText>
         </p>
         <p className="text-[10px] text-[var(--color-text-muted)]">
-          <FlipText delay={750}>{stats.topVenues[0] ? `${stats.topVenues[0][1]} shows` : ''}</FlipText>
+          <FlipText delay={750}>
+            {stats.topVenues[0] ? `${stats.topVenues[0][1]} shows` : ''}
+          </FlipText>
         </p>
       </div>
     </div>

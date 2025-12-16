@@ -144,4 +144,3 @@ export const TREEMAP_COLORS = {
   festival: '#5AAA78', // Jade Green
   venue: '#5A7AB0', // Steel Blue
 }
-

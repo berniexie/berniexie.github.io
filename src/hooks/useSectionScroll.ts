@@ -29,7 +29,7 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
 
         // Find the most visible section
         const visibleEntries = entries.filter((entry) => entry.isIntersecting)
-        
+
         if (visibleEntries.length > 0) {
           // Get the entry closest to the top of the viewport
           const topEntry = visibleEntries.reduce((prev, curr) => {
@@ -43,7 +43,7 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
       {
         rootMargin: '-100px 0px -50% 0px', // Trigger when section is in top half of viewport
         threshold: [0, 0.1, 0.5],
-      }
+      },
     )
 
     // Observe all section elements
@@ -92,4 +92,3 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
     handleSectionClick,
   }
 }
-

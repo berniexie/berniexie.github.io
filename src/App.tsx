@@ -10,10 +10,10 @@ function App() {
     <>
       <ScrollToTop />
       <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/blog" element={<BlogIndex />} />
-      <Route path="/blog/:slug" element={<BlogPost />} />
-    </Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogIndex />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+      </Routes>
     </>
   )
 }

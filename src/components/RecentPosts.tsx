@@ -29,11 +29,7 @@ function RecentPosts() {
 
       <div className="flex flex-col gap-6">
         {recentPosts.map((post) => (
-          <Link
-            key={post.slug}
-            to={`/blog/${post.slug}`}
-            className="group block"
-          >
+          <Link key={post.slug} to={`/blog/${post.slug}`} className="group block">
             <article className="glass-card rounded-lg p-4 transition-all">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">

@@ -17,7 +17,7 @@ function Sidebar({ sections, activeSection, onSectionClick }: SidebarProps) {
 
   const NavContent = () => {
     const isBlogActive = activeSection === 'blog'
-    
+
     return (
       <>
         <div>
@@ -64,7 +64,9 @@ function Sidebar({ sections, activeSection, onSectionClick }: SidebarProps) {
                           : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]'
                       }`}
                     >
-                      {isBlogActive && <span className="w-1 h-1 rounded-full bg-[var(--color-text)]" />}
+                      {isBlogActive && (
+                        <span className="w-1 h-1 rounded-full bg-[var(--color-text)]" />
+                      )}
                       Blog
                     </a>
                   )}

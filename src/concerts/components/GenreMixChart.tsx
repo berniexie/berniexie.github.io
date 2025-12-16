@@ -104,7 +104,17 @@ export function GenreMixChart({
                   .sort((a, b) => (b.payload?.value || 0) - (a.payload?.value || 0))
                   .slice(0, 10)
                 return (
-                  <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '8px 12px' }}>
+                  <ul
+                    style={{
+                      listStyle: 'none',
+                      margin: 0,
+                      padding: 0,
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      justifyContent: 'center',
+                      gap: '8px 12px',
+                    }}
+                  >
                     {sortedPayload.map((entry, index) => (
                       <li
                         key={`legend-${index}`}
@@ -137,4 +147,3 @@ export function GenreMixChart({
     </div>
   )
 }
-

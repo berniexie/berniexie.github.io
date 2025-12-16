@@ -4,15 +4,7 @@
     "date": "2016-04-02",
     "venue": "USC Springfest",
     "rating": 9,
-    "tags": [
-      "edm",
-      "future-bass",
-      "dj",
-      "us",
-      "electronic",
-      "city:los-angeles",
-      "venue:usc"
-    ]
+    "tags": ["edm", "future-bass", "dj", "us", "electronic", "city:los-angeles", "venue:usc"]
   },
   {
     "artist": "Jack U",
@@ -338,14 +330,6 @@
     "date": "2016-11-15",
     "venue": "1015 Folsom",
     "rating": 9.8,
-    "tags": [
-      "hip-hop",
-      "rap",
-      "solo",
-      "us",
-      "english",
-      "city:san-francisco",
-      "venue:1015-folsom"
-    ]
+    "tags": ["hip-hop", "rap", "solo", "us", "english", "city:san-francisco", "venue:1015-folsom"]
   }
 ]

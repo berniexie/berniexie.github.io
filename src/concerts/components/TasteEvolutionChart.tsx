@@ -1,12 +1,4 @@
-import {
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  LineChart,
-  Line,
-  Legend,
-} from 'recharts'
+import { XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, Legend } from 'recharts'
 import type { Concert, LineTooltipPayload, YearData } from '../types'
 import { GENRE_COLORS } from '../constants'
 
@@ -121,7 +113,12 @@ export function TasteEvolutionChart({
               stroke="var(--color-text)"
               strokeWidth={2}
               dot={{ r: 3, fill: 'var(--color-text)', strokeWidth: 0 }}
-              activeDot={{ r: 5, fill: 'var(--color-text)', stroke: 'var(--color-bg)', strokeWidth: 2 }}
+              activeDot={{
+                r: 5,
+                fill: 'var(--color-text)',
+                stroke: 'var(--color-bg)',
+                strokeWidth: 2,
+              }}
               name="Total"
               isAnimationActive={false}
             />
@@ -134,7 +131,12 @@ export function TasteEvolutionChart({
                 stroke={GENRE_COLORS[genre] || '#8A8A8A'}
                 strokeWidth={1.5}
                 dot={false}
-                activeDot={{ r: 4, fill: GENRE_COLORS[genre] || '#8A8A8A', stroke: 'var(--color-bg)', strokeWidth: 2 }}
+                activeDot={{
+                  r: 4,
+                  fill: GENRE_COLORS[genre] || '#8A8A8A',
+                  stroke: 'var(--color-bg)',
+                  strokeWidth: 2,
+                }}
                 name={genre}
                 isAnimationActive={false}
               />
@@ -145,4 +147,3 @@ export function TasteEvolutionChart({
     </div>
   )
 }
-

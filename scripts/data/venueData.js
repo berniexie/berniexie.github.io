@@ -106,7 +106,12 @@ const venueTags = {
 const festivalGuesses = [
   {
     match: 'beyond wonderland',
-    tags: ['festival', 'festival:beyond-wonderland', 'city:san-bernardino', 'venue:nos-events-center'],
+    tags: [
+      'festival',
+      'festival:beyond-wonderland',
+      'city:san-bernardino',
+      'venue:nos-events-center',
+    ],
   },
   { match: 'coachella', tags: ['festival', 'festival:coachella', 'city:indio', 'venue:coachella'] },
   {

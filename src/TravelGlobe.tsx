@@ -180,14 +180,14 @@ export default function TravelGlobe() {
   // Memoized callback props for Globe to prevent unnecessary re-renders
   const polygonCapColor = useCallback(
     (d: object) => (isCountryHovered(d) ? 'rgba(15, 118, 110, 0.2)' : 'rgba(0, 0, 0, 0)'),
-    [isCountryHovered]
+    [isCountryHovered],
   )
 
   const polygonSideColor = useCallback(() => 'rgba(0, 0, 0, 0)', [])
 
   const polygonStrokeColor = useCallback(
     (d: object) => (isCountryHovered(d) ? 'rgba(15, 118, 110, 0.6)' : 'rgba(0, 0, 0, 0.1)'),
-    [isCountryHovered]
+    [isCountryHovered],
   )
 
   const pointLat = useCallback((d: object) => (d as Trip).coordinates[0], [])
@@ -199,15 +199,12 @@ export default function TravelGlobe() {
   const arcEndLng = useCallback((d: object) => (d as Arc).endLng, [])
   const arcColor = useCallback(() => ['rgba(20, 184, 166, 0.9)', 'rgba(15, 118, 110, 0.4)'], [])
 
-  const handlePointHover = useCallback(
-    (point: object | null) => {
-      setHoveredTrip(point as Trip | null)
-      if (containerRef.current) {
-        containerRef.current.style.cursor = point ? 'pointer' : 'grab'
-      }
-    },
-    []
-  )
+  const handlePointHover = useCallback((point: object | null) => {
+    setHoveredTrip(point as Trip | null)
+    if (containerRef.current) {
+      containerRef.current.style.cursor = point ? 'pointer' : 'grab'
+    }
+  }, [])
 
   const handleGlobeReady = useCallback(() => setGlobeReady(true), [])
 

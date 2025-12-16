@@ -28,11 +28,11 @@ interface FlipCharProps {
 function FlipChar({ char: target, delay, className = '' }: FlipCharProps) {
   const charSet = getCharSet(target)
   const startChar = getStartChar(charSet)
-  
+
   const [current, setCurrent] = useState(startChar)
   const [next, setNext] = useState(startChar)
   const [isScrolling, setIsScrolling] = useState(false)
-  
+
   const currentRef = useRef(startChar)
   const targetRef = useRef(target)
   const charSetRef = useRef(charSet)
@@ -51,7 +51,7 @@ function FlipChar({ char: target, delay, className = '' }: FlipCharProps) {
   useEffect(() => {
     targetRef.current = target
     charSetRef.current = getCharSet(target)
-    
+
     // If we're not animating, check if we need to start
     if (!isAnimatingRef.current && currentRef.current !== target) {
       // Add initial delay only if we are starting a new sequence from rest
@@ -95,11 +95,11 @@ function FlipChar({ char: target, delay, className = '' }: FlipCharProps) {
       setIsScrolling(false)
 
       // Schedule next step
-      // Using requestAnimationFrame to ensure the 'isScrolling: false' 
+      // Using requestAnimationFrame to ensure the 'isScrolling: false'
       // has processed and DOM has reset transform before we start next slide
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-            loop()
+          loop()
         })
       })
     }, 25) // 25ms per character step (faster flipping)
@@ -113,23 +113,23 @@ function FlipChar({ char: target, delay, className = '' }: FlipCharProps) {
   }, [])
 
   return (
-    <span 
+    <span
       className={`relative inline-block overflow-hidden h-[1.2em] w-[0.65em] align-top ${className}`}
       aria-hidden="true"
     >
-      <span 
+      <span
         className="flex flex-col w-full transition-transform duration-50 ease-linear will-change-transform"
-        style={{ 
+        style={{
           transform: isScrolling ? 'translateY(-50%)' : 'translateY(0%)',
-          // Note: We stack 2 chars. Each is 100% height. 
+          // Note: We stack 2 chars. Each is 100% height.
           // So sliding -50% of the 200% container moves to the second char.
         }}
       >
         <span className="h-[1.2em] flex items-center justify-center leading-none">
-            {current === ' ' ? '\u00A0' : current}
+          {current === ' ' ? '\u00A0' : current}
         </span>
         <span className="h-[1.2em] flex items-center justify-center leading-none">
-            {next === ' ' ? '\u00A0' : next}
+          {next === ' ' ? '\u00A0' : next}
         </span>
       </span>
     </span>
@@ -145,14 +145,14 @@ interface FlipTextProps {
 export function FlipText({ children, className = '', delay = 0 }: FlipTextProps) {
   // Use a fixed array mapping if possible, but splitting children works
   const chars = children.split('')
-  
+
   // We wrap in a generic span for the semantic text
   return (
     <span className={`inline-flex ${className}`} aria-label={children}>
       {chars.map((char, index) => (
-        <FlipChar 
-          key={index} 
-          char={char} 
+        <FlipChar
+          key={index}
+          char={char}
           delay={delay} // No stagger, all start at base delay
         />
       ))}

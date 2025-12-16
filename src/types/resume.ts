@@ -32,4 +32,3 @@ export interface ResumeData {
   summary: string
   sections: ResumeSection[]
 }
-

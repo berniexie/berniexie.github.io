@@ -4,27 +4,13 @@
     "date": "2020-01-05",
     "venue": "The Fillmore",
     "rating": 8,
-    "tags": [
-      "soul-pop",
-      "band",
-      "us",
-      "english",
-      "city:san-francisco",
-      "venue:the-fillmore"
-    ]
+    "tags": ["soul-pop", "band", "us", "english", "city:san-francisco", "venue:the-fillmore"]
   },
   {
     "artist": "Saint Motel",
     "date": "2020-01-06",
     "venue": "Regency Ballroom",
     "rating": 8.5,
-    "tags": [
-      "indie-pop",
-      "band",
-      "us",
-      "english",
-      "city:san-francisco",
-      "venue:regency-ballroom"
-    ]
+    "tags": ["indie-pop", "band", "us", "english", "city:san-francisco", "venue:regency-ballroom"]
   }
 ]

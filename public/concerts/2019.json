@@ -337,29 +337,14 @@
     "date": "2019-05-18",
     "venue": "Mezzanine",
     "rating": 5,
-    "tags": [
-      "indie-pop",
-      "band",
-      "australia",
-      "english",
-      "city:san-francisco",
-      "venue:mezzanine"
-    ]
+    "tags": ["indie-pop", "band", "australia", "english", "city:san-francisco", "venue:mezzanine"]
   },
   {
     "artist": "FRENSHIP",
     "date": "2019-05-18",
     "venue": "Mezzanine",
     "rating": 6,
-    "tags": [
-      "pop",
-      "indie-pop",
-      "duo",
-      "us",
-      "english",
-      "city:san-francisco",
-      "venue:mezzanine"
-    ]
+    "tags": ["pop", "indie-pop", "duo", "us", "english", "city:san-francisco", "venue:mezzanine"]
   },
   {
     "artist": "Higher Brothers",
@@ -1043,60 +1028,28 @@
     "date": "2019-10-13",
     "venue": "Chase Center",
     "rating": 7.5,
-    "tags": [
-      "hip-hop",
-      "rap",
-      "solo",
-      "us",
-      "english",
-      "city:san-francisco",
-      "venue:chase-center"
-    ]
+    "tags": ["hip-hop", "rap", "solo", "us", "english", "city:san-francisco", "venue:chase-center"]
   },
   {
     "artist": "JID",
     "date": "2019-10-13",
     "venue": "Chase Center",
     "rating": 6,
-    "tags": [
-      "hip-hop",
-      "rap",
-      "solo",
-      "us",
-      "english",
-      "city:san-francisco",
-      "venue:chase-center"
-    ]
+    "tags": ["hip-hop", "rap", "solo", "us", "english", "city:san-francisco", "venue:chase-center"]
   },
   {
     "artist": "Logic",
     "date": "2019-10-13",
     "venue": "Chase Center",
     "rating": 7,
-    "tags": [
-      "hip-hop",
-      "rap",
-      "solo",
-      "us",
-      "english",
-      "city:san-francisco",
-      "venue:chase-center"
-    ]
+    "tags": ["hip-hop", "rap", "solo", "us", "english", "city:san-francisco", "venue:chase-center"]
   },
   {
     "artist": "Gryffin",
     "date": "2019-10-19",
     "venue": "SJSU",
     "rating": 9,
-    "tags": [
-      "edm",
-      "melodic-house",
-      "dj",
-      "us",
-      "electronic",
-      "city:san-jose",
-      "venue:sjsu"
-    ]
+    "tags": ["edm", "melodic-house", "dj", "us", "electronic", "city:san-jose", "venue:sjsu"]
   },
   {
     "artist": "Gesaffelstein",
@@ -1133,15 +1086,7 @@
     "date": "2019-11-22",
     "venue": "Terminal 5 - NYC",
     "rating": 6.5,
-    "tags": [
-      "edm",
-      "future-bass",
-      "duo",
-      "us",
-      "electronic",
-      "city:new-york",
-      "venue:terminal-5"
-    ]
+    "tags": ["edm", "future-bass", "duo", "us", "electronic", "city:new-york", "venue:terminal-5"]
   },
   {
     "artist": "Dreamcatcher",

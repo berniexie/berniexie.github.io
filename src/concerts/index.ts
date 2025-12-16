@@ -18,6 +18,3 @@ export { VenuesTreemap } from './components/VenuesTreemap'
 export { RatingsScatterChart } from './components/RatingsScatterChart'
 export { PerfectTensList } from './components/PerfectTensList'
 export { TopArtistsChart } from './components/TopArtistsChart'
-
-
-

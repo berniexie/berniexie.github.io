@@ -15,9 +15,7 @@ function PageLayout({ children, showDownloadButton = false }: PageLayoutProps) {
       {/* Main Layout - Centered */}
       <div className="max-w-4xl mx-auto px-6 py-8 md:py-16">
         {/* Content Area */}
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
 
         <footer className="mt-16 pt-8 border-t border-[var(--color-border)] flex justify-between items-end text-xs text-[var(--color-text-muted)]">
           <div>

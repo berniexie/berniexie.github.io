@@ -85,4 +85,3 @@ export interface GenrePieItem {
   value: number
   [key: string]: string | number
 }
-

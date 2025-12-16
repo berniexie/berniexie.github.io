@@ -24,11 +24,7 @@ interface ResumeSectionsProps {
   onToggleDetails: () => void
 }
 
-function ResumeSections({
-  sections,
-  showDetails,
-  onToggleDetails,
-}: ResumeSectionsProps) {
+function ResumeSections({ sections, showDetails, onToggleDetails }: ResumeSectionsProps) {
   return (
     <>
       {sections.map((section) => {
@@ -38,10 +34,7 @@ function ResumeSections({
           <div key={section.id} className="my-12">
             {/* Gradient separator */}
             <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[var(--color-border)] to-transparent opacity-60 mb-6" />
-            <div
-              id={section.id}
-              className="scroll-mt-24 py-4 flex justify-between items-center"
-            >
+            <div id={section.id} className="scroll-mt-24 py-4 flex justify-between items-center">
               <h2 className="mt-0 text-base md:text-lg font-semibold tracking-tight text-[var(--color-text)] font-display uppercase flex items-center gap-3">
                 {section.title}
               </h2>
@@ -90,4 +83,3 @@ function ResumeSections({
 }
 
 export default ResumeSections
-

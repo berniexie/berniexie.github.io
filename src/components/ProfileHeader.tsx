@@ -17,7 +17,7 @@ function ProfileHeader({ name, contact, summary }: ProfileHeaderProps) {
         <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-[var(--color-text)] font-display leading-[0.95] break-words">
           {name}
         </h1>
-        
+
         {/* 3D Bedroom Scene - Large and Centered */}
         {/* <div className="w-full h-[36rem] md:h-[48rem] mt-4 relative">
           <Suspense
@@ -83,4 +83,3 @@ function ProfileHeader({ name, contact, summary }: ProfileHeaderProps) {
 }
 
 export default ProfileHeader
-

@@ -137,17 +137,11 @@ export function VenuesTreemap({ venueTreemapData }: VenuesTreemapProps) {
       </h4>
       <div className="flex gap-4 mb-3">
         <span className="flex items-center gap-1.5 text-[10px] text-[var(--color-text-muted)]">
-          <span
-            className="w-2 h-2 rounded-sm"
-            style={{ backgroundColor: COLORS.venue.base }}
-          />
+          <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: COLORS.venue.base }} />
           Venues
         </span>
         <span className="flex items-center gap-1.5 text-[10px] text-[var(--color-text-muted)]">
-          <span
-            className="w-2 h-2 rounded-sm"
-            style={{ backgroundColor: COLORS.festival.base }}
-          />
+          <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: COLORS.festival.base }} />
           Festivals
         </span>
       </div>

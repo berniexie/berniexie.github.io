@@ -1,7 +1,11 @@
 import type { BlogPost, BlogPostMeta } from './types'
 
 // Import all markdown files from the posts directory at build time
-const postFiles = import.meta.glob('./posts/*.md', { eager: true, query: '?raw', import: 'default' })
+const postFiles = import.meta.glob('./posts/*.md', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+})
 
 /**
  * Simple browser-compatible frontmatter parser
@@ -10,26 +14,26 @@ const postFiles = import.meta.glob('./posts/*.md', { eager: true, query: '?raw',
 function parseFrontmatter(raw: string): { data: Record<string, unknown>; content: string } {
   const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/
   const match = raw.match(frontmatterRegex)
-  
+
   if (!match) {
     return { data: {}, content: raw }
   }
-  
+
   const [, frontmatter, content] = match
   const data: Record<string, unknown> = {}
-  
+
   // Parse simple YAML (key: value pairs and arrays)
   const lines = frontmatter.split('\n')
   for (const line of lines) {
     const trimmed = line.trim()
     if (!trimmed || trimmed.startsWith('#')) continue
-    
+
     const colonIndex = trimmed.indexOf(':')
     if (colonIndex === -1) continue
-    
+
     const key = trimmed.slice(0, colonIndex).trim()
     let value: unknown = trimmed.slice(colonIndex + 1).trim()
-    
+
     // Remove quotes if present
     if ((value as string).startsWith('"') && (value as string).endsWith('"')) {
       value = (value as string).slice(1, -1)
@@ -50,28 +54,26 @@ function parseFrontmatter(raw: string): { data: Record<string, unknown>; content
     } else if (value === 'false') {
       value = false
     }
-    
+
     data[key] = value
   }
-  
+
   return { data, content }
 }
 
 function parsePost(filename: string, raw: string): BlogPost | null {
   const { data, content } = parseFrontmatter(raw)
-  
+
   // Derive slug from frontmatter or filename
-  const filenameSlug = filename
-    .replace('./posts/', '')
-    .replace('.md', '')
-  
+  const filenameSlug = filename.replace('./posts/', '').replace('.md', '')
+
   const slug = (data.slug as string) || filenameSlug
-  
+
   // Skip drafts in production
   if (data.draft && import.meta.env.PROD) {
     return null
   }
-  
+
   return {
     title: (data.title as string) || 'Untitled',
     slug,

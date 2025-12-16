@@ -98,10 +98,7 @@ function InterestsSection() {
     <div className="py-6">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         {interests.map((item, index) => (
-          <div
-            key={item.label}
-            className="glass-card group flex flex-col gap-2 p-3 rounded-lg"
-          >
+          <div key={item.label} className="glass-card group flex flex-col gap-2 p-3 rounded-lg">
             <div className="flex items-center gap-2">
               <item.icon
                 size={12}

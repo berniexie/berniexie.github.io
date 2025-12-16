@@ -22,17 +22,11 @@ function BlogIndex() {
       </h1>
 
       {posts.length === 0 ? (
-        <p className="text-[var(--color-text-muted)] font-body">
-          No posts yet. Check back soon!
-        </p>
+        <p className="text-[var(--color-text-muted)] font-body">No posts yet. Check back soon!</p>
       ) : (
         <div className="flex flex-col gap-6">
           {posts.map((post) => (
-            <Link
-              key={post.slug}
-              to={`/blog/${post.slug}`}
-              className="group block"
-            >
+            <Link key={post.slug} to={`/blog/${post.slug}`} className="group block">
               <article className="glass-card rounded-lg p-5 transition-all">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">

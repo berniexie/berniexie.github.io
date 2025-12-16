@@ -83,13 +83,13 @@ Keep artist names **consistent** across entries. The tagging script uses exact s
 
 ### Common Patterns
 
-| Pattern             | Example                            |
-| ------------------- | ---------------------------------- |
-| Solo artist         | `IU`, `Stromae`                    |
-| Group               | `Blackpink`, `Seventeen`           |
-| DJ back-to-back     | `DJ Snake B2B Malaa`               |
-| Collaboration       | `Four tet, Fred Again..., Skrillex`|
-| Featured artists    | `Jay Park feat. Sik-k & ph-1`      |
+| Pattern          | Example                             |
+| ---------------- | ----------------------------------- |
+| Solo artist      | `IU`, `Stromae`                     |
+| Group            | `Blackpink`, `Seventeen`            |
+| DJ back-to-back  | `DJ Snake B2B Malaa`                |
+| Collaboration    | `Four tet, Fred Again..., Skrillex` |
+| Featured artists | `Jay Park feat. Sik-k & ph-1`       |
 
 ## Tag Categories
 
@@ -108,12 +108,12 @@ Tags are automatically generated from `artistTags.js` and `venueData.js`.
 
 ### Venue Tags
 
-| Category | Format              | Example                     |
-| -------- | ------------------- | --------------------------- |
-| City     | `city:city-name`    | `city:san-francisco`        |
-| Venue    | `venue:venue-slug`  | `venue:bill-graham-civic-auditorium` |
-| Festival | `festival:name`     | `festival:coachella`        |
-| Type     | `festival`          | Added for all festival sets |
+| Category | Format             | Example                              |
+| -------- | ------------------ | ------------------------------------ |
+| City     | `city:city-name`   | `city:san-francisco`                 |
+| Venue    | `venue:venue-slug` | `venue:bill-graham-civic-auditorium` |
+| Festival | `festival:name`    | `festival:coachella`                 |
+| Type     | `festival`         | Added for all festival sets          |
 
 ## Tagging Script
 
@@ -129,6 +129,7 @@ node scripts/tag-concerts.js
 ```
 
 Output:
+
 ```
 2019: 71 concerts tagged
 2020: 2 concerts tagged
@@ -138,7 +139,7 @@ Total concerts tagged: 196
 
 ## Handling Unknown Artists
 
-If an artist isn't in `artistTags.js`, they'll get tagged with `['unknown']`. 
+If an artist isn't in `artistTags.js`, they'll get tagged with `['unknown']`.
 Check the console or search for `"unknown"` in the JSON files to find untagged artists.
 
 ## Tips

@@ -117,7 +117,8 @@ const AsciiBackground = () => {
           const distSq = dx * dx + dy * dy
 
           // Skip expensive calculations for cells far from mouse
-          const interaction = distSq < interactionRadiusSq ? Math.max(0, 1 - Math.sqrt(distSq) / 400) : 0
+          const interaction =
+            distSq < interactionRadiusSq ? Math.max(0, 1 - Math.sqrt(distSq) / 400) : 0
 
           // Use lookup tables for trig functions
           const scale = 0.05

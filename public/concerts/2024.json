@@ -4,15 +4,7 @@
     "date": "2024-05-25",
     "venue": "ABBA Theatre",
     "rating": 9,
-    "tags": [
-      "pop",
-      "disco",
-      "group",
-      "sweden",
-      "english",
-      "city:london",
-      "venue:abba-theatre"
-    ]
+    "tags": ["pop", "disco", "group", "sweden", "english", "city:london", "venue:abba-theatre"]
   },
   {
     "artist": "Blu DeTiger",
@@ -49,28 +41,14 @@
     "date": "2024-06-15",
     "venue": "Sofi Stadium",
     "rating": 7.5,
-    "tags": [
-      "country",
-      "solo",
-      "us",
-      "english",
-      "city:inglewood",
-      "venue:sofi-stadium"
-    ]
+    "tags": ["country", "solo", "us", "english", "city:inglewood", "venue:sofi-stadium"]
   },
   {
     "artist": "Luke Combs",
     "date": "2024-06-15",
     "venue": "Sofi Stadium",
     "rating": 8.5,
-    "tags": [
-      "country",
-      "solo",
-      "us",
-      "english",
-      "city:inglewood",
-      "venue:sofi-stadium"
-    ]
+    "tags": ["country", "solo", "us", "english", "city:inglewood", "venue:sofi-stadium"]
   },
   {
     "artist": "Cosmos Midnight",
@@ -108,15 +86,7 @@
     "date": "2024-08-30",
     "venue": "Red Rocks Ampitheatre",
     "rating": 6.5,
-    "tags": [
-      "edm",
-      "midtempo",
-      "dj",
-      "canada",
-      "electronic",
-      "city:morrison",
-      "venue:red-rocks"
-    ]
+    "tags": ["edm", "midtempo", "dj", "canada", "electronic", "city:morrison", "venue:red-rocks"]
   },
   {
     "artist": "Dan + Shay",

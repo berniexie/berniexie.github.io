@@ -3,7 +3,9 @@ import type { Concert, ConcertStats, ConcertWithTimestamp, ArtistStats } from '.
 import { getPrimaryGenre } from '../utils'
 
 // Years with concert data - add new years here as needed
-const CONCERT_YEARS = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
+const CONCERT_YEARS = [
+  2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025,
+]
 
 export function useConcertsData() {
   const [concerts, setConcerts] = useState<Concert[]>([])
@@ -11,11 +13,12 @@ export function useConcertsData() {
   useEffect(() => {
     // Fetch all yearly concert files and combine them
     Promise.all(
-      CONCERT_YEARS.map((year) =>
-        fetch(`/concerts/${year}.json`)
-          .then((res) => res.json())
-          .catch(() => []) // Return empty array if year file doesn't exist
-      )
+      CONCERT_YEARS.map(
+        (year) =>
+          fetch(`/concerts/${year}.json`)
+            .then((res) => res.json())
+            .catch(() => []), // Return empty array if year file doesn't exist
+      ),
     )
       .then((yearlyData) => {
         const allConcerts = yearlyData.flat()
@@ -27,7 +30,7 @@ export function useConcertsData() {
   // Base filtered concerts - most other computations depend on this
   const validConcerts = useMemo(
     () => concerts.filter((c) => c.rating !== null && c.status !== 'cancelled'),
-    [concerts]
+    [concerts],
   )
 
   // Genre computations
@@ -82,7 +85,7 @@ export function useConcertsData() {
       .map((year) => {
         const yearConcerts = byYear[year] || []
         const yearConcertsValid = yearConcerts.filter(
-          (c) => c.rating !== null && c.status !== 'cancelled'
+          (c) => c.rating !== null && c.status !== 'cancelled',
         )
 
         // Count primary genres for this year
@@ -207,9 +210,10 @@ export function useConcertsData() {
     return Object.entries(artistConcerts)
       .map(([name, concerts]) => {
         const ratings = concerts.filter((c) => c.rating !== null).map((c) => c.rating!)
-        const avgRating = ratings.length > 0 ? ratings.reduce((a, b) => a + b, 0) / ratings.length : 0
+        const avgRating =
+          ratings.length > 0 ? ratings.reduce((a, b) => a + b, 0) / ratings.length : 0
         const sortedByDate = [...concerts].sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
         )
         return {
           name,

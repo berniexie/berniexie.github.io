@@ -19,15 +19,7 @@
     "date": "2023-03-19",
     "venue": "The Warfield",
     "rating": 8.5,
-    "tags": [
-      "alt-rnb",
-      "pop",
-      "duo",
-      "us",
-      "english",
-      "city:san-francisco",
-      "venue:the-warfield"
-    ]
+    "tags": ["alt-rnb", "pop", "duo", "us", "english", "city:san-francisco", "venue:the-warfield"]
   },
   {
     "artist": "Malaa",

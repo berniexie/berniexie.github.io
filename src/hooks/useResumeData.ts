@@ -20,5 +20,3 @@ export function useResumeData() {
 
   return { resumeData, isLoading }
 }
-
-

@@ -1,4 +1,13 @@
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell, LabelList } from 'recharts'
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Cell,
+  LabelList,
+} from 'recharts'
 import type { ArtistStats } from '../types'
 
 interface ArtistTooltipProps {
@@ -26,7 +35,9 @@ function ArtistTooltip({ active, payload }: ArtistTooltipProps) {
       </p>
       <p className="text-xs text-[var(--color-text-muted)]">
         Avg rating:{' '}
-        <span className="font-semibold text-[var(--color-text)]">{artist.avgRating.toFixed(1)}</span>
+        <span className="font-semibold text-[var(--color-text)]">
+          {artist.avgRating.toFixed(1)}
+        </span>
       </p>
       <p className="text-xs text-[var(--color-text-muted)]">Last seen: {lastSeenDate}</p>
 
@@ -47,10 +58,16 @@ function ArtistTooltip({ active, payload }: ArtistTooltipProps) {
 }
 
 // Custom label renderer for inside the bar
-function renderCustomLabel(props: { x?: number; y?: number; width?: number; height?: number; value?: string }) {
+function renderCustomLabel(props: {
+  x?: number
+  y?: number
+  width?: number
+  height?: number
+  value?: string
+}) {
   const { x = 0, y = 0, width = 0, height = 0, value } = props
   if (width < 30) return null // Don't render if bar is too small
-  
+
   return (
     <text
       x={x + 6}
@@ -108,17 +125,19 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
               allowDecimals={false}
               domain={[0, 6]}
             />
-            <YAxis
-              type="category"
-              dataKey="name"
-              hide={true}
-            />
+            <YAxis type="category" dataKey="name" hide={true} />
             <Tooltip
               content={<ArtistTooltip />}
               cursor={{ fill: 'var(--color-border)', opacity: 0.3 }}
               wrapperStyle={{ zIndex: 100 }}
             />
-            <Bar dataKey="count" radius={[4, 4, 4, 4]} barSize={18} isAnimationActive={false} style={{ cursor: 'pointer' }}>
+            <Bar
+              dataKey="count"
+              radius={[4, 4, 4, 4]}
+              barSize={18}
+              isAnimationActive={false}
+              style={{ cursor: 'pointer' }}
+            >
               {topArtists.map((_, index) => (
                 <Cell
                   key={`cell-${index}`}
@@ -135,4 +154,3 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
     </div>
   )
 }
-

@@ -12,14 +12,8 @@ function YCBadge({ batch, companySlug }: { batch: string; companySlug: string })
       title={`Y Combinator ${batch}`}
       onClick={(e) => e.stopPropagation()}
     >
-      <img
-        src="/yc-logo.svg"
-        alt="Y Combinator"
-        className="w-4 h-4 rounded-sm"
-      />
-      <span className="text-[10px] font-mono text-[#F26522] font-bold">
-        {batch}
-      </span>
+      <img src="/yc-logo.svg" alt="Y Combinator" className="w-4 h-4 rounded-sm" />
+      <span className="text-[10px] font-mono text-[#F26522] font-bold">{batch}</span>
     </a>
   )
 }
@@ -75,8 +69,7 @@ function JobItem({ job, isExpanded, onToggle }: JobItemProps) {
             <strong className="text-[var(--color-text)] font-medium group-hover:text-[var(--color-accent)] transition-colors duration-300">
               {job.title}
             </strong>
-            |
-            <span className="font-mono opacity-80">{job.period}</span>
+            |<span className="font-mono opacity-80">{job.period}</span>
           </div>
         </div>
       </button>

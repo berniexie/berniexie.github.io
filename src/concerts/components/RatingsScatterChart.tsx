@@ -79,7 +79,7 @@ export function RatingsScatterChart({ scatterData }: RatingsScatterChartProps) {
         ...entry,
         color: getRatingColor(entry.rating || 0),
       })),
-    [scatterData]
+    [scatterData],
   )
 
   return (
@@ -117,13 +117,21 @@ export function RatingsScatterChart({ scatterData }: RatingsScatterChartProps) {
               wrapperStyle={{ zIndex: 100 }}
               cursor={{ strokeDasharray: '3 3' }}
             />
-            <Scatter name="Ratings" data={scatterDataWithColors} shape="circle" isAnimationActive={false}>
+            <Scatter
+              name="Ratings"
+              data={scatterDataWithColors}
+              shape="circle"
+              isAnimationActive={false}
+            >
               {scatterDataWithColors.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={entry.color}
                   strokeWidth={0}
-                  style={{ transition: 'opacity 0.2s ease, transform 0.2s ease', cursor: 'pointer' }}
+                  style={{
+                    transition: 'opacity 0.2s ease, transform 0.2s ease',
+                    cursor: 'pointer',
+                  }}
                   className="hover:opacity-80"
                 />
               ))}

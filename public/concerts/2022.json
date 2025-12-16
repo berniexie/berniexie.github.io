@@ -658,15 +658,7 @@
     "date": "2022-09-17",
     "venue": "Chase Center",
     "rating": 9,
-    "tags": [
-      "edm",
-      "house",
-      "dj",
-      "us",
-      "electronic",
-      "city:san-francisco",
-      "venue:chase-center"
-    ]
+    "tags": ["edm", "house", "dj", "us", "electronic", "city:san-francisco", "venue:chase-center"]
   },
   {
     "artist": "Swedish House Mafia",
