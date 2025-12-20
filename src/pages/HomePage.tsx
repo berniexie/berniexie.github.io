@@ -3,16 +3,24 @@ import InterestsSection from '../InterestsSection'
 import PageLayout from '../components/PageLayout'
 import ProfileHeader from '../components/ProfileHeader'
 import ResumeSections from '../components/ResumeSections'
+import HobbySections from '../components/HobbySections'
 import Sidebar from '../components/Sidebar'
 import { useResumeData } from '../hooks/useResumeData'
 import { useSectionScroll } from '../hooks/useSectionScroll'
+import { HOBBY_SECTIONS } from '../config/sections'
 
 function HomePage() {
   const { resumeData, isLoading } = useResumeData()
   const [showDetails, setShowDetails] = useState(false)
 
+  // Combine resume sections with hobby sections for navigation
+  const allSections = [
+    ...(resumeData?.sections || []),
+    ...HOBBY_SECTIONS,
+  ]
+
   const { activeSection, handleSectionClick } = useSectionScroll({
-    sections: resumeData?.sections || [],
+    sections: allSections,
   })
 
   if (isLoading) {
@@ -29,7 +37,7 @@ function HomePage() {
     <>
       {/* Sidebar - Fixed on the left */}
       <Sidebar
-        sections={resumeData.sections}
+        sections={allSections}
         activeSection={activeSection}
         onSectionClick={handleSectionClick}
       />
@@ -45,11 +53,15 @@ function HomePage() {
           {/* Fun Facts / Interests */}
           <InterestsSection />
 
+          {/* Resume Content */}
           <ResumeSections
             sections={resumeData.sections}
             showDetails={showDetails}
             onToggleDetails={() => setShowDetails(!showDetails)}
           />
+
+          {/* Hobby Sections */}
+          <HobbySections />
         </article>
       </PageLayout>
     </>

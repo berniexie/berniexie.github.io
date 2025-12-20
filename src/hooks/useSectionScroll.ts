@@ -1,8 +1,12 @@
 import { useEffect, useState, useCallback, useRef } from 'react'
-import type { ResumeSection } from '../types/resume'
+
+interface Section {
+  id: string
+  title: string
+}
 
 interface UseSectionScrollOptions {
-  sections: ResumeSection[]
+  sections: Section[]
 }
 
 export function useSectionScroll({ sections }: UseSectionScrollOptions) {

@@ -1,8 +1,12 @@
 import { useState } from 'react'
-import type { ResumeSection } from '../types/resume'
+
+interface NavSection {
+  id: string
+  title: string
+}
 
 interface SidebarProps {
-  sections: ResumeSection[]
+  sections: NavSection[]
   activeSection: string
   onSectionClick: (sectionId: string) => void
 }

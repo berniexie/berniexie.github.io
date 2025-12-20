@@ -64,3 +64,21 @@ body {
   background: var(--color-accent);
   color: var(--color-bg);
 }
+
+/* Photo reveal animation */
+@keyframes photoReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.photo-reveal {
+  animation: photoReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+  opacity: 0;
+}

@@ -1,22 +1,8 @@
 import { Expand, Minimize } from 'lucide-react'
-import { lazy, Suspense } from 'react'
 import type { ResumeSection } from '../types/resume'
 import EducationList from './EducationList'
 import RecentPosts from './RecentPosts'
 import WorkExperience from './WorkExperience'
-
-// Lazy load heavy components for better initial load performance
-const TravelGlobe = lazy(() => import('../TravelGlobe'))
-const ConcertsSection = lazy(() => import('../ConcertsSection'))
-
-// Loading fallback component
-function SectionLoader() {
-  return (
-    <div className="flex items-center justify-center py-12">
-      <div className="animate-pulse text-[var(--color-text-muted)] text-sm">Loading...</div>
-    </div>
-  )
-}
 
 interface ResumeSectionsProps {
   sections: ResumeSection[]
@@ -63,18 +49,6 @@ function ResumeSections({ sections, showDetails, onToggleDetails }: ResumeSectio
 
             {/* Inject Recent Posts after Education section */}
             {section.id === 'education' && <RecentPosts />}
-
-            {section.id === 'travels' && (
-              <Suspense fallback={<SectionLoader />}>
-                <TravelGlobe />
-              </Suspense>
-            )}
-
-            {section.id === 'concerts' && (
-              <Suspense fallback={<SectionLoader />}>
-                <ConcertsSection />
-              </Suspense>
-            )}
           </div>
         )
       })}
