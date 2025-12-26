@@ -130,4 +130,3 @@ export function usePhotos() {
 
   return { albums }
 }
-

@@ -3,9 +3,10 @@ import { useState, useRef, useEffect } from 'react'
 interface ProgressiveImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string
   className?: string
+  onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void
 }
 
-export function ProgressiveImage({ src, className, alt, ...props }: ProgressiveImageProps) {
+export function ProgressiveImage({ src, className, alt, onLoad, ...props }: ProgressiveImageProps) {
   const [isLoaded, setIsLoaded] = useState(false)
   const prevSrcRef = useRef(src)
 
@@ -16,6 +17,11 @@ export function ProgressiveImage({ src, className, alt, ...props }: ProgressiveI
       prevSrcRef.current = src
     }
   }, [src])
+
+  const handleLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    setIsLoaded(true)
+    onLoad?.(e)
+  }
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -28,7 +34,7 @@ export function ProgressiveImage({ src, className, alt, ...props }: ProgressiveI
       <img
         src={src}
         alt={alt}
-        onLoad={() => setIsLoaded(true)}
+        onLoad={handleLoad}
         className={`w-full h-full object-cover transition-opacity duration-500 ease-out ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
@@ -37,4 +43,3 @@ export function ProgressiveImage({ src, className, alt, ...props }: ProgressiveI
     </div>
   )
 }
-

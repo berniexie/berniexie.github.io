@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react'
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { usePhotos, type PhotoMeta } from '../hooks/usePhotos'
 import ReactMarkdown from 'react-markdown'
 import { X, ChevronLeft, ChevronRight, Maximize2, Aperture, Clock, Calendar, ChevronDown, ChevronUp } from 'lucide-react'
@@ -6,7 +6,7 @@ import { useDrag } from '@use-gesture/react'
 import exifr from 'exifr'
 import { ProgressiveImage } from './ProgressiveImage'
 
-const INITIAL_DISPLAY_COUNT = 8
+const INITIAL_DISPLAY_COUNT = 6
 
 export default function PhotosSection() {
   const { albums } = usePhotos()
@@ -17,6 +17,23 @@ export default function PhotosSection() {
   // Track expand animation with a number that increments each expansion
   const expandCountRef = useRef(0)
   const [expandId, setExpandId] = useState(0)
+  // Track aspect ratios for intelligent grid layout
+  const [aspectRatios, setAspectRatios] = useState<Record<string, number>>({})
+
+  // Callback to track image aspect ratios as they load
+  const handleImageLoad = useCallback((src: string, img: HTMLImageElement) => {
+    const ratio = img.naturalWidth / img.naturalHeight
+    setAspectRatios(prev => ({ ...prev, [src]: ratio }))
+  }, [])
+
+  // Calculate row span based on aspect ratio (portrait = 2 rows, landscape = 1 row)
+  const getRowSpan = (src: string): number => {
+    const ratio = aspectRatios[src]
+    if (!ratio) return 1 // Default until loaded
+    // Portrait photos (taller than wide) get 2 row spans
+    if (ratio < 0.9) return 2
+    return 1
+  }
 
   // Default to portfolio or first album
   useEffect(() => {
@@ -174,23 +191,28 @@ export default function PhotosSection() {
             </div>
           )}
 
-          {/* Masonry-like Grid */}
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+          {/* Bento-style Grid - dense packing fills gaps, max-height clips overflow for clean edge */}
+          <div 
+            className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] max-h-[416px] overflow-hidden"
+            style={{ gridAutoFlow: 'dense' }}
+          >
             {visiblePhotos.map((photo, index) => {
               const isExpandedPhoto = index >= INITIAL_DISPLAY_COUNT
               const staggerIndex = index - INITIAL_DISPLAY_COUNT
               const staggerDelay = isExpandedPhoto ? Math.min(staggerIndex * 60, 400) : 0
+              const rowSpan = getRowSpan(photo.src)
 
               return (
                 <div 
                   // Use expandId in key for expanded photos to trigger animation on mount
                   key={isExpandedPhoto ? `${photo.src}-${expandId}` : photo.src}
                   className={`
-                    group relative break-inside-avoid overflow-hidden rounded-xl bg-[var(--color-bg-alt)] cursor-pointer
+                    group relative overflow-hidden rounded-xl bg-[var(--color-bg-alt)] cursor-pointer
                     ${isExpandedPhoto ? 'photo-reveal' : ''}
                   `}
                   style={{ 
-                    '--reveal-delay': `${staggerDelay}ms`
+                    '--reveal-delay': `${staggerDelay}ms`,
+                    gridRow: `span ${rowSpan}`
                   } as React.CSSProperties}
                   onClick={() => openLightbox(index)}
                 >
@@ -198,7 +220,8 @@ export default function PhotosSection() {
                     src={photo.src}
                     alt={`Photo ${index + 1}`}
                     loading="lazy"
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onLoad={(e) => handleImageLoad(photo.src, e.currentTarget as HTMLImageElement)}
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
                     <Maximize2 className="text-white drop-shadow-md" size={24} />
