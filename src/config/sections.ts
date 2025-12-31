@@ -14,3 +14,4 @@ export const HOBBY_SECTIONS: HobbySection[] = [
   { id: 'photos', title: 'Photos' },
   { id: 'concerts', title: 'Concerts' },
 ]
+

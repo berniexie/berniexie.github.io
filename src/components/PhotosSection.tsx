@@ -193,7 +193,7 @@ export default function PhotosSection() {
 
           {/* Bento-style Grid - dense packing fills gaps, max-height clips overflow for clean edge */}
           <div 
-            className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] max-h-[416px] overflow-hidden"
+            className={`grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] ${!isExpanded ? 'max-h-[416px] overflow-hidden' : ''}`}
             style={{ gridAutoFlow: 'dense' }}
           >
             {visiblePhotos.map((photo, index) => {
@@ -378,4 +378,3 @@ export default function PhotosSection() {
     </div>
   )
 }
-
