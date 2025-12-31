@@ -65,17 +65,18 @@ function JobItem({ job, isExpanded, onToggle }: JobItemProps) {
               )}
             </h3>
           </div>
-          <div className="text-[var(--color-text-muted)] font-body text-xs md:text-sm flex items-center gap-2">
-            <strong className="text-[var(--color-text)] font-medium group-hover:text-[var(--color-accent)] transition-colors duration-300">
+          <div className="text-[var(--color-text-muted)] font-body text-xs md:text-sm flex flex-col md:flex-row md:items-center gap-0.5 md:gap-2">
+            <strong className="text-[var(--color-text)] font-semibold group-hover:text-[var(--color-accent)] transition-colors duration-300">
               {job.title}
             </strong>
-            |<span className="font-mono opacity-80">{job.period}</span>
+            <span className="hidden md:inline">|</span>
+            <span className="font-mono opacity-80">{job.period}</span>
           </div>
         </div>
       </button>
 
       {job.summary && (
-        <p className="text-[var(--color-text-muted)] leading-relaxed py-2 font-body text-xs md:text-sm pl-2">
+        <p className="text-[var(--color-text-muted)] leading-relaxed py-2 font-body text-xs md:text-sm">
           {job.summary}
         </p>
       )}
