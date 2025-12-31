@@ -1,5 +1,21 @@
 import { useEffect, useRef } from 'react'
 
+// Polyfill for requestIdleCallback (not supported in Safari/iOS)
+const requestIdleCallback =
+  window.requestIdleCallback ||
+  ((cb: IdleRequestCallback) => {
+    const start = Date.now()
+    return window.setTimeout(() => {
+      cb({
+        didTimeout: false,
+        timeRemaining: () => Math.max(0, 50 - (Date.now() - start)),
+      })
+    }, 1)
+  })
+
+const cancelIdleCallback =
+  window.cancelIdleCallback || ((id: number) => clearTimeout(id))
+
 // Pre-compute sin/cos lookup tables for performance
 const SIN_TABLE_SIZE = 1000
 const sinTable: number[] = new Array(SIN_TABLE_SIZE)
