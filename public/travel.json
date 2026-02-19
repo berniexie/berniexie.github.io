@@ -43,7 +43,13 @@
       "city": "Hong Kong",
       "country": "China",
       "coordinates": [22.350627, 114.1849161],
-      "score": 9.5
+      "score": 9.4
+    },
+    {
+      "city": "Guangzhou",
+      "country": "China",
+      "coordinates": [23.1291, 113.2644],
+      "score": 9.4
     },
     {
       "city": "Hakone",

@@ -55,9 +55,10 @@ What helps most:
 
 When in doubt, phrase prompts as “verify first” requests.
 
-- **Good**: “Verify where `getUser()` is used before changing the signature.”
-- **Good**: “Confirm whether `Foo` already exists; if so, reuse it.”
-- **Bad**: “Implement X” (without constraints or a reference point)
+- **Good**: "Verify where `getUser()` is used before changing the signature."
+- **Good**: "Confirm whether `Foo` already exists; if so, reuse it."
+- **Good**: "Update the error handler to retry failed requests, if necessary."
+- **Bad**: "Implement X" (without constraints or a reference point)
 
 This reduces hallucinations because the agent has to reconcile its work with actual code.
 
