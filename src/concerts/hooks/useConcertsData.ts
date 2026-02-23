@@ -4,7 +4,7 @@ import { getPrimaryGenre } from '../utils'
 
 // Years with concert data - add new years here as needed
 const CONCERT_YEARS = [
-  2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025,
+  2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026,
 ]
 
 export function useConcertsData() {

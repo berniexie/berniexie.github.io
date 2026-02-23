@@ -1,9 +1,9 @@
 {
   "lastTravel": {
-    "city": "Vancouver",
-    "country": "Canada",
-    "month": "November",
-    "year": 2025
+    "city": "Guangzhou & Hong Kong",
+    "country": "China",
+    "month": "February",
+    "year": 2026
   },
   "golf": {
     "pr": 77,
@@ -13,19 +13,19 @@
     "handicapDate": "August 2025"
   },
   "mostPlayedSong": {
-    "title": "Whiplash",
-    "artist": "Aespa"
+    "title": "Blue",
+    "artist": "yung kai & MINNIE"
   },
   "lastWatched": {
-    "title": "Physical Asia",
+    "title": "The Crown",
     "platform": "Netflix"
   },
   "lastRead": {
-    "title": "The Singapore Story",
-    "author": "Lee Kuan Yew"
+    "title": "The Tipping Point",
+    "author": "Malcolm Gladwell"
   },
   "lastConcert": {
-    "artist": "Skaiisyourgod",
-    "venue": "Great American Music Hall"
+    "artist": "Hacken Lee",
+    "venue": "Thunder Valley Casino"
   }
 }
