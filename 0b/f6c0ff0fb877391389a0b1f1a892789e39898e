@@ -1,0 +1,26 @@
+src/pages/BlogPost.tsx
+  s_9c5126d61ead12::t_e8150fc769f86f 55
+src/pages/BlogIndex.tsx
+  s_9c5126d61ead12::t_e8150fc769f86f 47
+src/blog/posts/introducing-kstack.md
+  s_9c5126d61ead12::t_80dc8feff563ff 1,6,8-103
+  s_9c5126d61ead12::t_17508e5f05a99b 2-5,7
+src/components/RecentPosts.tsx
+  s_9c5126d61ead12::t_e8150fc769f86f 50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "0bf6c0ff0fb877391389a0b1f1a892789e39898e",
+  "prompts": {},
+  "sessions": {
+    "s_9c5126d61ead12": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffc19-ba06-7f02-bba1-327e3e236c20",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Bernard Xie <bxie94@gmail.com>"
+    }
+  }
+}
