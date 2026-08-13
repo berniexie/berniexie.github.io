@@ -36,9 +36,7 @@ export function BoardingPass({ trip, homeTrip }: BoardingPassProps) {
         </div>
 
         {trip.summary && <p className="boarding-pass__note">{trip.summary}</p>}
-        {homeTrip && !trip.isHome && (
-          <p className="boarding-pass__origin">Origin / SFO</p>
-        )}
+        {homeTrip && !trip.isHome && <p className="boarding-pass__origin">Origin / SFO</p>}
       </div>
 
       <div className="boarding-pass__stub" aria-hidden="true">
