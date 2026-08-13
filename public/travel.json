@@ -454,6 +454,12 @@
       "score": 8.0
     },
     {
+      "city": "Miami",
+      "country": "USA",
+      "coordinates": [25.7617, -80.1918],
+      "score": 7.5
+    },
+    {
       "city": "Kansas City",
       "country": "USA",
       "coordinates": [39.0997, -94.5786],

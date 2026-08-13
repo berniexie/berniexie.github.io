@@ -2,23 +2,31 @@ import type { ResumeEducationItem } from '../types/resume'
 
 interface EducationListProps {
   items: ResumeEducationItem[]
+  sectionId?: string
+  title?: string
 }
 
-function EducationList({ items }: EducationListProps) {
+function EducationList({
+  items,
+  sectionId = 'education',
+  title = 'Education',
+}: EducationListProps) {
   return (
-    <>
-      {items.map((item, index) => (
-        <div key={index}>
-          <h3 className="text-base md:text-lg font-semibold mt-6 mb-2 text-[var(--color-text)] font-display">
-            {item.school}
-          </h3>
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-0.5 md:gap-2 py-4 font-body text-xs md:text-sm">
-            <strong className="text-[var(--color-text)] font-semibold">{item.degree}</strong>
-            <span className="text-[var(--color-text-muted)]">{item.period}</span>
-          </div>
-        </div>
-      ))}
-    </>
+    <section id={sectionId} aria-labelledby={`${sectionId}-heading`} className="education">
+      <h3 id={`${sectionId}-heading`}>{title}</h3>
+
+      <div className="education__list">
+        {items.map((item) => (
+          <article key={`${item.school}-${item.period}`}>
+            <div>
+              <h4>{item.school}</h4>
+              <p>{item.degree}</p>
+            </div>
+            <time>{item.period}</time>
+          </article>
+        ))}
+      </div>
+    </section>
   )
 }
 

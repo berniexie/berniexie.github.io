@@ -103,7 +103,15 @@ export function getAllPosts(): BlogPost[] {
  * Get all post metadata (without content) for the blog index
  */
 export function getAllPostMeta(): BlogPostMeta[] {
-  return allPosts.map(({ content: _, ...meta }) => meta)
+  return allPosts.map((post) => ({
+    title: post.title,
+    slug: post.slug,
+    author: post.author,
+    date: post.date,
+    description: post.description,
+    tags: post.tags,
+    draft: post.draft,
+  }))
 }
 
 /**

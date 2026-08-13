@@ -83,11 +83,9 @@ export function RatingsScatterChart({ scatterData }: RatingsScatterChartProps) {
   )
 
   return (
-    <div className="glass-card mt-8 p-4 rounded-lg">
-      <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
-        All Ratings
-      </h4>
-      <div className="h-64">
+    <figure className="archive-chart archive-chart--wide">
+      <figcaption className="archive-chart__title">All Ratings</figcaption>
+      <div className="h-72">
         <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
           <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 0 }}>
             <XAxis
@@ -96,7 +94,7 @@ export function RatingsScatterChart({ scatterData }: RatingsScatterChartProps) {
               domain={['dataMin', 'dataMax']}
               name="Date"
               tickFormatter={(unixTime) => new Date(unixTime).getFullYear().toString()}
-              tick={{ fontSize: 10, fill: 'var(--color-text-muted)' }}
+              tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
               axisLine={{ stroke: 'var(--color-border)' }}
               tickLine={false}
             />
@@ -106,7 +104,7 @@ export function RatingsScatterChart({ scatterData }: RatingsScatterChartProps) {
               name="Rating"
               domain={[0, 10]}
               tickCount={11}
-              tick={{ fontSize: 10, fill: 'var(--color-text-muted)' }}
+              tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
               axisLine={false}
               tickLine={false}
               width={30}
@@ -139,6 +137,6 @@ export function RatingsScatterChart({ scatterData }: RatingsScatterChartProps) {
           </ScatterChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </figure>
   )
 }

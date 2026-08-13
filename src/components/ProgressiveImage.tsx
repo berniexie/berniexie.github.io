@@ -1,45 +1,68 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
+import type { ResponsivePhotoSources } from '../photos/photoManifest'
 
-interface ProgressiveImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  src: string
+interface ProgressiveImageProps extends Omit<
+  React.ImgHTMLAttributes<HTMLImageElement>,
+  'src' | 'srcSet'
+> {
+  sources: ResponsivePhotoSources
+  alt: string
   className?: string
-  onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void
+  imageClassName?: string
 }
 
-export function ProgressiveImage({ src, className, alt, onLoad, ...props }: ProgressiveImageProps) {
-  const [isLoaded, setIsLoaded] = useState(false)
-  const prevSrcRef = useRef(src)
+function toSrcSet(sources: ResponsivePhotoSources['avif' | 'webp']) {
+  return Object.entries(sources)
+    .map(([width, src]) => `${src} ${width}w`)
+    .join(', ')
+}
 
-  // Only reset loading state when src actually changes
-  useEffect(() => {
-    if (prevSrcRef.current !== src) {
-      setIsLoaded(false)
-      prevSrcRef.current = src
-    }
-  }, [src])
+export function ProgressiveImage({
+  sources,
+  alt,
+  className = '',
+  imageClassName = '',
+  onLoad,
+  loading = 'lazy',
+  decoding = 'async',
+  sizes = '(min-width: 768px) 33vw, 50vw',
+  ...props
+}: ProgressiveImageProps) {
+  const fallbackSrc = sources.webp[960]
+  const [loadedSrc, setLoadedSrc] = useState<string | null>(null)
+  const isLoaded = loadedSrc === fallbackSrc
 
-  const handleLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    setIsLoaded(true)
-    onLoad?.(e)
+  const handleLoad = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    setLoadedSrc(fallbackSrc)
+    onLoad?.(event)
   }
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      {/* Loading Skeleton - no animate-pulse to avoid flashing */}
-      {!isLoaded && (
-        <div className="absolute inset-0 bg-[var(--color-bg-alt)]" />
-      )}
-      
-      {/* Actual Image */}
-      <img
-        src={src}
-        alt={alt}
-        onLoad={handleLoad}
-        className={`w-full h-full object-cover transition-opacity duration-500 ease-out ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
+      <div
+        className={`absolute inset-0 bg-[var(--color-bg-alt)] transition-opacity duration-300 ${
+          isLoaded ? 'opacity-0' : 'opacity-100'
         }`}
-        {...props}
+        aria-hidden="true"
       />
+
+      <picture className="block h-full w-full">
+        <source type="image/avif" srcSet={toSrcSet(sources.avif)} sizes={sizes} />
+        <source type="image/webp" srcSet={toSrcSet(sources.webp)} sizes={sizes} />
+        <img
+          src={fallbackSrc}
+          srcSet={toSrcSet(sources.webp)}
+          sizes={sizes}
+          alt={alt}
+          loading={loading}
+          decoding={decoding}
+          onLoad={handleLoad}
+          className={`block h-full w-full transition-opacity duration-300 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          } ${imageClassName}`}
+          {...props}
+        />
+      </picture>
     </div>
   )
 }

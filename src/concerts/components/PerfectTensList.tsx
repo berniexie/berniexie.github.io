@@ -6,10 +6,8 @@ interface PerfectTensListProps {
 
 export function PerfectTensList({ topRated }: PerfectTensListProps) {
   return (
-    <div className="glass-card mt-8 p-4 rounded-lg">
-      <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
-        Perfect 10s
-      </h4>
+    <section className="archive-chart archive-chart--wide">
+      <h4 className="archive-chart__title">Perfect 10s</h4>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-72 overflow-y-auto pr-2">
         {topRated.map((concert, i) => (
           <div
@@ -34,6 +32,6 @@ export function PerfectTensList({ topRated }: PerfectTensListProps) {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }

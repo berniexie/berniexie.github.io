@@ -4,12 +4,12 @@ import type { TreemapCategory } from '../types'
 
 const COLORS = {
   venue: {
-    base: '#5A7AB0', // Steel Blue
-    hover: '#4A68A0', // Deeper on hover
+    base: '#E76F45',
+    hover: '#C86643',
   },
   festival: {
-    base: '#5AAA78', // Jade Green
-    hover: '#4A9A68', // Deeper on hover
+    base: '#0F6259',
+    hover: '#244C47',
   },
 }
 
@@ -131,10 +131,8 @@ export function VenuesTreemap({ venueTreemapData }: VenuesTreemapProps) {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
 
   return (
-    <div className="glass-card p-4 rounded-lg mt-8">
-      <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-3">
-        Venues & Festivals
-      </h4>
+    <figure className="archive-chart archive-chart--wide">
+      <figcaption className="archive-chart__title">Venues & Festivals</figcaption>
       <div className="flex gap-4 mb-3">
         <span className="flex items-center gap-1.5 text-[10px] text-[var(--color-text-muted)]">
           <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: COLORS.venue.base }} />
@@ -158,6 +156,6 @@ export function VenuesTreemap({ venueTreemapData }: VenuesTreemapProps) {
           </Treemap>
         </ResponsiveContainer>
       </div>
-    </div>
+    </figure>
   )
 }

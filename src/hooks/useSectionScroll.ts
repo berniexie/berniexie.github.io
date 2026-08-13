@@ -10,16 +10,9 @@ interface UseSectionScrollOptions {
 }
 
 export function useSectionScroll({ sections }: UseSectionScrollOptions) {
-  const [activeSection, setActiveSection] = useState<string>('')
+  const [activeSection, setActiveSection] = useState<string>(() => sections[0]?.id ?? '')
   const isScrollingRef = useRef(false)
   const observerRef = useRef<IntersectionObserver | null>(null)
-
-  // Initialize active section when sections change
-  useEffect(() => {
-    if (sections.length > 0 && !activeSection) {
-      setActiveSection(sections[0].id)
-    }
-  }, [sections, activeSection])
 
   // Use IntersectionObserver for efficient scroll detection
   useEffect(() => {
@@ -71,6 +64,7 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
 
     const element = document.getElementById(sectionId)
     if (element) {
+      window.history.replaceState(null, '', `#${sectionId}`)
       const offset = 100
       const bodyRect = document.body.getBoundingClientRect().top
       const elementRect = element.getBoundingClientRect().top
@@ -79,7 +73,7 @@ export function useSectionScroll({ sections }: UseSectionScrollOptions) {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth',
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
       })
 
       // Re-enable scroll handler after smooth scroll completes

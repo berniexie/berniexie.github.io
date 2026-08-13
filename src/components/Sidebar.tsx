@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { Menu, X } from 'lucide-react'
 
 interface NavSection {
   id: string
@@ -11,151 +12,164 @@ interface SidebarProps {
   onSectionClick: (sectionId: string) => void
 }
 
+interface NavContentProps {
+  sections: NavSection[]
+  activeSection: string
+  label: string
+  onSelect: (sectionId: string) => void
+}
+
+function NavContent({ sections, activeSection, label, onSelect }: NavContentProps) {
+  return (
+    <nav className="site-navigation" aria-label={label}>
+      <ul>
+        {sections.map((section) => {
+          const isActive = activeSection === section.id
+
+          return (
+            <li key={section.id}>
+              <a
+                href={`#${section.id}`}
+                aria-current={isActive ? 'location' : undefined}
+                onClick={(event) => {
+                  event.preventDefault()
+                  onSelect(section.id)
+                }}
+              >
+                <span>{section.title}</span>
+              </a>
+            </li>
+          )
+        })}
+      </ul>
+    </nav>
+  )
+}
+
 function Sidebar({ sections, activeSection, onSectionClick }: SidebarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const drawerRef = useRef<HTMLElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+
+  const closeMenu = useCallback(() => setIsMenuOpen(false), [])
+
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const previouslyFocused =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null
+    const previousOverflow = document.body.style.overflow
+    const focusFrame = window.requestAnimationFrame(() => closeButtonRef.current?.focus())
+
+    document.body.style.overflow = 'hidden'
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault()
+        closeMenu()
+        return
+      }
+
+      if (event.key !== 'Tab' || !drawerRef.current) return
+
+      const focusable = Array.from(
+        drawerRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      )
+
+      if (focusable.length === 0) return
+
+      const firstElement = focusable[0]
+      const lastElement = focusable[focusable.length - 1]
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault()
+        lastElement.focus()
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault()
+        firstElement.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.cancelAnimationFrame(focusFrame)
+      document.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = previousOverflow
+      previouslyFocused?.focus()
+    }
+  }, [closeMenu, isMenuOpen])
 
   const handleNavClick = (sectionId: string) => {
     onSectionClick(sectionId)
-    setIsMenuOpen(false)
-  }
-
-  const NavContent = () => {
-    const isBlogActive = activeSection === 'blog'
-
-    return (
-      <>
-        <div>
-          <div className="font-display font-bold text-xl tracking-tight mb-2">berniexie</div>
-          <div className="font-body text-xs text-[var(--color-text-muted)]">
-            Software Engineer
-            <br />
-            San Francisco, CA
-          </div>
-        </div>
-
-        <nav>
-          <ul className="flex flex-col gap-2">
-            {sections.map((section) => {
-              const isActive = activeSection === section.id
-              return (
-                <li key={section.id}>
-                  <a
-                    href={`#${section.id}`}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      handleNavClick(section.id)
-                    }}
-                    className={`text-sm uppercase tracking-widest transition-colors duration-200 flex items-center gap-2 ${
-                      isActive
-                        ? 'text-[var(--color-text)] font-semibold'
-                        : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]'
-                    }`}
-                  >
-                    {isActive && <span className="w-1 h-1 rounded-full bg-[var(--color-text)]" />}
-                    {section.title}
-                  </a>
-                  {/* Blog link right after Education */}
-                  {section.id === 'education' && (
-                    <a
-                      href="#blog"
-                      onClick={(e) => {
-                        e.preventDefault()
-                        handleNavClick('blog')
-                      }}
-                      className={`text-sm uppercase tracking-widest transition-colors duration-200 flex items-center gap-2 mt-2 ${
-                        isBlogActive
-                          ? 'text-[var(--color-text)] font-semibold'
-                          : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]'
-                      }`}
-                    >
-                      {isBlogActive && (
-                        <span className="w-1 h-1 rounded-full bg-[var(--color-text)]" />
-                      )}
-                      Blog
-                    </a>
-                  )}
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
-      </>
-    )
+    closeMenu()
   }
 
   return (
     <>
-      {/* Mobile Menu Button */}
-      <button
-        onClick={() => setIsMenuOpen(true)}
-        className="lg:hidden fixed top-6 left-6 z-50 p-2 rounded-md bg-[var(--color-bg)]/80 backdrop-blur-sm border border-[var(--color-border)] hover:border-[var(--color-text-muted)] transition-colors"
-        aria-label="Open menu"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <line x1="3" y1="6" x2="21" y2="6" />
-          <line x1="3" y1="12" x2="21" y2="12" />
-          <line x1="3" y1="18" x2="21" y2="18" />
-        </svg>
-      </button>
+      <header className="site-header">
+        <div className="site-header__inner">
+          <a className="site-header__brand" href="#top" aria-label="Bernard Xie, back to top">
+            Bernard Xie
+          </a>
 
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`xl:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
-          isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-      >
-        {/* Backdrop */}
-        <div
-          className="absolute inset-0 bg-black/20 backdrop-blur-sm"
-          onClick={() => setIsMenuOpen(false)}
-        />
+          <div className="site-header__desktop">
+            <NavContent
+              sections={sections}
+              activeSection={activeSection}
+              label="Page sections"
+              onSelect={handleNavClick}
+            />
+          </div>
 
-        {/* Drawer */}
-        <aside
-          className={`absolute left-0 top-0 h-full w-64 bg-[var(--color-bg)] border-r border-[var(--color-border)] p-8 flex flex-col gap-8 transition-transform duration-300 ease-out ${
-            isMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
-        >
-          {/* Close Button */}
           <button
-            onClick={() => setIsMenuOpen(false)}
-            className="absolute top-6 right-6 p-2 rounded-md hover:bg-[var(--color-border)]/20 transition-colors"
-            aria-label="Close menu"
+            ref={menuButtonRef}
+            className="site-header__menu"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="mobile-navigation"
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen(true)}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
+            <span>Menu</span>
+            <Menu aria-hidden="true" size={18} />
           </button>
+        </div>
+      </header>
 
-          <NavContent />
+      <div className="mobile-drawer" data-open={isMenuOpen} aria-hidden={!isMenuOpen}>
+        <div className="mobile-drawer__backdrop" aria-hidden="true" onClick={closeMenu} />
+        <aside
+          id="mobile-navigation"
+          ref={drawerRef}
+          className="mobile-drawer__panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="mobile-navigation-title"
+        >
+          <div className="mobile-drawer__header">
+            <p id="mobile-navigation-title">Menu</p>
+            <button
+              ref={closeButtonRef}
+              type="button"
+              aria-label="Close navigation menu"
+              onClick={closeMenu}
+            >
+              <X aria-hidden="true" size={20} />
+            </button>
+          </div>
+
+          <NavContent
+            sections={sections}
+            activeSection={activeSection}
+            label="Page sections"
+            onSelect={handleNavClick}
+          />
         </aside>
       </div>
-
-      {/* Desktop Sidebar */}
-      <aside className="hidden xl:flex fixed left-16 top-24 w-48 h-fit flex-col gap-8 z-40">
-        <NavContent />
-      </aside>
     </>
   )
 }

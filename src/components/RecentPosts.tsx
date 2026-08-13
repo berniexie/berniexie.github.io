@@ -1,66 +1,45 @@
-import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { formatPostDate } from '../blog/formatPostDate'
 import { getAllPostMeta } from '../blog/posts'
 
 function RecentPosts() {
-  const allPosts = getAllPostMeta()
-  const recentPosts = allPosts.slice(0, 3)
+  const recentPosts = getAllPostMeta().slice(0, 3)
 
-  if (recentPosts.length === 0) {
-    return null
-  }
+  if (recentPosts.length === 0) return null
 
   return (
-    <div className="my-12">
-      {/* Gradient separator */}
-      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[var(--color-border)] to-transparent opacity-60 mb-6" />
+    <section id="blog" aria-labelledby="writing-heading" className="content-section">
+      <header className="simple-section-heading">
+        <div>
+          <h2 id="writing-heading">Writing</h2>
+          <p>Recent posts about software, startups, and whatever else is on my mind.</p>
+        </div>
 
-      <div id="blog" className="scroll-mt-24 py-4 flex justify-between items-center">
-        <h2 className="mt-0 text-base md:text-lg font-semibold tracking-tight text-[var(--color-text)] font-display uppercase flex items-center gap-3">
-          Recent Blog Posts
-        </h2>
-        <Link
-          to="/blog"
-          className="text-[10px] uppercase tracking-widest font-semibold flex items-center gap-2 text-[var(--color-accent)] hover:text-[var(--color-text)] transition-colors px-3 py-1.5 rounded-full border border-[var(--color-accent)]/30 hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10"
-        >
-          See All <ArrowUpRight size={12} />
+        <Link to="/blog" className="simple-text-link">
+          All writing <ArrowUpRight size={14} aria-hidden="true" />
         </Link>
-      </div>
+      </header>
 
-      <div className="flex flex-col gap-6">
+      <div className="writing-list">
         {recentPosts.map((post) => (
-          <Link key={post.slug} to={`/blog/${post.slug}`} className="group block">
-            <article className="glass-card rounded-lg p-4 transition-all">
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-sm md:text-base font-display font-semibold text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors flex items-center gap-2">
-                    {post.title}
-                    <ArrowUpRight
-                      size={14}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"
-                    />
-                  </h3>
-                  <p className="text-xs text-[var(--color-text-muted)] font-body mt-1 line-clamp-2">
-                    {post.description}
-                  </p>
-                  <div className="flex items-center gap-3 mt-2 text-[10px] text-[var(--color-text-muted)] font-body">
-                    <span>{post.author}</span>
-                    <span>•</span>
-                    <time dateTime={post.date}>
-                      {new Date(`${post.date}T00:00:00`).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                      })}
-                    </time>
-                  </div>
-                </div>
+          <article key={post.slug}>
+            <Link to={`/blog/${post.slug}`} className="writing-item">
+              <div className="writing-item__date">
+                <time dateTime={post.date}>{formatPostDate(post.date, 'short')}</time>
               </div>
-            </article>
-          </Link>
+
+              <div>
+                <h3>{post.title}</h3>
+                <p>{post.description}</p>
+              </div>
+
+              <ArrowUpRight size={17} aria-hidden="true" />
+            </Link>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

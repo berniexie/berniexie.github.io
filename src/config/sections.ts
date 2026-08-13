@@ -10,8 +10,15 @@ export interface HobbySection {
 }
 
 export const HOBBY_SECTIONS: HobbySection[] = [
-  { id: 'travels', title: 'Travels' },
-  { id: 'photos', title: 'Photos' },
+  { id: 'travels', title: 'Travel' },
+  { id: 'photos', title: 'Photography' },
   { id: 'concerts', title: 'Concerts' },
 ]
 
+export const SITE_NAV_SECTIONS: HobbySection[] = [
+  { id: 'work-experience', title: 'Work' },
+  { id: 'travels', title: 'Travel' },
+  { id: 'photos', title: 'Photos' },
+  { id: 'concerts', title: 'Concerts' },
+  { id: 'blog', title: 'Writing' },
+]

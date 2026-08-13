@@ -13,5 +13,88 @@
       "city:lincoln",
       "venue:thunder-valley-casino"
     ]
+  },
+  {
+    "artist": "BTS",
+    "date": "2026-05-17",
+    "venue": "Stanford Stadium",
+    "rating": 9.8,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:stanford",
+      "venue:stanford-stadium"
+    ]
+  },
+  {
+    "artist": "Beabadoobee",
+    "date": "2026-08-02",
+    "venue": "Lollapalooza",
+    "rating": 6.5,
+    "tags": [
+      "indie-rock",
+      "indie-pop",
+      "solo",
+      "uk",
+      "filipino-british",
+      "english",
+      "festival",
+      "festival:lollapalooza",
+      "city:chicago",
+      "venue:grant-park"
+    ]
+  },
+  {
+    "artist": "YOASOBI",
+    "date": "2026-08-02",
+    "venue": "Lollapalooza",
+    "rating": 9.9,
+    "tags": [
+      "j-pop",
+      "duo",
+      "japan",
+      "japanese",
+      "festival",
+      "festival:lollapalooza",
+      "city:chicago",
+      "venue:grant-park"
+    ]
+  },
+  {
+    "artist": "Aespa",
+    "date": "2026-08-02",
+    "venue": "Lollapalooza",
+    "rating": 8.5,
+    "tags": [
+      "k-pop",
+      "girl-group",
+      "group",
+      "south-korea",
+      "korean",
+      "festival",
+      "festival:lollapalooza",
+      "city:chicago",
+      "venue:grant-park"
+    ]
+  },
+  {
+    "artist": "The Chainsmokers",
+    "date": "2026-08-02",
+    "venue": "Lollapalooza",
+    "rating": 8.7,
+    "tags": [
+      "edm",
+      "pop",
+      "duo",
+      "us",
+      "electronic",
+      "festival",
+      "festival:lollapalooza",
+      "city:chicago",
+      "venue:grant-park"
+    ]
   }
 ]

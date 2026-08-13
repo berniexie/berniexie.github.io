@@ -81,22 +81,20 @@ export function TasteEvolutionChart({
   concerts,
 }: TasteEvolutionChartProps) {
   return (
-    <div className="glass-card mb-8 p-4 rounded-lg">
-      <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
-        Taste Evolution (Shows per Year)
-      </h4>
+    <figure className="archive-chart archive-chart--wide">
+      <figcaption className="archive-chart__title">Taste Evolution (Shows per Year)</figcaption>
 
-      <div className="h-64">
+      <div className="h-72 md:h-80">
         <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
           <LineChart data={yearsData}>
             <XAxis
               dataKey="year"
-              tick={{ fontSize: 10, fill: 'var(--color-text-muted)' }}
+              tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
               axisLine={{ stroke: 'var(--color-border)' }}
               tickLine={false}
             />
             <YAxis
-              tick={{ fontSize: 10, fill: 'var(--color-text-muted)' }}
+              tick={{ fontSize: 11, fill: 'var(--color-text-muted)' }}
               axisLine={false}
               tickLine={false}
               width={30}
@@ -105,7 +103,7 @@ export function TasteEvolutionChart({
               content={<LineChartTooltip concerts={concerts} />}
               wrapperStyle={{ zIndex: 100 }}
             />
-            <Legend wrapperStyle={{ fontSize: '10px', paddingTop: '10px' }} />
+            <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '12px' }} />
             {/* Total Shows Line */}
             <Line
               type="monotone"
@@ -122,8 +120,8 @@ export function TasteEvolutionChart({
               name="Total"
               isAnimationActive={false}
             />
-            {/* Genre Lines - Top 10 */}
-            {topGenresList.slice(0, 10).map((genre) => (
+            {/* Keep the signature view legible by showing only the six leading genres. */}
+            {topGenresList.slice(0, 6).map((genre) => (
               <Line
                 key={genre}
                 type="monotone"
@@ -144,6 +142,6 @@ export function TasteEvolutionChart({
           </LineChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </figure>
   )
 }

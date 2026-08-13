@@ -13,8 +13,7 @@ const requestIdleCallback =
     }, 1)
   })
 
-const cancelIdleCallback =
-  window.cancelIdleCallback || ((id: number) => clearTimeout(id))
+const cancelIdleCallback = window.cancelIdleCallback || ((id: number) => clearTimeout(id))
 
 // Pre-compute sin/cos lookup tables for performance
 const SIN_TABLE_SIZE = 1000

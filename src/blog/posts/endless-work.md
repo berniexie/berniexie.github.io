@@ -1,10 +1,10 @@
 ---
-title: "Endless Work"
-slug: "endless-work"
-author: "Bernard"
-date: "2026-02-18"
-description: "AI has collapsed the activation energy for starting new tasks, turning startup engineering into an endless cycle of planning and shipping with no natural break points."
-tags: ["ai", "startups", "burnout", "productivity", "health"]
+title: 'Endless Work'
+slug: 'endless-work'
+author: 'Bernard'
+date: '2026-02-18'
+description: 'AI has collapsed the activation energy for starting new tasks, turning startup engineering into an endless cycle of planning and shipping with no natural break points.'
+tags: ['ai', 'startups', 'burnout', 'productivity', 'health']
 draft: false
 ---
 

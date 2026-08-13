@@ -1,7 +1,6 @@
-import { Expand, Minimize } from 'lucide-react'
+import { ChevronsDownUp, ChevronsUpDown } from 'lucide-react'
 import type { ResumeSection } from '../types/resume'
 import EducationList from './EducationList'
-import RecentPosts from './RecentPosts'
 import WorkExperience from './WorkExperience'
 
 interface ResumeSectionsProps {
@@ -11,48 +10,52 @@ interface ResumeSectionsProps {
 }
 
 function ResumeSections({ sections, showDetails, onToggleDetails }: ResumeSectionsProps) {
+  const workSection = sections.find((section) => section.jobs)
+  const educationSection = sections.find((section) => section.items)
+
+  if (!workSection?.jobs) return null
+
   return (
-    <>
-      {sections.map((section) => {
-        const isWorkSection = section.id === 'work-experience'
+    <section id={workSection.id} aria-labelledby="work-heading" className="content-section">
+      <header className="simple-section-heading">
+        <div>
+          <h2 id="work-heading">Work</h2>
+          <p>
+            I’ve been building software since 2016, from early-stage products to large teams. I’m
+            currently the co-founder and CTO of Kestral.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onToggleDetails}
+          aria-expanded={showDetails}
+          aria-controls="work-experience-timeline"
+          className="simple-text-button"
+        >
+          {showDetails ? (
+            <>
+              <ChevronsDownUp size={13} aria-hidden="true" />
+              Collapse details
+            </>
+          ) : (
+            <>
+              <ChevronsUpDown size={13} aria-hidden="true" />
+              Expand details
+            </>
+          )}
+        </button>
+      </header>
 
-        return (
-          <div key={section.id} className="my-12">
-            {/* Gradient separator */}
-            <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[var(--color-border)] to-transparent opacity-60 mb-6" />
-            <div id={section.id} className="scroll-mt-24 py-4 flex justify-between items-center">
-              <h2 className="mt-0 text-base md:text-lg font-semibold tracking-tight text-[var(--color-text)] font-display uppercase flex items-center gap-3">
-                {section.title}
-              </h2>
+      <WorkExperience jobs={workSection.jobs} showDetails={showDetails} />
 
-              {isWorkSection && (
-                <button
-                  onClick={onToggleDetails}
-                  className="text-[10px] uppercase tracking-widest font-semibold flex items-center gap-2 text-[var(--color-accent)] hover:text-[var(--color-text)] transition-colors px-3 py-1.5 rounded-full border border-[var(--color-accent)]/30 hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10"
-                >
-                  {showDetails ? (
-                    <>
-                      <Minimize size={12} /> Collapse Details
-                    </>
-                  ) : (
-                    <>
-                      <Expand size={12} /> Expand Details
-                    </>
-                  )}
-                </button>
-              )}
-            </div>
-
-            {section.jobs && <WorkExperience jobs={section.jobs} showDetails={showDetails} />}
-
-            {section.items && <EducationList items={section.items} />}
-
-            {/* Inject Recent Posts after Education section */}
-            {section.id === 'education' && <RecentPosts />}
-          </div>
-        )
-      })}
-    </>
+      {educationSection?.items && (
+        <EducationList
+          items={educationSection.items}
+          sectionId={educationSection.id}
+          title={educationSection.title}
+        />
+      )}
+    </section>
   )
 }
 

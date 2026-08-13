@@ -1,8 +1,8 @@
 {
   "lastTravel": {
-    "city": "Guangzhou & Hong Kong",
-    "country": "China",
-    "month": "February",
+    "city": "Chicago",
+    "country": "USA",
+    "month": "August",
     "year": 2026
   },
   "golf": {
@@ -13,19 +13,19 @@
     "handicapDate": "August 2025"
   },
   "mostPlayedSong": {
-    "title": "Blue",
-    "artist": "yung kai & MINNIE"
+    "title": "REDRED",
+    "artist": "CORTIS"
   },
   "lastWatched": {
-    "title": "The Crown",
+    "title": "Pursuit of Jade",
     "platform": "Netflix"
   },
   "lastRead": {
-    "title": "The Tipping Point",
-    "author": "Malcolm Gladwell"
+    "title": "Putting Out of Your Mind",
+    "author": "Bob Rotella"
   },
   "lastConcert": {
-    "artist": "Hacken Lee",
-    "venue": "Thunder Valley Casino"
+    "artist": "The Chainsmokers",
+    "venue": "Lollapalooza"
   }
 }

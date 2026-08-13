@@ -60,11 +60,9 @@ export function GenreMixChart({
   totalValidConcerts,
 }: GenreMixChartProps) {
   return (
-    <div className="glass-card p-4 rounded-lg">
-      <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
-        Genre Mix
-      </h4>
-      <div className="h-64">
+    <figure className="archive-chart">
+      <figcaption className="archive-chart__title">Genre Mix</figcaption>
+      <div className="h-72">
         <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
           <PieChart>
             <Pie
@@ -102,7 +100,7 @@ export function GenreMixChart({
                 // Sort by value (percentage) descending, then take top 10
                 const sortedPayload = [...(payload || [])]
                   .sort((a, b) => (b.payload?.value || 0) - (a.payload?.value || 0))
-                  .slice(0, 10)
+                  .slice(0, 8)
                 return (
                   <ul
                     style={{
@@ -122,7 +120,7 @@ export function GenreMixChart({
                           display: 'flex',
                           alignItems: 'center',
                           gap: '4px',
-                          fontSize: '9px',
+                          fontSize: '11px',
                         }}
                       >
                         <span
@@ -144,6 +142,6 @@ export function GenreMixChart({
           </PieChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </figure>
   )
 }

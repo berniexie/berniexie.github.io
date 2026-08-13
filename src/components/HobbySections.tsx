@@ -1,5 +1,5 @@
-import { lazy, Suspense } from 'react'
-import { HOBBY_SECTIONS } from '../config/sections'
+import { lazy, Suspense, type ReactNode } from 'react'
+import { useNearViewport } from '../hooks/useNearViewport'
 
 // Lazy load heavy components for better initial load performance
 const TravelGlobe = lazy(() => import('../TravelGlobe'))
@@ -7,10 +7,28 @@ const ConcertsSection = lazy(() => import('../ConcertsSection'))
 const PhotosSection = lazy(() => import('./PhotosSection'))
 
 // Loading fallback component
-function SectionLoader() {
+function SectionLoader({ label }: { label: string }) {
   return (
-    <div className="flex items-center justify-center py-12">
-      <div className="animate-pulse text-[var(--color-text-muted)] text-sm">Loading...</div>
+    <div className="section-placeholder" role="status">
+      <span>Loading {label}…</span>
+    </div>
+  )
+}
+
+function DeferredSection({
+  children,
+  label,
+  minHeight,
+}: {
+  children: ReactNode
+  label: string
+  minHeight: string
+}) {
+  const { elementRef, isNearViewport } = useNearViewport()
+
+  return (
+    <div ref={elementRef} style={{ minHeight }}>
+      {isNearViewport ? children : <SectionLoader label={label} />}
     </div>
   )
 }
@@ -18,38 +36,51 @@ function SectionLoader() {
 function HobbySections() {
   return (
     <>
-      {HOBBY_SECTIONS.map((section) => (
-        <div key={section.id} className="my-12">
-          {/* Gradient separator */}
-          <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[var(--color-border)] to-transparent opacity-60 mb-6" />
-          <div id={section.id} className="scroll-mt-24 py-4 flex justify-between items-center">
-            <h2 className="mt-0 text-base md:text-lg font-semibold tracking-tight text-[var(--color-text)] font-display uppercase flex items-center gap-3">
-              {section.title}
-            </h2>
+      <section id="travels" className="content-section" aria-labelledby="travel-title">
+        <header className="simple-section-heading">
+          <div>
+            <h2 id="travel-title">Travel</h2>
+            <p>Places I’ve visited and rated. Select a destination to see the details.</p>
           </div>
+        </header>
 
-          {section.id === 'travels' && (
-            <Suspense fallback={<SectionLoader />}>
-              <TravelGlobe />
-            </Suspense>
-          )}
+        <DeferredSection label="travel map" minHeight="min(720px, 90vw)">
+          <Suspense fallback={<SectionLoader label="travel map" />}>
+            <TravelGlobe />
+          </Suspense>
+        </DeferredSection>
+      </section>
 
-          {section.id === 'photos' && (
-            <Suspense fallback={<SectionLoader />}>
-              <PhotosSection />
-            </Suspense>
-          )}
+      <section id="photos" className="content-section" aria-labelledby="photos-title">
+        <header className="simple-section-heading">
+          <div>
+            <h2 id="photos-title">Photography</h2>
+            <p>A few favorite frames from trips and everyday life.</p>
+          </div>
+        </header>
 
-          {section.id === 'concerts' && (
-            <Suspense fallback={<SectionLoader />}>
-              <ConcertsSection />
-            </Suspense>
-          )}
-        </div>
-      ))}
+        <DeferredSection label="photos" minHeight="680px">
+          <Suspense fallback={<SectionLoader label="photos" />}>
+            <PhotosSection />
+          </Suspense>
+        </DeferredSection>
+      </section>
+
+      <section id="concerts" className="content-section" aria-labelledby="concerts-title">
+        <header className="simple-section-heading">
+          <div>
+            <h2 id="concerts-title">Concerts</h2>
+            <p>Every show I can remember, going back to 2012.</p>
+          </div>
+        </header>
+        <DeferredSection label="concert history" minHeight="620px">
+          <Suspense fallback={<SectionLoader label="concert history" />}>
+            <ConcertsSection />
+          </Suspense>
+        </DeferredSection>
+      </section>
     </>
   )
 }
 
 export default HobbySections
-

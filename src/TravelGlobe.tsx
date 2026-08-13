@@ -1,13 +1,16 @@
-import { useEffect, useRef, useState, useCallback, useMemo } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import type { Geometry } from 'geojson'
 import Globe from 'react-globe.gl'
 import type { GlobeMethods } from 'react-globe.gl'
-import type { Geometry } from 'geojson'
+import { MeshPhongMaterial } from 'three'
+import { MapPin } from 'lucide-react'
 import { BoardingPass } from './components/BoardingPass'
+import { loadTravelData, usePortfolioSummary } from './hooks/usePortfolioSummary'
 
-interface Trip {
+export interface Trip {
   city: string
   country: string
-  coordinates: [number, number] // [lat, lon]
+  coordinates: [number, number]
   score: number
   summary?: string
   isHome?: boolean
@@ -34,7 +37,6 @@ interface TravelData {
   trips: Trip[]
 }
 
-// Map travel.json country names to GeoJSON names
 const COUNTRY_NAME_MAP: Record<string, string> = {
   USA: 'United States of America',
   UK: 'United Kingdom',
@@ -44,223 +46,282 @@ const COUNTRY_NAME_MAP: Record<string, string> = {
   'Czech Republic': 'Czechia',
 }
 
+function supportsWebGl() {
+  try {
+    const canvas = document.createElement('canvas')
+    return Boolean(canvas.getContext('webgl2') || canvas.getContext('webgl'))
+  } catch {
+    return false
+  }
+}
+
 export default function TravelGlobe() {
   const globeRef = useRef<GlobeMethods | undefined>(undefined)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const globeContainerRef = useRef<HTMLDivElement>(null)
   const [trips, setTrips] = useState<Trip[]>([])
   const [countries, setCountries] = useState<CountryFeature[]>([])
+  const [activeTrip, setActiveTrip] = useState<Trip | null>(null)
   const [hoveredTrip, setHoveredTrip] = useState<Trip | null>(null)
   const [homeTrip, setHomeTrip] = useState<Trip | null>(null)
   const [globeReady, setGlobeReady] = useState(false)
+  const [loadError, setLoadError] = useState(false)
   const [dimensions, setDimensions] = useState({ width: 600, height: 600 })
+  const [canRenderGlobe] = useState(supportsWebGl)
+  const { data: portfolioSummary } = usePortfolioSummary()
 
-  // Load travel data
+  const globeMaterial = useMemo(
+    () =>
+      new MeshPhongMaterial({
+        color: '#17211d',
+        emissive: '#0d1512',
+        shininess: 3,
+      }),
+    [],
+  )
+
+  useEffect(() => () => globeMaterial.dispose(), [globeMaterial])
+
   useEffect(() => {
-    fetch('/travel.json')
-      .then((res) => res.json())
-      .then((data: TravelData) => {
-        setTrips(data.trips)
-        const home = data.trips.find((t) => t.isHome)
-        if (home) setHomeTrip(home)
+    let cancelled = false
+
+    Promise.all([
+      loadTravelData() as Promise<TravelData>,
+      fetch('/countries.geojson').then((response) => {
+        if (!response.ok) throw new Error('Map data unavailable')
+        return response.json() as Promise<{ features: CountryFeature[] }>
+      }),
+    ])
+      .then(([travelData, countryData]) => {
+        if (cancelled) return
+
+        const sortedTrips = [...travelData.trips].sort((a, b) => b.score - a.score)
+        const home = travelData.trips.find((trip) => trip.isHome) ?? null
+
+        setTrips(sortedTrips)
+        setCountries(countryData.features)
+        setHomeTrip(home)
       })
-      .catch((err) => console.error('Failed to load travel data', err))
+      .catch(() => {
+        if (!cancelled) setLoadError(true)
+      })
+
+    return () => {
+      cancelled = true
+    }
   }, [])
 
-  // Load country borders GeoJSON (cached locally for performance)
   useEffect(() => {
-    fetch('/countries.geojson')
-      .then((res) => res.json())
-      .then((data: { features: CountryFeature[] }) => {
-        setCountries(data.features)
-      })
-      .catch((err) => console.error('Failed to load country data', err))
-  }, [])
+    const container = globeContainerRef.current
+    if (!container) return
 
-  // Handle resize
-  useEffect(() => {
     const updateDimensions = () => {
-      if (containerRef.current) {
-        const width = Math.min(containerRef.current.offsetWidth, 800)
-        setDimensions({ width, height: width })
-      }
+      const width = Math.min(container.offsetWidth, 680)
+      setDimensions({ width, height: width })
     }
 
     updateDimensions()
-    window.addEventListener('resize', updateDimensions)
-    return () => window.removeEventListener('resize', updateDimensions)
+    const observer = new ResizeObserver(updateDimensions)
+    observer.observe(container)
+    return () => observer.disconnect()
   }, [])
 
-  // Setup globe controls when ready
   useEffect(() => {
-    if (globeReady && globeRef.current) {
-      globeRef.current.pointOfView({ lat: 20, lng: 0, altitude: 1.8 })
+    if (!globeReady || !globeRef.current) return
 
-      const controls = globeRef.current.controls()
-      if (controls) {
-        controls.autoRotate = true
-        controls.autoRotateSpeed = 0.5
-        controls.enableZoom = true
-        controls.minDistance = 120
-        controls.maxDistance = 400
-        controls.enableDamping = true
-        controls.dampingFactor = 0.1
-      }
-    }
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    globeRef.current.pointOfView({ lat: 22, lng: 5, altitude: 1.9 }, reduceMotion ? 0 : 700)
+
+    const controls = globeRef.current.controls()
+    if (!controls) return
+    controls.autoRotate = !reduceMotion
+    controls.autoRotateSpeed = 0.35
+    controls.enableZoom = true
+    controls.minDistance = 120
+    controls.maxDistance = 380
+    controls.enableDamping = !reduceMotion
+    controls.dampingFactor = 0.08
   }, [globeReady])
 
-  // Stop auto-rotate on interaction
+  const defaultTrip = useMemo(() => {
+    const latest = portfolioSummary?.latestTravel
+    if (!latest) return trips[0] ?? null
+
+    return (
+      trips.find(
+        (trip) =>
+          trip.city.toLocaleLowerCase() === latest.city.toLocaleLowerCase() &&
+          trip.country.toLocaleLowerCase() === latest.country.toLocaleLowerCase(),
+      ) ??
+      trips[0] ??
+      null
+    )
+  }, [portfolioSummary?.latestTravel, trips])
+
+  const selectedTrip = activeTrip ?? defaultTrip
+  const presentedTrip = hoveredTrip ?? selectedTrip
+
   const handleInteraction = useCallback(() => {
-    if (globeRef.current) {
-      const controls = globeRef.current.controls()
-      if (controls) {
-        controls.autoRotate = false
-      }
-    }
+    const controls = globeRef.current?.controls()
+    if (controls) controls.autoRotate = false
   }, [])
 
-  // Helper to check if a country feature matches the hovered trip
-  const isCountryHovered = useCallback(
+  const handleTripSelect = useCallback(
+    (trip: Trip) => {
+      setActiveTrip(trip)
+      handleInteraction()
+      globeRef.current?.pointOfView(
+        { lat: trip.coordinates[0], lng: trip.coordinates[1], altitude: 1.65 },
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 650,
+      )
+    },
+    [handleInteraction],
+  )
+
+  const isCountryActive = useCallback(
     (feature: object) => {
-      if (!hoveredTrip) return false
-      const f = feature as CountryFeature
-      const geoName = f.properties.ADMIN || f.properties.NAME || ''
-      const tripCountry = hoveredTrip.country
-
-      // Direct match
-      if (geoName === tripCountry) return true
-
-      // Mapped match
-      if (COUNTRY_NAME_MAP[tripCountry] === geoName) return true
-
-      // Partial match (e.g. "United States" vs "United States of America")
-      if (geoName.includes(tripCountry) || tripCountry.includes(geoName)) return true
-
-      return false
+      if (!presentedTrip) return false
+      const country = feature as CountryFeature
+      const geoName = country.properties.ADMIN || country.properties.NAME || ''
+      const tripCountry = presentedTrip.country
+      return (
+        geoName === tripCountry ||
+        COUNTRY_NAME_MAP[tripCountry] === geoName ||
+        geoName.includes(tripCountry) ||
+        tripCountry.includes(geoName)
+      )
     },
-    [hoveredTrip],
+    [presentedTrip],
   )
 
-  // Dynamic point color based on hover
   const getPointColor = useCallback(
-    (d: object) => {
-      const trip = d as Trip
-      if (hoveredTrip?.city === trip.city) {
-        return '#ffffff' // White when hovered
-      }
-      return '#f97316' // Bright orange for visibility
-    },
-    [hoveredTrip],
+    (point: object) => ((point as Trip).city === presentedTrip?.city ? '#f3f0e7' : '#e76f45'),
+    [presentedTrip],
   )
 
-  // Dynamic point radius based on hover and score
   const getPointRadius = useCallback(
-    (d: object) => {
-      const trip = d as Trip
-      if (hoveredTrip?.city === trip.city) {
-        return 1.2
-      }
-      return trip.score >= 9.0 ? 0.8 : 0.6
-    },
-    [hoveredTrip],
+    (point: object) => ((point as Trip).city === presentedTrip?.city ? 1.05 : 0.55),
+    [presentedTrip],
   )
 
-  // Arc from home to hovered location
   const arcData = useMemo<Arc[]>(() => {
-    if (!homeTrip || !hoveredTrip || hoveredTrip.isHome) return []
+    if (!homeTrip || !presentedTrip || presentedTrip.isHome) return []
     return [
       {
         startLat: homeTrip.coordinates[0],
         startLng: homeTrip.coordinates[1],
-        endLat: hoveredTrip.coordinates[0],
-        endLng: hoveredTrip.coordinates[1],
+        endLat: presentedTrip.coordinates[0],
+        endLng: presentedTrip.coordinates[1],
       },
     ]
-  }, [homeTrip, hoveredTrip])
+  }, [homeTrip, presentedTrip])
 
-  // Memoized callback props for Globe to prevent unnecessary re-renders
-  const polygonCapColor = useCallback(
-    (d: object) => (isCountryHovered(d) ? 'rgba(15, 118, 110, 0.2)' : 'rgba(0, 0, 0, 0)'),
-    [isCountryHovered],
-  )
+  const featuredTrips = trips.filter((trip) => !trip.isHome).slice(0, 5)
 
-  const polygonSideColor = useCallback(() => 'rgba(0, 0, 0, 0)', [])
-
-  const polygonStrokeColor = useCallback(
-    (d: object) => (isCountryHovered(d) ? 'rgba(15, 118, 110, 0.6)' : 'rgba(0, 0, 0, 0.1)'),
-    [isCountryHovered],
-  )
-
-  const pointLat = useCallback((d: object) => (d as Trip).coordinates[0], [])
-  const pointLng = useCallback((d: object) => (d as Trip).coordinates[1], [])
-
-  const arcStartLat = useCallback((d: object) => (d as Arc).startLat, [])
-  const arcStartLng = useCallback((d: object) => (d as Arc).startLng, [])
-  const arcEndLat = useCallback((d: object) => (d as Arc).endLat, [])
-  const arcEndLng = useCallback((d: object) => (d as Arc).endLng, [])
-  const arcColor = useCallback(() => ['rgba(20, 184, 166, 0.9)', 'rgba(15, 118, 110, 0.4)'], [])
-
-  const handlePointHover = useCallback((point: object | null) => {
-    setHoveredTrip(point as Trip | null)
-    if (containerRef.current) {
-      containerRef.current.style.cursor = point ? 'pointer' : 'grab'
-    }
-  }, [])
-
-  const handleGlobeReady = useCallback(() => setGlobeReady(true), [])
+  if (loadError) {
+    return (
+      <div className="archive-fallback" role="status">
+        <p className="meta-label">Atlas unavailable</p>
+        <p>The travel notes could not be loaded. The rest of the site is still available.</p>
+      </div>
+    )
+  }
 
   return (
-    <div className="w-full flex flex-col items-center justify-center my-12 relative z-0">
-      {/* Globe container */}
-      <div
-        ref={containerRef}
-        className="relative w-full max-w-[800px] aspect-square flex items-center justify-center"
-      >
-        <Globe
-          ref={globeRef}
-          width={dimensions.width}
-          height={dimensions.height}
-          backgroundColor="rgba(0,0,0,0)"
-          // Day Earth texture (Blue Marble)
-          globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-          showGlobe={true}
-          showAtmosphere={false}
-          // Country Polygons (highlight on hover)
-          polygonsData={countries}
-          polygonCapColor={polygonCapColor}
-          polygonSideColor={polygonSideColor}
-          polygonStrokeColor={polygonStrokeColor}
-          polygonAltitude={0.005}
-          // Points Layer (clean circular markers)
-          pointsData={trips}
-          pointLat={pointLat}
-          pointLng={pointLng}
-          pointColor={getPointColor}
-          pointRadius={getPointRadius}
-          pointAltitude={0.01}
-          pointsMerge={false}
-          // Arcs Layer (streak from home to hovered location)
-          arcsData={arcData}
-          arcStartLat={arcStartLat}
-          arcStartLng={arcStartLng}
-          arcEndLat={arcEndLat}
-          arcEndLng={arcEndLng}
-          arcColor={arcColor}
-          arcDashLength={0.5}
-          arcDashGap={0.2}
-          arcDashAnimateTime={1500}
-          arcStroke={0.5}
-          arcAltitudeAutoScale={0.3}
-          // Hover interaction
-          onPointHover={handlePointHover}
-          // Globe events
-          onGlobeReady={handleGlobeReady}
-          onZoom={handleInteraction}
-        />
+    <div className="travel-atlas">
+      <div className="travel-atlas__copy">
+        <div className="travel-latest">
+          <p className="meta-label">
+            Latest field note
+            {portfolioSummary?.latestTravel
+              ? ` / ${portfolioSummary.latestTravel.month} ${portfolioSummary.latestTravel.year}`
+              : ''}
+          </p>
+          <p className="travel-latest__place">
+            {selectedTrip ? `${selectedTrip.city}, ${selectedTrip.country}` : 'Loading the atlas…'}
+          </p>
+        </div>
 
-        {/* Hover tooltip */}
-        {hoveredTrip && (
-          <div className="absolute bottom-4 right-4 z-50 animate-in fade-in duration-200">
-            <BoardingPass trip={hoveredTrip} homeTrip={homeTrip} />
+        <div>
+          <p className="meta-label">Highest rated</p>
+          <ol className="destination-list" aria-label="Highest-rated destinations">
+            {featuredTrips.map((trip, index) => {
+              const isActive = trip.city === presentedTrip?.city
+              return (
+                <li key={`${trip.city}-${trip.country}`}>
+                  <button
+                    type="button"
+                    className={isActive ? 'is-active' : ''}
+                    onClick={() => handleTripSelect(trip)}
+                    onFocus={() => setHoveredTrip(trip)}
+                    onBlur={() => setHoveredTrip(null)}
+                    onMouseEnter={() => setHoveredTrip(trip)}
+                    onMouseLeave={() => setHoveredTrip(null)}
+                    aria-pressed={trip.city === selectedTrip?.city}
+                  >
+                    <span className="destination-list__index">0{index + 1}</span>
+                    <span>
+                      <strong>{trip.city}</strong>
+                      <small>{trip.country}</small>
+                    </span>
+                    <span className="destination-list__score">{trip.score.toFixed(1)}</span>
+                  </button>
+                </li>
+              )
+            })}
+          </ol>
+        </div>
+
+        {presentedTrip && <BoardingPass trip={presentedTrip} homeTrip={homeTrip} />}
+      </div>
+
+      <div ref={globeContainerRef} className="travel-atlas__globe">
+        {canRenderGlobe ? (
+          <Globe
+            ref={globeRef}
+            width={dimensions.width}
+            height={dimensions.height}
+            backgroundColor="rgba(0,0,0,0)"
+            globeMaterial={globeMaterial}
+            showGlobe
+            showAtmosphere={false}
+            showGraticules
+            polygonsData={countries}
+            polygonCapColor={(feature) =>
+              isCountryActive(feature) ? 'rgba(231, 111, 69, 0.28)' : 'rgba(15, 98, 89, 0.08)'
+            }
+            polygonSideColor={() => 'rgba(0, 0, 0, 0)'}
+            polygonStrokeColor={(feature) =>
+              isCountryActive(feature) ? 'rgba(243, 240, 231, 0.75)' : 'rgba(243, 240, 231, 0.18)'
+            }
+            polygonAltitude={0.006}
+            pointsData={trips}
+            pointLat={(point) => (point as Trip).coordinates[0]}
+            pointLng={(point) => (point as Trip).coordinates[1]}
+            pointColor={getPointColor}
+            pointRadius={getPointRadius}
+            pointAltitude={0.012}
+            pointsMerge={false}
+            arcsData={arcData}
+            arcStartLat={(arc) => (arc as Arc).startLat}
+            arcStartLng={(arc) => (arc as Arc).startLng}
+            arcEndLat={(arc) => (arc as Arc).endLat}
+            arcEndLng={(arc) => (arc as Arc).endLng}
+            arcColor={() => ['rgba(231, 111, 69, 0.95)', 'rgba(243, 240, 231, 0.35)']}
+            arcDashLength={0.5}
+            arcDashGap={0.2}
+            arcDashAnimateTime={1800}
+            arcStroke={0.45}
+            arcAltitudeAutoScale={0.24}
+            onPointHover={(point) => setHoveredTrip(point as Trip | null)}
+            onPointClick={(point) => handleTripSelect(point as Trip)}
+            onGlobeClick={handleInteraction}
+            onGlobeReady={() => setGlobeReady(true)}
+            onZoom={handleInteraction}
+          />
+        ) : (
+          <div className="globe-fallback" role="img" aria-label="Travel atlas unavailable">
+            <MapPin aria-hidden="true" />
+            <p>Interactive atlas unavailable on this device.</p>
           </div>
         )}
       </div>

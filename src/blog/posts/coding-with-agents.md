@@ -1,10 +1,10 @@
 ---
-title: "Coding with agents: a practical playbook"
-slug: "coding-with-agents"
-author: "Bernard"
-date: "2025-12-20"
-description: "A lightweight set of principles and prompts for getting reliable, high-leverage results from coding agents: be specific, plan well, verify everything, and institutionalize learnings."
-tags: ["ai", "coding", "agents", "cursor", "workflow"]
+title: 'Coding with agents: a practical playbook'
+slug: 'coding-with-agents'
+author: 'Bernard'
+date: '2025-12-20'
+description: 'A lightweight set of principles and prompts for getting reliable, high-leverage results from coding agents: be specific, plan well, verify everything, and institutionalize learnings.'
+tags: ['ai', 'coding', 'agents', 'cursor', 'workflow']
 draft: false
 ---
 
@@ -146,4 +146,5 @@ Cursor has a lot of agent-adjacent tools that are worth using intentionally:
 ## Further reading
 
 Here's a great article of general coding philosophy with AI. They used Codex, but the same principles apply to any agentic coding tool.
+
 - [Shipping Sora for Android with Codex](https://openai.com/index/shipping-sora-for-android-with-codex/)

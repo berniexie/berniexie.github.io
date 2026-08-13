@@ -1,75 +1,109 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
+@source not "./photos";
+@source not "../public/photos";
 
-/* Cyber/Tech Theme */
 :root {
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'Space Mono', monospace;
+  color-scheme: light;
 
-  /* Light Theme Colors */
-  --color-bg: #faf8f5;
-  --color-bg-alt: #f5f2ed;
-  --color-text: #1a1a1a;
-  --color-text-muted: #3f3f46; /* Zinc-700 - much darker for better contrast */
-  --color-border: #a1a1aa; /* Zinc-400 - more visible on light bg */
-  --color-accent: #0f766e; /* Teal-700 */
-  --color-accent-secondary: #115e59; /* Teal-800 */
-  --color-accent-dim: rgba(15, 118, 110, 0.1);
-  --color-accent-rgb: 15, 118, 110;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-meta: 'Space Mono', monospace;
+
+  --color-paper: #f3f0e7;
+  --color-paper-raised: #fbf8f0;
+  --color-paper-deep: #e8e1d3;
+  --color-ink: #151a17;
+  --color-stone: #686d67;
+  --color-ink-soft: var(--color-stone);
+  --color-ink-faint: #777e77;
+  --color-rule: #d1cbc0;
+  --color-jade: #0f6259;
+  --color-jade-deep: #0e4d42;
+  --color-jade-wash: rgba(15, 98, 89, 0.1);
+  --color-ember: #e76f45;
+  --color-ember-deep: #984426;
+  --color-ember-wash: rgba(231, 111, 69, 0.11);
+
+  /* Compatibility aliases used by the existing data visualizations. */
+  --color-bg: var(--color-paper);
+  --color-bg-alt: var(--color-paper-deep);
+  --color-bg-secondary: var(--color-paper-raised);
+  --color-text: var(--color-ink);
+  --color-text-muted: var(--color-ink-soft);
+  --color-border: var(--color-rule);
+  --color-accent: var(--color-jade);
+  --color-accent-secondary: var(--color-ember);
+  --color-accent-dim: var(--color-jade-wash);
+  --color-accent-rgb: 15, 98, 89;
 }
 
-/* Light mode override (optional, but let's stick to dark as default for 'coolness') */
-@media (prefers-color-scheme: light) {
-  /* Commenting out light mode to force the cool dark theme */
-  /* :root { ... } */
+html {
+  min-width: 320px;
+  background: var(--color-paper);
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-body);
-  background-color: var(--color-bg);
-  color: var(--color-text);
   line-height: 1.6;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  background-image:
-    linear-gradient(to right, #e8e4dd 1px, transparent 1px),
-    linear-gradient(to bottom, #e8e4dd 1px, transparent 1px);
-  background-size: 40px 40px;
-  background-attachment: fixed;
 }
 
-/* Custom Scrollbar */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--color-jade);
+  color: var(--color-paper-raised);
+}
+
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--color-paper);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4d4d8; /* Zinc-300 */
-  border-radius: 99px;
-  transition: background 0.2s ease;
+  background: var(--color-rule);
+  border: 2px solid var(--color-paper);
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a1a1aa; /* Zinc-400 */
+  background: var(--color-ink-faint);
 }
 
-/* Selection */
-::selection {
-  background: var(--color-accent);
-  color: var(--color-bg);
-}
-
-/* Photo reveal animation */
 @keyframes photoReveal {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -81,4 +115,19 @@ body {
   animation: photoReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: var(--reveal-delay, 0ms);
   opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

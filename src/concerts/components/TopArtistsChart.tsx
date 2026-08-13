@@ -84,23 +84,7 @@ function renderCustomLabel(props: {
 }
 
 // Color gradient from warm to cool based on position (balanced taupe-friendly palette)
-const BAR_COLORS = [
-  '#C87058', // Terracotta (top)
-  '#D08060',
-  '#D49068',
-  '#D8A070',
-  '#D4A870',
-  '#C8B070',
-  '#B0B870',
-  '#90B878',
-  '#70B888',
-  '#60B898',
-  '#58B0A0',
-  '#58A0A8',
-  '#5890B0',
-  '#5878B0',
-  '#5A68A0', // Slate Blue (bottom)
-]
+const BAR_COLORS = ['#E76F45', '#C86643', '#A9864F', '#76938B', '#3D8278', '#0F6259']
 
 interface TopArtistsChartProps {
   topArtists: ArtistStats[]
@@ -110,16 +94,14 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
   if (topArtists.length === 0) return null
 
   return (
-    <div className="glass-card p-4 rounded-lg h-full">
-      <h4 className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] font-semibold mb-4">
-        Most Seen Artists
-      </h4>
-      <div className="h-[280px]">
+    <figure className="archive-chart">
+      <figcaption className="archive-chart__title">Most Seen Artists</figcaption>
+      <div className="h-72">
         <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
           <BarChart data={topArtists} layout="vertical" margin={{ left: 10, right: 20 }}>
             <XAxis
               type="number"
-              tick={{ fill: 'var(--color-text-muted)', fontSize: 10 }}
+              tick={{ fill: 'var(--color-text-muted)', fontSize: 11 }}
               axisLine={{ stroke: 'var(--color-border)' }}
               tickLine={false}
               allowDecimals={false}
@@ -151,6 +133,6 @@ export function TopArtistsChart({ topArtists }: TopArtistsChartProps) {
           </BarChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </figure>
   )
 }

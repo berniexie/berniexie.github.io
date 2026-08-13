@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz'
@@ -17,6 +17,12 @@ function getCharSet(char: string): string {
 // Get the starting character for a character set
 function getStartChar(charSet: string): string {
   return charSet[0] || ' '
+}
+
+function getNextChar(current: string, charSet: string): string {
+  const index = charSet.indexOf(current)
+  if (index === -1) return charSet[0]
+  return charSet[(index + 1) % charSet.length]
 }
 
 interface FlipCharProps {
@@ -39,37 +45,7 @@ function FlipChar({ char: target, delay, className = '' }: FlipCharProps) {
   const isAnimatingRef = useRef(false)
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null)
 
-  // Helper to get next char in sequence within the character set
-  const getNextChar = (c: string) => {
-    const set = charSetRef.current
-    const idx = set.indexOf(c)
-    if (idx === -1) return set[0]
-    return set[(idx + 1) % set.length]
-  }
-
-  // Update target ref when prop changes
-  useEffect(() => {
-    targetRef.current = target
-    charSetRef.current = getCharSet(target)
-
-    // If we're not animating, check if we need to start
-    if (!isAnimatingRef.current && currentRef.current !== target) {
-      // Add initial delay only if we are starting a new sequence from rest
-      // (approximated by isAnimatingRef check)
-      const startTimeout = setTimeout(() => {
-        startLoop()
-      }, delay)
-      return () => clearTimeout(startTimeout)
-    }
-  }, [target, delay])
-
-  const startLoop = () => {
-    if (isAnimatingRef.current) return
-    isAnimatingRef.current = true
-    loop()
-  }
-
-  const loop = () => {
+  const loop = useCallback(function runLoop() {
     // Safety: if target is not in its character set, snap to it immediately to prevent infinite loop
     if (charSetRef.current.indexOf(targetRef.current) === -1) {
       setCurrent(targetRef.current)
@@ -83,7 +59,7 @@ function FlipChar({ char: target, delay, className = '' }: FlipCharProps) {
       return
     }
 
-    const nextChar = getNextChar(currentRef.current)
+    const nextChar = getNextChar(currentRef.current, charSetRef.current)
     setNext(nextChar)
     setIsScrolling(true)
 
@@ -99,11 +75,33 @@ function FlipChar({ char: target, delay, className = '' }: FlipCharProps) {
       // has processed and DOM has reset transform before we start next slide
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          loop()
+          runLoop()
         })
       })
     }, 25) // 25ms per character step (faster flipping)
-  }
+  }, [])
+
+  const startLoop = useCallback(() => {
+    if (isAnimatingRef.current) return
+    isAnimatingRef.current = true
+    loop()
+  }, [loop])
+
+  // Update target ref when prop changes
+  useEffect(() => {
+    targetRef.current = target
+    charSetRef.current = getCharSet(target)
+
+    // If we're not animating, check if we need to start
+    if (!isAnimatingRef.current && currentRef.current !== target) {
+      // Add initial delay only if we are starting a new sequence from rest
+      // (approximated by isAnimatingRef check)
+      const startTimeout = setTimeout(() => {
+        startLoop()
+      }, delay)
+      return () => clearTimeout(startTimeout)
+    }
+  }, [target, delay, startLoop])
 
   // Cleanup on unmount
   useEffect(() => {

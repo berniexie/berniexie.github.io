@@ -1,35 +1,31 @@
-import AsciiBackground from '../AsciiBackground'
-import { DownloadButton } from './DownloadButton'
-
 interface PageLayoutProps {
   children: React.ReactNode
+  navigationRail?: boolean
+  /** Retained for HomePage compatibility; no floating download control is rendered. */
   showDownloadButton?: boolean
 }
 
-function PageLayout({ children, showDownloadButton = false }: PageLayoutProps) {
+function PageLayout({ children }: PageLayoutProps) {
   return (
-    <div className="min-h-screen relative selection:bg-[var(--color-text)] selection:text-[var(--color-bg)]">
-      <AsciiBackground />
-      {showDownloadButton && <DownloadButton />}
+    <div className="site-shell">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
 
-      {/* Main Layout - Centered */}
-      <div className="max-w-4xl mx-auto px-6 py-8 md:py-16">
-        {/* Content Area */}
-        <main>{children}</main>
+      <div className="site-page">
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
 
-        <footer className="mt-16 pt-8 border-t border-[var(--color-border)] flex justify-between items-end text-xs text-[var(--color-text-muted)]">
+        <footer className="site-footer">
           <div>
-            <p>&copy; {new Date().getFullYear()}</p>
+            <p>© {new Date().getFullYear()} Bernard Xie</p>
+            <p>San Francisco, California</p>
           </div>
-          <div className="flex-col justify-items-end items-end gap-3">
-            <img
-              src="/round-cat.png"
-              alt="Cat"
-              className="w-16 h-16 animate-spin"
-              style={{ animationDuration: '3s' }}
-            />
-            <p>Got the goods.</p>
-          </div>
+          <a className="site-footer__mascot" href="#main-content" aria-label="Back to the top">
+            <img src="/round-cat.png" alt="" />
+            <span>Back to top</span>
+          </a>
         </footer>
       </div>
     </div>

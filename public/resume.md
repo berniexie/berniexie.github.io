@@ -17,15 +17,19 @@ Full-stack engineer with 9 years of experience. Currently building AI-native pro
 
 **Co-Founder & CTO** | April 2025 – Present
 
-Architected and built 90%+ of a production AI task management platform generating $X,000 MRR, owning the full stack from database schema design through React UI to GCP deployment pipelines and 30+ AI agents.
+Kestral gives companies a shared context layer for coordinating people and AI agents across product, customer, and engineering work.
 
-- Delivered a scalable multi-tenant SaaS platform by architecting a full-stack TypeScript system using React/Vite, Node/Express, Apollo GraphQL, and PostgreSQL, deployed on Google Cloud Run with optimized CI/CD for rapid iteration.
+- Set technical direction and led hands-on development of a revenue-generating multi-tenant platform with a three-person technical team.
 
-- Engineered a citation-grounded multi-agent AI system using Mastra orchestration and cloud agents—featuring an intelligent query router, 11 agentic tools, hybrid vector search, Zep graph memory, and multi-step workflows for task deduplication, prioritization, and project auto-categorization
+- Led early sales and marketing and served as the forward-deployed engineer for customer pilots, turning customer needs into product decisions.
 
-- Designed distributed batch processing with Cloud Run Jobs, Cloud Tasks priority queues, and database-driven stream processing for sequential job execution—supporting real-time updates via GraphQL subscriptions, Redis Pub/Sub, and WebSockets, with 8+ external integrations
+- Evolved Kestral from AI task management into a company-wide context layer that turns tasks, documents, customer conversations, and activity from GitHub, Slack, and Linear into shared goals, blockers, priorities, and next steps.
 
-- Drove product identity and developer credibility through brand/visual design, marketing site development, founding engineer mentorship, top 0.01% Cursor power-user recognition, and invited talks on production AI engineering
+- Built the agent platform and evaluation system, using 700+ scenarios to measure quality and cost and catch regressions.
+
+- Connected Kestral to 20+ services and engineering workflows through an MCP gateway and plugins for Claude, Codex, and Cursor, including automatic branch, PR, and task sync.
+
+- Recognized among the top 1% of engineers using Cursor and invited by Cursor to present production AI engineering and product demos.
 
 ---
 

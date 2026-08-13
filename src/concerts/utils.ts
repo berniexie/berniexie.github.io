@@ -31,9 +31,9 @@ export function getPrimaryGenre(tags: string[]): string {
  * Get color for rating value (balanced taupe-friendly palette)
  */
 export function getRatingColor(rating: number): string {
-  if (rating >= 9) return '#5A9E6B' // Rich Sage (excellent)
-  if (rating >= 8) return '#5AAA98' // Teal (great)
-  if (rating >= 7) return '#7AAA70' // Green (good)
-  if (rating >= 5) return '#C9A058' // Gold (average)
-  return '#C08060' // Terracotta (below average)
+  if (rating >= 9) return '#0F6259'
+  if (rating >= 8) return '#3D8278'
+  if (rating >= 7) return '#76938B'
+  if (rating >= 5) return '#A9864F'
+  return '#E76F45'
 }

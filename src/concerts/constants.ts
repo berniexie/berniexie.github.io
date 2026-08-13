@@ -1,36 +1,36 @@
-// Genre Colors for consistent styling across charts (balanced taupe-friendly palette)
+// Restrained field-log palette: jade and ember supported by legible neutral tones.
 export const GENRE_COLORS: Record<string, string> = {
-  'k-pop': '#D4918F', // Soft Rose
-  'k-hip-hop': '#C9A067', // Warm Caramel
-  'k-rnb': '#D4B8A8', // Warm Blush
-  'k-rock': '#B85A5A', // Dusty Red
-  house: '#5BA88E', // Jade
-  techno: '#6B5B8A', // Soft Purple
-  trap: '#C07040', // Burnt Orange
-  dubstep: '#8B6B9E', // Soft Violet
-  'future-bass': '#4A9E9E', // Teal
-  'electro-pop': '#B87A98', // Rose Pink
-  downtempo: '#7AAA8A', // Seafoam
-  'progressive-house': '#5A8AB0', // Steel Blue
-  midtempo: '#9E5A7A', // Mauve
-  'hip-hop': '#D4A050', // Golden
-  rnb: '#B8A080', // Tan
-  'alt-rnb': '#C9B8A0', // Light Tan
-  rock: '#A05858', // Brick
-  'alt-rock': '#B87070', // Coral Red
-  'indie-pop': '#70B888', // Mint
-  'indie-rock': '#5AA868', // Green
-  pop: '#D0909A', // Blush
-  'alt-pop': '#D4A8B0', // Light Blush
-  country: '#C9A050', // Mustard
-  latin: '#C87058', // Terracotta
-  afrobeats: '#98B860', // Lime Olive
-  'j-pop': '#C87098', // Magenta Rose
-  'c-pop': '#B88888', // Dusty Rose
-  bass: '#6A7AB0', // Periwinkle
-  'melodic-bass': '#5A5A98', // Slate Blue
-  electronic: '#58A8A8', // Aqua
-  other: '#909090', // Grey
+  'k-pop': '#E76F45',
+  'k-hip-hop': '#B65B3D',
+  'k-rnb': '#C98B72',
+  'k-rock': '#8F4434',
+  house: '#0F6259',
+  techno: '#244C47',
+  trap: '#D27A45',
+  dubstep: '#5C514A',
+  'future-bass': '#3D8278',
+  'electro-pop': '#A76E5A',
+  downtempo: '#76938B',
+  'progressive-house': '#416F69',
+  midtempo: '#78665E',
+  'hip-hop': '#A9733F',
+  rnb: '#8F7868',
+  'alt-rnb': '#A99786',
+  rock: '#8A5144',
+  'alt-rock': '#B46751',
+  'indie-pop': '#668B76',
+  'indie-rock': '#456F59',
+  pop: '#C47A67',
+  'alt-pop': '#AE8A7E',
+  country: '#A9864F',
+  latin: '#C86643',
+  afrobeats: '#778550',
+  'j-pop': '#B87369',
+  'c-pop': '#9D7770',
+  bass: '#596E70',
+  'melodic-bass': '#4D5F66',
+  electronic: '#2F746C',
+  other: '#7B7D77',
 }
 
 // Meta tags to ignore for genre classification
@@ -141,6 +141,6 @@ export const GENRE_PRIORITY: string[] = [
 
 // Colors for treemap (balanced taupe-friendly palette)
 export const TREEMAP_COLORS = {
-  festival: '#5AAA78', // Jade Green
-  venue: '#5A7AB0', // Steel Blue
+  festival: '#0F6259',
+  venue: '#E76F45',
 }
