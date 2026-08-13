@@ -7,6 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
@@ -49,6 +50,39 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Wait for branch-based Pages deployment
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+          branch_deploy_seen=false
+
+          for attempt in {1..36}; do
+            state="$(
+              gh api "repos/${GH_REPO}/actions/runs?head_sha=${HEAD_SHA}&event=dynamic&per_page=20" \
+                --jq '.workflow_runs[] | select(.name == "pages build and deployment") | .status' \
+                | head -n 1
+            )"
+
+            if [ "$state" = "completed" ]; then
+              echo "Branch-based Pages deployment has settled."
+              exit 0
+            fi
+
+            if [ -n "$state" ]; then
+              branch_deploy_seen=true
+            elif [ "$branch_deploy_seen" = false ] && [ "$attempt" -ge 6 ]; then
+              echo "No branch-based Pages deployment detected."
+              exit 0
+            fi
+
+            sleep 5
+          done
+
+          echo "::warning::Timed out waiting for the branch-based Pages deployment."
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
