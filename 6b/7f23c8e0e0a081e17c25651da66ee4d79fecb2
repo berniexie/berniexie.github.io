@@ -1,0 +1,19 @@
+.github/workflows/deploy.yml
+  s_42c754a3208452::t_6d167c68269785 10,53-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "6b7f23c8e0e0a081e17c25651da66ee4d79fecb2",
+  "prompts": {},
+  "sessions": {
+    "s_42c754a3208452": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffc11-2035-7650-9875-834f07c855cf",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Bernard Xie <bxie94@gmail.com>"
+    }
+  }
+}
