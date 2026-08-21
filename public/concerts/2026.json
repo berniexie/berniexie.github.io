@@ -96,5 +96,34 @@
       "city:chicago",
       "venue:grant-park"
     ]
+  },
+  {
+    "artist": "CORTIS",
+    "date": "2026-08-16",
+    "venue": "Bill Graham",
+    "rating": 10,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:san-francisco",
+      "venue:bill-graham-civic-auditorium"
+    ]
+  },
+  {
+    "artist": "Ne-Yo + Akon",
+    "date": "2026-08-19",
+    "venue": "Shoreline Amphitheatre",
+    "rating": 10,
+    "tags": [
+      "rnb",
+      "hip-hop",
+      "us",
+      "english",
+      "city:mountain-view",
+      "venue:shoreline-amphitheatre"
+    ]
   }
 ]

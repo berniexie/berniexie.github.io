@@ -18,14 +18,15 @@
           "ycSlug": "kestral",
           "title": "Co-Founder & CTO",
           "period": "April 2025 – Present",
-          "summary": "Kestral gives companies a shared context layer for coordinating people and AI agents across product, customer, and engineering work.",
+          "summary": "Kestral is a task and project management app built for the AI era. It gives companies a shared context layer for coordinating people and AI agents across product, customer, and engineering work and allows them to run automations to automatically complete work on their behalf.",
           "details": [
-            "Set technical direction and led hands-on development of a revenue-generating multi-tenant platform with a three-person technical team.",
-            "Led early sales and marketing and served as the forward-deployed engineer for customer pilots, turning customer needs into product decisions.",
-            "Evolved Kestral from AI task management into a company-wide context layer that turns tasks, documents, customer conversations, and activity from GitHub, Slack, and Linear into shared goals, blockers, priorities, and next steps.",
-            "Built the agent platform and evaluation system, using 700+ scenarios to measure quality and cost and catch regressions.",
-            "Connected Kestral to 20+ services and engineering workflows through an MCP gateway and plugins for Claude, Codex, and Cursor, including automatic branch, PR, and task sync.",
-            "Recognized among the top 1% of engineers using Cursor and invited by Cursor to present production AI engineering and product demos."
+            "Led a three-person team building the product: workspaces, tasks, projects, documents, and real-time updates, now used by paying customers.",
+            "Built the agent platform — one main agent plus specialists — with server-side rules for memory, citations, permissions, and stopping duplicate writes.",
+            "Built a state-of-the-art context search on Chroma (hybrid semantic + keyword) and Zep (knowledge-graph memory), so agents find and cite the right tasks, docs, and facts.",
+            "Built integrations so automations can pull data from Slack, GitHub, Linear, and other tools.",
+            "Built the MCP layer for Cursor, Claude, and Codex so outside agents can work on live Kestral data, with permission and write-safety checks on every call.",
+            "Built 700+ evals and used them to track quality and cost, catch regressions, and fold several agents into one without breaking existing behavior.",
+            "As a founder, did early sales and forward-deployed engineering: sat with customers, closed pilots, and turned what we heard into product and platform changes."
           ]
         },
         {
