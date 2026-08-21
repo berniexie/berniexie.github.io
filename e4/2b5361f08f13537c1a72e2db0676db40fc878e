@@ -1,0 +1,45 @@
+scripts/data/artistTags.js
+  s_6b12eb9a0ca92d::t_3ab5d9c636dee4 211
+  s_6b12eb9a0ca92d::t_bb65366d0a6ef5 60
+public/concerts/2026.json
+  s_6b12eb9a0ca92d::t_7990d614eeff4d 99-127
+public/resume.txt
+  s_91078e15f9474a::t_eb0302e4f31f27 19
+  s_91078e15f9474a::t_594ced2a71b60c 15,17-18,21-23
+  s_91078e15f9474a::t_75f0783f273dc9 1-14,16,24-63
+  s_91078e15f9474a::t_ce7fc12a34fc88 20
+public/trends.json
+  s_6b12eb9a0ca92d::t_9d2d67816500c3 28-29
+public/resume.json
+  s_91078e15f9474a::t_1a821955e530a3 25
+  s_91078e15f9474a::t_ca888c1f223d29 21,23-24,27-29
+  s_91078e15f9474a::t_ad4b10d680bb2b 26
+public/resume.md
+  s_91078e15f9474a::t_1ef9eca5092de4 20,22,24,30,32-34
+  s_91078e15f9474a::t_eda89413335eef 26
+  s_91078e15f9474a::t_abd7739c1dee06 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "e42b5361f08f13537c1a72e2db0676db40fc878e",
+  "prompts": {},
+  "sessions": {
+    "s_6b12eb9a0ca92d": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "8a730b28-b4ee-4b16-ac00-5f43feff8bbb",
+        "model": "grok-4.6"
+      },
+      "human_author": "Bernard Xie <bxie94@gmail.com>"
+    },
+    "s_91078e15f9474a": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "4fa373ee-171d-42dc-a5f7-ffcc3c65aa2c",
+        "model": "grok-4.6"
+      },
+      "human_author": "Bernard Xie <bxie94@gmail.com>"
+    }
+  }
+}
