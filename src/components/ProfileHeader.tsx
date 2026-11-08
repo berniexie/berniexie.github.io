@@ -11,12 +11,10 @@ function ProfileHeader({ name, contact }: ProfileHeaderProps) {
   return (
     <header id="top" className="simple-hero" aria-labelledby="portfolio-hero-title">
       <h1 id="portfolio-hero-title">{name}</h1>
-      <p className="simple-hero__role">
-        I’m a software engineer and co-founder based in San Francisco.
-      </p>
+      <p className="simple-hero__role">I’m a product engineer based in San Francisco.</p>
       <p className="simple-hero__lede">
-        I’m currently building Kestral. Outside work, I take photos, travel, see live music, and
-        write occasionally.
+        I’m a product engineer at Nooks, previously co-founder and CTO of Kestral. Outside work, I
+        take photos, travel, see live music, and write occasionally.
       </p>
 
       <nav className="simple-hero__links" aria-label="Contact and profile links">

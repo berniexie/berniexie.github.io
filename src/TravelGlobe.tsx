@@ -233,7 +233,7 @@ export default function TravelGlobe() {
           <p className="meta-label">
             Latest field note
             {portfolioSummary?.latestTravel
-              ? ` / ${portfolioSummary.latestTravel.month} ${portfolioSummary.latestTravel.year}`
+              ? ` / ${[portfolioSummary.latestTravel.month, portfolioSummary.latestTravel.year].filter(Boolean).join(' ')}`
               : ''}
           </p>
           <p className="travel-latest__place">

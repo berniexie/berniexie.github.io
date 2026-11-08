@@ -3,7 +3,7 @@ import { SplitFlapText } from './components/SplitFlapText'
 import { useNearViewport } from './hooks/useNearViewport'
 
 interface InterestsData {
-  lastTravel: { city: string; country: string; month: string; year: number }
+  lastTravel: { city: string; country: string; month?: string; year: number }
   golf: { pr: number; course: string; date: string; handicap: number; handicapDate: string }
   mostPlayedSong: { title: string; artist: string }
   lastWatched: { title: string; platform: string }
@@ -49,7 +49,9 @@ function InterestsSection() {
           {
             label: 'Last travel',
             value: `${state.data.lastTravel.city}, ${state.data.lastTravel.country}`,
-            detail: `${state.data.lastTravel.month} ${state.data.lastTravel.year}`,
+            detail: [state.data.lastTravel.month, state.data.lastTravel.year]
+              .filter(Boolean)
+              .join(' '),
           },
           {
             label: 'Golf',

@@ -22,7 +22,7 @@ function ResumeSections({ sections, showDetails, onToggleDetails }: ResumeSectio
           <h2 id="work-heading">Work</h2>
           <p>
             I’ve been building software since 2016, from early-stage products to large teams. I’m
-            currently the co-founder and CTO of Kestral.
+            now a product engineer at Nooks, previously co-founder and CTO of Kestral.
           </p>
         </div>
         <button

@@ -1,8 +1,8 @@
 {
   "lastTravel": {
-    "city": "Chicago",
-    "country": "USA",
-    "month": "August",
+    "city": "Seoul",
+    "country": "South Korea",
+    "month": "October",
     "year": 2026
   },
   "golf": {
@@ -13,19 +13,19 @@
     "handicapDate": "August 2025"
   },
   "mostPlayedSong": {
-    "title": "REDRED",
-    "artist": "CORTIS"
+    "title": "Beggin'",
+    "artist": "Chris Lake"
   },
   "lastWatched": {
-    "title": "Pursuit of Jade",
-    "platform": "Netflix"
+    "title": "You can See Everything",
+    "platform": "Movie Theatre"
   },
   "lastRead": {
     "title": "Putting Out of Your Mind",
     "author": "Bob Rotella"
   },
   "lastConcert": {
-    "artist": "Ne-Yo + Akon",
-    "venue": "Shoreline Amphitheatre"
+    "artist": "Bruno Mars",
+    "venue": "Levi’s Stadium"
   }
 }

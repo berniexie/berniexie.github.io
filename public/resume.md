@@ -7,15 +7,21 @@
 
 ---
 
-Full-stack engineer with 9 years of experience. Currently building AI-native products as Founding CTO at a YC-backed startup. Track record of shipping complex systems end-to-end, from architecture to deployment, while mentoring teams and driving technical strategy.
+Full-stack engineer with 10 years of experience. Product Engineer at Nooks, previously Co-Founder & CTO at Kestral (YC X25). Track record of shipping complex systems end-to-end, from architecture to deployment, while mentoring teams and driving technical strategy.
 
 ---
 
 ## Work Experience
 
+### Nooks
+
+**Product Engineer** | November 2026 – Present
+
+---
+
 ### Kestral (YC X25)
 
-**Co-Founder & CTO** | April 2025 – Present
+**Co-Founder & CTO** | April 2025 – September 2026
 
 Kestral is a task and project management app built for the AI era. It gives companies a shared context layer for coordinating people and AI agents across product, customer, and engineering work and allows them to run automations to automatically complete work on their behalf.
 

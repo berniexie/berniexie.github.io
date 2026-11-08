@@ -13,7 +13,8 @@ function JobItem({ job, isExpanded, onToggle }: JobItemProps) {
   const headingId = `work-heading-${reactId}`
   const detailsId = `work-details-${reactId}`
   const toggleLabelId = `work-toggle-${reactId}`
-  const isFeatured = job.company.toLowerCase() === 'kestral'
+  const isCurrent = job.period.endsWith('Present')
+  const hasDetails = job.details.length > 0
 
   return (
     <li className="work-item">
@@ -23,7 +24,7 @@ function JobItem({ job, isExpanded, onToggle }: JobItemProps) {
             <div className="work-item__heading">
               <h3 id={headingId}>{job.company}</h3>
 
-              {isFeatured && <span className="work-item__current">Current</span>}
+              {isCurrent && <span className="work-item__current">Current</span>}
 
               {job.ycBatch && job.ycSlug && (
                 <a
@@ -48,37 +49,41 @@ function JobItem({ job, isExpanded, onToggle }: JobItemProps) {
           <div className="work-item__meta">
             <time>{job.period}</time>
 
-            <button
-              type="button"
-              onClick={onToggle}
-              aria-expanded={isExpanded}
-              aria-controls={detailsId}
-              aria-labelledby={`${toggleLabelId} ${headingId}`}
-              className="work-item__toggle"
-            >
-              <span id={toggleLabelId}>{isExpanded ? 'Less' : 'More'}</span>
-              <ChevronDown
-                size={13}
-                aria-hidden="true"
-                className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
-              />
-            </button>
+            {hasDetails && (
+              <button
+                type="button"
+                onClick={onToggle}
+                aria-expanded={isExpanded}
+                aria-controls={detailsId}
+                aria-labelledby={`${toggleLabelId} ${headingId}`}
+                className="work-item__toggle"
+              >
+                <span id={toggleLabelId}>{isExpanded ? 'Less' : 'More'}</span>
+                <ChevronDown
+                  size={13}
+                  aria-hidden="true"
+                  className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                />
+              </button>
+            )}
           </div>
         </div>
 
-        <div
-          id={detailsId}
-          role="region"
-          aria-labelledby={headingId}
-          hidden={!isExpanded}
-          className="work-item__details"
-        >
-          <ul>
-            {job.details.map((detail, detailIndex) => (
-              <li key={detailIndex}>{detail}</li>
-            ))}
-          </ul>
-        </div>
+        {hasDetails && (
+          <div
+            id={detailsId}
+            role="region"
+            aria-labelledby={headingId}
+            hidden={!isExpanded}
+            className="work-item__details"
+          >
+            <ul>
+              {job.details.map((detail, detailIndex) => (
+                <li key={detailIndex}>{detail}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </article>
     </li>
   )

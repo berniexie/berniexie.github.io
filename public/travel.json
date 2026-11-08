@@ -4,8 +4,9 @@
       "city": "Shanghai",
       "country": "China",
       "coordinates": [31.2312707, 121.4700152],
-      "score": 10,
-      "summary": "My home and my favorite city in the world."
+      "score": 10.0,
+      "summary": "My home and my favorite city in the world.",
+      "lastVisited": "2026-10"
     },
     {
       "city": "San Francisco",
@@ -31,7 +32,8 @@
       "city": "New York City",
       "country": "USA",
       "coordinates": [40.7127281, -74.0060152],
-      "score": 9.67
+      "score": 9.5,
+      "lastVisited": "2026-08"
     },
     {
       "city": "Singapore",
@@ -61,7 +63,8 @@
       "city": "Seoul",
       "country": "South Korea",
       "coordinates": [37.5666791, 126.9782914],
-      "score": 9.43
+      "score": 9.6,
+      "lastVisited": "2026-10"
     },
     {
       "city": "Vancouver",
@@ -403,7 +406,8 @@
       "city": "Fukuoka",
       "country": "Japan",
       "coordinates": [33.6251241, 130.6180016],
-      "score": 8.3
+      "score": 9.3,
+      "lastVisited": "2026-09"
     },
     {
       "city": "Busan",
@@ -476,6 +480,34 @@
       "country": "Taiwan",
       "coordinates": [21.9465, 120.7861],
       "score": 9.6
+    },
+    {
+      "city": "Toronto",
+      "country": "Canada",
+      "coordinates": [43.6532, -79.3832],
+      "score": 8.3,
+      "lastVisited": "2026-08"
+    },
+    {
+      "city": "Aso",
+      "country": "Japan",
+      "coordinates": [32.9521, 131.1214],
+      "score": 9.3,
+      "lastVisited": "2026-09"
+    },
+    {
+      "city": "Nagasaki",
+      "country": "Japan",
+      "coordinates": [32.75, 129.87],
+      "score": 8.9,
+      "lastVisited": "2026-09"
+    },
+    {
+      "city": "Kurokawa",
+      "country": "Japan",
+      "coordinates": [33.0789, 131.1417],
+      "score": 9.2,
+      "lastVisited": "2026-09"
     }
   ]
 }

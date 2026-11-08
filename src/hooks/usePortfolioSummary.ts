@@ -21,7 +21,7 @@ export interface TravelData {
 export interface LatestTravel {
   city: string
   country: string
-  month: string
+  month?: string
   year: number
 }
 
