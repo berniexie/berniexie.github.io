@@ -125,5 +125,36 @@
       "city:mountain-view",
       "venue:shoreline-amphitheatre"
     ]
+  },
+  {
+    "artist": "BTS",
+    "date": "2026-08-22",
+    "venue": "Rogers Stadium",
+    "rating": 9,
+    "tags": [
+      "k-pop",
+      "boy-group",
+      "group",
+      "south-korea",
+      "korean",
+      "city:toronto",
+      "venue:rogers-stadium"
+    ]
+  },
+  {
+    "artist": "Bruno Mars",
+    "date": "2026-10-11",
+    "venue": "Levi’s Stadium",
+    "rating": 9.9,
+    "tags": [
+      "pop",
+      "rnb",
+      "funk",
+      "solo",
+      "us",
+      "english",
+      "city:santa-clara",
+      "venue:levis-stadium"
+    ]
   }
 ]

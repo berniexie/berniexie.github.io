@@ -36,6 +36,7 @@ const artistTags = {
   Bleachers: ['indie-pop', 'synth-pop', 'band', 'us', 'english'],
   Blackpink: ['k-pop', 'girl-group', 'group', 'south-korea', 'korean'],
   Brockhampton: ['hip-hop', 'alt-hip-hop', 'group', 'us', 'english'],
+  'Bruno Mars': ['pop', 'rnb', 'funk', 'solo', 'us', 'english'],
   'Blink-182': ['rock', 'pop-punk', 'band', 'us', 'english'],
   'Blu DeTiger': ['alt-pop', 'funk-pop', 'solo', 'us', 'english'],
   'Boys Like Girls': ['rock', 'pop-rock', 'band', 'us', 'english'],
